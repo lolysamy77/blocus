@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Accueil — Blocus</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root { --font-sys: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif; }
+html, body { margin: 0; padding: 0; font: 14.5px/1.6 var(--font-sys); background: var(--fonds); color: var(--texte); transition: background-color .15s ease, color .15s ease; }
+#topbar { position: sticky; z-index: 26; top: 0; }
+main { max-width: 860px; margin: 0 auto; padding: 0 20px 3rem; }
+
+/* le titre et son chapeau */
+h1 { margin: 2.2rem 0 .6rem; font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; }
+.chapo { margin: 0 0 2.6rem; color: var(--texte-2); font-size: 15.5px; max-width: 68ch; }
+.chapo b { color: var(--texte); font-weight: 600; }
+
+/* les trois sections : même ossature, un simple filet au-dessus */
+section { margin: 0 0 2.6rem; }
+h2 { margin: 0 0 .3rem; font-size: clamp(1.15rem, 2.6vw, 1.4rem); font-weight: 700; letter-spacing: -.01em; }
+section > p.intro { margin: 0 0 1.2rem; color: var(--texte-2); max-width: 68ch; }
+
+/* la grille des cinq gestes */
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; align-items: start; }
+.carte { background: var(--fonds-2); border: 1px solid var(--bord); border-radius: 14px; padding: 1.1rem 1.2rem 1.2rem; box-shadow: 0 10px 40px -28px var(--ombre); }
+.carte h3 { margin: 0 0 .35rem; font-size: 1.02rem; font-weight: 700; letter-spacing: -.01em; }
+.carte p { margin: 0 0 .8rem; color: var(--texte-2); font-size: 13.8px; }
+.carte p:last-child { margin-bottom: 0; }
+.carte a { color: var(--lien); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--lien-bord); }
+.carte a:hover { border-bottom-color: var(--lien); }
+
+/* les principes : une pastille numérotée, puis le texte */
+.principes { list-style: none; margin: 0; padding: 0; counter-reset: principe; }
+.principes li { position: relative; margin: 0 0 1rem; padding: .1rem 0 .1rem 2.6rem; max-width: 68ch; }
+.principes li:last-child { margin-bottom: 0; }
+.principes li::before {
+  counter-increment: principe; content: counter(principe);
+  position: absolute; left: 0; top: 0;
+  width: 1.65rem; height: 1.65rem; border-radius: 8px;
+  background: var(--accent-solide); color: var(--blanc);
+  font-size: 12.5px; font-weight: 700; line-height: 1.65rem; text-align: center;
+}
+.principes b { font-weight: 700; }
+.principes code, .rappel code { font: 12.5px/1 ui-monospace, SFMono-Regular, Consolas, monospace; background: var(--fonds-2); border: 1px solid var(--bord); border-radius: 5px; padding: .15em .35em; }
+
+.rappel { margin: 1.4rem 0 0; padding: .9rem 1.1rem; background: var(--fonds-2); border: 1px solid var(--bord); border-radius: 12px; color: var(--texte-2); font-size: 13.5px; max-width: 68ch; }
+.rappel a { color: var(--lien); }
+
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--bord); color: var(--texte-3); font-size: 12.5px; }
+</style>
+<script src="build/theme.js"></script>
+<style>html, body { background-image: url("fond du site.jpg"); background-size: cover; background-attachment: fixed; background-position: center; }
+</style>
+  <link rel="stylesheet" href="build/mobile-nav.css" />
+</head>
+<body>
+<div id="topbar">
+  <nav id="nav" aria-label="Navigation principale"></nav>
+</div>
+<main>
+  <h1>Ce que les élèves disent, jour par jour</h1>
+  <p class="chapo">
+    Ce site tient deux carnets. Le premier recense les <b>blocus</b> : jour par
+    jour, département par département, ce que les élèves d'un collège ou d'un
+    lycée ont signalé. Le second recueille les <b>revendications</b> : ce que
+    chaque établissement demande, par-delà les quatorze demandes nationales.
+    Rien n'y entre tout seul — chaque ligne vient d'un élève, et elle est relue
+    avant d'apparaître.
+  </p>
+
+  <section aria-labelledby="t-sert">
+    <h2 id="t-sert">À quoi il sert</h2>
+    <p class="intro">
+      Trois choses, et seulement trois. Tout le reste est une façon de les
+      rendre lisibles.
+    </p>
+    <div class="grille">
+      <div class="carte">
+        <h3>Savoir ce qui se passe, où, et quel jour</h3>
+        <p>La carte colore un département seulement s'il y a un blocus ce
+        jour-là ; le tableau reprend la même information jour par jour, et le
+        panneau d'un établissement donne le détail de ce qu'il a signalé. Un
+        département sans blocus reste gris : le site ne repeint pas le pays
+        pour qu'il ait l'air vivant.</p>
+      </div>
+      <div class="carte">
+        <h3>Donner la parole aux élèves de chaque établissement</h3>
+        <p>Les quatorze revendications nationales sont la trame commune, celle
+        que tout le monde a lue. Un collège ou un lycée y ajoute ce qui manque
+        chez lui, avec ses mots, et ses propres élèves votent pour ou contre
+        chacune : une revendication se décide entre élèves d'un même
+        établissement, pas entre comptes.</p>
+      </div>
+      <div class="carte">
+        <h3>Rendre compte, y compris de ce qu'on ne sait pas</h3>
+        <p>Un jour sans signalement est un jour sans signalement, pas un jour
+        sans mouvement : le site le dit plutôt que de le combler. C'est la
+        limite du carnet, et elle est affichée plutôt qu'envoyée.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-faire">
+    <h2 id="t-faire">Ce que les élèves peuvent faire</h2>
+    <p class="intro">Quatre gestes, et chacun ouvre une page. Aucun ne demande
+    de compte, aucun ne demande de nom.</p>
+    <div class="grille">
+      <div class="carte">
+        <h3>Signaler un blocus</h3>
+        <p>Vous choisissez votre département, puis votre établissement, et vous
+        dites ce qui s'est passé : l'entrée bloquée, un rassemblement, une
+        grève, une fermeture administrative, autre chose. Un lien vers un
+        article ou une photo suffit comme preuve.</p>
+        <p><a href="signaler-un-blocus.html">Signaler un blocus</a></p>
+      </div>
+      <div class="carte">
+        <h3>Porter une revendication dans son établissement</h3>
+        <p>Vous prenez une des quatorze demandes de la liste — celle qui vous
+        parle — et vous dites ce qui manque chez vous. Le serveur n'en accepte
+        pas d'autre : ce sont ces quatorze-là, pas les vôtres.</p>
+        <p><a href="ajouter-une-revendication.html">Choisir pour mon établissement</a></p>
+      </div>
+      <div class="carte">
+        <h3>Voter dans son établissement</h3>
+        <p>Le vote se fait dans le panneau de l'établissement, sur la carte de
+        votre département. Un appareil = une voix, et une voix dans un seul
+        établissement — le serveur le vérifie, il ne se contente pas de le
+        dire.</p>
+        <p><a href="carte.html">Ouvrir la carte</a></p>
+      </div>
+      <div class="carte">
+        <h3>Lire et relire les quatorze demandes</h3>
+        <p>Le texte de chaque revendication est écrit, pas abrégé. C'est la
+        liste dont le formulaire tire ses propositions, et dont le serveur
+        refuse de s'écarter.</p>
+        <p><a href="revendications.html">Lire les quatorze revendications</a></p>
+      </div>
+    </div>
+    <p class="rappel">Et pour le reste, sans rien écrire : le
+    <a href="tableau-des-blocus.html">tableau des blocus, jour par jour</a>, la
+    <a href="carte.html">carte de France</a>, et le
+    <a href="departements.html">choix du département</a> si vous préférez
+    partir de là.</p>
+  </section>
+
+  <section aria-labelledby="t-principes">
+    <h2 id="t-principes">Les grands principes</h2>
+    <p class="intro">Ce qui n'est pas négociable, et qui vaut pour toutes les
+    pages.</p>
+    <ol class="principes">
+      <li><b>Ce sont les élèves qui parlent.</b> Le site ne publie rien qu'un
+      élève de l'établissement concerné n'ait signalé. Il n'a pas de compte,
+      et il ne représente personne : il enregistre ce qu'on lui dit, et il le
+      rattache à l'établissement qui l'a dit.</li>
+
+      <li><b>Rien n'est publié sans relecture.</b> Un signalement arrive dans
+      le dossier <code>demandes_blocus/</code>, un fichier par jour et par
+      établissement ; une revendication dans <code>demandes_revendications/</code>.
+      Ils sont relus avant d'apparaître sur la carte, parce qu'un nom
+      d'établissement erré fausse les chiffres de tout un département.</li>
+
+      <li><b>Une seule ligne par établissement et par jour.</b> Deux
+      signalements le même jour ne se cumulent pas : ils sont numérotés
+      <code>_#1</code>, <code>_#2</code>…, et la carte n'en compte qu'un. Ce qui
+      est additionné, c'est le nombre d'élèves qui le signalent — jamais le
+      nombre de fichiers.</li>
+
+      <li><b>Les quatorze revendications sont une liste fermée.</b> Le serveur
+      refuse tout titre qui n'en fait pas partie et renvoie la liste, pour que
+      la page rattrape son retard au lieu de deviner. Une revendication
+      d'établissement ne remplace pas la demande nationale : elle s'y ajoute,
+      et c'est ce qui manque chez soi qu'elle dit.</li>
+
+      <li><b>Un appareil = une voix, dans un seul établissement.</b> Ce que
+      cela ne fait pas, et qu'il faut dire : un navigateur qui efface ses
+      données ouvre une nouvelle voix. Sans compte, il n'y a rien d'autre sur
+      quoi s'appuyer — c'est pourquoi le serveur est la source de vérité, et
+      pourquoi la page ne prétend jamais qu'un vote est garanti.</li>
+
+      <li><b>Aucune donnée personnelle.</b> Ni nom, ni prénom, ni classe dans ce
+      qu'on envoie : seulement l'établissement, la date, et ce qui a été
+      écrit. Un identifiant d'appareil — tiré au sort, conservé sur l'appareil,
+      jamais demandé à personne — sert à compter les voix.</li>
+
+      <li><b>Le site dit ce qu'il ne sait pas.</b> Un établissement sans blocus
+      ce jour-là reste gris, un jour sans signalement reste vide, et un
+      établissement dont on ignore la situation affiche qu'on l'ignore. La carte
+      ne peint que ce qui a été signalé.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="t-auteur">
+    <h2 id="t-auteur">Qui fait ce site</h2>
+    <p class="intro">C'est moi qui ai écrit ce site et qui le tiens à jour :
+    jeune programmeur des lycées. Les données ne viennent pas de moi&nbsp;:
+    elles viennent des élèves qui signalent ce qui se passe dans leur
+    établissement, et je n'écris jamais à leur place. C'est aussi pour cela
+    que je signe en bas de chaque page — on sait qui fait l'outil, et qui
+    parle sur la carte.</p>
+  </section>
+
+  <footer>
+    Actu Blocus — les signalements, les revendications et les votes sont écrits
+    sur votre machine, dans les dossiers <code>demandes_blocus/</code>,
+    <code>demandes_revendications/</code> et <code>votes/</code>. Aucune donnée
+    personnelle n'est collectée.
+  </footer>
+</main>
+<script src="build/nav.js"></script>
+<script>
+NAV.poser("nav", "accueil", { titre: "Accueil" });
+</script>
+  <script src="build/mobile-nav.js"></script>
+</body>
+</html>

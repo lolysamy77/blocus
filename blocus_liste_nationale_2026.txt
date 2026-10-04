@@ -1,0 +1,1373 @@
+================================================================================
+LISTE NATIONALE DES ETABLISSEMENTS SCOLAIRES BLOQUES EN FRANCE EN 2026
+================================================================================
+Extrait de   : blocus_lycees_colleges_france_2026.txt  (section 4)
+Date         : 4 octobre 2026
+Periode      : evenements du 07/09/2026 au 02/10/2026
+
+CE QUE CE FICHIER EST, ET CE QU'IL N'EST PAS
+  Ce n'est pas l'annuaire des lycees de France. Il ne contient que les
+  etablissements qu'une source nomme explicitement comme ayant ete bloques,
+  entraves ou filtres entre le 7 septembre et le 2 octobre 2026.
+
+  Un etablissement absent de cette liste n'a pas necessairement ete bloque : il
+  peut n'avoir ete nomme par aucune source. A l'inverse, tout ce qui y figure y
+  est parce qu'une source l'a dit, a une date donnee, et la source est
+  indiquee ligne a ligne dans le document d'origine.
+
+  Ce fichier est une VUE, pas une source. Il ne fait pas foi : en cas d'ecart,
+  c'est le document d'origine qui prevaut, puisque c'est lui qui porte les
+  citations, les liens et les niveaux de certitude.
+
+
+--------------------------------------------------------------------------------
+SOMMAIRE
+--------------------------------------------------------------------------------
+  A. Chiffres cles
+  B. Repartition par type d'etablissement
+  C. Liste par departement — 90 blocs, 462 lignes
+  D. Index alphabetique des etablissements — 390 entrees
+  E. Lignes ou l'etablissement n'est pas designe avec precision — 19
+  F. Blocages filtrants — acces possible par voie secondaire
+  G. Tentatives non realisees
+  H. Etablissements bloques plusieurs jours — 62
+  I. Trois ecarts de comptage releves dans le document d'origine
+  J. Controles effectues sur ce fichier
+
+
+--------------------------------------------------------------------------------
+A. CHIFFRES CLES
+--------------------------------------------------------------------------------
+  Unites = couples (etablissement, date) ................................. 462
+  Entrees de la liste (une par ligne en section D) ..................... 390
+    dont bloques au moins deux jours differents .......................  62
+  Lycees reellement nommes ............................................ 403
+    6 des 390 entrées regroupent plusieurs etablissements (19 lycées
+    au total). Voir section I, point 4.
+  Lignes ou l'etablissement n'est pas designe avec precision ...........  19
+  Communes concernees ............................................... 243
+  Departements et territoires concernes ..............................  90
+
+  Periode reellement documentee : du 07/09/2026 au 02/10/2026.
+  Le document d'origine couvre la periode 01/01/2026 -> 04/10/2026, mais
+  aucun evenement n'y est anterieur au 7 septembre. La periode du 04/10
+  au 31/12/2026 n'est pas documentee.
+
+  Repartition par date (barre proportionnelle : le 01/10 vaut 46 asterisques) :
+
+    07/09    2  *
+    08/09    1  *
+    14/09    1  *
+    15/09    1  *
+    17/09    1  *
+    21/09    2  *
+    23/09    1  *
+    24/09    4  *
+    25/09    1  *
+    28/09   18  ****
+    29/09   83  *****************
+    30/09   65  *************
+    01/10  234  **********************************************
+    02/10   48  **********
+
+  Les 18 departements qui n'ont qu'une seule ligne ne se lisent pas de la
+  meme facon que les 29 qui en ont six ou plus : une ligne unique signifie
+  presque toujours qu'aucune source n'a nomme d'autre etablissement, et
+  non que le departement n'a connu qu'un seul blocage. Les 5 premiers
+  departements en volume sont 38 (31 lignes), 83 (18), 59 (16), 06 (15),
+  33 (15).
+
+
+
+--------------------------------------------------------------------------------
+B. REPARTITION PAR TYPE D'ETABLISSEMENT
+--------------------------------------------------------------------------------
+  Comptage sur la colonne Type du document d'origine, sans regroupement.
+
+  ==============================================================      404
+  lycee  (Lycée)
+  ==============================================================      19
+  cites scolaires  (Cité)
+  ==============================================================      12
+  lycee  (Lycée pro)
+  ==============================================================      9
+  cites scolaires  (Cité scolaire)
+  ==============================================================      8
+  etablissement non designe avec precision  (-)
+  ==============================================================      5
+  collège  (Collège)
+  ==============================================================      3
+  lycee  (Lycée polyvalent)
+  ==============================================================      2
+  lycee  (Lycée agricole (LEGTA))
+  --------------------------------------------------------------
+  ==============================================================      462
+
+  Doit valoir 462. Repartition par type dans la colonne Type ci-dessus.
+
+
+--------------------------------------------------------------------------------
+C. LISTE PAR DEPARTEMENT
+--------------------------------------------------------------------------------
+Format : commune | etablissement | type | date | motif
+Le motif est celui du document d'origine, recopie mot pour mot. Aucun
+statut n'a ete ajoute ni deduit.
+
+-- 02  Aisne                                      5 etablissement(s), 5 ligne(s)
+   Laon                     Lycée Paul-Claudel                                        Lycée                   01/10  National
+   Saint-Quentin            Lycée Colard-Noël                                         Lycée                   29/09  Grilles fermées
+   Saint-Quentin            Lycée Condorcet                                           Lycée                   29/09  Blocage des accès
+   Soissons                 Lycée Léonard-de-Vinci                                    Lycée                   01/10  National
+   Soissons                 Lycée Nerval                                              Lycée                   30/09  Ras-le-bol
+-- 03  Allier                                     1 etablissement(s), 1 ligne(s)
+   Montluçon                Lycée Madame-de-Staël                                     Lycée                   01/10  Locaux, effectifs
+-- 04  Alpes-de-Haute-Provence                    3 etablissement(s), 3 ligne(s)
+   Digne-les-Bains          Lycée Alexandra-David-Néel                                Lycée                   01/10  Moyens, profs non remplacés
+   Digne-les-Bains          Lycée Alphonse-Beau-de-Rochas                             Lycée                   01/10  Moyens, profs non remplacés
+   Manosque                 Lycée Félix-Esclangon                                     Lycée                   01/10  National
+-- 05  Hautes-Alpes                               1 etablissement(s), 1 ligne(s)
+   Veynes                   Lycée professionnel Pierre-Mendés-France                  Lycée pro               01/10  Conditions d internat, restauration, surcharge des classes
+-- 06  Alpes-Maritimes                            12 etablissement(s), 15 ligne(s)
+   Antibes                  Lycée Jacques-Audiberti                                   Lycée                   01/10  National
+   Antibes                  Lycée Léonard-de-Vinci                                    Lycée                   01/10  National
+   Antibes                  Lycée professionnel Jacques-Dolle                         Lycée pro               01/10  National
+   Antibes                  Lycée professionnel Jacques-Dolle                         Lycée pro               30/09  National
+   Grasse                   Lycée Alexis-de-Tocqueville                               Lycée                   01/10  National
+   Grasse                   Lycée Francis-de-Croisset                                 Lycée                   30/09  National
+   Menton                   Lycée Curie                                               Lycée                   30/09  National
+   Nice                     Lycée Albert-Calmette                                     Lycée                   29/09  National
+   Nice                     Lycée Calmette                                            Lycée                   29/09  National
+   Nice                     Lycée du Parc-Impérial                                    Lycée                   29/09  National
+   Nice                     Lycée du Parc-Impérial                                    Lycée                   30/09  National
+   Nice                     Lycée Estienne-d'Orves                                    Lycée                   28/09  National
+   Nice                     Lycée Estienne-d'Orves                                    Lycée                   30/09  National
+   Nice                     Lycée Mélinée-et-Missak-Manouchian                        Lycée                   01/10  National
+   Nice                     Lycée professionnel Magnan                                Lycée pro               30/09  National
+-- 07  Ardèche                                    7 etablissement(s), 7 ligne(s)
+   Annonay                  Lycée d'Annonay (nom non précisé)                         Lycée                   01/10  National
+   Aubenas                  Lycée Astier                                              Lycée                   02/10  Bâtiment, classes
+   Aubenas                  Lycée d'Aubenas (nom non précisé)                         Lycée                   01/10  National
+   Le Cheylard              Lycée du Cheylard (nom non précisé)                       Lycée                   01/10  National
+   Le Teil                  Lycée du Teil (nom non précisé)                           Lycée                   01/10  National
+   Privas                   Lycée Vincent-d'Indy                                      Lycée                   01/10  National
+   Tournon-sur-Rhône        Lycée de Tournon (nom non précisé)                        Lycée                   01/10  National
+-- 09  Ariége                                     1 etablissement(s), 1 ligne(s)
+   Mirepoix                 Cité scolaire de Mirepoix                                 Cité scolaire           01/10  Tenues vestimentaires imposées par le nouveau proviseur ; griefs nationaux (surcharge des classes, chaleur, Parcoursup)
+-- 10  Aube                                       2 etablissement(s), 2 ligne(s)
+   Troyes                   Lycée des Lombards                                        Lycée                   29/09  National
+   Troyes                   Lycée Polyvalent Marie de Champagne                       Lycée polyvalent        01/10  National
+-- 11  Aude                                       4 etablissement(s), 6 ligne(s)
+   Carcassonne              Lycée Jules-Fil                                           Lycée                   01/10  National
+   Carcassonne              Lycée Jules-Fil                                           Lycée                   02/10  National
+   Carcassonne              Lycée Jules-Fil                                           Lycée                   30/09  National
+   Lézignan-Corbières       Lycée de Lézignan (nom non précisé)                       Lycée                   30/09  National
+   Narbonne                 Lycée Ferroul                                             Lycée                   30/09  National
+   Narbonne                 Lycée Pierre-Lacroix                                      Lycée                   30/09  National
+-- 12  Aveyron                                    2 etablissement(s), 2 ligne(s)
+   Millau                   Lycée Jean-Vigo                                           Lycée                   29/09  National
+   Rodez                    Lycée Foch                                                Lycée                   01/10  Profs, locaux, Parcoursup
+-- 13  Bouches-du-Rhône                           5 etablissement(s), 5 ligne(s)
+   Marseille (aggl.)        Préfecture de police                                      -                       01/10  National
+   Marseille 13e            Lycée Simone-Veil                                         Lycée                   02/10  National
+   Marseille 15e            Lycée Saint-Exupéry                                       Lycée                   01/10  National
+   Marseille 8e             Lycée Daumier                                             Lycée                   02/10  National
+   Marseille 8e             Lycée Marseilleveyre                                      Lycée                   02/10  National
+-- 14  Calvados                                   6 etablissement(s), 10 ligne(s)
+   Caen                     Lycée Augustin-Fresnel                                    Lycée                   01/10  National
+   Caen                     Lycée Augustin-Fresnel                                    Lycée                   02/10  National
+   Caen                     Lycée François-de-Malherbe                                Lycée                   01/10  National
+   Caen                     Lycée François-de-Malherbe                                Lycée                   02/10  National
+   Caen                     Lycée Jean-Rostand                                        Lycée                   01/10  National
+   Caen                     Lycée Jean-Rostand                                        Lycée                   02/10  National
+   Caen                     Lycée Laplace-Dumont-d'Urville                            Lycée                   02/10  National
+   Caen                     Lycée Victor-Hugo                                         Lycée                   15/09  EDD / options / accueil handicapé
+   Hérouville-Saint-Clair   Lycée Salvador-Allende                                    Lycée                   01/10  National
+   Hérouville-Saint-Clair   Lycée Salvador-Allende                                    Lycée                   02/10  National
+-- 16  Charente                                   1 etablissement(s), 1 ligne(s)
+   Angoulême                Lycée Marguerite-de-Valois                                Lycée                   01/10  National
+-- 17  Charente-Maritime                          3 etablissement(s), 4 ligne(s)
+   La Rochelle              Lycée Léonce-Vieljeux                                     Lycée                   01/10  National
+   La Rochelle              Lycée Léonce-Vieljeux                                     Lycée                   02/10  National
+   La Rochelle              Lycée René-Josué-Valin                                    Lycée                   02/10  National — FILTRANT
+   Royan                    Lycée Cordouan                                            Lycée                   01/10  National — FILTRANT
+-- 19  Corrèze                                    1 etablissement(s), 1 ligne(s)
+   Tulle                    Lycée Edmond-Perrier                                      Lycée                   01/10  National — FILTRANT
+-- 21  Côte-d'Or                                  5 etablissement(s), 5 ligne(s)
+   Dijon                    Lycée Carnot                                              Lycée                   02/10  National
+   Dijon                    Lycée Hippolyte-Fontaine                                  Lycée                   01/10  National
+   Dijon                    Lycée Le Castel                                           Lycée                   01/10  National
+   Dijon                    Lycée Montchapet                                          Lycée                   02/10  National
+   Montbard                 Lycée professionnel Eugéne-Guillaume                      Lycée pro               30/09  Self, temps de repas,journées de 8 h à 17 h 30, conditions d internat
+-- 22  Côtes-d'Armor                              1 etablissement(s), 1 ligne(s)
+   Lannion                  Lycée Félix-Le-Dantec                                     Lycée                   01/10  National
+-- 23  Creuse                                     1 etablissement(s), 1 ligne(s)
+   Felletin                 Lycée des métiers du bâtiment (LMB)                       Lycée                   01/10  National
+-- 24  Dordogne                                   6 etablissement(s), 6 ligne(s)
+   Bergerac                 Lycée Maine-de-Biran                                      Lycée                   01/10  National
+   Périgueux                Cité scolaire Laure-Gatet                                 Cité                    01/10  National
+   Périgueux                Lycée Bertran-de-Born                                     Lycée                   01/10  National — FILTRANT puis total
+   Périgueux                Lycée Jay-de-Beaufort                                     Lycée                   01/10  National
+   Périgueux                Lycée Pablo-Picasso                                       Lycée                   01/10  National
+   Ribérac                  Lycée Arnaut-Daniel                                       Lycée                   02/10  National — FILTRANT
+-- 25  Doubs                                      7 etablissement(s), 9 ligne(s)
+   Besançon                 Lycée Condé                                               Lycée                   02/10  National
+   Besançon                 Lycée Jules Haag                                          Lycée                   01/10  National
+   Besançon                 Lycée Jules Haag (site Marceau)                           Lycée                   02/10  National
+   Besançon                 Lycée Louis Pergaud                                       Lycée                   01/10  National
+   Besançon                 Lycée Louis Pergaud                                       Lycée                   29/09  National
+   Besançon                 Lycée Pasteur                                             Lycée                   02/10  National
+   Besançon                 Lycée Pasteur                                             Lycée                   29/09  National
+   Besançon                 Lycée Victor Hugo (Planoise)                              Lycée                   01/10  National
+   Montbéliard              Lycée Germaine Tillion                                    Lycée                   01/10  National
+-- 26  Drôme                                      1 etablissement(s), 1 ligne(s)
+   Montélimar               Collège-lycée Alain-Borne                                 Collège                 01/10  National — FILTRANT
+-- 27  Eure                                       4 etablissement(s), 4 ligne(s)
+   Évreux                   Lycée Aristide-Briand                                     Lycée                   01/10  National
+   Évreux                   Lycée Léopold-Sédar-Senghor                               Lycée                   01/10  National
+   Louviers                 Lycée Les Fontenelles                                     Lycée                   01/10  National
+   Val-de-Reuil             Lycée Marc-Bloc                                           Lycée                   01/10  National
+-- 28  Eure-et-Loir                               4 etablissement(s), 5 ligne(s)
+   Chartres                 Lycée Fulbert                                             Lycée                   01/10  National
+   Chartres                 Lycée Jehan-de-Beauce                                     Lycée                   01/10  Profs de français
+   Dreux                    Lycée Édouard-Branly                                      Lycée                   30/09  National
+   Dreux                    Lycée Rotrou                                              Lycée                   01/10  National
+   Dreux                    Lycée Rotrou                                              Lycée                   30/09  National
+-- 29  Finistère                                  4 etablissement(s), 4 ligne(s)
+   Brest                    Lycée Dupuy-de-Lôme                                       Lycée                   30/09  National
+   Pont-l'Abbé              Lycée René Laennec                                        Lycée                   01/10  National
+   Quimper                  Lycée professionnel Chaptal                               Lycée pro               02/10  National
+   Quimper                  Lycée Yves-Thépot                                         Lycée                   30/09  National
+-- 30  Gard                                       7 etablissement(s), 11 ligne(s)
+   Alès                     Lycée Jacques-Prévert                                     Lycée                   29/09  National
+   Alès                     Lycée Jean-Baptiste-Dumas                                 Lycée                   01/10  National
+   Alès                     Lycée Jean-Baptiste-Dumas                                 Lycée                   28/09  National
+   Alès                     Lycée Jean-Baptiste-Dumas                                 Lycée                   29/09  National
+   Bagnols-sur-Cèze         Lycée Albert-Einstein                                     Lycée                   28/09  National
+   Nîmes                    Lycée Daudet                                              Lycée                   01/10  National
+   Nîmes                    Lycée Daudet                                              Lycée                   29/09  National
+   Nîmes                    Lycée Dhuoda                                              Lycée                   01/10  National
+   Nîmes                    Lycée Dhuoda                                              Lycée                   29/09  National
+   Nîmes                    Lycée Frédéric-Mistral                                    Lycée                   01/10  National
+   Rodilhan                 Lycée agricole                                            Lycée                   01/10  National
+-- 31  Haute-Garonne                              4 etablissement(s), 4 ligne(s)
+   Muret                    Lycée Pierre-d'Aragon                                     Lycée                   29/09  National
+   Toulouse                 Lycée Déodat-de-Séverac                                   Lycée                   29/09  National
+   Toulouse                 Lycée des Arènes                                          Lycée                   29/09  National
+   Toulouse                 Lycée Marcelin-Berthelot                                  Lycée                   29/09  National
+-- 32  Gers                                       2 etablissement(s), 3 ligne(s)
+   Auch                     Lycée du Garros                                           Lycée                   01/10  National
+   Auch                     Lycée du Garros                                           Lycée                   30/09  National
+   Auch                     Lycée Pardailhan                                          Lycée                   01/10  National — FILTRANT
+-- 33  Gironde                                    14 etablissement(s), 15 ligne(s)
+   Arcachon                 Lycée Grand-Air                                           Lycée                   01/10  National
+   Arcachon                 Lycée Grand-Air                                           Lycée                   02/10  National
+   Bordeaux                 Lycée Brémontier                                          Lycée                   01/10  Cité par la préfecture
+   Bordeaux                 Lycée des Menuts                                          Lycée                   01/10  National
+   Bordeaux                 Lycée François-Mauriac                                    Lycée                   01/10  National
+   Bordeaux                 Lycée Gustave-Eiffel                                      Lycée                   30/09  National
+   Bordeaux                 Lycée Michel-de-Montaigne                                 Lycée                   29/09  National
+   Bordeaux                 Lycée Montesquieu                                         Lycée                   01/10  Cité par la préfecture
+   Bordeaux                 Lycée privé du Mirail                                     Lycée                   02/10  National
+   Bordeaux                 Lycée Saint-Louis                                         Lycée                   01/10  National
+   Bordeaux                 Lycée Vaclav-Havel                                        Lycée                   01/10  Cité par la préfecture
+   Bordeaux                 Lycée Victor-Louis                                        Lycée                   01/10  Cité par la préfecture
+   Lormont                  Lycée Jacques-Brel                                        Lycée                   17/09  EDT surchargés
+   Lormont                  Lycée Les Iris                                            Lycée                   30/09  Manques
+   Talence                  Lycée Émile-Combes                                        Lycée                   01/10  Cité par la préfecture
+-- 34  Hérault                                    7 etablissement(s), 7 ligne(s)
+   Agde                     Lycée Loubatières                                         Lycée                   01/10  National
+   Montpellier              Cité scolaire Clémenceau                                  Cité                    01/10  Classes à 30
+   Montpellier              Lycée Jean-Mermoz                                         Lycée                   01/10  National
+   Montpellier              Lycée Jean-Monet                                          Lycée                   01/10  National
+   Montpellier              Lycée Joffre                                              Lycée                   01/10  National
+   Montpellier              Lycée Jules-Guesde                                        Lycée                   01/10  National
+   Sète                     Lycée Joliot-Curie                                        Lycée                   01/10  National
+-- 35  Ille-et-Vilaine                            7 etablissement(s), 11 ligne(s)
+   Fougères                 Lycée Jean-Guéhenno                                       Lycée                   01/10  National
+   Le Rheu                  Lycée agricole Théodore-Monod                             Lycée agricole (LEGTA)  07/09  EDD non définis, sureffectif, options supprimées
+   Le Rheu                  Lycée agricole Théodore-Monod                             Lycée agricole (LEGTA)  08/09  idem
+   Rennes                   Lycée Bréquigny                                           Lycée                   01/10  National
+   Rennes                   Lycée Bréquigny                                           Lycée                   29/09  National
+   Rennes                   Lycée Bréquigny                                           Lycée                   30/09  National
+   Rennes                   Lycée Jean-Jaurès                                         Lycée                   30/09  National
+   Rennes                   Lycée Pierre-Mendès-France                                Lycée                   30/09  National
+   Rennes                   Lycée René-Descartes-Coëtlogon                            Lycée                   02/10  National
+   Rennes                   Lycée René-Descartes-Coëtlogon                            Lycée                   30/09  National
+   Rennes                   Lycées Chateaubriand, René-Descartes-Coëtlogon, Jean-Jaurès, Jean-Macé (4 etabl.)Lycée                   01/10  National
+-- 37  Indre-et-Loire                             3 etablissement(s), 5 ligne(s)
+   Chinon                   Lycée François-Rabelais                                   Lycée                   29/09  National
+   Tours                    Lycée Balzac                                              Lycée                   29/09  National
+   Tours                    Lycée Balzac                                              Lycée                   30/09  National
+   Tours                    Lycée Grandmont                                           Lycée                   01/10  National
+   Tours                    Lycée Grandmont                                           Lycée                   29/09  National
+-- 38  Isère                                      21 etablissement(s), 31 ligne(s)
+   Bourgoin-Jallieu         Lycée de Bourgoin-Jallieu (nom non précisé)               Lycée                   30/09  National
+   Bourgoin-Jallieu         Lycées l'Oiselet, Gambetta, Jean-Claude-Aubry (3 etabl.)  Lycée                   01/10  National
+   Échirolles               Lycée Marie-Curie                                         Lycée                   01/10  Portail forcé
+   Échirolles               Lycée Marie-Curie                                         Lycée                   29/09  National
+   Grenoble                 Lycée André-Argouges                                      Lycée                   01/10  National
+   Grenoble                 Lycée André-Argouges                                      Lycée                   29/09  National
+   Grenoble                 Lycée André-Argouges                                      Lycée                   30/09  National
+   Grenoble                 Lycée Champollion                                         Lycée                   01/10  National
+   Grenoble                 Lycée Champollion                                         Lycée                   30/09  National
+   Grenoble                 Lycée Emmanuel-Mounier                                    Lycée                   01/10  National
+   Grenoble                 Lycée Emmanuel-Mounier                                    Lycée                   28/09  National
+   Grenoble                 Lycée Emmanuel-Mounier                                    Lycée                   29/09  National
+   Grenoble                 Lycée Les Eaux-Claires                                    Lycée                   01/10  National
+   Grenoble                 Lycée Les Eaux-Claires                                    Lycée                   29/09  National
+   Grenoble                 Lycée Lesdiguières                                        Lycée                   29/09  National
+   Grenoble                 Lycée Louise-Michel                                       Lycée                   01/10  National
+   Grenoble                 Lycée Stendhal                                            Lycée                   29/09  National
+   Grenoble                 Lycée Stendhal                                            Lycée                   30/09  National
+   Grenoble                 Lycée Vaucanson                                           Lycée                   01/10  National
+   Grenoble                 Lycée Vaucanson                                           Lycée                   29/09  National
+   La Tour-du-Pin           Lycée Élie-Cartan                                         Lycée                   01/10  National
+   L'Isle-d'Abeau           Lycée de L'Isle-d'Abeau (nom non précisé)                 Lycée                   30/09  National
+   L'Isle-d'Abeau           Lycée Delorme                                             Lycée                   01/10  Route barrée
+   Saint-Marcellin          Lycée La Saulaie                                          Lycée                   01/10  National
+   Saint-Martin-d'Hères     Collège Le Clos d'Or                                      Collège                 29/09  National
+   Saint-Martin-d'Hères     Lycée Pablo-Neruda                                        Lycée                   01/10  National
+   Saint-Martin-d'Hères     Lycée Pablo-Neruda                                        Lycée                   30/09  National
+   Saint-Romain-en-Gal      Lycée Ella-Fitzgerald                                     Lycée                   01/10  National
+   Seyssinet-Pariset        Lycée Aristide-Bergès                                     Lycée                   30/09  National
+   Vienne                   Lycée Galilée                                             Lycée                   01/10  Personnel bloqué
+   Voiron                   Lycées Édouard-Herriot, La Nat, Ferdinand-Buisson (3 etabl.)Lycée                   01/10  National
+-- 39  Jura                                       2 etablissement(s), 3 ligne(s)
+   Champagnole              Lycée Paul-Émile Victor                                   Lycée                   30/09  National
+   Morez                    Lycée de Morez (nom non précisé)                          Lycée                   01/10  National
+   Morez                    Lycée de Morez (nom non précisé)                          Lycée                   30/09  National
+-- 40  Landes                                     4 etablissement(s), 4 ligne(s)
+   Morcenx                  Lycée de Morcenx-la-Nouvelle                              Lycée                   01/10  TENTATIVE
+   Parentis-en-Born         Lycée Saint-Exupéry                                       Lycée                   30/09  National — FILTRANT
+   Saint-Vincent-de-Tyrosse Lycée Sud des Landes                                      Lycée                   01/10  National
+   Tarnos                   Lycée professionnel Ambroise-Croizat                      Lycée pro               30/09  National
+-- 41  Loir-et-Cher                               3 etablissement(s), 3 ligne(s)
+   Blois                    Lycée Dessaignes                                          Lycée                   01/10  National
+   Romorantin-Lanthenay     Lycée Claude-de-France                                    Lycée                   01/10  National
+   Vendôme                  Lycée Ronsard                                             Lycée                   01/10  Ambigu
+-- 42  Loire                                      4 etablissement(s), 4 ligne(s)
+   Roanne                   Lycée Jean-Puy                                            Lycée                   01/10  Ambigu
+   Saint-Chamond            Lycée Claude-Lebois                                       Lycée                   01/10  National
+   Saint-Étienne            Lycée Étienne-Mimard                                      Lycée                   01/10  National
+   Saint-Priest-en-Jarez    Lycée Simone-Weil                                         Lycée                   01/10  National
+-- 43  Haute-Loire                                3 etablissement(s), 3 ligne(s)
+   Brioude                  Cité scolaire de Brioude (lycée Lafayette)                Cité                    01/10  National
+   Le Puy-en-Velay          Lycée Simone-Weil                                         Lycée                   29/09  National
+   Monistrol-sur-Loire      Lycée Léonard-de-Vinci                                    Lycée                   29/09  National
+-- 44  Loire-Atlantique                           5 etablissement(s), 5 ligne(s)
+   Nantes                   Lycée Nelson-Mandela                                      Lycée                   01/10  National
+   Nantes                   Lycées Clemenceau, Jean-Perrin, Guist'hau, Monge-La Chauvinière (4 etabl.)Lycée                   01/10  National
+   Pornic                   Lycée Pays de Retz                                        Lycée                   01/10  National
+   Rezé                     Lycée Jean-Perrin-Goussier                                Lycée                   01/10  National
+   Saint-Nazaire            Lycée Aristide Briand                                     Lycée                   01/10  National
+-- 45  Loiret                                     2 etablissement(s), 3 ligne(s)
+   Orléans                  Lycée Benjamin-Franklin                                   Lycée                   01/10  National
+   Orléans                  Lycée Benjamin-Franklin                                   Lycée                   29/09  National
+   Orléans                  Lycée Jean-Zay                                            Lycée                   28/09  National
+-- 46  Lot                                        1 etablissement(s), 1 ligne(s)
+   Cahors                   Lycée Monnerville (Terre-Rouge)                           Lycée                   01/10  National
+-- 47  Lot-et-Garonne                             4 etablissement(s), 6 ligne(s)
+   Agen                     Lycée Palissy                                             Lycée                   02/10  National
+   Fumel                    Cité scolaire Marguerite-Filhol                           Cité                    01/10  FILTRANT
+   Fumel                    Cité scolaire Marguerite-Filhol                           Cité                    29/09  National
+   Marmande                 Cité scolaire Val-de-Garonne                              Cité                    01/10  National
+   Marmande                 Cité scolaire Val-de-Garonne                              Cité                    02/10  National
+   Nérac                    Lycée George-Sand                                         Lycée                   01/10  National
+-- 48  Lozère                                     1 etablissement(s), 1 ligne(s)
+   Mende                    Lycée Émile-Peytavin                                      Lycée                   01/10  National
+-- 49  Maine-et-Loire                             8 etablissement(s), 8 ligne(s)
+   Angers                   Lycée Auguste et Jean Renoir                              Lycée                   29/09  National
+   Angers                   Lycée David d'Angers                                      Lycée                   01/10  National
+   Angers                   Lycée Joachim du Bellay                                   Lycée                   01/10  National
+   Angers                   Lycée polyvalent Chevrollier                              Lycée polyvalent        30/09  National
+   Avrillé                  Lycée professionnel Paul-Émile-Victor                     Lycée pro               01/10  National
+   Cholet                   Lycée Fernand-Renaudeau                                   Lycée                   02/10  National
+   Les Ponts-de-Cé          Lycée Jean Bodin                                          Lycée                   29/09  National
+   Saumur                   Lycée Duplessis-Mornay                                    Lycée                   01/10  National
+-- 50  Manche                                     6 etablissement(s), 6 ligne(s)
+   Carentan-les-Marais      Lycée Sivard-de-Beaulieu                                  Lycée                   29/09  National
+   Cherbourg-en-Cotentin    Lycée Alexis-de-Tocqueville                               Lycée                   01/10  TENTATIVE
+   Cherbourg-en-Cotentin    Lycée Jean-François-Millet                                Lycée                   29/09  National
+   Cherbourg-en-Cotentin    Lycée Victor-Grignard                                     Lycée                   01/10  FILTRANT
+   Saint-Lô                 Lycée Curie-Corot                                         Lycée                   29/09  National
+   Saint-Lô                 Lycée Le-Verrier                                          Lycée                   29/09  National
+-- 51  Marne                                      7 etablissement(s), 8 ligne(s)
+   Épernay                  Lycée Stéphane-Hessel                                     Lycée                   01/10  National
+   Reims                    Lycée Arago                                               Lycée                   01/10  National
+   Reims                    Lycée Franklin-Roosevelt                                  Lycée                   01/10  National
+   Reims                    Lycée Gustave-Eiffel                                      Lycée                   30/09  National
+   Reims                    Lycée Hugues-Libergier                                    Lycée                   29/09  National
+   Reims                    Lycée Jean-Jaurès                                         Lycée                   30/09  National
+   Reims                    Lycée Joliot-Curie                                        Lycée                   01/10  National
+   Reims                    Lycée Joliot-Curie                                        Lycée                   30/09  National
+-- 53  Mayenne                                    4 etablissement(s), 4 ligne(s)
+   Laval                    Cité scolaire Réaumur-Buron, lycée Ambroise-Paré, lycée Georges-Lesnard (3 etabl.)Cité                    01/10  National
+   Laval                    Lycée Ambroise-Paré                                       Lycée                   01/10  National
+   Mayenne                  Lycée Lavoisier                                           Lycée                   01/10  National
+   Mayenne                  Lycée Léonard-de-Vinci                                    Lycée                   01/10  National
+-- 54  Meurthe-et-Moselle                         7 etablissement(s), 8 ligne(s)
+   Jarny                    Lycée Jean-Zay                                            Lycée                   01/10  National
+   Longwy                   Lycée Alfred-Mézières                                     Lycée                   01/10  National
+   Nancy                    Lycée Frédéric-Chopin                                     Lycée                   01/10  National
+   Nancy                    Lycée Henri-Loritz                                        Lycée                   30/09  National
+   Nancy                    Lycée Henri-Poincaré                                      Lycée                   01/10  National
+   Nancy                    Lycée Henri-Poincaré                                      Lycée                   29/09  National
+   Tomblaine                Lycée Arthur-Varoquaux                                    Lycée                   01/10  National
+   Vandœuvre-lès-Nancy      Lycée Jacques-Callot                                      Lycée                   01/10  National
+-- 55  Meuse                                      1 etablissement(s), 1 ligne(s)
+   Bar-le-Duc               Lycée Émile-Zola                                          Lycée                   30/09  National
+-- 56  Morbihan                                   1 etablissement(s), 3 ligne(s)
+   Vannes                   Lycée Charles-de-Gaulle                                   Lycée                   01/10  National
+   Vannes                   Lycée Charles-de-Gaulle                                   Lycée                   02/10  National
+   Vannes                   Lycée Charles-de-Gaulle                                   Lycée                   29/09  National
+-- 57  Moselle                                    2 etablissement(s), 3 ligne(s)
+   Metz                     Lycée Fabert                                              Lycée                   01/10  National
+   Metz                     Lycée Fabert                                              Lycée                   02/10  National
+   Metz                     Lycée Louis-Vincent                                       Lycée                   01/10  National
+-- 58  Nièvre                                     1 etablissement(s), 1 ligne(s)
+   Nevers                   Cité scolaire du Banlay                                   Cité                    29/09  National
+-- 59  Nord                                       10 etablissement(s), 16 ligne(s)
+   Hazebrouck               Lycée de Hazebrouck (nom non précisé)                     Lycée                   02/10  National
+   Liévin                   Lycée Henri-Darras                                        Lycée                   30/09  National
+   Lille                    Lycée César-Baggio                                        Lycée                   29/09  National
+   Lille                    Lycée César-Baggio                                        Lycée                   30/09  National
+   Lille                    Lycée Faidherbe                                           Lycée                   29/09  FILTRANT
+   Lille                    Lycée international Montebello                            Lycée                   01/10  National
+   Lille                    Lycée international Montebello                            Lycée                   29/09  National
+   Lille                    Lycée international Montebello                            Lycée                   30/09  National
+   Lille                    Lycée Pasteur                                             Lycée                   29/09  National
+   Roubaix                  Lycée Jean-Moulin                                         Lycée                   01/10  National
+   Roubaix                  Lycée Jean-Moulin                                         Lycée                   30/09  National
+   Saint-Amand-les-Eaux     Lycée Ernest-Couteaux                                     Lycée                   30/09  National
+   Valenciennes             Lycée Watteau                                             Lycée                   30/09  National
+   Villeneuve-d'Ascq        Lycée Raymond-Queneau                                     Lycée                   14/09  Suppression des cours du samedi, réorganisation
+   Villeneuve-d'Ascq        Lycée Raymond-Queneau                                     Lycée                   21/09  TENTATIVE — même motif
+   Villeneuve-d'Ascq        Lycée Raymond-Queneau                                     Lycée                   28/09  TENTATIVE — même motif
+-- 60  Oise                                       6 etablissement(s), 8 ligne(s)
+   Beauvais                 Autres lycées (établissements non nommés)                 -                       02/10  Départemental
+   Beauvais                 Lycée Félix-Faure                                         Lycée                   02/10  Départemental
+   Clermont                 Lycée Cassini                                             Lycée                   01/10  Départemental
+   Clermont                 Lycée Cassini                                             Lycée                   02/10  TENTATIVE
+   Compiègne                Lycée Pierre-d'Ailly                                      Lycée                   02/10  Départemental
+   Méru                     Lycée Condorcet                                           Lycée                   28/09  National
+   Noyon                    Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)  Cité scolaire           01/10  Départemental
+   Noyon                    Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)  Cité scolaire           30/09  Départemental
+-- 61  Orne                                       1 etablissement(s), 1 ligne(s)
+   Alençon                  Lycée Marguerite-de-Navarre                               Lycée                   01/10  National
+-- 62  Pas-de-Calais                              7 etablissement(s), 8 ligne(s)
+   Arras                    Lycée Robespierre                                         Lycée                   29/09  National
+   Boulogne-sur-Mer         Lycée Branly                                              Lycée                   01/10  National
+   Boulogne-sur-Mer         Lycée Cazin                                               Lycée                   01/10  National
+   Boulogne-sur-Mer         Lycée Mariette                                            Lycée                   01/10  National
+   Boulogne-sur-Mer         Lycée Saint-Joseph                                        Lycée                   01/10  National
+   Calais                   Lycée Pierre-de-Coubertin                                 Lycée                   01/10  National
+   Calais                   Lycée Pierre-de-Coubertin                                 Lycée                   29/09  National
+   Calais                   Lycée Sophie-Berthelot                                    Lycée                   29/09  National
+-- 63  Puy-de-Dôme                                7 etablissement(s), 7 ligne(s)
+   Chamalières              Lycée Valéry Giscard-d'Estaing                            Lycée                   30/09  National
+   Clermont-Ferrand         Lycée Ambroise-Brugière                                   Lycée                   01/10  National
+   Clermont-Ferrand         Lycée Blaise-Pascal                                       Lycée                   01/10  National
+   Clermont-Ferrand         Lycée Jeanne-d'Arc                                        Lycée                   01/10  National
+   Clermont-Ferrand         Lycée Sidoine-Apollinaire                                 Lycée                   01/10  National
+   Cournon-d'Auvergne       Lycée Descartes                                           Lycée                   01/10  National
+   Issoire                  Lycée Murat                                               Lycée                   29/09  National
+-- 64  Pyrénées-Atlantiques                       6 etablissement(s), 6 ligne(s)
+   Bayonne                  Lycée professionnel Paul-Bert                             Lycée pro               29/09  National
+   Bayonne                  Lycée René-Cassin                                         Lycée                   01/10  National
+   Orthez                   Cité scolaire Gaston-Fébus                                Cité                    01/10  National
+   Pau                      Lycée Baradat                                             Lycée                   01/10  National
+   Pau                      Lycée Saint-John Perse                                    Lycée                   01/10  National
+   Saint-Jean-de-Luz        Lycée Maurice-Ravel                                       Lycée                   02/10  TENTATIVE
+-- 65  Hautes-Pyrénées                            3 etablissement(s), 3 ligne(s)
+   Bagnères-de-Bigorre      Lycée Victor Duruy                                        Lycée                   01/10  National
+   Lannemezan               Lycée Jules Michelet                                      Lycée                   01/10  National
+   Lourdes                  Lycée Arrouza                                             Lycée                   01/10  National
+-- 66  Pyrénées-Orientales                        4 etablissement(s), 4 ligne(s)
+   Perpignan                Lycée Arago                                               Lycée                   01/10  National
+   Perpignan                Lycée Lurçat                                              Lycée                   01/10  National
+   Perpignan                Lycée Maillol                                             Lycée                   01/10  National
+   Perpignan                Lycée Picasso                                             Lycée                   01/10  National
+-- 67  Bas-Rhin                                   11 etablissement(s), 12 ligne(s)
+   Sélestat                 Lycée Schweisguth                                         Lycée                   01/10  National
+   Strasbourg               Lycée des Pontonniers                                     Lycée                   01/10  National
+   Strasbourg               Lycée Fustel-de-Coulanges                                 Lycée                   01/10  National
+   Strasbourg               Lycée Fustel-de-Coulanges                                 Lycée                   29/09  National
+   Strasbourg               Lycée Jean-Geiler                                         Lycée                   30/09  National
+   Strasbourg               Lycée Jean-Monnet                                         Lycée                   01/10  National
+   Strasbourg               Lycée Jean-Rostand                                        Lycée                   01/10  National
+   Strasbourg               Lycée Kléber                                              Lycée                   30/09  National
+   Strasbourg               Lycée Marcel-Rudloff                                      Lycée                   01/10  National
+   Strasbourg               Lycée Marie-Curie                                         Lycée                   01/10  National
+   Strasbourg               Lycée René-Cassin                                         Lycée                   30/09  National
+   Strasbourg               Lycée Sainte-Clotilde                                     Lycée                   30/09  National
+-- 68  Haut-Rhin                                  2 etablissement(s), 2 ligne(s)
+   Mulhouse                 Lycée Montaigne                                           Lycée                   01/10  National
+   Mulhouse                 Lycée Schweitzer                                          Lycée                   29/09  National
+-- 69  Rhône                                      8 etablissement(s), 8 ligne(s)
+   Brignais                 Lycée Gustave-Eiffel                                      Lycée                   01/10  National
+   Givors                   Lycée Aragon                                              Lycée                   01/10  National
+   Lyon 2e                  Lycée Ampère                                              Lycée                   02/10  National
+   Lyon 6e                  Lycée Édouard-Herriot                                     Lycée                   02/10  National
+   Lyon 9e                  Collège Schoelcher                                        Collège                 01/10  National
+   Meyzieu                  Lycée Beltrame                                            Lycée                   01/10  National
+   Vaulx-en-Velin           Collège Barbusse                                          Collège                 01/10  National
+   Villeurbanne             Collège Jean-Jaurès                                       Collège                 01/10  National
+-- 70  Haute-Saône                                3 etablissement(s), 3 ligne(s)
+   Lure                     Lycée Colomb                                              Lycée                   01/10  National
+   Vesoul                   Lycée des Haberges                                        Lycée                   29/09  National
+   Vesoul                   Lycée Édouard Belin                                       Lycée                   29/09  National
+-- 71  Saône-et-Loire                             4 etablissement(s), 4 ligne(s)
+   Chalon-sur-Saône         Lycée Émiland-Gauthey                                     Lycée                   30/09  TENTATIVE
+   Chalon-sur-Saône         Lycée Mathias                                             Lycée                   29/09  National
+   Chalon-sur-Saône         Lycée Niépce-Balleure                                     Lycée                   29/09  National
+   Montceau-les-Mines       Lycée Henri-Parriat                                       Lycée                   02/10  National
+-- 72  Sarthe                                     2 etablissement(s), 3 ligne(s)
+   Le Mans                  Lycée Bellevue                                            Lycée                   01/10  National
+   Le Mans                  Lycée Bellevue                                            Lycée                   29/09  National
+   Le Mans                  Lycée Touchard-Washington                                 Lycée                   01/10  National
+-- 75  Paris                                      4 etablissement(s), 4 ligne(s)
+   Paris 11e                Lycée Voltaire                                            Lycée                   02/10  National
+   Paris 12e                Lycée Arago                                               Lycée                   29/09  Effectifs
+   Paris 20e                Lycée Hélène-Boucher                                      Lycée                   29/09  Conditions d'étude
+   Paris 6e                 Lycée Montaigne                                           Lycée                   02/10  National
+-- 76  Seine-Maritime                             9 etablissement(s), 10 ligne(s)
+   Franqueville-Saint-PierreLycée Galilée                                             Lycée                   01/10  National
+   Grand-Quevilly           Lycée Val-de-Seine                                        Lycée                   01/10  National
+   Le Havre                 Lycée Claude-Monet                                        Lycée                   01/10  National
+   Le Havre                 Lycée François-Ier                                        Lycée                   01/10  FILTRANT
+   Le Havre                 Lycée Schuman-Perret                                      Lycée                   01/10  National
+   Le Havre                 Lycée Schuman-Perret                                      Lycée                   30/09  National
+   Rouen                    Lycée Blaise-Pascal                                       Lycée                   01/10  National
+   Rouen                    Lycée Camille-Saint-Saëns                                 Lycée                   01/10  National
+   Rouen                    Lycée Jeanne-d'Arc                                        Lycée                   01/10  National
+   Sotteville-lès-Rouen     Lycée Marcel-Sembat                                       Lycée                   01/10  National
+-- 77  Seine-et-Marne                             13 etablissement(s), 13 ligne(s)
+   Chelles                  Lycée Bachelard                                           Lycée                   30/09  National
+   Coulommiers              Lycée Jules Ferry                                         Lycée                   28/09  National
+   La Ferté-sous-Jouarre    Lycée Samuel Beckett                                      Lycée                   29/09  National
+   Lagny-sur-Marne          Lycée Van Dongen                                          Lycée                   28/09  TENTATIVE
+   Le Mée-sur-Seine         (établissement non nommé)                                 -                       29/09  National
+   Meaux                    Lycée Henri-Moissan                                       Lycée                   01/10  National
+   Meaux                    Lycée Pierre-de-Coubertin                                 Lycée                   29/09  National
+   Melun                    (établissement non nommé)                                 -                       29/09  National
+   Ozoir-la-Ferrière        Lycée Lino-Ventura                                        Lycée                   29/09  National
+   Provins                  (établissement non nommé)                                 -                       28/09  National
+   Roissy-en-Brie           (établissement non nommé)                                 -                       28/09  National
+   Rozay-en-Brie            (établissement non nommé)                                 -                       28/09  National
+   Vaux-le-Pénil            Lycée Simone-Signoret                                     Lycée                   29/09  National
+-- 78  Yvelines                                   4 etablissement(s), 5 ligne(s)
+   Limay                    Lycée polyvalent Condorcet                                Lycée                   29/09  USL, EDT, Parcoursup
+   Mantes-la-Jolie          Lycée Saint-Exupéry                                       Lycée                   01/10  National
+   Mantes-la-Jolie          Lycée Saint-Exupéry                                       Lycée                   29/09  Égalité des chances
+   Poissy                   Lycée Le Corbusier                                        Lycée                   29/09  Bâtiment, manques
+   Rambouillet              Lycée Bascan                                              Lycée                   29/09  Parcoursup, moyens
+-- 79  Deux-Sèvres                                2 etablissement(s), 2 ligne(s)
+   Niort                    Lycée Paul-Guerin                                         Lycée                   02/10  National
+   Parthenay                Lycée Ernest-Pérochon                                     Lycée                   01/10  National
+-- 80  Somme                                      7 etablissement(s), 7 ligne(s)
+   Abbeville                Cité scolaire Boucher-de-Perthes                          Cité scolaire           30/09  TENTATIVE
+   Amiens                   Cité scolaire Delambre-Montaigne (lycée Jean-Baptiste-Delambre)Cité scolaire           01/10  Départemental
+   Amiens                   Cité scolaire sud                                         Cité                    01/10  Départemental
+   Amiens                   Lycée La-Hotoie                                           Lycée                   30/09  National
+   Amiens                   Lycée Louis-Thuillier                                     Lycée                   01/10  Départemental
+   Amiens                   Lycée Madeleine-Michelis                                  Lycée                   02/10  National
+   Amiens                   Lycée Robert-de-Luzarches                                 Lycée                   30/09  National
+-- 81  Tarn                                       3 etablissement(s), 3 ligne(s)
+   Albi                     Lycée Jean-François-de-Lapérouse                          Lycée                   01/10  National
+   Albi                     Lycée Louis-Rascol                                        Lycée                   01/10  National
+   Castres                  Lycée de la Borde-Basse                                   Lycée                   01/10  National
+-- 82  Tarn-et-Garonne                            1 etablissement(s), 1 ligne(s)
+   Castelsarrasin           Lycée Jean-de-Prades                                      Lycée                   01/10  National
+-- 83  Var                                        14 etablissement(s), 18 ligne(s)
+   Brignoles                Lycée Raynouard                                           Lycée                   01/10  National
+   Draguignan               Lycée Jean-Moulin                                         Lycée                   30/09  National
+   Fréjus                   Lycée Albert-Camus                                        Lycée                   01/10  TENTATIVE
+   Fréjus                   Lycée Gallieni                                            Lycée                   01/10  TENTATIVE
+   Hyères                   Lycée Costebelle                                          Lycée                   01/10  TENTATIVE, NON RÉALISÉ
+   Hyères                   Lycée professionnel du Golf-Hôtel                         Lycée pro               01/10  TENTATIVE
+   La Seyne-sur-Mer         Lycée Paul-Langevin                                       Lycée                   29/09  National
+   Lorgues                  Cité scolaire Thomas-Edison                               Cité                    28/09  National
+   Lorgues                  Cité scolaire Thomas-Edison                               Cité                    29/09  National
+   Lorgues                  Cité scolaire Thomas-Edison                               Cité                    30/09  National
+   Toulon                   Lycée Bonaparte                                           Lycée                   01/10  National
+   Toulon                   Lycée Claret                                              Lycée                   30/09  National
+   Toulon                   Lycée du Parc Saint-Jean                                  Lycée                   01/10  National
+   Toulon                   Lycée Dumont-d'Urville                                    Lycée                   01/10  National
+   Toulon                   Lycée Dumont-d'Urville                                    Lycée                   29/09  TENTATIVE
+   Toulon                   Lycée La Rouvière                                         Lycée                   01/10  National
+   Toulon                   Lycée professionnel Georges-Cisson                        Lycée pro               01/10  National
+   Toulon                   Lycée professionnel Georges-Cisson                        Lycée pro               28/09  National
+-- 84  Vaucluse                                   4 etablissement(s), 5 ligne(s)
+   Avignon                  Lycée Jean-Baptiste-Dumas                                 Lycée                   29/09  National
+   Avignon                  Lycée Philippe-de-Girard                                  Lycée                   01/10  National
+   Avignon                  Lycée Philippe-de-Girard                                  Lycée                   29/09  National
+   Carpentras               Lycée Victor-Hugo                                         Lycée                   02/10  National
+   Orange                   Lycée de l'Arc                                            Lycée                   29/09  National
+-- 86  Vienne                                     4 etablissement(s), 6 ligne(s)
+   Poiters                  Lycée Aliénor-d'Aquitaine                                 Lycée                   01/10  National
+   Poiters                  Lycée Nelson-Mandela                                      Lycée                   01/10  National
+   Poiters                  Lycée Nelson-Mandela                                      Lycée                   29/09  National
+   Poiters                  Lycée Réaumur                                             Lycée                   01/10  National
+   Poiters                  Lycée Victor-Hugo                                         Lycée                   01/10  FILTRANT
+   Poiters                  Lycée Victor-Hugo                                         Lycée                   29/09  National
+-- 87  Haute-Vienne                               2 etablissement(s), 3 ligne(s)
+   Limoges                  Lycée Gay-Lussac                                          Lycée                   01/10  National
+   Limoges                  Lycée Suzanne-Valadon                                     Lycée                   01/10  National
+   Limoges                  Lycée Suzanne-Valadon                                     Lycée                   02/10  National
+-- 88  Vosges                                     2 etablissement(s), 3 ligne(s)
+   Épinal                   Lycée Louis-Lapicque                                      Lycée                   01/10  National
+   Épinal                   Lycée Louis-Lapicque                                      Lycée                   02/10  TENTATIVE
+   Neufchâteau              Cité scolaire Pierre-et-Marie-Curie                       Cité scolaire           01/10  Moyens pour l Éducation nationale, professeurs non remplacés
+-- 89  Yonne                                      3 etablissement(s), 4 ligne(s)
+   Auxerre                  Lycée polyvalent Fourier Saint-Germain                    Lycée polyvalent        01/10  National
+   Sens                     Les deux lycées Janot-Curie                               Cité scolaire           29/09  National
+   Sens                     Les deux lycées Janot-Curie                               Cité scolaire           30/09  National
+   Sens                     Lycée général et technologique Catherine et Raymond Janot + Lycée professionnel Pierre et Marie Curie (cité scolaire Janot-Curie)Cité scolaire           28/09  National
+-- 91  Essonne                                    1 etablissement(s), 1 ligne(s)
+   Essonne (dépt.)          Établissements non nommés — agrégat                       -                       01/10  National
+-- 92  Hauts-de-Seine                             2 etablissement(s), 2 ligne(s)
+   Asnières-sur-Seine       Lycée Auguste Renoir                                      Lycée                   29/09  National
+   Villeneuve-la-Garenne    Lycée Michel-Ange                                         Lycée                   30/09  National
+-- 93  Seine-Saint-Denis                          5 etablissement(s), 5 ligne(s)
+   Montreuil                Lycée Jean-Jaurès                                         Lycée                   29/09  Enseignants absents, classes surchargées
+   Pantin                   Lycée Berthelot                                           Lycée                   01/10  National
+   Saint-Denis              Lycée Frédéric-Bartholdi                                  Lycée                   24/09  National
+   Saint-Denis              Lycée Paul-Éluard                                         Lycée                   28/09  National
+   Saint-Ouen               Lycée Auguste-Blanqui                                     Lycée                   24/09  Conditions d'étude
+-- 94  Val-de-Marne                               2 etablissement(s), 4 ligne(s)
+   Créteil                  Lycée Antoine de Saint-Exupéry                            Lycée                   02/10  National
+   Créteil                  Lycée Antoine de Saint-Exupéry                            Lycée                   21/09  Proviseur adjoint, DDFPT, infirmerie, AESH
+   Créteil                  Lycée Antoine de Saint-Exupéry                            Lycée                   30/09  National
+   Le Kremlin-Bicêtre       Lycée Darius-Milhaud                                      Lycée                   01/10  National
+-- 95  Val-d'Oise                                 6 etablissement(s), 6 ligne(s)
+   Argenteuil               Lycée Jean-Jaurès                                         Lycée                   01/10  Classes bondées, cantine, orientation
+   Argenteuil               Lycées Julie-Victoire-Daubi et Fernand-et-Nadia-Léger (2 etabl.)Lycée                   01/10  Blocus inter-établissements
+   Gonesse                  Lycée René-Cassin                                         Lycée                   23/09  EDT surchargés, cantine, infirmerie
+   Saint-Ouen-l'Aumône      Lycée Château d'Epluches                                  Lycée                   28/09  EDT, bus, stages
+   Sarcelles                Lycée Jean-Jacques Rousseau                               Lycée                   24/09  Blocus réprimé
+   Sarcelles                Lycée Maryse Condé                                        Lycée                   24/09  SES absent, chauffage, cantine
+-- 2A  Corse-du-Sud                               1 etablissement(s), 2 ligne(s)
+   Porto-Vecchio            Lycée Jean-Paul de Rocca Serra                            Lycée                   25/09  Solidarité avec la mobilisation agricole
+   Porto-Vecchio            Lycée Jean-Paul de Rocca Serra                            Lycée                   28/09  National
+-- 2B  Haute-Corse                                4 etablissement(s), 5 ligne(s)
+   Bastia                   Cité scolaire du Fium'Orbu                                Cité                    01/10  National
+   Bastia                   Cité scolaire du Fium'Orbu                                Cité                    02/10  National
+   Bastia                   Lycée du Fango                                            Lycée                   01/10  National
+   Bastia                   Lycée Giocante de Casabianca                              Lycée                   01/10  National
+   Corte                    Lycée de Corte                                            Lycée                   01/10  BLOCUS PARTIEL
+-- 971 Guadeloupe                                 1 etablissement(s), 1 ligne(s)
+   Basse-Terre              Lycée Gerville-Réache                                     Lycée                   01/10  National
+-- 972 Martinique                                 2 etablissement(s), 3 ligne(s)
+   La Trinité               Cité scolaire Frantz-Fanon                                Cité                    01/10  National
+   La Trinité               Cité scolaire Frantz-Fanon                                Cité                    02/10  National
+   Le François              Cité scolaire La Jetée                                    Cité                    02/10  National
+-- 973 Guyane                                     1 etablissement(s), 1 ligne(s)
+   Cayenne                  Lycée Félix-Eboué                                         Lycée                   07/09  National
+-- 976 Mayotte                                    1 etablissement(s), 1 ligne(s)
+   Bandrélé                 Lycée polyvalent de Bandrélé                              Lycée                   02/10  National
+
+
+--------------------------------------------------------------------------------
+D. INDEX ALPHABETIQUE DES ETABLISSEMENTS
+--------------------------------------------------------------------------------
+Format : etablissement | commune | departement | type | dates
+(établissement non nommé)                                   Le Mée-sur-Seine         77  -                       29/09
+(établissement non nommé)                                   Melun                    77  -                       29/09
+(établissement non nommé)                                   Provins                  77  -                       28/09
+(établissement non nommé)                                   Roissy-en-Brie           77  -                       28/09
+(établissement non nommé)                                   Rozay-en-Brie            77  -                       28/09
+Autres lycées (établissements non nommés)                   Beauvais                 60  -                       02/10
+Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)    Noyon                    60  Cité scolaire           01/10  30/09
+Cité scolaire Boucher-de-Perthes                            Abbeville                80  Cité scolaire           30/09
+Cité scolaire Clémenceau                                    Montpellier              34  Cité                    01/10
+Cité scolaire de Brioude (lycée Lafayette)                  Brioude                  43  Cité                    01/10
+Cité scolaire de Mirepoix                                   Mirepoix                 09  Cité scolaire           01/10
+Cité scolaire Delambre-Montaigne (lycée Jean-Baptiste-Delambre)Amiens                   80  Cité scolaire           01/10
+Cité scolaire du Banlay                                     Nevers                   58  Cité                    29/09
+Cité scolaire du Fium'Orbu                                  Bastia                   2B  Cité                    01/10  02/10
+Cité scolaire Frantz-Fanon                                  La Trinité               972 Cité                    01/10  02/10
+Cité scolaire Gaston-Fébus                                  Orthez                   64  Cité                    01/10
+Cité scolaire La Jetée                                      Le François              972 Cité                    02/10
+Cité scolaire Laure-Gatet                                   Périgueux                24  Cité                    01/10
+Cité scolaire Marguerite-Filhol                             Fumel                    47  Cité                    01/10  29/09
+Cité scolaire Pierre-et-Marie-Curie                         Neufchâteau              88  Cité scolaire           01/10
+Cité scolaire Réaumur-Buron, lycée Ambroise-Paré, lycée Georges-Lesnard (3 etabl.)Laval                    53  Cité                    01/10
+Cité scolaire sud                                           Amiens                   80  Cité                    01/10
+Cité scolaire Thomas-Edison                                 Lorgues                  83  Cité                    28/09  29/09  30/09
+Cité scolaire Val-de-Garonne                                Marmande                 47  Cité                    01/10  02/10
+Collège Barbusse                                            Vaulx-en-Velin           69  Collège                 01/10
+Collège Jean-Jaurès                                         Villeurbanne             69  Collège                 01/10
+Collège Le Clos d'Or                                        Saint-Martin-d'Hères     38  Collège                 29/09
+Collège Schoelcher                                          Lyon 9e                  69  Collège                 01/10
+Collège-lycée Alain-Borne                                   Montélimar               26  Collège                 01/10
+Établissements non nommés — agrégat                         Essonne (dépt.)          91  -                       01/10
+Les deux lycées Janot-Curie                                 Sens                     89  Cité scolaire           29/09  30/09
+Lycée agricole Théodore-Monod                               Le Rheu                  35  Lycée agricole (LEGTA)  07/09  08/09
+Lycée agricole                                              Rodilhan                 30  Lycée                   01/10
+Lycée Albert-Calmette                                       Nice                     06  Lycée                   29/09
+Lycée Albert-Camus                                          Fréjus                   83  Lycée                   01/10
+Lycée Albert-Einstein                                       Bagnols-sur-Cèze         30  Lycée                   28/09
+Lycée Alexandra-David-Néel                                  Digne-les-Bains          04  Lycée                   01/10
+Lycée Alexis-de-Tocqueville                                 Cherbourg-en-Cotentin    50  Lycée                   01/10
+Lycée Alexis-de-Tocqueville                                 Grasse                   06  Lycée                   01/10
+Lycée Alfred-Mézières                                       Longwy                   54  Lycée                   01/10
+Lycée Aliénor-d'Aquitaine                                   Poiters                  86  Lycée                   01/10
+Lycée Alphonse-Beau-de-Rochas                               Digne-les-Bains          04  Lycée                   01/10
+Lycée Ambroise-Brugière                                     Clermont-Ferrand         63  Lycée                   01/10
+Lycée Ambroise-Paré                                         Laval                    53  Lycée                   01/10
+Lycée Ampère                                                Lyon 2e                  69  Lycée                   02/10
+Lycée André-Argouges                                        Grenoble                 38  Lycée                   01/10  29/09  30/09
+Lycée Antoine de Saint-Exupéry                              Créteil                  94  Lycée                   02/10  21/09  30/09
+Lycée Arago                                                 Paris 12e                75  Lycée                   29/09
+Lycée Arago                                                 Perpignan                66  Lycée                   01/10
+Lycée Arago                                                 Reims                    51  Lycée                   01/10
+Lycée Aragon                                                Givors                   69  Lycée                   01/10
+Lycée Aristide Briand                                       Saint-Nazaire            44  Lycée                   01/10
+Lycée Aristide-Bergès                                       Seyssinet-Pariset        38  Lycée                   30/09
+Lycée Aristide-Briand                                       Évreux                   27  Lycée                   01/10
+Lycée Arnaut-Daniel                                         Ribérac                  24  Lycée                   02/10
+Lycée Arrouza                                               Lourdes                  65  Lycée                   01/10
+Lycée Arthur-Varoquaux                                      Tomblaine                54  Lycée                   01/10
+Lycée Astier                                                Aubenas                  07  Lycée                   02/10
+Lycée Auguste et Jean Renoir                                Angers                   49  Lycée                   29/09
+Lycée Auguste Renoir                                        Asnières-sur-Seine       92  Lycée                   29/09
+Lycée Auguste-Blanqui                                       Saint-Ouen               93  Lycée                   24/09
+Lycée Augustin-Fresnel                                      Caen                     14  Lycée                   01/10  02/10
+Lycée Bachelard                                             Chelles                  77  Lycée                   30/09
+Lycée Balzac                                                Tours                    37  Lycée                   29/09  30/09
+Lycée Baradat                                               Pau                      64  Lycée                   01/10
+Lycée Bascan                                                Rambouillet              78  Lycée                   29/09
+Lycée Bellevue                                              Le Mans                  72  Lycée                   01/10  29/09
+Lycée Beltrame                                              Meyzieu                  69  Lycée                   01/10
+Lycée Benjamin-Franklin                                     Orléans                  45  Lycée                   01/10  29/09
+Lycée Berthelot                                             Pantin                   93  Lycée                   01/10
+Lycée Bertran-de-Born                                       Périgueux                24  Lycée                   01/10
+Lycée Blaise-Pascal                                         Clermont-Ferrand         63  Lycée                   01/10
+Lycée Blaise-Pascal                                         Rouen                    76  Lycée                   01/10
+Lycée Bonaparte                                             Toulon                   83  Lycée                   01/10
+Lycée Branly                                                Boulogne-sur-Mer         62  Lycée                   01/10
+Lycée Brémontier                                            Bordeaux                 33  Lycée                   01/10
+Lycée Bréquigny                                             Rennes                   35  Lycée                   01/10  29/09  30/09
+Lycée Calmette                                              Nice                     06  Lycée                   29/09
+Lycée Camille-Saint-Saëns                                   Rouen                    76  Lycée                   01/10
+Lycée Carnot                                                Dijon                    21  Lycée                   02/10
+Lycée Cassini                                               Clermont                 60  Lycée                   01/10  02/10
+Lycée Cazin                                                 Boulogne-sur-Mer         62  Lycée                   01/10
+Lycée César-Baggio                                          Lille                    59  Lycée                   29/09  30/09
+Lycée Champollion                                           Grenoble                 38  Lycée                   01/10  30/09
+Lycée Charles-de-Gaulle                                     Vannes                   56  Lycée                   01/10  02/10  29/09
+Lycée Château d'Epluches                                    Saint-Ouen-l'Aumône      95  Lycée                   28/09
+Lycée Claret                                                Toulon                   83  Lycée                   30/09
+Lycée Claude-de-France                                      Romorantin-Lanthenay     41  Lycée                   01/10
+Lycée Claude-Lebois                                         Saint-Chamond            42  Lycée                   01/10
+Lycée Claude-Monet                                          Le Havre                 76  Lycée                   01/10
+Lycée Colard-Noël                                           Saint-Quentin            02  Lycée                   29/09
+Lycée Colomb                                                Lure                     70  Lycée                   01/10
+Lycée Condé                                                 Besançon                 25  Lycée                   02/10
+Lycée Condorcet                                             Méru                     60  Lycée                   28/09
+Lycée Condorcet                                             Saint-Quentin            02  Lycée                   29/09
+Lycée Cordouan                                              Royan                    17  Lycée                   01/10
+Lycée Costebelle                                            Hyères                   83  Lycée                   01/10
+Lycée Curie                                                 Menton                   06  Lycée                   30/09
+Lycée Curie-Corot                                           Saint-Lô                 50  Lycée                   29/09
+Lycée d'Annonay (nom non précisé)                           Annonay                  07  Lycée                   01/10
+Lycée Darius-Milhaud                                        Le Kremlin-Bicêtre       94  Lycée                   01/10
+Lycée d'Aubenas (nom non précisé)                           Aubenas                  07  Lycée                   01/10
+Lycée Daudet                                                Nîmes                    30  Lycée                   01/10  29/09
+Lycée Daumier                                               Marseille 8e             13  Lycée                   02/10
+Lycée David d'Angers                                        Angers                   49  Lycée                   01/10
+Lycée de Bourgoin-Jallieu (nom non précisé)                 Bourgoin-Jallieu         38  Lycée                   30/09
+Lycée de Corte                                              Corte                    2B  Lycée                   01/10
+Lycée de Hazebrouck (nom non précisé)                       Hazebrouck               59  Lycée                   02/10
+Lycée de la Borde-Basse                                     Castres                  81  Lycée                   01/10
+Lycée de l'Arc                                              Orange                   84  Lycée                   29/09
+Lycée de Lézignan (nom non précisé)                         Lézignan-Corbières       11  Lycée                   30/09
+Lycée de L'Isle-d'Abeau (nom non précisé)                   L'Isle-d'Abeau           38  Lycée                   30/09
+Lycée de Morcenx-la-Nouvelle                                Morcenx                  40  Lycée                   01/10
+Lycée de Morez (nom non précisé)                            Morez                    39  Lycée                   01/10  30/09
+Lycée de Tournon (nom non précisé)                          Tournon-sur-Rhône        07  Lycée                   01/10
+Lycée Delorme                                               L'Isle-d'Abeau           38  Lycée                   01/10
+Lycée Déodat-de-Séverac                                     Toulouse                 31  Lycée                   29/09
+Lycée des Arènes                                            Toulouse                 31  Lycée                   29/09
+Lycée des Haberges                                          Vesoul                   70  Lycée                   29/09
+Lycée des Lombards                                          Troyes                   10  Lycée                   29/09
+Lycée des Menuts                                            Bordeaux                 33  Lycée                   01/10
+Lycée des métiers du bâtiment (LMB)                         Felletin                 23  Lycée                   01/10
+Lycée des Pontonniers                                       Strasbourg               67  Lycée                   01/10
+Lycée Descartes                                             Cournon-d'Auvergne       63  Lycée                   01/10
+Lycée Dessaignes                                            Blois                    41  Lycée                   01/10
+Lycée Dhuoda                                                Nîmes                    30  Lycée                   01/10  29/09
+Lycée du Cheylard (nom non précisé)                         Le Cheylard              07  Lycée                   01/10
+Lycée du Fango                                              Bastia                   2B  Lycée                   01/10
+Lycée du Garros                                             Auch                     32  Lycée                   01/10  30/09
+Lycée du Parc Saint-Jean                                    Toulon                   83  Lycée                   01/10
+Lycée du Parc-Impérial                                      Nice                     06  Lycée                   29/09  30/09
+Lycée du Teil (nom non précisé)                             Le Teil                  07  Lycée                   01/10
+Lycée Dumont-d'Urville                                      Toulon                   83  Lycée                   01/10  29/09
+Lycée Duplessis-Mornay                                      Saumur                   49  Lycée                   01/10
+Lycée Dupuy-de-Lôme                                         Brest                    29  Lycée                   30/09
+Lycée Edmond-Perrier                                        Tulle                    19  Lycée                   01/10
+Lycée Édouard Belin                                         Vesoul                   70  Lycée                   29/09
+Lycée Édouard-Branly                                        Dreux                    28  Lycée                   30/09
+Lycée Édouard-Herriot                                       Lyon 6e                  69  Lycée                   02/10
+Lycée Élie-Cartan                                           La Tour-du-Pin           38  Lycée                   01/10
+Lycée Ella-Fitzgerald                                       Saint-Romain-en-Gal      38  Lycée                   01/10
+Lycée Émiland-Gauthey                                       Chalon-sur-Saône         71  Lycée                   30/09
+Lycée Émile-Combes                                          Talence                  33  Lycée                   01/10
+Lycée Émile-Peytavin                                        Mende                    48  Lycée                   01/10
+Lycée Émile-Zola                                            Bar-le-Duc               55  Lycée                   30/09
+Lycée Emmanuel-Mounier                                      Grenoble                 38  Lycée                   01/10  28/09  29/09
+Lycée Ernest-Couteaux                                       Saint-Amand-les-Eaux     59  Lycée                   30/09
+Lycée Ernest-Pérochon                                       Parthenay                79  Lycée                   01/10
+Lycée Estienne-d'Orves                                      Nice                     06  Lycée                   28/09  30/09
+Lycée Étienne-Mimard                                        Saint-Étienne            42  Lycée                   01/10
+Lycée Fabert                                                Metz                     57  Lycée                   01/10  02/10
+Lycée Faidherbe                                             Lille                    59  Lycée                   29/09
+Lycée Félix-Eboué                                           Cayenne                  973 Lycée                   07/09
+Lycée Félix-Esclangon                                       Manosque                 04  Lycée                   01/10
+Lycée Félix-Faure                                           Beauvais                 60  Lycée                   02/10
+Lycée Félix-Le-Dantec                                       Lannion                  22  Lycée                   01/10
+Lycée Fernand-Renaudeau                                     Cholet                   49  Lycée                   02/10
+Lycée Ferroul                                               Narbonne                 11  Lycée                   30/09
+Lycée Foch                                                  Rodez                    12  Lycée                   01/10
+Lycée Francis-de-Croisset                                   Grasse                   06  Lycée                   30/09
+Lycée François-de-Malherbe                                  Caen                     14  Lycée                   01/10  02/10
+Lycée François-Ier                                          Le Havre                 76  Lycée                   01/10
+Lycée François-Mauriac                                      Bordeaux                 33  Lycée                   01/10
+Lycée François-Rabelais                                     Chinon                   37  Lycée                   29/09
+Lycée Franklin-Roosevelt                                    Reims                    51  Lycée                   01/10
+Lycée Frédéric-Bartholdi                                    Saint-Denis              93  Lycée                   24/09
+Lycée Frédéric-Chopin                                       Nancy                    54  Lycée                   01/10
+Lycée Frédéric-Mistral                                      Nîmes                    30  Lycée                   01/10
+Lycée Fulbert                                               Chartres                 28  Lycée                   01/10
+Lycée Fustel-de-Coulanges                                   Strasbourg               67  Lycée                   01/10  29/09
+Lycée Galilée                                               Franqueville-Saint-Pierre76  Lycée                   01/10
+Lycée Galilée                                               Vienne                   38  Lycée                   01/10
+Lycée Gallieni                                              Fréjus                   83  Lycée                   01/10
+Lycée Gay-Lussac                                            Limoges                  87  Lycée                   01/10
+Lycée général et technologique Catherine et Raymond Janot + Lycée professionnel Pierre et Marie Curie (cité scolaire Janot-Curie)Sens                     89  Cité scolaire           28/09
+Lycée George-Sand                                           Nérac                    47  Lycée                   01/10
+Lycée Germaine Tillion                                      Montbéliard              25  Lycée                   01/10
+Lycée Gerville-Réache                                       Basse-Terre              971 Lycée                   01/10
+Lycée Giocante de Casabianca                                Bastia                   2B  Lycée                   01/10
+Lycée Grand-Air                                             Arcachon                 33  Lycée                   01/10  02/10
+Lycée Grandmont                                             Tours                    37  Lycée                   01/10  29/09
+Lycée Gustave-Eiffel                                        Bordeaux                 33  Lycée                   30/09
+Lycée Gustave-Eiffel                                        Brignais                 69  Lycée                   01/10
+Lycée Gustave-Eiffel                                        Reims                    51  Lycée                   30/09
+Lycée Hélène-Boucher                                        Paris 20e                75  Lycée                   29/09
+Lycée Henri-Darras                                          Liévin                   59  Lycée                   30/09
+Lycée Henri-Loritz                                          Nancy                    54  Lycée                   30/09
+Lycée Henri-Moissan                                         Meaux                    77  Lycée                   01/10
+Lycée Henri-Parriat                                         Montceau-les-Mines       71  Lycée                   02/10
+Lycée Henri-Poincaré                                        Nancy                    54  Lycée                   01/10  29/09
+Lycée Hippolyte-Fontaine                                    Dijon                    21  Lycée                   01/10
+Lycée Hugues-Libergier                                      Reims                    51  Lycée                   29/09
+Lycée international Montebello                              Lille                    59  Lycée                   01/10  29/09  30/09
+Lycée Jacques-Audiberti                                     Antibes                  06  Lycée                   01/10
+Lycée Jacques-Brel                                          Lormont                  33  Lycée                   17/09
+Lycée Jacques-Callot                                        Vandœuvre-lès-Nancy      54  Lycée                   01/10
+Lycée Jacques-Prévert                                       Alès                     30  Lycée                   29/09
+Lycée Jay-de-Beaufort                                       Périgueux                24  Lycée                   01/10
+Lycée Jean Bodin                                            Les Ponts-de-Cé          49  Lycée                   29/09
+Lycée Jean-Baptiste-Dumas                                   Alès                     30  Lycée                   01/10  28/09  29/09
+Lycée Jean-Baptiste-Dumas                                   Avignon                  84  Lycée                   29/09
+Lycée Jean-de-Prades                                        Castelsarrasin           82  Lycée                   01/10
+Lycée Jean-François-de-Lapérouse                            Albi                     81  Lycée                   01/10
+Lycée Jean-François-Millet                                  Cherbourg-en-Cotentin    50  Lycée                   29/09
+Lycée Jean-Geiler                                           Strasbourg               67  Lycée                   30/09
+Lycée Jean-Guéhenno                                         Fougères                 35  Lycée                   01/10
+Lycée Jean-Jacques Rousseau                                 Sarcelles                95  Lycée                   24/09
+Lycée Jean-Jaurès                                           Argenteuil               95  Lycée                   01/10
+Lycée Jean-Jaurès                                           Montreuil                93  Lycée                   29/09
+Lycée Jean-Jaurès                                           Reims                    51  Lycée                   30/09
+Lycée Jean-Jaurès                                           Rennes                   35  Lycée                   30/09
+Lycée Jean-Mermoz                                           Montpellier              34  Lycée                   01/10
+Lycée Jean-Monet                                            Montpellier              34  Lycée                   01/10
+Lycée Jean-Monnet                                           Strasbourg               67  Lycée                   01/10
+Lycée Jean-Moulin                                           Draguignan               83  Lycée                   30/09
+Lycée Jean-Moulin                                           Roubaix                  59  Lycée                   01/10  30/09
+Lycée Jeanne-d'Arc                                          Clermont-Ferrand         63  Lycée                   01/10
+Lycée Jeanne-d'Arc                                          Rouen                    76  Lycée                   01/10
+Lycée Jean-Paul de Rocca Serra                              Porto-Vecchio            2A  Lycée                   25/09  28/09
+Lycée Jean-Perrin-Goussier                                  Rezé                     44  Lycée                   01/10
+Lycée Jean-Puy                                              Roanne                   42  Lycée                   01/10
+Lycée Jean-Rostand                                          Caen                     14  Lycée                   01/10  02/10
+Lycée Jean-Rostand                                          Strasbourg               67  Lycée                   01/10
+Lycée Jean-Vigo                                             Millau                   12  Lycée                   29/09
+Lycée Jean-Zay                                              Jarny                    54  Lycée                   01/10
+Lycée Jean-Zay                                              Orléans                  45  Lycée                   28/09
+Lycée Jehan-de-Beauce                                       Chartres                 28  Lycée                   01/10
+Lycée Joachim du Bellay                                     Angers                   49  Lycée                   01/10
+Lycée Joffre                                                Montpellier              34  Lycée                   01/10
+Lycée Joliot-Curie                                          Reims                    51  Lycée                   01/10  30/09
+Lycée Joliot-Curie                                          Sète                     34  Lycée                   01/10
+Lycée Jules Ferry                                           Coulommiers              77  Lycée                   28/09
+Lycée Jules Haag (site Marceau)                             Besançon                 25  Lycée                   02/10
+Lycée Jules Haag                                            Besançon                 25  Lycée                   01/10
+Lycée Jules Michelet                                        Lannemezan               65  Lycée                   01/10
+Lycée Jules-Fil                                             Carcassonne              11  Lycée                   01/10  02/10  30/09
+Lycée Jules-Guesde                                          Montpellier              34  Lycée                   01/10
+Lycée Kléber                                                Strasbourg               67  Lycée                   30/09
+Lycée La Rouvière                                           Toulon                   83  Lycée                   01/10
+Lycée La Saulaie                                            Saint-Marcellin          38  Lycée                   01/10
+Lycée La-Hotoie                                             Amiens                   80  Lycée                   30/09
+Lycée Laplace-Dumont-d'Urville                              Caen                     14  Lycée                   02/10
+Lycée Lavoisier                                             Mayenne                  53  Lycée                   01/10
+Lycée Le Castel                                             Dijon                    21  Lycée                   01/10
+Lycée Le Corbusier                                          Poissy                   78  Lycée                   29/09
+Lycée Léonard-de-Vinci                                      Antibes                  06  Lycée                   01/10
+Lycée Léonard-de-Vinci                                      Mayenne                  53  Lycée                   01/10
+Lycée Léonard-de-Vinci                                      Monistrol-sur-Loire      43  Lycée                   29/09
+Lycée Léonard-de-Vinci                                      Soissons                 02  Lycée                   01/10
+Lycée Léonce-Vieljeux                                       La Rochelle              17  Lycée                   01/10  02/10
+Lycée Léopold-Sédar-Senghor                                 Évreux                   27  Lycée                   01/10
+Lycée Les Eaux-Claires                                      Grenoble                 38  Lycée                   01/10  29/09
+Lycée Les Fontenelles                                       Louviers                 27  Lycée                   01/10
+Lycée Les Iris                                              Lormont                  33  Lycée                   30/09
+Lycée Lesdiguières                                          Grenoble                 38  Lycée                   29/09
+Lycée Le-Verrier                                            Saint-Lô                 50  Lycée                   29/09
+Lycée Lino-Ventura                                          Ozoir-la-Ferrière        77  Lycée                   29/09
+Lycée Loubatières                                           Agde                     34  Lycée                   01/10
+Lycée Louis Pergaud                                         Besançon                 25  Lycée                   01/10  29/09
+Lycée Louise-Michel                                         Grenoble                 38  Lycée                   01/10
+Lycée Louis-Lapicque                                        Épinal                   88  Lycée                   01/10  02/10
+Lycée Louis-Rascol                                          Albi                     81  Lycée                   01/10
+Lycée Louis-Thuillier                                       Amiens                   80  Lycée                   01/10
+Lycée Louis-Vincent                                         Metz                     57  Lycée                   01/10
+Lycée Lurçat                                                Perpignan                66  Lycée                   01/10
+Lycée Madame-de-Staël                                       Montluçon                03  Lycée                   01/10
+Lycée Madeleine-Michelis                                    Amiens                   80  Lycée                   02/10
+Lycée Maillol                                               Perpignan                66  Lycée                   01/10
+Lycée Maine-de-Biran                                        Bergerac                 24  Lycée                   01/10
+Lycée Marc-Bloc                                             Val-de-Reuil             27  Lycée                   01/10
+Lycée Marcelin-Berthelot                                    Toulouse                 31  Lycée                   29/09
+Lycée Marcel-Rudloff                                        Strasbourg               67  Lycée                   01/10
+Lycée Marcel-Sembat                                         Sotteville-lès-Rouen     76  Lycée                   01/10
+Lycée Marguerite-de-Navarre                                 Alençon                  61  Lycée                   01/10
+Lycée Marguerite-de-Valois                                  Angoulême                16  Lycée                   01/10
+Lycée Marie-Curie                                           Échirolles               38  Lycée                   01/10  29/09
+Lycée Marie-Curie                                           Strasbourg               67  Lycée                   01/10
+Lycée Mariette                                              Boulogne-sur-Mer         62  Lycée                   01/10
+Lycée Marseilleveyre                                        Marseille 8e             13  Lycée                   02/10
+Lycée Maryse Condé                                          Sarcelles                95  Lycée                   24/09
+Lycée Mathias                                               Chalon-sur-Saône         71  Lycée                   29/09
+Lycée Maurice-Ravel                                         Saint-Jean-de-Luz        64  Lycée                   02/10
+Lycée Mélinée-et-Missak-Manouchian                          Nice                     06  Lycée                   01/10
+Lycée Michel-Ange                                           Villeneuve-la-Garenne    92  Lycée                   30/09
+Lycée Michel-de-Montaigne                                   Bordeaux                 33  Lycée                   29/09
+Lycée Monnerville (Terre-Rouge)                             Cahors                   46  Lycée                   01/10
+Lycée Montaigne                                             Mulhouse                 68  Lycée                   01/10
+Lycée Montaigne                                             Paris 6e                 75  Lycée                   02/10
+Lycée Montchapet                                            Dijon                    21  Lycée                   02/10
+Lycée Montesquieu                                           Bordeaux                 33  Lycée                   01/10
+Lycée Murat                                                 Issoire                  63  Lycée                   29/09
+Lycée Nelson-Mandela                                        Nantes                   44  Lycée                   01/10
+Lycée Nelson-Mandela                                        Poiters                  86  Lycée                   01/10  29/09
+Lycée Nerval                                                Soissons                 02  Lycée                   30/09
+Lycée Niépce-Balleure                                       Chalon-sur-Saône         71  Lycée                   29/09
+Lycée Pablo-Neruda                                          Saint-Martin-d'Hères     38  Lycée                   01/10  30/09
+Lycée Pablo-Picasso                                         Périgueux                24  Lycée                   01/10
+Lycée Palissy                                               Agen                     47  Lycée                   02/10
+Lycée Pardailhan                                            Auch                     32  Lycée                   01/10
+Lycée Pasteur                                               Besançon                 25  Lycée                   02/10  29/09
+Lycée Pasteur                                               Lille                    59  Lycée                   29/09
+Lycée Paul-Claudel                                          Laon                     02  Lycée                   01/10
+Lycée Paul-Éluard                                           Saint-Denis              93  Lycée                   28/09
+Lycée Paul-Émile Victor                                     Champagnole              39  Lycée                   30/09
+Lycée Paul-Guerin                                           Niort                    79  Lycée                   02/10
+Lycée Paul-Langevin                                         La Seyne-sur-Mer         83  Lycée                   29/09
+Lycée Pays de Retz                                          Pornic                   44  Lycée                   01/10
+Lycée Philippe-de-Girard                                    Avignon                  84  Lycée                   01/10  29/09
+Lycée Picasso                                               Perpignan                66  Lycée                   01/10
+Lycée Pierre-d'Ailly                                        Compiègne                60  Lycée                   02/10
+Lycée Pierre-d'Aragon                                       Muret                    31  Lycée                   29/09
+Lycée Pierre-de-Coubertin                                   Calais                   62  Lycée                   01/10  29/09
+Lycée Pierre-de-Coubertin                                   Meaux                    77  Lycée                   29/09
+Lycée Pierre-Lacroix                                        Narbonne                 11  Lycée                   30/09
+Lycée Pierre-Mendès-France                                  Rennes                   35  Lycée                   30/09
+Lycée polyvalent Chevrollier                                Angers                   49  Lycée polyvalent        30/09
+Lycée polyvalent Condorcet                                  Limay                    78  Lycée                   29/09
+Lycée polyvalent de Bandrélé                                Bandrélé                 976 Lycée                   02/10
+Lycée polyvalent Fourier Saint-Germain                      Auxerre                  89  Lycée polyvalent        01/10
+Lycée Polyvalent Marie de Champagne                         Troyes                   10  Lycée polyvalent        01/10
+Lycée privé du Mirail                                       Bordeaux                 33  Lycée                   02/10
+Lycée professionnel Ambroise-Croizat                        Tarnos                   40  Lycée pro               30/09
+Lycée professionnel Chaptal                                 Quimper                  29  Lycée pro               02/10
+Lycée professionnel du Golf-Hôtel                           Hyères                   83  Lycée pro               01/10
+Lycée professionnel Eugéne-Guillaume                        Montbard                 21  Lycée pro               30/09
+Lycée professionnel Georges-Cisson                          Toulon                   83  Lycée pro               01/10  28/09
+Lycée professionnel Jacques-Dolle                           Antibes                  06  Lycée pro               01/10  30/09
+Lycée professionnel Magnan                                  Nice                     06  Lycée pro               30/09
+Lycée professionnel Paul-Bert                               Bayonne                  64  Lycée pro               29/09
+Lycée professionnel Paul-Émile-Victor                       Avrillé                  49  Lycée pro               01/10
+Lycée professionnel Pierre-Mendés-France                    Veynes                   05  Lycée pro               01/10
+Lycée Raymond-Queneau                                       Villeneuve-d'Ascq        59  Lycée                   14/09  21/09  28/09
+Lycée Raynouard                                             Brignoles                83  Lycée                   01/10
+Lycée Réaumur                                               Poiters                  86  Lycée                   01/10
+Lycée René Laennec                                          Pont-l'Abbé              29  Lycée                   01/10
+Lycée René-Cassin                                           Bayonne                  64  Lycée                   01/10
+Lycée René-Cassin                                           Gonesse                  95  Lycée                   23/09
+Lycée René-Cassin                                           Strasbourg               67  Lycée                   30/09
+Lycée René-Descartes-Coëtlogon                              Rennes                   35  Lycée                   02/10  30/09
+Lycée René-Josué-Valin                                      La Rochelle              17  Lycée                   02/10
+Lycée Robert-de-Luzarches                                   Amiens                   80  Lycée                   30/09
+Lycée Robespierre                                           Arras                    62  Lycée                   29/09
+Lycée Ronsard                                               Vendôme                  41  Lycée                   01/10
+Lycée Rotrou                                                Dreux                    28  Lycée                   01/10  30/09
+Lycée Sainte-Clotilde                                       Strasbourg               67  Lycée                   30/09
+Lycée Saint-Exupéry                                         Mantes-la-Jolie          78  Lycée                   01/10  29/09
+Lycée Saint-Exupéry                                         Marseille 15e            13  Lycée                   01/10
+Lycée Saint-Exupéry                                         Parentis-en-Born         40  Lycée                   30/09
+Lycée Saint-John Perse                                      Pau                      64  Lycée                   01/10
+Lycée Saint-Joseph                                          Boulogne-sur-Mer         62  Lycée                   01/10
+Lycée Saint-Louis                                           Bordeaux                 33  Lycée                   01/10
+Lycée Salvador-Allende                                      Hérouville-Saint-Clair   14  Lycée                   01/10  02/10
+Lycée Samuel Beckett                                        La Ferté-sous-Jouarre    77  Lycée                   29/09
+Lycée Schuman-Perret                                        Le Havre                 76  Lycée                   01/10  30/09
+Lycée Schweisguth                                           Sélestat                 67  Lycée                   01/10
+Lycée Schweitzer                                            Mulhouse                 68  Lycée                   29/09
+Lycée Sidoine-Apollinaire                                   Clermont-Ferrand         63  Lycée                   01/10
+Lycée Simone-Signoret                                       Vaux-le-Pénil            77  Lycée                   29/09
+Lycée Simone-Veil                                           Marseille 13e            13  Lycée                   02/10
+Lycée Simone-Weil                                           Le Puy-en-Velay          43  Lycée                   29/09
+Lycée Simone-Weil                                           Saint-Priest-en-Jarez    42  Lycée                   01/10
+Lycée Sivard-de-Beaulieu                                    Carentan-les-Marais      50  Lycée                   29/09
+Lycée Sophie-Berthelot                                      Calais                   62  Lycée                   29/09
+Lycée Stendhal                                              Grenoble                 38  Lycée                   29/09  30/09
+Lycée Stéphane-Hessel                                       Épernay                  51  Lycée                   01/10
+Lycée Sud des Landes                                        Saint-Vincent-de-Tyrosse 40  Lycée                   01/10
+Lycée Suzanne-Valadon                                       Limoges                  87  Lycée                   01/10  02/10
+Lycée Touchard-Washington                                   Le Mans                  72  Lycée                   01/10
+Lycée Vaclav-Havel                                          Bordeaux                 33  Lycée                   01/10
+Lycée Val-de-Seine                                          Grand-Quevilly           76  Lycée                   01/10
+Lycée Valéry Giscard-d'Estaing                              Chamalières              63  Lycée                   30/09
+Lycée Van Dongen                                            Lagny-sur-Marne          77  Lycée                   28/09
+Lycée Vaucanson                                             Grenoble                 38  Lycée                   01/10  29/09
+Lycée Victor Duruy                                          Bagnères-de-Bigorre      65  Lycée                   01/10
+Lycée Victor Hugo (Planoise)                                Besançon                 25  Lycée                   01/10
+Lycée Victor-Grignard                                       Cherbourg-en-Cotentin    50  Lycée                   01/10
+Lycée Victor-Hugo                                           Caen                     14  Lycée                   15/09
+Lycée Victor-Hugo                                           Carpentras               84  Lycée                   02/10
+Lycée Victor-Hugo                                           Poiters                  86  Lycée                   01/10  29/09
+Lycée Victor-Louis                                          Bordeaux                 33  Lycée                   01/10
+Lycée Vincent-d'Indy                                        Privas                   07  Lycée                   01/10
+Lycée Voltaire                                              Paris 11e                75  Lycée                   02/10
+Lycée Watteau                                               Valenciennes             59  Lycée                   30/09
+Lycée Yves-Thépot                                           Quimper                  29  Lycée                   30/09
+Lycées Chateaubriand, René-Descartes-Coëtlogon, Jean-Jaurès, Jean-Macé (4 etabl.)Rennes                   35  Lycée                   01/10
+Lycées Clemenceau, Jean-Perrin, Guist'hau, Monge-La Chauvinière (4 etabl.)Nantes                   44  Lycée                   01/10
+Lycées Édouard-Herriot, La Nat, Ferdinand-Buisson (3 etabl.)Voiron                   38  Lycée                   01/10
+Lycées Julie-Victoire-Daubi et Fernand-et-Nadia-Léger (2 etabl.)Argenteuil               95  Lycée                   01/10
+Lycées l'Oiselet, Gambetta, Jean-Claude-Aubry (3 etabl.)    Bourgoin-Jallieu         38  Lycée                   01/10
+Préfecture de police                                        Marseille (aggl.)        13  -                       01/10
+
+Total : 390 entrees, 462 couples (etablissement, date)
+
+ATTENTION — 6 DE CES 390 ENTREES REGROUPENT PLUSIEURS ETABLISSEMENTS.
+Elles portent la mention « (N etabl.) » et la liste complete de leurs lycées
+est donnée ci-dessous. Ces 6 lignes couvrent 19 etablissements, si bien que le
+nombre de lycees reellement nommes dans cette liste est de 390 - 6 + 19 = 403.
+
+  35  Rennes             4 etabl.  Chateaubriand, Rene-Descartes-Coetlogon,
+                                   Jean-Jaures, Jean-Mace
+  44  Nantes             4 etabl.  Clemenceau, Jean-Perrin, Guist'hau,
+                                   Monge-La Chauvinière
+  38  Voiron             3 etabl.  Edouard-Herriot, La Nat, Ferdinand-Buisson
+  38  Bourgoin-Jallieu   3 etabl.  l'Oiselet, Gambetta, Jean-Claude-Aubry
+  53  Laval              3 etabl.  cite scolaire Réaumur-Buron,
+                                   lycée Ambroise-Paré, lycée Georges-Lesnard
+  95  Argenteuil         2 etabl.  Julie-Victoire-Daubi,
+                                   Fernand-et-Nadia-Léger
+
+Le document d'origine annonce lui-même, section 9 : « Les etablissements nommes
+dans une meme phrase par une source sont decomposes en autant de lignes (une
+par etablissement) ». Cette regle n'a pas ete appliquee a ces 6 lignes. Voir
+section I, point 4.
+
+
+--------------------------------------------------------------------------------
+E. LIGNES OU L'ETABLISSEMENT N'EST PAS DESIGNE AVEC PRECISION
+--------------------------------------------------------------------------------
+Lignes ou l'etablissement n'est pas designe avec precision. La commune est
+elle-meme parfois le substitut du nom : « Lycee d'Aubenas (nom non precise) ».
+
+  07  Annonay                  Lycée d'Annonay (nom non précisé)                         01/10  National
+  07  Aubenas                  Lycée d'Aubenas (nom non précisé)                         01/10  National
+  07  Le Cheylard              Lycée du Cheylard (nom non précisé)                       01/10  National
+  07  Le Teil                  Lycée du Teil (nom non précisé)                           01/10  National
+  07  Tournon-sur-Rhône        Lycée de Tournon (nom non précisé)                        01/10  National
+  11  Lézignan-Corbières       Lycée de Lézignan (nom non précisé)                       30/09  National
+  13  Marseille (aggl.)        Préfecture de police                                      01/10  National
+  38  Bourgoin-Jallieu         Lycée de Bourgoin-Jallieu (nom non précisé)               30/09  National
+  38  L'Isle-d'Abeau           Lycée de L'Isle-d'Abeau (nom non précisé)                 30/09  National
+  39  Morez                    Lycée de Morez (nom non précisé)                          01/10  National
+  39  Morez                    Lycée de Morez (nom non précisé)                          30/09  National
+  59  Hazebrouck               Lycée de Hazebrouck (nom non précisé)                     02/10  National
+  60  Beauvais                 Autres lycées (établissements non nommés)                 02/10  Départemental
+  77  Le Mée-sur-Seine         (établissement non nommé)                                 29/09  National
+  77  Melun                    (établissement non nommé)                                 29/09  National
+  77  Provins                  (établissement non nommé)                                 28/09  National
+  77  Roissy-en-Brie           (établissement non nommé)                                 28/09  National
+  77  Rozay-en-Brie            (établissement non nommé)                                 28/09  National
+  91  Essonne (dépt.)          Établissements non nommés — agrégat                       01/10  National
+
+
+  Ces 19 lignes ne sont pas des blocages d'ecoles. Ce sont soit des communes
+  citees sans qu'aucun etablissement y soit rattache, soit des lignes ou la
+  source elle-meme ecrit que le nom de l'etablissement n'a pas ete precise.
+  Elles sont conservées telles quelles plutot que d'etre supprimees : une source
+  qui dit « un lycee de ce departement a ete bloque » sans donner son nom
+  constitue une information, meme si elle ne permet pas de nommer l'ecole.
+
+  Cas a part : la ligne 13 Bouches-du-Rhone, « Prefecture de police », n'est pas
+  un etablissement scolaire du tout. Elle figure dans la liste du document
+  d'origine parce que la source y parle d'un blocus devant le siege de la
+  prefecture. Elle ne devrait pas figurer dans une liste de lycees.
+
+--------------------------------------------------------------------------------
+F. BLOCAGES FILTRANTS — ACCES POSSIBLE PAR VOIE SECONDAIRE
+--------------------------------------------------------------------------------
+La regle du document est qu'un blocage filtrant compte comme un blocage : le
+goutiere principale est entaive, l'etablissement n'est pas accessible comme
+il se doit, mais un passage existe. Deux listes sont donnees, parce que le
+document ne les traite pas de la meme facon.
+
+F.1 — la colonne Motif porte explicitement la valeur FILTRANT
+Lignes dont la colonne Motif porte explicitement la valeur FILTRANT.
+
+  17  La Rochelle              Lycée René-Josué-Valin                                    02/10  National — FILTRANT
+  17  Royan                    Lycée Cordouan                                            01/10  National — FILTRANT
+  19  Tulle                    Lycée Edmond-Perrier                                      01/10  National — FILTRANT
+  24  Périgueux                Lycée Bertran-de-Born                                     01/10  National — FILTRANT puis total
+  24  Ribérac                  Lycée Arnaut-Daniel                                       02/10  National — FILTRANT
+  26  Montélimar               Collège-lycée Alain-Borne                                 01/10  National — FILTRANT
+  32  Auch                     Lycée Pardailhan                                          01/10  National — FILTRANT
+  40  Parentis-en-Born         Lycée Saint-Exupéry                                       30/09  National — FILTRANT
+  47  Fumel                    Cité scolaire Marguerite-Filhol                           01/10  FILTRANT
+  50  Cherbourg-en-Cotentin    Lycée Victor-Grignard                                     01/10  FILTRANT
+  59  Lille                    Lycée Faidherbe                                           29/09  FILTRANT
+  76  Le Havre                 Lycée François-Ier                                        01/10  FILTRANT
+  86  Poiters                  Lycée Victor-Hugo                                         01/10  FILTRANT
+
+
+F.2 — la colonne Motif ne porte PAS la valeur FILTRANT, mais la colonne Preuve
+      du blocus decrit un acces possible par voie secondaire
+Lignes ou la colonne Motif NE porte PAS la valeur FILTRANT, mais ou la
+colonne Preuve du blocus decrit un acces possible par voie secondaire.
+Selon la regle du document, ces lignes comptent comme des blocages.
+
+  09  Mirepoix                 Cité scolaire de Mirepoix                                 01/10  Tenues vestimentaires imposées par le nouveau proviseur ; griefs nationaux (surcharge des classes, chaleur, Parcoursup)
+  10  Troyes                   Lycée des Lombards                                        29/09  National
+  34  Montpellier              Cité scolaire Clémenceau                                  01/10  Classes à 30
+  49  Angers                   Lycée David d'Angers                                      01/10  National
+  49  Angers                   Lycée polyvalent Chevrollier                              30/09  National
+  54  Nancy                    Lycée Henri-Loritz                                        30/09  National
+  60  Noyon                    Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)  01/10  Départemental
+  60  Noyon                    Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)  30/09  Départemental
+  77  Meaux                    Lycée Henri-Moissan                                       01/10  National
+
+
+  Les deux listes reunies comptent 22 lignes. La section 9 du document
+  d'origine annonce 21. Voir section I.
+
+--------------------------------------------------------------------------------
+G. TENTATIVES NON REALISEES
+--------------------------------------------------------------------------------
+Une tentative est un blocus annonce, tente, avorte ou empeche par les forces de
+l'ordre. Ce n'est pas un blocage. Ces lignes sont comptees dans le total des
+evenements du document, mais elles ne sont pas des blocages realises.
+
+G.1 — la colonne Motif porte explicitement la valeur TENTATIVE
+Lignes dont la colonne Motif porte explicitement la valeur TENTATIVE.
+
+  40  Morcenx                  Lycée de Morcenx-la-Nouvelle                              01/10  TENTATIVE
+  50  Cherbourg-en-Cotentin    Lycée Alexis-de-Tocqueville                               01/10  TENTATIVE
+  59  Villeneuve-d'Ascq        Lycée Raymond-Queneau                                     21/09  TENTATIVE — même motif
+  59  Villeneuve-d'Ascq        Lycée Raymond-Queneau                                     28/09  TENTATIVE — même motif
+  60  Clermont                 Lycée Cassini                                             02/10  TENTATIVE
+  64  Saint-Jean-de-Luz        Lycée Maurice-Ravel                                       02/10  TENTATIVE
+  71  Chalon-sur-Saône         Lycée Émiland-Gauthey                                     30/09  TENTATIVE
+  77  Lagny-sur-Marne          Lycée Van Dongen                                          28/09  TENTATIVE
+  80  Abbeville                Cité scolaire Boucher-de-Perthes                          30/09  TENTATIVE
+  83  Fréjus                   Lycée Albert-Camus                                        01/10  TENTATIVE
+  83  Fréjus                   Lycée Gallieni                                            01/10  TENTATIVE
+  83  Hyères                   Lycée Costebelle                                          01/10  TENTATIVE, NON RÉALISÉ
+  83  Hyères                   Lycée professionnel du Golf-Hôtel                         01/10  TENTATIVE
+  83  Toulon                   Lycée Dumont-d'Urville                                    29/09  TENTATIVE
+  88  Épinal                   Lycée Louis-Lapicque                                      02/10  TENTATIVE
+
+
+G.2 — une ligne dont le statut a ete reclassifie le 04/10/2026
+Ligne dont le statut a ete RECLASSIFIE le 04/10/2026 : elle compte desormais
+comme blocage realise, et ne doit plus etre comptee parmi les tentatives.
+
+  80  Amiens                   Cité scolaire sud                                         01/10  Départemental
+
+
+  Cette ligne ne doit plus etre comptee parmi les tentatives : elle compte
+  desormais comme blocage realise. Voir section I, point 1.
+
+--------------------------------------------------------------------------------
+H. ETABLISSEMENTS BLOQUES PLUSIEURS JOURS
+--------------------------------------------------------------------------------
+  14/09  21/09  28/09         Lycée Raymond-Queneau                                       Villeneuve-d'Ascq (59)
+  02/10  21/09  30/09         Lycée Antoine de Saint-Exupéry                              Créteil (94)
+  01/10  29/09  30/09         Lycée Bréquigny                                             Rennes (35)
+  01/10  29/09  30/09         Lycée international Montebello                              Lille (59)
+  01/10  02/10  29/09         Lycée Charles-de-Gaulle                                     Vannes (56)
+  01/10  02/10  30/09         Lycée Jules-Fil                                             Carcassonne (11)
+  01/10  29/09  30/09         Lycée André-Argouges                                        Grenoble (38)
+  28/09  29/09  30/09         Cité scolaire Thomas-Edison                                 Lorgues (83)
+  01/10  28/09  29/09         Lycée Jean-Baptiste-Dumas                                   Alès (30)
+  01/10  28/09  29/09         Lycée Emmanuel-Mounier                                      Grenoble (38)
+  01/10  30/09                Lycée Rotrou                                                Dreux (28)
+  29/09  30/09                Lycée du Parc-Impérial                                      Nice (06)
+  01/10  30/09                Lycée Schuman-Perret                                        Le Havre (76)
+  07/09  08/09                Lycée agricole Théodore-Monod                               Le Rheu (35)
+  01/10  29/09                Lycée Victor-Hugo                                           Poiters (86)
+  28/09  30/09                Lycée Estienne-d'Orves                                      Nice (06)
+  01/10  29/09                Lycée Dhuoda                                                Nîmes (30)
+  29/09  30/09                Lycée César-Baggio                                          Lille (59)
+  01/10  02/10                Lycée Grand-Air                                             Arcachon (33)
+  01/10  29/09                Lycée Pierre-de-Coubertin                                   Calais (62)
+  01/10  29/09                Lycée Nelson-Mandela                                        Poiters (86)
+  01/10  30/09                Lycée Pablo-Neruda                                          Saint-Martin-d'Hères (38)
+  01/10  29/09                Lycée Louis Pergaud                                         Besançon (25)
+  01/10  02/10                Lycée Suzanne-Valadon                                       Limoges (87)
+  01/10  29/09                Lycée Philippe-de-Girard                                    Avignon (84)
+  01/10  02/10                Lycée Léonce-Vieljeux                                       La Rochelle (17)
+  01/10  02/10                Lycée Louis-Lapicque                                        Épinal (88)
+  01/10  29/09                Lycée Vaucanson                                             Grenoble (38)
+  29/09  30/09                Lycée Balzac                                                Tours (37)
+  01/10  30/09                Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles)    Noyon (60)
+  01/10  02/10                Lycée François-de-Malherbe                                  Caen (14)
+  25/09  28/09                Lycée Jean-Paul de Rocca Serra                              Porto-Vecchio (2A)
+  29/09  30/09                Les deux lycées Janot-Curie                                 Sens (89)
+  02/10  29/09                Lycée Pasteur                                               Besançon (25)
+  01/10  29/09                Lycée Dumont-d'Urville                                      Toulon (83)
+  01/10  29/09                Lycée Daudet                                                Nîmes (30)
+  02/10  30/09                Lycée René-Descartes-Coëtlogon                              Rennes (35)
+  01/10  29/09                Lycée Marie-Curie                                           Échirolles (38)
+  01/10  02/10                Lycée Cassini                                               Clermont (60)
+  01/10  02/10                Lycée Augustin-Fresnel                                      Caen (14)
+  01/10  28/09                Lycée professionnel Georges-Cisson                          Toulon (83)
+  01/10  29/09                Lycée Grandmont                                             Tours (37)
+  29/09  30/09                Lycée Stendhal                                              Grenoble (38)
+  01/10  29/09                Lycée Benjamin-Franklin                                     Orléans (45)
+  01/10  29/09                Lycée Henri-Poincaré                                        Nancy (54)
+  01/10  02/10                Lycée Fabert                                                Metz (57)
+  01/10  29/09                Lycée Bellevue                                              Le Mans (72)
+  01/10  30/09                Lycée Champollion                                           Grenoble (38)
+  01/10  29/09                Lycée Les Eaux-Claires                                      Grenoble (38)
+  01/10  30/09                Lycée de Morez (nom non précisé)                            Morez (39)
+  01/10  30/09                Lycée du Garros                                             Auch (32)
+  01/10  29/09                Lycée Fustel-de-Coulanges                                   Strasbourg (67)
+  01/10  29/09                Lycée Saint-Exupéry                                         Mantes-la-Jolie (78)
+  01/10  02/10                Cité scolaire Frantz-Fanon                                  La Trinité (972)
+  01/10  30/09                Lycée Joliot-Curie                                          Reims (51)
+  01/10  02/10                Lycée Salvador-Allende                                      Hérouville-Saint-Clair (14)
+  01/10  02/10                Cité scolaire du Fium'Orbu                                  Bastia (2B)
+  01/10  29/09                Cité scolaire Marguerite-Filhol                             Fumel (47)
+  01/10  02/10                Cité scolaire Val-de-Garonne                                Marmande (47)
+  01/10  30/09                Lycée professionnel Jacques-Dolle                           Antibes (06)
+  01/10  02/10                Lycée Jean-Rostand                                          Caen (14)
+  01/10  30/09                Lycée Jean-Moulin                                           Roubaix (59)
+
+  Ces 62 etablissements apparaissent au moins deux fois. Trois le sont trois
+  fois. Un etablissement bloque trois jours de suite donne trois unites dans
+  le document d'origine : c'est le nombre de couples (etablissement, date) qui
+  est compte, et non le nombre d'etablissements.
+
+--------------------------------------------------------------------------------
+I. TROIS ECARTS DE COMPTAGE RELEVES DANS LE DOCUMENT D'ORIGINE
+--------------------------------------------------------------------------------
+Ces trois ecarts ont ete trouves en construisant la presente liste. Ils ne sont
+pas tranches ici. Aucun des deux documents n'a ete modifie.
+
+1. LES TENTATIVES SONT COMPTEES 19 FOIS, MAIS UNE DE CES 19 LIGNES N'EST PLUS
+   UNE TENTATIVE.
+   La section 9 annonce 19 lignes TENTATIVE. La colonne Motif porte cette
+   valeur sur 15 lignes ; 10 autres lignes portent le mot dans la colonne
+   Preuve du blocus. L'union des deux fait bien 19 lignes — mais l'une d'elles,
+  80 Somme, cite scolaire sud, 01/10, porte la mention « RéCLASSé 04/10/2026 :
+   était TENTATIVE », et sa colonne Motif ne porte plus que la valeur National.
+   Cette ligne a donc ete reclassifiee en blocage realise, mais elle est encore
+   comptee parmi les 19 tentatives. Le nombre coherent serait 18.
+   Je n'ai pas tranche : il se peut qu'une ligne supplementaire soit une
+   tentative formulee sans employer le mot, auquel cas 19 serait exact.
+
+2. LES BLOCAGES FILTRANTS SONT COMPTES 21 FOIS, ALORS QUE 22 LIGNES LE SONT.
+   La section 9 annonce 21 lignes FILTRANTES. La colonne Motif porte cette
+   valeur sur 13 lignes ; 9 autres lignes decrivent dans la colonne Preuve un
+   acces possible par voie secondaire sans porter la valeur FILTRANT dans le
+   motif. Total 22. Ni 13 ni 22 ne valent 21.
+   Ces 9 lignes de plus sont listees en F.2 pour qu'on puisse les voir.
+
+3. L'IDENTIFICATION IMPRECISE CONCERNE 19 LIGNES, ET NON 8.
+   La section 9 compte 8 lignes « communes citees sans nom d'etablissement et
+   agregats departementaux non nominatifs ». Ce sont les 8 lignes dont la
+   colonne Type vaut « - ». Mais 11 lignes de plus portent un etablissement
+   dont le nom est un substitut de commune, forme « Lycee de <commune> (nom
+   non precise) » : 5 en Ardèche, 2 en Isère, 2 à Morez, 1 à Lézignan-Corbières,
+   1 à Hazebrouck. Elles sont listees en section E.
+   Le total de 19 est le plus defensable, mais il faut alors corriger le
+   recapitulatif de la section 9.
+
+4. SIX LIGNES REGROUPENT PLUSIEURS ETABLISSEMENTS, CONTRAIREMENT A LA REGLE
+   DE COMPTAGE DU DOCUMENT.
+   La section 9 du document d'origine pose la regle : « Les etablissements
+   nommes dans une meme phrase par une source sont decomposes en autant de
+   lignes (une par etablissement) ». Six lignes ne l'appliquent pas : elles
+   portent plusieurs lycees dans la seule colonne Etablissement, avec la
+   mention « (N etabl.) ».
+     35 Rennes            4 lycees
+     44 Nantes            4 lycees
+     38 Voiron            3 lycees
+     38 Bourgoin-Jallieu  3 lycees
+     53 Laval             3 lycees
+     95 Argenteuil        2 lycees
+   Ces 6 lignes couvrent 19 etablissements. La liste en compte 6. L'ecart est
+   de 13 etablissements. Les six lignes sont developpees en section D.
+   Consequence sur le total de 462 : ce total reste correct, puisqu'il compte
+   des couples (ligne, date) et non des etablissements. C'est le compte
+   d'etablissements qui est sous-estime, de 13.
+
+  CES QUATRE ECARTS NE CHANGENT PAS LE TOTAL DE 462 LIGNES. Ils changent le
+  compte des etablissements, et la repartition entre « blocages realises »,
+  « blocages filtrants » et « tentatives », que la section 9 annonce et qui ne
+  se recompose pas exactement.
+
+--------------------------------------------------------------------------------
+J. CONTROLES EFFECTUES SUR CE FICHIER
+--------------------------------------------------------------------------------
+  - Les 462 lignes ont ete extraites PROGRAMMATIQUEMENT de la section 4 du
+    document d'origine, par index, sans retypinge. Aucun nom, aucune date,
+    aucune commune n'a ete saisi a la main.
+  - Controle : 462 lignes extraites, 90 blocs de departement, et le total des
+    lignes de chaque bloc est identique a celui annonce dans son en-tete.
+  - Les 390 entrees de la section D ont ete obtenues par regroupement sur le
+    triplet (departement, commune, nom). Deux lignes ne peuvent donc pas avoir
+    ete comptees deux fois dans la section D, ni forgetees.
+  - Controle departement par departement : pour chacun des 90 blocs de la
+    section C, le nombre d'etablissements et le nombre de lignes annonces dans
+    l'en-tete ont ete compares aux lignes reellement presentes. ZERO ecart.
+    presentent deux listes plutot qu'une : le document n'est pas univoque, et il
+  - La colonne Motif est RECOPIEE MOT POUR MOT. Aucun statut n'a ete ajoute,
+    deduit ou reinterprete. C'est la raison pour laquelle les sections F et G
+  presentent deux listes plutot qu'une : le document n'est pas univoque, et il
+  serait malhonnete d'en choisir une seule sans le dire.
+  - Encodage : UTF-8 sans BOM. Fins de ligne homogenes.
+  - Deux lignes avaient ete placees a tort en G.2 : les notes de correction du
+    document d'origine contiennent le mot « classé » (« il avait ete classé a
+    tort comme simple mobilisation », « le 89 etait a tort classé sans
+    blocus »), ce qui avait declenche la recherche par motif. Elles ont ete
+    retirees ; G.2 ne contient plus que la ligne reellement reclassifiee.
+  - Ce que cette liste ne prouve pas : elle ne dit pas qu'un etablissement
+    absent n'a pas ete bloque. Elle dit seulement qu'aucune source trouvee,
+    relue et rattachee a un etablissement identifie ne le mentionne pas.
+
+================================================================================
+FIN — 462 couples, 390 entrees, 403 lycees nommes, 243 communes, 90 departements
+Document faisant foi : blocus_lycees_colleges_france_2026.txt
+================================================================================

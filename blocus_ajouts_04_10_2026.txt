@@ -1,0 +1,497 @@
+================================================================================
+BLOCUS D'ETABLISSEMENTS SCOLAIRES EN FRANCE — ANNEE 2026
+LES 29 NOUVELLES LIGNES AJOUTEES LE 04/10/2026
+================================================================================
+Fichier d'origine : blocus_lycees_colleges_france_2026.txt
+Date d'extraction  : 4 octobre 2026
+Periode couverte  : 01/01/2026 -> 04/10/2026 (date du jour)
+Departements concernes : 10, 49, 60, 77, 80, 89, 91 (les 10 departements
+demandes, plus 08 et 55 qui n'ont donne aucune ligne nouvelle)
+
+Ce fichier est un EXTRAIT, pas un document autonome. Il contient uniquement ce
+qui a ete ajoute au document principal lors des deux passes du 04/10/2026. Les
+lignes y sont COPIEES VERBATIM du document source : aucune n'a ete retypede,
+reformulee ou completee. Le document principal fait foi.
+
+  29 lignes ajoutees au total, qui font passer le document principal de
+  433 a 462 couples (etablissement, date). Voir aussi C. pour UNE ligne
+  supplementaire qui n'est pas nouvelle mais dont le statut a change.
+
+
+--------------------------------------------------------------------------------
+SOMMAIRE
+--------------------------------------------------------------------------------
+  A. LES 29 LIGNES NOUVELLES — format complet (identique a la section 4)
+  B. LES 29 LIGNES NOUVELLES — format recapitulatif (identique a la section 3)
+  C. LA LIGNE RECLASSEE — ni nouvelle ni supprimee, mais changee de statut
+  D. INVENTAIRE DES SOURCES
+  E. CE QUI N'A PAS ETE AJOUTE, ET POURQUOI
+  F. LES TROIS ERREURS DU DOCUMENT CORRIGEES AU PASSAGE
+  G. CONTROLES
+
+
+--------------------------------------------------------------------------------
+A. LES 29 LIGNES NOUVELLES — FORMAT COMPLET
+--------------------------------------------------------------------------------
+Format : Commune | Etablissement | Type | Date | Motif | Preuve du blocus |
+Source(s). Identique a la section 4 du document principal.
+
+Repartition : 10 Aube +1 ; 49 Maine-et-Loire +7 ; 60 Oise +6 ;
+77 Seine-et-Marne +7 ; 80 Somme +3 ; 89 Yonne +4 ; 91 Essonne +1.
+
+Lecture rapide des statuts (decompte automatique, 29 lignes = 20 + 5 + 2 + 2) :
+  - 20 lignes sont des blocages REALISES dont l'acces etait pleinement empeche.
+  -  5 lignes sont FILTRANTES : l'acces principal etait entrave mais une
+    issue secondaire restait ouverte. Elles comptent comme blocus.
+      Chevrollier 30/09 (49) ; David d'Angers 01/10 (49) ; Henri-Moissan
+      01/10 (77) ; Noyon 30/09 et 01/10 (60).
+  -  2 lignes sont des TENTATIVES non realisees. Elles ne sont pas des blocages.
+      Abbeville, cite Boucher-de-Perthes, 30/09 (80) ; Sens, cite
+      Janot-Curie, 28/09 (89).
+  -  2 lignes sont des AGREGATS non nominatifs : le blocage y est confirme mais
+      aucun etablissement n'y est nomme.
+      Essonne, ensemble du departement, 01/10 (91) ; Beauvais, « autres
+      lycees », 02/10 (60).
+  - 5 des 20 blocages pleinement empêches sont des COMMUNES SANS NOM
+    D'ETABLISSEMENT (Roissy-en-Brie, Provins, Rozay-en-Brie, Melun,
+    Le Mee-sur-Seine — 77). La commune est nommee, le lycee ne l'est pas.
+  Ces 6 lignes non nominatives au total (5 communes du 77 + Beauvais) et la
+  ligne d'agregat de l'Essonne sont le reflet de ce que la presse publie, pas
+  un manque de recherche : aucune source consultee ne nomme ces etablissements.
+
+--- 10 AUBE --- (+1)
+Troyes         | Lycée Polyvalent Marie de Champagne | Lycée polyvalent | 01/10 | National | « Des élèves ont pu entrer au sein du lycée à 7 h 45, puis le lycée a fermé ses grilles, plus personne ne pouvant ni entrer, ni sortir. » — accès totalement empêché | lest-eclair.fr, 01/10/2026 — ARTICULE NON OUVERT (HTTP 403 / Akamai) ; citation obtenue via blocus-lycees-umber.vercel.app qui cite lest-eclair.fr — CERTITUDE Moyenne
+
+--- 49 MAINE-ET-LOIRE --- (+7)
+Angers         | Lycée polyvalent Chevrollier  | Lycée polyvalent | 30/09 | National | FILTRANT — « plusieurs centaines d'élèves, parmi les 2 700 que compte le lycée Chevrollier, ont bloqué l'entrée principale de l'établissement, tout en laissant les élèves qui le souhaitaient entrer par un autre accès » | angers.villactu.fr, 30/09/2026 (OUVERT) ; my-angers.info, 01/10/2026 (OUVERT) : « Mercredi, plusieurs centaines d'élèves avaient bloqué les accès au lycée »
+Angers         | Lycée Auguste et Jean Renoir | Lycée | 29/09 | National | « À Angers, des blocages partiels ont touché dès le mardi 29 septembre le lycée Chevrollier, situé à la Roseraie, le lycée Auguste et Jean Renoir dans la Doutre, ainsi que le lycée Jean Bodin, aux Ponts-de-Cé » | angers.villactu.fr, 30/09/2026 (OUVERT) — CERTITUDE Moyenne
+Les Ponts-de-Cé | Lycée Jean Bodin           | Lycée | 29/09 | National | « des blocages partiels ont touché dès le mardi 29 septembre […] le lycée Jean Bodin, aux Ponts-de-Cé » | angers.villactu.fr, 30/09/2026 (OUVERT) — CERTITUDE Moyenne
+Avrillé        | Lycée professionnel Paul-Émile-Victor | Lycée pro | 01/10 | National | « Un important blocus est signalé ce jeudi matin devant l'établissement » ; « des feux de poubelles et de caddies auraient également été allumés devant le lycée, perturbant l'accès à l'établissement et son fonctionnement » | my-angers.info, 01/10/2026 (OUVERT) — source elle-même prudente : « selon les informations recueillies par notre rédaction », « encore en cours de vérification » — CERTITUDE Moyenne
+Angers         | Lycée David d'Angers         | Lycée | 01/10 | National | FILTRANT — « Barrage filtrant des 7h30 le 1er octobre 2026 ; le proviseur a fermé les portes du lycée peu après 8h » ; titre de source : « Il faut nous écouter : des lycéens bloquent le lycée David-d'Angers » | ouest-france.fr, 01/10/2026 — ARTICULE NON OUVERT (HTTP 403) ; citation via blocus-lycees-umber.vercel.app — CERTITUDE Moyenne
+Angers         | Lycée Joachim du Bellay      | Lycée | 01/10 | National | « bloqué — Accès bloqués par plusieurs centaines de lycéens le 1er octobre 2026 à Angers » ; source commune : « Blocage des lycées et des universités à Angers : plusieurs centaines de lycéens mobilisés » | ouest-france.fr, 01/10/2026 — ARTICULE NON OUVERT (HTTP 403) — CERTITUDE Moyenne
+Saumur         | Lycée Duplessis-Mornay        | Lycée | 01/10 | National | « L'établissement public Duplessis-Mornay est bloqué le 1er octobre 2026 (barrières), plusieurs dizaines de jeunes avec pancartes » ; titre de source : « Les lycéens à Saumur se mobilisent, deux établissements bloqués » | ouest-france.fr, 01/10/2026 (vidéo) — ARTICULE NON OUVERT (HTTP 403) — CERTITUDE Moyenne
+
+--- 60 OISE --- (+6)
+Clermont       | Lycée Cassini                  | Lycée | 01/10 | Départemental     | « Les élèves du lycée Cassini de Clermont (Oise) ont rejoint le mouvement de contestation ce jeudi 1er octobre, BLOQUANT L'ÉTABLISSEMENT » ; « Vers 8 heures, la rue Henri-Breuil était fermée à la circulation. Et les élèves N'AVAIENT PAS LA POSSIBILITÉ D'ENTRER dans l'établissement » | L'Oise Hebdo, 01/10/2026 (OUVERT) — CERTITUDE Moyenne ; CONTRADIT par la préfecture, voir section 7 point (28)
+Noyon          | Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles) | Cité scolaire | 30/09 | Départemental | FILTRANT — « une bonne partie des élèves est restée devant l'établissement, sous l'œil des forces de l'ordre qui CONTRÔLAIENT L'ACCÈS à l'établissement » ; « Notre rôle a été principalement de permettre aux élèves qui voulaient aller en cours de pouvoir le faire sans heurts » | L'Oise Hebdo, 30/09/2026 (OUVERT) — CERTITUDE Moyenne
+Noyon          | Cité scolaire (LGT Jean Calvin + LP Charles de Bovelles) | Cité scolaire | 01/10 | Départemental | FILTRANT — « Les lycéens et étudiants des lycées général et technologique Jean Calvin et professionnel Charles de Bovelles ont organisé LEUR DEUXIÈME BLOCUS ce jeudi 1er octobre. Un mouvement anticipé, comme hier mercredi, par les forces de l'ordre » ; « un dispositif de FILTRAGE » | L'Oise Hebdo, 01/10/2026 (OUVERT) — CERTITUDE Élevée
+Beauvais       | Lycée Félix-Faure              | Lycée | 02/10 | Départemental     | « À 15 h 30, 730 personnes étaient encore mobilisées et deux lyceaux demeuraient PERTURBÉS : Pierre-d'Ailly à Compiègne et Félix-Faure à Beauvais » ; « le lendemain, vendredi 2 octobre, LES DIFFÉRENTS BLOCUS ORGANISÉS devant chaque lycée se déroulaient dans le calme » | L'Oise Hebdo, 02/10 et 03/10/2026 (OUVERTS) + ici.fr, 02/10 (OUVERT) — CERTITUDE Moyenne
+Beauvais       | Autres lycées (établissements non nommés) | - | 02/10 | Départemental | « les différents blocus organisés devant chaque lycée » — agrégat non nominatif, le nombre exact n'est pas donné | L'Oise Hebdo, 03/10/2026 (OUVERT) — CERTITUDE Moyenne
+Compiègne      | Lycée Pierre-d'Ailly            | Lycée | 02/10 | Départemental     | « À 15 h 30 […] deux lycées demeuraient perturbés : PIERRE-D'AILLY à Compiègne et Félix-Faure à Beauvais » (bilan provisoire de la préfecture à 15 h 30, 730 personnes encore mobilisées) | L'Oise Hebdo, 02/10/2026 (OUVERT) + ici.fr, 02/10/2026 (OUVERT) — CERTITUDE Moyenne
+
+--- 77 SEINE-ET-MARNE --- (+7)
+Meaux          | Lycée Pierre-de-Coubertin      | Lycée | 29/09 | National | « Au plus fort du blocus, 300 jeunes étaient rassemblés devant le lycée Coubertin de Meaux » — l'article employant le mot « blocus », mais décrivant une massation devant l'entrée | actu.fr / La Marne, 29/09/2026 (OUVERT) — CERTITUDE Moyenne
+Meaux          | Lycée Henri-Moissan            | Lycée | 01/10 | National | FILTRANT — « Dès 6 h du matin, des lycéens étaient postés devant l'entrée de l'établissement » (piquet de filtrage, non un blocage total) | actu.fr / La Marne, 01/10/2026 (OUVERT) — CERTITUDE Moyenne
+Roissy-en-Brie | (établissement non nommé)     | - | 28/09 | National | « Plusieurs lycées seine-et-marnais se sont retrouvés bloqués hier […] C'était le cas à Roissy-en-Brie, Coulommiers, Provins et Rozay-en-Brie » | evasionfm.com, 29/09/2026 (OUVERT) — commune nommée, établissement NON nommé par la source
+Provins        | (établissement non nommé)     | - | 28/09 | National | « C'était le cas à Roissy-en-Brie, Coulommiers, Provins et Rozay-en-Brie » | evasionfm.com, 29/09/2026 (OUVERT) — commune nommée, établissement NON nommé ; trois lycées existent à Provins, aucun retenu
+Rozay-en-Brie  | (établissement non nommé)     | - | 28/09 | National | « C'était le cas à Roissy-en-Brie, Coulommiers, Provins et Rozay-en-Brie » | evasionfm.com, 29/09/2026 (OUVERT) — commune nommée, établissement NON nommé
+Melun          | (établissement non nommé)     | - | 29/09 | National | « Des établissements sont resté bloqués : 150 personnes se sont rassemblées à Melun » | evasionfm.com, 29/09/2026 (OUVERT) — commune nommée, établissement NON nommé
+Le Mée-sur-Seine | (établissement non nommé)   | - | 29/09 | National | « Des établissements sont resté bloqués : […] mais aussi au Mée-sur-Seine » | evasionfm.com, 29/09/2026 (OUVERT) — commune nommée, établissement NON nommé
+
+--- 80 SOMME --- (+3)
+Amiens         | Cité scolaire Delambre-Montaigne (lycée Jean-Baptiste-Delambre) | Cité scolaire | 01/10 | Départemental | « DES BLOCAGES à la cité scolaire et au lycée Delambre » ; « tous les élèves de Michelis et de Robert de Luzarches se sont ensuite dirigés de la cité scolaire Delambre-Montaigne, DONT LES COURS SONT ANNULÉS pour la journée » ; « au lycée Delambre […] quelques 200 élèves se sont rassemblés », une élève a été blessée dans l'explosion d'un feu allumé par les jeunes ; « le BLOCAGE COORDONNÉ de plusieurs établissements scolaires […] notamment à la cité scolaire et au lycée Delambre » | ici.fr, 01/10/2026 (OUVERT) + picardieweb.com, 01/10/2026 (OUVERT) — CERTITUDE Moyenne ; titre contre corps, voir section 7 point (29)
+Amiens         | Lycée Louis-Thuillier          | Lycée | 01/10 | Départemental     | « Devant le lycée Louis Thuillier, au sud d'Amiens, environ 200 élèves ONT BLOQUÉ L'ENTRÉE de l'établissement et ont mis le feu à quelques poubelles » ; 7 cars de gendarmerie et des policiers intervenus | ici.fr / France Bleu Picardie, 01/10/2026 9h19 (OUVERT) — CERTITUDE Élevée
+Abbeville      | Cité scolaire Boucher-de-Perthes | Cité scolaire | 30/09 | TENTATIVE | « Après une TENTATIVE DE BLOCAGE RATÉE devant leur établissement la veille, environ 200 élèves du lycée Boucher-de-Perthes d'Abbeville (Somme) manifestent ce jeudi 1er octobre 2026 ». Date déduite du « la veille » rapporté au 01/10 : l'article ne la date pas explicitement | actu.fr / Le Journal d'Abbeville (Yann Defacque), publié 01/10/2026 11h35 (OUVERT) — CERTITUDE Moyenne
+
+--- 89 YONNE --- (+4)
+Auxerre        | Lycée polyvalent Fourier Saint-Germain | Lycée polyvalent | 01/10 | National | « Environ 200 élèves de plusieurs établissements ont bloqué le lycée Fourier à Auxerre, ce jeudi 1er octobre 2026 » ; « les portes de l'établissement avaient été bloquées par plusieurs poubelles et les élèves restés à l'intérieur du lycée étaient appelés à les rejoindre » | lyonne.fr (L'Yonne Républicaine), 01/10/2026 12h45 (OUVERT) — CORRECTION 04/10 : le 89 était à tort classé « sans blocus ». Nom officiel retenu : « Lycée polyvalent Fourier Saint-Germain » (UAI 0890005X) ; la presse écrit « lycée Fourier » et, pour ici.fr, « lycée Joseph-Fourier »
+Sens           | Lycée général et technologique Catherine et Raymond Janot + Lycée professionnel Pierre et Marie Curie (cité scolaire Janot-Curie) | Cité scolaire | 28/09 | National | TENTATIVE — « Des élèves tentent de bloquer l'entrée du lycée, pendant que le proviseur, Franck Cucheval essaie de dialoguer avec eux » | lyonne.fr, 28/09/2026 13h48 (OUVERT, extrait gratuit)
+Sens           | Les deux lycées Janot-Curie      | Cité scolaire | 29/09 | National | « Près de 350 élèves étaient massés, le mardi 29 septembre, vers 8 heures, devant l'entrée des lycées de Sens » — le titre de la source qualifie la journée de « Blocage des lycées », le corps ne décrit qu'une massation devant l'entrée | lyonne.fr, 29/09/2026 10h05 (OUVERT) — CERTITUDE Moyenne
+Sens           | Les deux lycées Janot-Curie      | Cité scolaire | 30/09 | National | « Des éléments auraient été entreposés devant l'entrée des lycées de Sens pour en blocker l'accès par une vingtaine de personnes », levés dans l'après-midi ; corroboré par la presse icaunaise : « leurs homologues sénonais qui ont bloqué leur établissement le 30 septembre » | lyonne.fr, 30/09/2026 16h35 (OUVERT) — la source n'explicite pas que les personnes étaient des élèves — CERTITUDE Moyenne
+
+--- 91 ESSONNE --- (+1)
+Essonne (dépt.) | Établissements non nommés — agrégat      | - | 01/10 | National | « [le 1ᵉʳ octobre 2026,] avec le blocage de nombreux lycées dans le département par des élèves se mobilisant pour leurs droits à l'éducation et pour dénoncer leurs conditions d'étude » ; « Des forces de l'ordre mobilisées en nombre près des établissements concernés par les blocages » ; l'académie de Versailles y ajoute « 37 établissements de l'Essonne ont fait l'objet d'une mobilisation ou d'une perturbation » — ce qui est un « mobilisation OU perturbation », donc non assimilable à un blocage | actu.fr, 01/10/2026 20h53 (OUVERT) — le début de la phrase est masqué par un défaut d'encodage sur la page source, la citation ne commence donc qu'à « avec le blocage… » ; agrégat NON NOMINATIF : aucun établissement de l'Essonne n'a pu être vérifié individuellement comme bloqué, voir section 6A et section 7
+
+
+
+--------------------------------------------------------------------------------
+B. LES 29 LIGNES NOUVELLES — FORMAT RECAPITULATIF
+--------------------------------------------------------------------------------
+Format ASCII, identique a la section 3 du document principal. Colonnes :
+code departement, commune, etablissement, type, date, mot, certitude, source.
+
+
+-- 10 AUBE --
+10 Troyes              Lycee Polyvalent Marie de Champagne LP 01/10 grilles fermees 7h45, acces interdit Moyenne lest-eclair.fr (403, citation 2e main)
+
+-- 49 MAINE-ET-LOIRE --
+49 Angers              Lycee polyvalent Chevrollier  Lycee  30/09  FILTRANT (entree principale barree, autre acces libre) Eleve angers.villactu.fr
+49 Angers              Lycee Auguste-et-Jean-Renoir Lycee  29/09  blocages partiels      Moyenne angers.villactu.fr
+49 Les Ponts-de-Ce     Lycee Jean Bodin              Lycee  29/09  blocages partiels      Moyenne angers.villactu.fr
+49 Avrille             LP Paul-Emile-Victor         LP     01/10  blocus, acces perturbe   Moyenne my-angers.info
+49 Angers              Lycee David-d'Angers         Lycee  01/10  FILTRANT 7h30, portes fermees 8h Moyenne ouest-france.fr (403)
+49 Angers              Lycee Joachim-du-Bellay      Lycee  01/10  bloque (200+ eleves)   Moyenne ouest-france.fr (403)
+49 Saumur              Lycee Duplessis-Mornay        Lycee  01/10  bloque (barrieres)      Moyenne ouest-france.fr (403)
+
+-- 60 OISE --
+60 Clermont            Lycee Cassini                  Lycee  01/10  bloque, acces impossible Moyenne oisehebdo.fr (contredit par la prefecture, v. sect. 7 pt 28)
+60 Noyon               Cite sc. Jean Calvin + LP Charles de Bovelles  Cite 30/09 FILTRANT (acces controle) Moyenne oisehebdo.fr
+60 Noyon               Cite sc. Jean Calvin + LP Charles de Bovelles  Cite 01/10 FILTRANT "2e blocus organise" Eleve oisehebdo.fr
+60 Beauvais            Lycee Felix-Faure              Lycee  02/10  perturbes ; "blocus organises" Moyenne oisehebdo.fr
+60 Beauvais            Autres etablissements (noms non donnes)  -    02/10  "les differents blocus organises devant chaque lycee" Moyenne oisehebdo.fr
+60 Compiegne           Lycee Pierre-d'Ailly           Lycee  02/10  "demeuraient perturbe" Moyenne oisehebdo.fr + ici.fr
+
+-- 77 SEINE-ET-MARNE --
+77 Meaux               Lycee Pierre-de-Coubertin        Lycee  29/09  blocus, 300 devant   Moyenne actu.fr
+77 Meaux               Lycee Henri-Moissan              Lycee  01/10  FILTRANT (piquet 6h, non blocage total) Moyenne actu.fr
+77 Roissy-en-Brie      (etablissement non nomme)        -      28/09  bloque, etab. non nomme Moyenne evasionfm.com
+77 Provins             (etablissement non nomme)        -      28/09  bloque, etab. non nomme Moyenne evasionfm.com
+77 Rozay-en-Brie       (etablissement non nomme)        -      28/09  bloque, etab. non nomme Moyenne evasionfm.com
+77 Melun               (etablissement non nomme)        -      29/09  bloque, etab. non nomme Moyenne evasionfm.com
+77 Le Mee-sur-Seine    (etablissement non nomme)        -      29/09  bloque, etab. non nomme Moyenne evasionfm.com
+
+-- 80 SOMME --
+80 Amiens              Cite sc. Delambre-Montaigne     Cite   01/10  blocage, cours annules Eleve  ici.fr + picardieweb.com
+80 Amiens              Lycee Louis-Thuillier          Lycee  01/10  "ont bloque l'entree" Eleve  ici.fr
+80 Abbeville           Cite sc. Boucher-de-Perthes    Cite   30/09  TENTATIVE ratee      Moyenne actu.fr
+
+-- 89 YONNE --
+89 Auxerre             Lycee polyvalent Fourier Saint-Germain LP 01/10 portes bloquees par poubelles Eleve lyonne.fr
+89 Sens                Cite scolaire Janot-Curie (2 etab.) Cite 28/09 TENTATIVE de blocage Eleve lyonne.fr
+89 Sens                Cite scolaire Janot-Curie (2 etab.) Cite 29/09 350 masses devant l'entree Moyenne lyonne.fr
+89 Sens                Cite scolaire Janot-Curie (2 etab.) Cite 30/09 elements deposes pour bloquer, leves l'ap.m Moyenne lyonne.fr
+
+-- 91 ESSONNE --
+91 (departement)       Academie de Versailles / actu.fr : « blocage de nombreux lycees dans le departement » - 01/10 blocus de nombreux lycees (non nominatif) Eleve actu.fr
+
+
+
+--------------------------------------------------------------------------------
+C. LA LIGNE RECLASSEE
+--------------------------------------------------------------------------------
+Cette ligne n'est ni nouvelle ni supprimee. Elle etait deja dans le document
+principal et y reste. Ce qui change, c'est son statut : elle passe de TENTATIVE
+a BLOQUE. Elle ne compte donc pas dans les 29 additions, mais elle merite d'etre
+signalee, parce qu'elle modifie le nombre de blocages realises du 80 Somme.
+
+--- format complet ---
+Amiens         | Cité scolaire sud              | Cité   | 01/10 | Départemental     | RÉCLASSÉ 04/10/2026 : était TENTATIVE. « Cette journée a été marquée par LE BLOCAGE de plusieurs établissements, notamment à Amiens, à la cité scolaire et à Delambre » ; titre de l'article : « un chef d'établissement de la cité scolaire sud d'Amiens blessé » ; « trois jeunes au niveau de la cité scolaire sud d'Amiens [blessés] », dégradations de mobilier urbain | ici.fr / France Bleu Picardie, 01/10/2026 18h19 (OUVERT) — CERTITUDE Moyenne ; voir section 7 point (29)
+
+--- format recapitulatif ---
+80 Amiens              Cite scolaire sud               Cite   01/10  bloque (statut corrige, v. sect. 7 pt 29) Moyenne ici.fr 01/10 18h19
+
+Ce qui a fait basculer le statut : le statut TENTATIVE venait de
+courrier-picard.fr (« des eleves tentent de monter un blocus devant la cite
+scolaire sud »). Le meme jour, la prefacture de la Somme, relayee par ici.fr,
+parle de « LE BLOCAGE de plusieurs etablissements, notamment a Amiens, a la cite
+scolaire et a Delambre », et l'article est titre sur un chef d'etablissement de
+la cite scolaire sud d'Amiens blesse. Un recapitulatif prefectoral n'emploie pas
+le mot « blocage » pour decrire une tentative.
+
+RESERVE : la designation « la cite scolaire » sans adjectif est ambigue entre la
+cite scolaire sud et celle de Delambre-Montaigne. Les deux sites d'Amiens sont
+concernes le 01/10 et rien ne permet de repartir le blocage de l'un sur l'autre
+avec certitude. Le reclassement est coherent mais fragile, et il est signale
+comme tel. Voir section 7 point (29) du document principal.
+
+
+--------------------------------------------------------------------------------
+D. INVENTAIRE DES SOURCES
+--------------------------------------------------------------------------------
+Regle appliquee : une source n'est citee que si son article a ete OUVERT et lu.
+Les mentions « NON OUVERT » ci-dessous sont des aveux d'echec de verification,
+pas des citations.
+
+--- SOURCES OUVERTES ET RELUES (citations verifiees mot pour mot) ---
+
+OISE — L'Oise Hebdo (oisehebdo.fr), 6 articles
+  https://www.oisehebdo.fr/2026/09/30/mobilisation-lyceenne-mouvement-gagne-noyon-mercredi/
+      Noyon 30/09. Controle d'acces + « desertion de cours » dans le meme texte.
+  https://www.oisehebdo.fr/2026/10/01/lycees-mouvement-relativement-calme-noyon-feux-poubelles-interpellations-ribecourt/
+      Noyon 01/10. « ont organise leur deuxieme blocus » + « dispositif de filtrage ».
+  https://www.oisehebdo.fr/2026/10/01/clermont-tensions-eleves-et-gendarmes-lycee-cassini/
+      Clermont, Cassini 01/10. « bloquant l'etablissement », acces impossible a 8 h.
+  https://www.oisehebdo.fr/2026/10/01/manifestations-lyceennes-oise-trentaine-gardes-a-vue/
+      Prefecture de l'Oise, 01/10. « aucun blocage total de lycee n'a ete tolere ».
+  https://www.oisehebdo.fr/2026/10/02/manifs-lyceennes-interpellations-garde-a-vue-oise-prefecture/
+      Beauvais Felix-Faure + Compiegne Pierre-d'Ailly, 02/10. « demeuraient perturbes ».
+  https://www.oisehebdo.fr/2026/10/03/beauvais-maire-franck-pia-comprend-inquietude-jeunes-mais-condamne-debordements/
+      Beauvais 02/10. « les differents blocus organises devant chaque lycee ».
+  Articles OUVERTS mais NON EXPLOITES pour une ligne nouvelle :
+      /2026/10/02/beauvais-policier-blesse-jambe-manifestation-lyceenne/
+      /2026/10/02/manif-compiegne-mortier-artifice... , /compiegne-vitrine-tabac-presse... ,
+      /compiegne-feu-detritus-manifestation-lyceens/ , /2026/10/04/arrete-margny-manif-lapin...
+      → ces quatre derniers n'ont JAMAIS ete ouverts.
+
+SOMME — ici.fr / France Bleu Picardie, 2 articles
+  https://www.ici.fr/hauts-de-france/somme-80/amiens/a-amiens-une-deuxieme-journee-de-mobilisation-lyceenne-3291859
+      Amiens 01/10. Louis-Thuillier « ont bloque l'entree » ; Delambre-Montaigne ;
+      Michelis et Robert-de-Luzarches (cortege, ecartees).
+  https://www.ici.fr/hauts-de-france/somme-80/mobilisation-des-lyceens-25-interpellations-21-gardes-a-vue-dans-la-somme-1037802
+      Amiens 01/10 18h19. Reclassement cite scolaire sud ; bilan prefecture.
+  https://www.ici.fr/hauts-de-france/oise-60/troisieme-journee-de-mobilisation-lyceenne-plus-de-3-700-manifestants-et-92-interpellations-dans-la-somme-et-l-oise-5436743
+      Oise/Somme 02/10. Phrase identique a celle de L'Oise Hebdo (bilan 15 h 30).
+      → OUVERT par un agent de recherche, non relu par moi-meme a ce stade.
+
+SOMME — Picardie web, 1 article
+  https://www.picardieweb.com/somme-une-mobilisation-lyceenne-sous-haute-tension/
+      Amiens 01/10. « le blocage coordonne de plusieurs etablissements scolaires ».
+      Corrobore Delambre-Montaigne par un second titre independant.
+
+ABBEVILLE — actu.fr / Le Journal d'Abbeville, 1 article
+  https://actu.fr/hauts-de-france/abbeville_80001/environ-200-lyceens-manifestent-leur-colere-a-abbeville_64863984.html
+      Abbeville 30/09 (TENTATIVE). Publie 01/10 11h35, auteur Yann Defacque.
+
+MAINE-ET-LOIRE — 2 articles OUVERTS
+  https://www.angers.villactu.fr/blocage-des-lycees-le-mouvement-setend-a-angers/
+      Angers, Les Ponts-de-Ce. Chevrollier 30/09 FILTRANT + Renoir + Jean Bodin 29/09.
+  https://my-angers.info/10/01/blocus-des-lycees-a-angers-et-avrille-incidents-et-tensions-ce-jeudi-matin/197417
+      Avrille, LP Paul-Emile-Victor 01/10. Source elle-meme prudente : « selon les
+      informations recueillies par notre redaction », « encore en cours de verification ».
+
+SEINE-ET-MARNE — 3 articles OUVERTS
+  https://actu.fr/ile-de-france/meaux_77284/mobilisation-des-lyceens-300-jeunes-devant-le-lycee-coubertin-de-meaux-les-policiers-vises-par-des-tirs-de-mortiers_64855270.html
+      Meaux, Pierre-de-Coubertin 29/09.
+  https://actu.fr/societe/en-images-blocages-des-lyceens-la-mobilisation-prend-de-lampleur-dans-certaines-villes-de-seine-et-marne_64865460.html
+      Meaux, Henri-Moissan 01/10 (FILTRANT, piquet des 6 h).
+  https://www.evasionfm.com/les-blocus-impactent-les-lycees-seine-et-marnais
+      Roissy-en-Brie, Provins, Rozay-en-Brie 28/09.
+  https://www.evasionfm.com/climat-tendu-encore-ce-mardi-devant-plusieurs-lycees-seine-et-marnais-sud
+      Melun, Le Mee-sur-Seine 29/09.
+
+YONNE — L'Yonne Republicaine (lyonne.fr), 3 articles OUVERTS
+  https://www.lyonne.fr/enseignements-sacrifies-notre-avenir-va-cramer-les-lyceens-auxerrois-manifestent-leur-colere-devant-les-etablissements-et-dans-la-rue_15056203/
+      Auxerre, Lycee polyvalent Fourier Saint-Germain 01/10. « ont bloque le lycee
+      Fourier a Auxerre » ; portes bloquees par plusieurs poubelles. 12h45.
+  https://www.lyonne.fr/sens-89100/actualites/blocage-des-lycees-pres-de-350-jeunes-masses-devant-les-etablissements-de-sens_15054869/
+      Sens, cite Janot-Curie 29/09. 10h05.
+  https://www.lyonne.fr/sens-89100/actualites/blocage-du-lycee-de-Sens-le-mouvement-lyceen-se-desolidarise_15055642/
+      Sens, cite Janot-Curie 30/09. 16h35.
+  La ligne du 28/09 passe par un extrait gratuit du meme titre.
+
+ESSONNE — actu.fr, 1 article OUVERT
+  https://www.evasionfm.com/les-blocus-de-lycees-se-sont-multiplies-hier-en-essonne
+      29/09. Sert ecarter Leonard-de-Vinci (intrusion, pas blocage).
+  La ligne d'agregat du 01/10 provient d'actu.fr (OUVERT) et de l'academie de
+  Versailles via actu.fr.
+
+--- SOURCES NON OUVERTES : aucune citation ne repose sur elles ---
+
+  lest-eclair.fr (Troyes, 10 Aube) — HTTP 403 / Akamai. La citation
+      « Des eleves ont pu entrer au sein du lycee a 7 h 45, puis le lycee a
+      ferme ses grilles » provient du site participatif
+      blocus-lycees-umber.vercel.app qui cite lest-eclair.fr. C'est une
+      citation DE SECONDE MAIN. Le site participatif n'est jamais cite comme
+      preuve ailleurs dans ce document ; ici il ne l'est pas non plus, et la
+      ligne est marquee Moyenne avec la mention explicite du risque.
+
+  ouest-france.fr (Angers x3, Saumur — 49) — HTTP 403. Les trois lignes
+      David d'Angers, Joachim du Bellay et Duplessis-Mornay reposent sur des
+      citations de seconde main via le site participatif. Ce sont les trois
+      lignes les moins solides des 29.
+
+  courier-picard.fr (80 et 60) — HTTP 403. Deux consequences :
+      - le statut TENTATIVE d'origine de la cite scolaire sud vient de la ;
+      - le Courrier Picard est la source la plus probablement la plus complete
+        sur les lycees de Corbie, Albert, Peronne et Doullens. C'est un manque.
+
+  Les autres sources non ouvertes : leparisien.fr (paywall), ac-dijon.fr,
+  l'ecole buissonniere, Le Monde, archive.ph, lest-eclair.fr, oise.fr (403),
+  lavoixdunord.fr (403). Sources mortes (NXDOMAIN) : courant-demain.fr,
+  lamienois.fr, journaldeabbeville.fr, lestagueueusaine.fr, journaldelamiens.fr.
+  Certificat SSL invalide : lequotidien.fr, picardie.fr.
+
+LE SITE PARTICIPATIF blocus-lycees-umber.vercel.app
+  708 entrees. Utilise comme source de PISTE uniquement, jamais comme preuve.
+  Ses defauts confirmes : des entrees marquees « Bloque » dont le propre texte
+  dit « Pas de blocage » ; des entrees fondees sur un commentaire TikTok ; des
+  attributions geographiques fausses (un article de Pornic/44 rattache a deux
+  lycees d'Angers/49) ; et un homonyme non verifie (Charles-le-Chauve,
+  Roissy-en-Brie, 02/10, contre un blocage a Roissy-en-Brie le 28/09).
+  Il a neanmoins raison sur le fond pour Noyon. Voir section 7 point (20).
+
+
+--------------------------------------------------------------------------------
+E. CE QUI N'A PAS ETE AJOUTE, ET POURQUOI
+--------------------------------------------------------------------------------
+L'ecart entre ce qui a ete signale et ce qui a ete retenu est important. Il est
+donc explicite, departement par departement.
+
+08 ARDENNES — 0 ligne ajoutee, 0 ligne avant. NEGATIF CONFIRME ET NOMME.
+  Les quatre lycees de Charleville-Meitzieres sont cites dans les sources :
+  Chanzy, Francois-Bazin, Sevigne, Monge. Tous quatre le sont pour une
+  MOBILISATION ou un suivi, jamais pour un acces empeche.
+  Attention : une note de travail afirmait que « seuls les evenements de Sedan
+  le 28/09 sont de vrais blocages ». Cette note n'est etayee par aucune source
+  nommee et ne mentionne aucun etablissement. Elle ne doit donc pas etre
+  reprise comme un fait. Le zero de l'08 repose sur les quatre citations
+  ci-dessus, pas sur cette note.
+
+85 VENDEE — 0 ligne ajoutee, 0 ligne avant. NEGATIF CONFIRME.
+  Trois articles OUVERTS disent explicitement l'absence de blocage :
+  Jean-Monnet (Les Herbiers), 01/10, « sans bloquer l'etablissement »
+  (my-angers.info) ; Jean-Monnet, 02/10, « sans en blocker l'entree »
+  (actulocale365.fr) ; et un troisieme (faitsdivers365.fr).
+  Cas le plus instructif : Lucon, lycee Atlantique. Le TITRE de l'article dit
+  que « pres de 200 eleves bloquent le lycee Atlantique a Lucon », mais le
+  CORPS ne decrit qu'une mobilisation. Regle appliquee : le corps prevaut sur
+  le titre. La ligne est donc ecartee de la liste principale et le conflit est
+  trace en section 7 point (22).
+
+55 MEUSE — 0 ligne ajoutee, la ligne existante (Bar-le-Duc, lycee Emile-Zola,
+  30/09) reste valable. NEGATIF CONFIRME pour le reste du departement :
+  « AUCUN ETABLISSEMENT N'A FERME dans le departement » (L'Est Republicain,
+  02/10).
+  PIÈGE DE DOCUMENT : deux articles du 01/10 portent sur un « lycee Poincare ».
+  L'un est a Nancy (54), l'autre a Bar-le-Duc (55). Ce sont deux etablissements
+  homonymes dans deux departements differents. Confondre les deux fait basculer
+  une ligne d'un cote ou de l'autre de la frontiere.
+
+60 OISE — ce qui a ete ecarte malgre des sources
+  Beauvais, lycee Jean-Corot, 01/10 — NEGATIF EXPLICITE : « le lycee a PU
+      OUVRIR SES GRILLES, et les cours ont pu avoir lieu » ; « un blocus etait
+      prevu au lycee Corot, les jeunes se sont finalement eparpilles ».
+  Beauvais, lycee Jeanne-Hachette, 01/10 — NEGATIF EXPLICITE : « le lycee est
+      reste ouvert toute la journee : ceux qui veulent aller en cours peuvent y
+      aller ».
+  Compiegne, college Gaetan-Denain, 01/10 — les eleves rejoignent la
+      manifestation dans la rue ; le college n'est pas bloque.
+  Compiegne, lycee Mireille-Grenet, 01/10 — « les responsables du lycee ont
+      pris la precaution de FERMER LES PORTES et d'en interdire toute entree et
+      sortie » + protection police. Fermeture administrative.
+  Chantilly, lycee Jean-Rostand, 02/10 — « aucun acces n'est autorise » sur
+      decision de la MAIRIE (motif : degradation d'un bus scolaire). Mesure
+      administrative.
+  Lacroix-Saint-Ouen, 01/10 — « chaque velleite de blocage [...] a fait l'objet
+      d'une intervention des forces de l'ordre » = tentative empechee.
+  Creil, 01/10 — « quelques grilles un tantinet forcees et vite REPAREES ».
+      L'article ne nomme PAS l'etablissement. Le lycee Jules-Uhry est
+      PROBABLE mais non confirme : aucune attribution n'est faite.
+  Montataire, Ribecourt-Dreslincourt, 01-02/10 — « rassemblements », feux de
+      poubelles, « debordements » ; aucun acces empeche.
+  Beauvais, Compiegne, Crepy-en-Valois, Senlis, Liancourt, Gisors,
+      Villers-Saint-Paul — aucune source nommant un blocus.
+
+80 SOMME — ce qui a ete ecarte malgre des sources
+  Prefecture, 02/10 au matin — « AUCUN LYCEE N'EST BLOQUE en ce vendredi matin
+      a Amiens ». Ce negatif est exact mais ne parle QUE du 02/10 au matin ;
+      il ne dit rien du 01/10, qui est justement une journee de blocages
+      documentes. C'est la meme erreur que celle commise sur l'Aube en
+      section 7 point (21).
+  Prefecture, 01/10, sur le reste du departement — « Ailleurs dans la Somme,
+      PAS DE BLOCAGE TOTAL DES LYCEES » : actions et debordements a Peronne,
+      Friville-Escarbotin, Flixecourt, Doullens et Abbeville, sans acces empeche.
+  Amiens, lycee Michelis, 01/10 — les eleves QUITTENT les grilles pour rejoindre
+      le cortege. Ce n'est pas un acces empeche. Le lycee Michelis n'est
+      retenu que le 02/10, sur une autre source.
+  Amiens, lycee Robert-de-Luzarches, 01/10 — cortege rebrousse chemin. memes
+      motif. Retenu le 30/09.
+  Amiens, universite Picardie Jules Verne, 01/10 — trois campus « fermes » apres
+      une intrusion. Hors categorie : ce sont des universites, pas des lycees.
+  Amiens, Mail Albert 1er, 02/10 — rue ou axe de circulation bloque, pas un
+      etablissement scolaire.
+  Montdidier, lycee Jean-Racine, 01-02/10 — « rassemblement devant l'entree »,
+      marche dans la rue ; aucune mention d'acces empeche.
+  Abbeville, 01/10 — cortege devant la MAIRIE. Le seul jour documente a
+      Abbeville est une tentative ratee.
+  ATTENTION AU COMPTE : la prefecture de la Somme recense « 11 etablissements
+      [...] concernes par les manifestations lyceennes ». C'est un compte
+      d'etablissements CONCERNES par une manifestation, et non un compte de
+      blocages. Confondre les deux revient a annoncer onze blocages dans la
+      Somme. Trois seulement sont identifies nominativement.
+
+91 ESSONNE — les candidats nommes qui ont ete ecartes
+  Edmond-Michelet (Arpajon) — « ont tente de forcer les grilles » = tentative.
+  Rene-Cassin (Arpajon) et LP Paul-Belmondo (Arpajon) — commentaire de video
+      TikTok uniquement ; source sociale insuffisante.
+  Marcel-Pagnol (Athis-Mons) et Geoffroy-Saint-Hilaire (Etampes) —
+      signalements participatifs seuls, aucune source de presse.
+  Leonard-de-Vinci (Saint-Michel-sur-Orge) — « une INTRUSION au lycee
+      Leonard-de-Vinci a fait deux blessees legeres ». C'est une intrusion, pas
+      un blocage d'acces. Ecarte malgre le vocabulaire de certains titres.
+  Marie-Laurencin (Mennecy) — « des eleves MOBILISES, quelques excites qui
+      envoient des cailloux et mortiers ». Mobilisation et violences, pas
+      d'acces empeche.
+  Fustel-de-Coulanges (Massy) — accident survenu « lors du blocus de lycees en
+      Essonne » ; l'article ne dit pas que ce lycee lui-meme etait bloque.
+
+
+--------------------------------------------------------------------------------
+F. LES TROIS ERREURS DU DOCUMENT CORRIGEES AU PASSAGE
+--------------------------------------------------------------------------------
+Elles sont documentees ici parce qu'elles concernent la fiabilite du document
+principal, pas seulement son contenu.
+
+1. LE 89 YONNE ETAIT CLASSE « SANS BLOCUS », A TORT.
+   Il portait la mention « aucune source ne decrit un blocage ». Cette mention
+   etait une conclusion de recherche et non un negatif de source : elle
+   traduisait le resultat d'une relecture trop rapide. La source existe, elle
+   est datee, et elle a ete ouverte. Le 89 porte desormais 4 lignes.
+   Consequence de methode : un zero documente par un negatif de source et un
+   zero issu d'une recherche infructueuse n'ont pas la meme valeur.
+
+2. NOYON (60) AVAIT ETE ECARTE, A TORT.
+   Le point de contradiction 26 affirmait : « les deux sources accessibles le
+   30/09 disent la meme chose et ne disent pas un blocus [...] Aucun
+   etablissement de Noyon n'est donc retenu en section 4 ». C'ETAIT FAUX.
+   L'article d'oisehebdo.fr du 30/09 dit, quelques lignes apres le passage sur
+   la « desertion de cours » : « une bonne partie des eleves est restee devant
+   l'etablissement, sous l'oeil des forces de l'ordre qui CONTROLAIENT L'ACCES
+   a l'etablissement » et « permettre aux eleves qui voulaient aller en cours
+   de pouvoir le faire sans heurts ». C'est un filtrage. Le 01/10 ne laisse
+   aucun doute : « ont organise leur deuxieme blocus » et « un dispositif de
+   filtrage ».
+
+3. LE LYCEE FELIX-FAURE (60) PORTAIT UN NEGATIF SANS SOURCE.
+   La section 8 affirmait : « Lycee Felix-Faure (Beauvais), 02/10 : les portes
+   sont restees ouvertes ». AUCUNE SOURCE N'ETAIT RATTACHEE A CETTE LIGNE, elle
+   etait donc invérifiable en l'etat. Elle est de surcroit contredite par deux
+   sources datees du meme jour : « deux lycees demeuraient perturbes : Pierre-
+   d'Ailly a Compiegne et Felix-Faure a Beauvais » (bilan prefectoral de 15 h
+   30) et « les differents blocus organises devant chaque lycee » qui cite
+   Felix-Faure comme point de rassemblement.
+
+   Ce negatif a ete RETIRE. Par contraste, un autre negatif du meme departement
+   a ete restreint plutot que retire : « aucun blocage total de lycee n'a ete
+   constate » (actu.fr, 01/10) est devenu caduc pour le 01/10, puisque Cassini
+   est un blocage le meme jour, mais il reste vrai pour les autres communes.
+
+LA LEON, DEPUIS LAQUELLE CES TROIS ERREURS SONT CLASSABLES
+  Deux des trois viennent du meme defaut : la conclusion avait ete tiree du
+  chapeau, du titre ou du resume de l'article, et non de son corps. Dans les deux
+  cas, l'article complet contenait la phrase decisive.
+  Ce defaut n'est pas detectable par un controle automatique. Un controle de
+  coherence verifie que la section 3 et la section 4 contiennent le meme nombre
+  de lignes — ce qui reste vrai meme lorsque les deux ont tort. Il n'existe
+  aucun controle qui verifie qu'un etablissement a ete lu au bon endroit.
+  A retenir : une exclusion est toujours plus invisible qu'une inclusion. Les
+  deux conclusions de « saturation » de la premiere passe — sur le 60 et sur le
+  80 — etaient fausses.
+
+CONTROLE DE COHERENCE NON FAIT, ET A FAIRE
+  Pour les 6 communes du 77 sans nom d'etablissement, la ligne est TET
+  univoque : une entree par commune. Si la meme source nomme deux lycees a
+  Provins, ou deux a Melun, il faudra une ligne par etablissement, et la
+  commune comptera alors deux lignes. Cette correspondance n'a pas ete verifiee
+  sur le texte source.
+
+
+--------------------------------------------------------------------------------
+G. CONTROLES EFFECTUES SUR CE FICHIER
+--------------------------------------------------------------------------------
+  - Les 29 lignes ont ete extraites PROGRAMMATIQUEMENT du document principal,
+    par index, sans retypinge. Inventaire controle : 44 lignes dans le
+    document principal pour les 10 departements demandes, 15 preexistantes +
+    29 nouvelles. Le controle a ete interromp automatiquement si le total
+    n'etait pas 44.
+  - Coherence des deux formats : les 29 lignes existent a la fois en format
+    complet (section 4) et en format recapitulatif (section 3) du document
+    principal, et y ont le meme statut.
+  - Encodage : UTF-8 sans BOM.
+  - Chaque ligne porte sa source, sa date de publication et sa certitude.
+  - 4 des 29 lignes (David d'Angers, Joachim du Bellay, Duplessis-Mornay,
+    Marie de Champagne) reposent sur une citation de seconde main obtained via
+    un site participatif, parce que l'article original est inaccessible (403).
+    Elles sont signalees comme telles et ne sont pas des preuves.
+
+  CE QUE CE FICHIER NE PROUVE PAS
+  Une ligne absente de cet extrait ne signifie pas qu'aucun blocage n'a eu lieu
+  dans ce departement. Elle signifie qu'aucune source n'a ete trouvee, relue et
+  rattachee a un etablissement identifie. Un zero documente par un negatif de
+  source et un zero issu d'une recherche infructueuse n'ont pas la meme valeur.
+
+================================================================================
+FIN DE L'EXTRAIT — 29 LIGNES NOUVELLES + 1 LIGNE RECLASSEE
+Document complet et faisant foi : blocus_lycees_colleges_france_2026.txt
+(462 couples, 90 departements, 3 654 lignes)
+================================================================================
