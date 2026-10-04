@@ -1,0 +1,43 @@
+# Lot 3 — Hauts-de-France + Normandie
+
+Etablissements deja releves mais **non rattaches**. URL de presse fournie :
+la recuperer en premier.
+
+| # | Etablissement | Commune | Dept | Piste | URL fournie |
+|---|---|---|---|---|---|
+| 1 | Lycée Yourcenar | Bethune | 62 | — | https://www.lavoixdunord.fr/1742176/article/2026-10-01/colere-dans-les-lycees-du-nord-et-pas-de-calais-un-proviseur-hospitalise-une |
+| 2 | Lycée Jean Bart | Calais | 62 | college Jean Macle a Calais — piste erronee, A VERIFIER | https://www.nordlittoral.fr/299564/article/2026-09-30/calais-lille-roubaix-dunkerque-ou-en-est-la-mobilisation-des-lyceens-ce-mercredi |
+| 3 | Lycée Saint-Joseph | Boulogne-sur-Mer | 62 | college prive Saint-Joseph de Navarin (Boulogne) — piste erronee, A VERIFIER | https://www.lavoixdunord.fr/1742176/article/2026-10-01/colere-dans-les-lycees-du-nord-et-pas-de-calais-un-proviseur-hospitalise-une |
+| 4 | Lycée Woillez | Montreuil | 62 | — | https://www.lavoixdunord.fr/1742371/article/2026-10-01/embrasement-de-la-colere-dans-les-lycees-plus-de-manifestants-plus-de-blesses |
+| 5 | Lycée Delamare-Deboutteville | Darnetal | 76 | — | https://www.paris-normandie.fr/id748927/article/2026-09-30/gaz-lacrymogenes-incendie-garde-vue-ou-en-sont-les-blocus-et-mobilisations |
+| 6 | Lycée Alexis de Tocqueville | Saint-Lo | 50 | ⚠ l'article parle de 300 eleves mobilises au **lycée Millet a Cherbourg**, pas a Saint-Lo. Verifier lequel des deux est reellement bloque. | https://actu.fr/normandie/cherbourg-en-cotentin_50129/on-bloque-plus-personne-ne-rentre-300-eleves-mobilises-au-lycee-millet-a-cherbourg_64851171.html |
+| 7 | Lycée Millet | Cherbourg-en-Cotentin | 50 | decrit dans l'article du lot | https://actu.fr/normandie/cherbourg-en-cotentin_50129/on-bloque-plus-personne-ne-rentre-300-eleves-mobilises-au-lycee-millet-a-cherbourg_64851171.html |
+| 8 | Lycée Sivard de Beaulieu | Coutances | 50 | meme article, a verifier | https://actu.fr/normandie/cherbourg-en-cotentin_50129/on-bloque-plus-personne-ne-rentre-300-eleves-mobilises-au-lycee-millet-a-cherbourg_64851171.html |
+| 9 | Lycée Le Verrier | Carentan-les-Marais | 50 | meme article, a verifier | https://actu.fr/normandie/cherbourg-en-cotentin_50129/on-bloque-plus-personne-ne-rentre-300-eleves-mobilises-au-lycee-millet-a-cherbourg_64851171.html |
+
+## Articles de liste a exploiter en priorite
+
+Les deux articles La Voix du Nord citent plusieurs etablissements du Nord et du
+Pas-de-Calais : les **extraire tous**, c'est du rendement pur.
+
+- https://www.lavoixdunord.fr/1742176/article/2026-10-01/colere-dans-les-lycees-du-nord-et-pas-de-calais-un-proviseur-hospitalise-une
+- https://www.lavoixdunord.fr/1742371/article/2026-10-01/embrasement-de-la-colere-dans-les-lycees-plus-de-manifestants-plus-de-blesses
+- https://www.nordlittoral.fr/299564/article/2026-09-30/calais-lille-roubaix-dunkerque-ou-en-est-la-mobilisation-des-lyceens-ce-mercredi
+
+Chercher aussi la liste nominative des lycees bloques dans le Nord et le
+Pas-de-Calais (la Voix du Nord en publie souvent une : `"les lycees" bloques
+Nord Pas-de-Calais liste octobre 2026`).
+
+## Points d'attention
+
+- **Calais / Boulogne** : les pistes proposees sont des colleges. Verifier
+  quel etablissement a ete bloque (le lycee Jean Bart a bien existe a Calais ;
+  le college Jean Macle aussi — ils sont distincts).
+- **Saint-Lo (50)** : l'article concerne le lycee Millet a Cherbourg. Ne pas
+  attribuer le blocus a Saint-Lo sans source specifique.
+- Boulogne-sur-Mer : verifier si le libelle exact est « Lycee Saint-Joseph ».
+
+## Extensions
+
+Lille, Roubaix, Dunkerque, Calais, Boulogne, Arras, Valenciennes, Amiens, Rouen,
+Le Havre, Caen, Cherbourg, Dieppe.

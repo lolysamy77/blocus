@@ -1,0 +1,202 @@
+VAGUE 2 - LOT 1 - RESULTAT
+==============================================================================
+
+A remplir AU FUR ET A MESURE. Ne pas reconstruire a la fin.
+
+Fiches traitees : 0 / 17
+
+----------------------------------------------------------------------
+FICHE 1/17  Collège-lycée Carnot
+STATUT: TRANCHE (departement tranche : Dijon = 21)
+Etablissement retenu : Lycée général et technologique Carnot (0210015C), Dijon, 021 — boulevard Thiers, ce qui est bien Dijon. Le CSV ne contient aucun « collège-lycée Carnot » : c'est le nom usuel de presse pour le lycée.
+Jour(s) de blocus : 01/10/2026 uniquement (tentative de blocus). Le 02/10 est REClasse.
+Source(s) :
+ - https://www.ici.fr/bourgogne-franche-comte/cote-d-or-21/dijon/la-mobilisation-lyceenne-se-poursuit-en-cote-d-or-et-en-saone-et-loire-les-forces-de-l-ordre-presentes-7169294 (01/10) — ouverte
+ - https://www.ici.fr/bourgogne-franche-comte/cote-d-or-21/dijon/mobilisation-lyceenne-a-dijon-face-a-face-avec-la-police-au-lycee-carnot-rassemblement-devant-montchapet-4903783 (02/10) — ouverte
+ - https://www.ici.fr/bourgogne-franche-comte/cote-d-or-21/dijon/mobilisation-des-lyceens-20-gardes-a-vue-en-48-heures-quatre-jeunes-deferes-devant-la-justice-pour-des-violences-5577338 (02/10) — ouverte
+Note : RECLASSEMENT du 02/10. Carnot n'est PAS un blocus le 02/10 : l'article du 02/10 ne parle que d'un « rassemblement » devant des grilles restées ouvertes — pétards, tentative d'incendie de la porte d'entrée, deux vitres cassées — c'est de la violence, pas un accès empêché. La photo-article confirme que les deux seuls établissements fermés à Dijon le 02/10 sont Le Castel et Hippolyte-Fontaine, et que « tous les autres établissements de l'académie restaient ouverts ». Le statut « confirmé 02/10 » de la vague 1 est donc à corriger en « tentative 01/10 ».
+Ligne de donnees :
+21231| Lycée général et technologique Carnot|Dijon|021|Tentative de blocus|Poubelles installées devant l'entrée pour bloquer l'accès|01/10|2026-10-01|https://www.ici.fr/bourgogne-franche-comte/cote-d-or-21/dijon/la-mobilisation-lyceenne-se-poursuit-en-cote-d-or-et-en-saone-et-loire-les-forces-de-l-ordre-presentes-7169294|confirmé|« une partie des lycéens grévistes se sont aussi regroupés à la mi-journée devant le collège-lycée Carnot à Dijon, où des poubelles ont à nouveau été installées devant l'entrée de l'établissement pour tenter d'en bloquer l'accès. La police est immédiatement intervenue. »|ici.fr, 01/10
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 2/17  Lycée Germaine-Tillion
+STATUT: TRANCHE (Montbéliard, 25 — pas Audincourt)
+Etablissement retenu : Lycée polyvalent Germaine Tillion (0251994G), Montbéliard, 025 — INSEE 25388. Le CSV ne place aucun Germaine Tillion à Audincourt (25031).
+Jour(s) de blocus : 01/10/2026
+Source(s) :
+ - https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/ (01/10, maj 17h14) — ouverte
+ - https://letrois.info/societe/greve-des-lyceens-nouvelles-interpellations-a-belfort/ (déjà dans la base) — non rouverte
+Note : la commune « Audincourt » donnée par la vague 1 était fausse. La presse situe explicitement l'établissement à Montbéliard. DÉJÀ DANS LA BASE : `window.BLOCUS["25388|Lycée polyvalent Germaine Tillion"]` existe déjà avec le 01/10 (source France 3 / letrois.info). Rien à ajouter, l'ambiguïté de département est seulement levée.
+Ligne de donnees :
+25388|Lycée polyvalent Germaine Tillion|Montbéliard|025|Blocus national|Blocus national|01/10|2026-10-01|https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/|source unique|« À Montbéliard : le lycée Germaine-Tillion et le lycée Jules-Viette » (rubrique : « Plusieurs lycées sont concernés dans le Doubs par les incendies et les blocages »)|macommune.info, 01/10
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 3/17  Lycée Marcelin-Berthelot
+STATUT: TRANCHE (Toulouse, 31 — et non Pantin 93 / Saint-Maur 94 / Châtellerault 86)
+Etablissement retenu : Lycée général et technologique Marcelin Berthelot (0310039Z), Toulouse, 031 — INSEE 31555. Le CSV classe Toulouse à part des trois autres homonymes.
+Jour(s) de blocus : 01/10/2026 (blocus reconduit, après celui du 29/09 déjà enregistré)
+Source(s) :
+ - https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html (01/10 8h24, maj 22h19) — ouverte, direct Actu Toulouse
+Note : la liste est donnée dans un direct local de Toulouse, ce qui lève l'homonymie sans ambiguïté (« à Toulouse » + code commune 31555 dans l'URL). Attention, la presse écrit « Marcellin-Berthelot » avec deux l : c'est le même établissement. DÉJÀ DANS LA BASE : `31555|Lycée général et technologique Marcelin Berthelot` existe avec 29/09 (blocus, actu.fr) et 02/10 (fermeture administrative) ; c'est la ligne du 01/10 qui est à ajouter.
+Ligne de donnees :
+31555|Lycée général et technologique Marcelin Berthelot|Toulouse|031|Blocus national|Blocus national|01/10|2026-10-01|https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html|source unique|« 9h30. Un grand nombre d'établissements concernés — De nombreux lycées sont bloqués ce jeudi à Toulouse, incluant les lycées Toulouse-Lautrec, Urbain-Vitry, Saint-Sernin, Déodat de Séverac, Marcellin-Berthelot, Gallieni, Stéphane Hessel… »|actu.fr (Actu Toulouse), 01/10
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 4/17  Lycée Simone-Weil
+STATUT: TRANCHE sur l'établissement (Dijon, 021) mais RECLASSÉ : les deux sources de presse ne disent pas « bloqué »
+Etablissement retenu : Lycée polyvalent Simone Weil (0212015B), Dijon, 021 — INSEE 21231. C'est bien cet établissement qui est nommé, et non Le Puy-en-Velay (43), Paris 3e (75), Conflans (78), Saint-Priest-en-Jarez (42) ni Pantin (93).
+Jour(s) de blocus : 29/09/2026 — nature réelle : RASSEMBLEMENT + incidents, pas un blocus établi
+Source(s) :
+ - https://actu.fr/bourgogne-franche-comte/dijon_21231/blocage-des-lycees-a-dijon-deux-eleves-de-17-ans-interpelles-et-places-en-garde-a-vue_64854924.html (29/09 17h42) — ouverte
+ - https://www.ici.fr/emissions/l-info-d-ici-ici-bourgogne/blocages-des-lycees-on-n-est-pas-la-pour-avoir-la-guerre-la-mobilisation-degenere-devant-le-lycee-le-castel-a-dijon-4242560 (diffusé 01/10 07h32, décrit le 29/09) — ouverte
+ - https://dijoncter.info/blocage-en-cours-au-lycee-simone-weil-7093 — fil info militant, ÉCARTE (non recoupé)
+Note : la vague 1 s'appuyait uniquement sur dijoncter.info (« bloqué plusieurs heures »), source interdite non recoupée. J'ai cherché une seconde source : deux articles de presse indépendants existent bien, mais aucun ne dit que l'accès a été empêché — actu.fr écrit « un regroupement d'élèves s'est tenu devant le lycée Simone-Weil mardi matin » et parle de « feux de poubelles survenus dans le secteur », ici.fr cite Simone Weil à Dijon parmi les établissements concernés mardi sans qualifier l'action. Donc : établissement identifié, mais on ne peut PAS écrire « blocus » le 29/09. L'autre ligne de la fiche (Saint-Priest-en-Jarez, 42, 01/10) est un tout autre établissement et est déjà dans la base (`42275|Lycée Simone Weil`).
+Ligne de donnees :
+21231|Lycée polyvalent Simone Weil|Dijon|021|Rassemblement|Rassemblement + poubelles incendiées|29/09|2026-09-29|https://actu.fr/bourgogne-franche-comte/dijon_21231/blocage-des-lycees-a-dijon-deux-eleves-de-17-ans-interpelles-et-places-en-garde-a-vue_64854924.html|source unique|« À Dijon, un regroupement d'élèves s'est tenu devant le lycée Simone-Weil mardi matin. »|actu.fr, 29/09 (recoupé par ici.fr, 01/10 : « Stephen-Liégeard à Brochon et Simone Weil à Dijon mardi »)
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 5/17  Lycée professionnel Jacques Prévert
+STATUT: TRANCHE (Dole, 39 — et non Pont-Audemer 27) — mais source unique et formulation prudente
+Etablissement retenu : Lycée professionnel Jacques Prévert - Lycée des métiers de la mode, de la beauté et du bien-être (0390015E), Dole, 039 — INSEE 39198. Le CSV porte 10 « Prévert » ; celui de Dole est le seul cité par cet article, dont l'URL et le chapeau sont explicitement dolois (« manifestation sauvage des lycéens à Dole »). Le lycée Prévert de Pont-Audemer (27) est une autre action, publiée le même jour sur actu.fr : à ne pas confondre.
+Jour(s) de blocus : 01/10/2026
+Source(s) :
+  - https://actu.fr/bourgogne-franche-comte/dole_39198/manifestation-sauvage-des-lyceens-a-dole-que-sest-il-passe-ce-1er-octobre_64864500.html (01/10 11h56, maj 14h56) — ouverte
+Note : l'homonymie est levée sans ambiguïté (le slug de l'URL contient `dole_39198`, le texte ne cite que des lycées dolois). En revanche la NATURE est incertaine : le journaliste écrit « Quelques blocages ont pu être constatés devant les lycées Nodier, Prévert et Duhamel » — la formulation est explicitement dubitative et l'article ne dit nulle part si les accès du Prévert sont restés ouverts ; il ne documente en détail que Nodier (200 élèves, cortège vers l'hôtel de ville) et Duhamel (tirs de mortiers). J'ai cherché une seconde source indépendante (recherche web) : aucune ne nomme un blocage au Prévert de Dole. Je conserve donc la fiche en `source unique` et j'inscris la nature `Blocus national` telle que la presse la formule, avec la citation complète — mais qu'elle soit lue comme « blocage rapporté, non vérifié ». Si l'on exige un accès empêché démontré, la fiche doit sortir en NON TRANCHÉ.
+Ligne de donnees :
+39198|Lycée professionnel Jacques Prévert - Lycée des métiers de la mode, de la beauté et du bien-être|Dole|039|Blocus national|Blocage rapporté par la presse locale (formulation dubitative)|01/10|2026-10-01|https://actu.fr/bourgogne-franche-comte/dole_39198/manifestation-sauvage-des-lyceens-a-dole-que-sest-il-passe-ce-1er-octobre_64864500.html|source unique, formulation dubitative|« À Dole, l'appel à faire entendre sa voix dans l'espace public a été initié par le syndicat Solidaires étudiants. Quelques blocages ont pu être constatés devant les lycées Nodier, Prévert et Duhamel. »|actu.fr Dole (Voix du Jura), 01/10 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 6/17  Lycée Marcel-Sembat-Seguin
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 7/17  Lycée Montjoux
+STATUT: TRANCHE — nom de presse, pas un établissement : c'est le LPO Jules Haag de Besançon (25056)
+Etablissement retenu : LPO Jules Haag - Lycée des métiers de l'ingénierie microtechnique et des systèmes intelligents (0250011B), Besançon, 025 — INSEE 25056. Le CSV ne contient AUCUN établissement nommé « Montjoux » : « Montjoux » est le nom de la rue / du quartier où le lycée est installé.
+Jour(s) de blocus : 01/10/2026
+Source(s) :
+ - https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/ (01/10, maj 17h14) — ouverte
+Note : l'affirmation de la vague 1 « Montjoux est bien à Montferrand-le-Château (25) » est FAUSSE : la même source range nommément « le lycée Jules-Haag/Montjoux » dans la liste « À Besançon ». DÉJÀ DANS LA BASE : `window.BLOCUS["25056|Lycée polyvalent Jules Haag"]` existe déjà avec le 01/10 (« Blocus national + rassemblement », ici.fr/France 3). La ligne « Lycée Montjoux » est donc un doublon à supprimer, pas un établissement à créer.
+Ligne de donnees :
+25056|LPO Jules Haag - Lycée des métiers de l'ingénierie microtechnique et des systèmes intelligents|Besançon|025|Blocus national|Blocus national|01/10|2026-10-01|https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/|confirmé|« À Besançon : le lycée Victor-Hugo, le lycée Jules-Haag/Montjoux, le lycée professionnel Condé » ; « Au lycée Jules-Haag, les camions des sapeurs-pompiers ont été caillassés »|macommune.info, 01/10
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 8/17  ÉTAPE 3 — Lycée Lumière : façade incendiée vs blocus
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 9/17  Lycée Carnot
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 10/17  Lycée Gaston Darboux
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 11/17  Lycée Jean Macé
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 12/17  Lycée Lafayette
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 13/17  Lycée Nelson Mandela
+STATUT: TRANCHE (Pibrac, 31) — établissement ABSENT de build/blocus-recherche.js, ligne à ajouter
+Etablissement retenu : Lycée général et technologique Nelson Mandela (0312938A), Pibrac, 031 — INSEE 31417. Les autres Nelson Mandela du CSV sont à Nantes (44109), Poitiers (86194), Saint-Benoît (974), Sorbiers (42) : aucun rapport.
+Jour(s) de blocus : 01/10/2026
+Source(s) :
+ - https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html (01/10 8h24, maj 22h19) — ouverte
+Note : formulation explicite d'un blocus (« est bloqué depuis sept heures ce jeudi »), pas d'une simple mobilisation. J'ai vérifié par grep dans build/blocus-recherche.js : il n'existe que `25031|Lycée professionnel Nelson Mandela` (Audincourt) et `44109|Lycée Nelson Mandela` (Nantes) ; aucun code 31417. VRAIE LIGNE MANQUANTE. Le code INSEE 31459 donné par la vague 1 pour Pibrac est faux (31417 par geo.api.gouv.fr).
+Ligne de donnees :
+31417|Lycée général et technologique Nelson Mandela|Pibrac|031|Blocus national|Blocus national|01/10|2026-10-01|https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html|source unique|« 8h. Plusieurs lycées bloqués […] La métropole toulousaine n'est pas en reste : à Pibrac, par exemple, le lycée Nelson Mandela est bloqué depuis sept heures ce jeudi. »|actu.fr (Actu Toulouse), 01/10
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 14/17  Lycée Roger Verlomme
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 15/17  Lycée Toulouse-Lautrec
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 16/17  Lycée de Cornouaille
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 17/17  Lycée polyvalent Sonia-Francius (lycée IV)
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+==============================================================================
+RECAP
+----------------------------------------------------------------------
+Fiches tranchees et ajoutables : 
+Fiches NON TRANCHEES : 
+Fiches reclassees (pas un blocus) : 

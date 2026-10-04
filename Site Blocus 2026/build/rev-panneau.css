@@ -1,0 +1,115 @@
+/* ===========================================================================
+   rev-panneau.css — les revendications d'un établissement, dans le panneau.
+
+   Ce fichier ne fait qu'une chose : styler le bloc écrit par
+   build/rev-panneau.js. Il est à part du <style> de index.html pour deux
+   raisons — le panneau fait déjà deux cents lignes de CSS, et un bloc qui a sa
+   propre feuille se relit sans dépendre du reste.
+
+   Le panneau fait 272 px de large : tout ici est écrit pour cette largeur. Le
+   tableau a deux colonnes, la revendication et le pourcentage ; la colonne de
+   droite est fixe, parce qu'un pourcentage doit s'aligner d'une ligne à
+   l'autre — c'est la seule chose qui rend le tableau lisible quand les titres
+   sont de longueurs différentes.
+
+   Les couleurs viennent de build/theme.js, comme le reste du panneau.
+   =========================================================================== */
+
+#panneau .rv {
+  margin-top: 6px; padding: 9px 12px 11px;
+  border-top: 1px solid var(--bord);
+}
+
+/* --- l'en-tête : combien de revendications, combien de votants ------------- */
+#panneau .rv .rvh { display: flex; flex-direction: column; gap: 1px; margin-bottom: 7px; }
+#panneau .rv .rvh b { font-size: 12.5px; font-weight: 700; color: var(--texte); }
+#panneau .rv .rvh span { font-size: 11.5px; color: var(--texte-3); }
+
+/* --- le tableau ----------------------------------------------------------
+   Le tableau s'appelle .rvtab et non .rvt : .rvt est le titre d'une ligne.
+   Un même nom pour les deux ferait hériter le tableau du gras du titre.
+
+   Les deux colonnes ont un en-tête, lu mais pas montré : à 272 px de large, une
+   ligne « Revendication / Soutien » coûterait plus de place qu'elle n'en
+   apprendrait. La première colonne est un en-tête de ligne — c'est elle qui
+   nomme la ligne, et sans elle un lecteur d'écran lit des pourcentages sans
+   savoir de quoi ils parlent. */
+#panneau .rv table.rvtab {
+  width: 100%; border-collapse: collapse; table-layout: fixed;
+}
+#panneau .rv table.rvtab thead th {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+#panneau .rv table.rvtab td,
+#panneau .rv table.rvtab tbody th {
+  padding: 0 0 9px; vertical-align: top;
+}
+#panneau .rv table.rvtab tbody th { font-weight: normal; text-align: left; }
+#panneau .rv table.rvtab tbody tr:last-child td,
+#panneau .rv table.rvtab tbody tr:last-child th { padding-bottom: 2px; }
+/* la colonne du pourcentage : même largeur partout, alignée à droite, en
+   chiffres à chasse fixe — deux pour cent et vingt pour cent doivent s'aligner */
+#panneau .rv table.rvtab td.rvp,
+#panneau .rv table.rvtab th.rvp {
+  width: 64px; padding-left: 8px; text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+#panneau .rv .rvt { font-size: 12.5px; font-weight: 600; line-height: 1.3; color: var(--texte); }
+#panneau .rv .rvd { margin-top: 2px; font-size: 11.5px; line-height: 1.45; color: var(--texte-2); }
+/* l'état de la ligne : « à relire », combien de propositions, retenue le… */
+#panneau .rv .rvn { margin-top: 3px; font-size: 10.5px; line-height: 1.35; color: var(--texte-3); }
+
+/* --- la barre de soutien --------------------------------------------------
+   La part des élèves qui soutiennent la revendication, à l'échelle du
+   décompte. Une barre sans nombre ne veut rien dire : le nombre est à
+   droite, en clair. */
+#panneau .rv .rvb {
+  margin-top: 5px; height: 5px; border-radius: 20px;
+  background: var(--fonds-3); overflow: hidden;
+}
+#panneau .rv .rvb .rvf { display: block; height: 100%; background: var(--accent); border-radius: 20px; }
+
+#panneau .rv .rvp b { display: block; font-size: 14.5px; font-weight: 700; line-height: 1.15; color: var(--texte); }
+#panneau .rv .rvp span { display: block; font-size: 10.5px; line-height: 1.3; color: var(--texte-3); }
+#panneau .rv .rvp .rvp0 { font-size: 14.5px; color: var(--texte-3); }
+
+/* --- voter ---------------------------------------------------------------- */
+#panneau .rv .rvbts { display: flex; gap: 5px; margin-top: 6px; }
+#panneau .rv .rvbt {
+  flex: 1; padding: 4px 4px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--bord); background: var(--fonds);
+  font: 600 10.5px/1.2 inherit; color: var(--texte-2);
+}
+#panneau .rv .rvbt.oui { border-color: var(--accent-cible); color: var(--accent-2); background: var(--accent-pale); }
+#panneau .rv .rvbt:hover { border-color: var(--bord-2); background: var(--fonds-2); }
+#panneau .rv .rvbt.oui:hover { border-color: var(--accent); background: var(--accent-pale); }
+#panneau .rv .rvbt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* le vote déjà pris : il est compté, et on ne le refait pas */
+#panneau .rv .rvv {
+  margin-top: 6px; padding: 4px 7px; border-radius: 6px;
+  background: var(--fonds-2); border: 1px solid var(--bord);
+  font-size: 10.5px; line-height: 1.4; color: var(--texte-2);
+}
+#panneau .rv .rvv b { color: var(--texte); }
+#panneau .rv .rvv-non { background: var(--ambre-pale); border-color: var(--ambre-bord); color: var(--ambre); }
+
+/* --- ce qu'il reste sous le tableau --------------------------------------- */
+#panneau .rv .rva {
+  display: block; margin-top: 8px; padding: 7px; border-radius: 7px;
+  background: var(--accent-pale); color: var(--accent-2); text-decoration: none;
+  font: 600 11.5px/1.2 inherit; text-align: center;
+}
+#panneau .rv .rva:hover { background: var(--accent-cible); }
+#panneau .rv .rvnote { margin: 6px 0 0; font-size: 10.5px; line-height: 1.4; color: var(--texte-3); }
+#panneau .rv .rvmsg { margin: 4px 0 0; font-size: 11px; line-height: 1.4; }
+#panneau .rv .rvmsg:empty { margin: 0; }
+#panneau .rv .rvmsg-oui { color: var(--vert-fonce); }
+#panneau .rv .rvmsg-part { color: var(--ambre); }
+#panneau .rv .rvmsg-non { color: var(--rouge-fonce); }
+
+/* --- le vide : aucune revendication --------------------------------------- */
+#panneau .rv .rvi { padding: 2px 0 4px; font-size: 12px; line-height: 1.45; color: var(--texte-2); }
+#panneau .rv .rvi b { display: block; color: var(--texte); }
+#panneau .rv .rvi span { display: block; margin-top: 2px; color: var(--texte-3); font-size: 11.5px; }

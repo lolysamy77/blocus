@@ -1,0 +1,200 @@
+VAGUE 2 - LOT 3 - RESULTAT
+==============================================================================
+
+A remplir AU FUR ET A MESURE. Ne pas reconstruire a la fin.
+
+Fiches traitees : 0 / 18
+
+----------------------------------------------------------------------
+FICHE 1/18  Lycée Balzac
+STATUT: NON TRANCHE
+Etablissement retenu : aucun — le CSV ne contient aucun « Balzac » à Blois (41) ; le seul Balzac bloqué et sourcé est celui de Tours (37), déjà en base sous 37261.
+Jour(s) de blocus : —
+Source(s) : https://www.sweetfm.fr/de-blois-a-bourges-une-mobilisation-lyceenne-qui-se-durcit-en-centre-val-de-loire (01/10/2026) ; https://www.ici.fr/centre-val-de-loire/indre-et-loire-37/tours/des-degradations-et-trois-interpellations-en-marge-des-blocus-de-lycees-en-indre-et-loire-1156497 (29/09/2026)
+Note : L'attribution de la vague 1 (« Blois / 41 / entrée “Balzac” de la cité scolaire Robert-Badinter », 01/10/2026) est contredite par les sources. L'article Loir-et-Cher du 01/10/2026 ne cite à Blois qu'un blocus au « lycée Dessaignes », et précise que les élèves du « lycée Robert Badinter » ont participé au DÉFILÉ dans les rues de Blois, pas à un blocus ; il attribue par ailleurs explicitement Balzac à Tours : « Trois lycées de Tours — Balzac, Paul-Louis-Courier et Grandmont — ont été fermés dès ce jeudi après-midi ». Aucun établissement du CSV ne porte le nom « Balzac » en 41. Le blocus Balzac de Tours (29/09, 30/09, 01/10) est déjà dans build/blocus-recherche.js : rien à ajouter.
+Ligne de donnees : (néant) 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 2/18  Lycée Jean-Jacques Rousseau
+STATUT: TRANCHE — DÉJÀ DANS LA BASE (rien à ajouter)
+Etablissement retenu : Lycée polyvalent Jean-Jacques Rousseau — UAI 0950650R — Sarcelles — dept 095 (code INSEE commune 95585). Le CSV tranche l'homonymie : la ligne retenue est bien celle de Sarcelles, pas Montmorency (0950648N) ni Montpellier (EREA, 0340833W).
+Jour(s) de blocus : 24/09/2026
+Source(s) : build/blocus-recherche.js, clé `95585|Lycée Jean-Jacques Rousseau`
+Note : La fiche existe déjà dans la base avec exactement le même établissement et le même jour : `{ n: "Blocus (Blocus réprimé)", j: "24/09", z: "2026-09-24", p: "presse", q: "« le blocus a été réprimé violemment ce jeudi matin » ; 10 GAV", m: "france3-regions.fr, 25/09" }`. Aucune vérification web n'est nécessaire : la ligne de la vague 1 ne fait que confirmer l'existant. Le code 95585 annoncé par la vague 1 est bien celui du CSV pour Sarcelles.
+Ligne de donnees : (déjà en base — 95585|Lycée Jean-Jacques Rousseau, 24/09/2026, aucune modification) 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 3/18  Lycée René-Cassin
+STATUT: PARTIELLEMENT TRANCHE — une ligne NON TRANCHE (Rive-de-Gier), une ligne DÉJÀ EN BASE (Gonesse)
+Etablissement retenu : deux établissements distincts, à ne pas confondre.
+  (a) Lycée général et technologique René Cassin — Gonesse — dept 095 — code INSEE 95277. DÉJÀ EN BASE.
+  (b) Lycée professionnel René Cassin — UAI 0420029D — Rive-de-Gier — dept 042 — code INSEE 42186. NON TRANCHE.
+Jour(s) de blocus : (a) 23/09/2026 — (b) 01/10/2026 annoncé par la vague 1, non vérifié.
+Source(s) : (a) build/blocus-recherche.js, clé `95277|Lycée René Cassin` — (b) aucune source retrouvée malgré 3 recherches.
+Note : (a) La base contient déjà exactement cette ligne : `{ n: "Blocus (EDT surchargés, cantine, infirmerie)", j: "23/09", z: "2026-09-23", p: "presse", q: "« un blocus a lieu depuis mercredi 23 septembre »", m: "actu.fr, 30/09" }`. Rien à ajouter. (b) Pour Rive-de-Gier, aucune source de presse ne cite un blocus au lycée René Cassin : les recherches « René Cassin Rive-de-Gier bloqué », « Rive-de-Gier lycée bloqué 29/09 et 01/10 » et « Loire lycées bloqués 1er octobre liste » ne renvoient que des annuaires d'établissements, sans fait de blocus. La seule trace locale trouvée est une réception de délégation de lycéens en mairie, qui n'est pas un blocus. Conformément aux règles, je n'invente ni date ni URL : ligne abandonnée. ATTENTION si la source de la vague 1 ressurgit : le CSV donne bien « Lycée professionnel René Cassin » (0420029D) et non « Lycée polyvalent ».
+Ligne de donnees : (néant — (a) déjà en base sous 95277, (b) NON TRANCHE) 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 4/18  Lycée Turgot
+STATUT: TRANCHE
+Etablissement retenu : Lycée général et technologique Turgot — UAI 0750647W — Paris 3e Arrondissement — dept 075 (code INSEE commune 75103). Vérifié au CSV. Absent de build/blocus-recherche.js (aucune occurrence de « Turgot »).
+Jour(s) de blocus : 29/09/2026 (mardi, blocus partiel)
+Source(s) : https://www.actufrance24.fr/blocage-du-lycee-turgot-a-paris-consequences-de-la-greve-des-fonctionnaires-sur-le-point-dindice (29/09/2026 08:01) ; https://www.bfmtv.com/societe/manifestations/video-blocus-a-paris-le-lycee-turgot-a-ete-en-partie-bloque-ce-mardi-matin_VN-202609290303.html (titre, 29/09/2026)
+Note : Accès effectivement empêché (lignes de barrages aux entrées principales) -> c'est un blocus, pas un simple rassemblement. L'article cadre l'action dans une journée de grève des fonctionnaires, mais décrit des accès bloqués, pas une simple présence. Horodatage explicite : « mardi 29 septembre 2026 à 08:01 ». Le blocus est partiel (« en partie bloqué », « partiellement bloqué l'accès »), ce que je conserve dans la nature.
+Ligne de donnees : 75103|Lycée général et technologique Turgot|Paris 3e Arrondissement|075|Blocus national (partiel)|Blocus national (partiel)|29/09|2026-09-29|https://www.actufrance24.fr/blocage-du-lycee-turgot-a-paris-consequences-de-la-greve-des-fonctionnaires-sur-le-point-dindice|presse|« Ce mardi matin, des manifestants ont partiellement bloqué l'accès au lycée Turgot, situé dans le 3ᵉ arrondissement de Paris » ; « le blocage a concerné les entrées principales du lycée, où des panneaux ont été érigés et des manifestants ont formé des lignes de barrages » ; « des étudiants et des professeurs bloqués à l'extérieur »|actufrance24.fr, 29/09/2026 08:01 ; bfmtv.com, 29/09/2026 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 5/18  Cité scolaire du Banlay
+STATUT: RECLASSÉ — RASSEMBLEMENT, PAS UN BLOCUS (accès restés ouverts)
+Etablissement retenu : « Cité scolaire du Banlay » n'existe pas au CSV sous ce nom. La source nomme TROIS établissements du CSV, tous à Nevers (code INSEE 58194), dept 058 :
+  - 0580031U Lycée général et technologique Jules Renard
+  - 0580032V Lycée général et technologique Raoul Follereau
+  - 0580050P Lycée professionnel Jean Rostand
+Jour(s) de blocus : 29/09/2026 — mais ce n'est PAS un blocus (voir Note).
+Source(s) : https://www.lejdc.fr/nevers-58000/actualites/on-bloque-tout-parce-quon-nous-laisse-rien-plusieurs-centaines-deleves-mobilises-devant-leurs-lycees-a-nevers_15055004/ (Le Journal du Centre, 29/09/2026 15h26)
+Note : La fiche est tranchée, mais dans le sens du RECLASSEMENT. L'article nomme bien les trois lycées et confirme le lieu (« les différents établissements de la cité scolaire du Banlay »), donc la fiche n'est pas INTROUVABLE. En revanche la source elle-même refuse le mot « blocus » : « C'est un mouvement pacifique. Les gens qui voulaient rentrer dans le lycée ont pu le faire. » Selon la définition des consignes (« un blocus signifie que l'accès des élèves a été empêché » ; « le rassemblement devant des grilles lorsque les accès restent ouverts » n'est pas un blocage), c'est un RASSEMBLEMENT. Je fournis donc les trois lignes en nature « Rassemblement », à ne PAS compter comme blocus. À noter : Jean Rostand Nevers est DÉJÀ en base (clé `58194|Lycée professionnel Jean Rostand`) mais pour le 01/10 avec un blocus réel — les deux faits sont distincts et ne se contredisent pas.
+Ligne de donnees (RECLASSÉES, ne pas compter comme blocus) :
+58194|Lycée général et technologique Jules Renard|Nevers|058|Rassemblement|Rassemblement|29/09|2026-09-29|https://www.lejdc.fr/nevers-58000/actualites/on-bloque-tout-parce-quon-nous-laisse-rien-plusieurs-centaines-deleves-mobilises-devant-leurs-lycees-a-nevers_15055004/|presse|« plusieurs centaines de jeunes se sont rassemblés devant les entrées des lycées Raoul-Follereau, Jules-Renard et Jean-Rostand à Nevers, mardi 29 septembre, dès le matin » ; « C'est un mouvement pacifique. Les gens qui voulaient rentrer dans le lycée ont pu le faire. »|Le Journal du Centre, 29/09/2026
+58194|Lycée général et technologique Raoul Follereau|Nevers|058|Rassemblement|Rassemblement|29/09|2026-09-29|https://www.lejdc.fr/nevers-58000/actualites/on-bloque-tout-parce-quon-nous-laisse-rien-plusieurs-centaines-deleves-mobilises-devant-leurs-lycees-a-nevers_15055004/|presse|« plusieurs centaines de jeunes se sont rassemblés devant les entrées des lycées Raoul-Follereau, Jules-Renard et Jean-Rostand à Nevers, mardi 29 septembre, dès le matin » ; « C'est un mouvement pacifique. Les gens qui voulaient rentrer dans le lycée ont pu le faire. »|Le Journal du Centre, 29/09/2026 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 6/18  Lycée François-Mauriac–Forez Pierre-Desgranges
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 7/18  Lycée Joffre (Joseph Joffre)
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 8/18  Lycée Victor Hugo (Planoise)
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 9/18  Lycée Albert Camus
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 10/18  Lycée Ella-Fitzgerald
+STATUT: TRANCHE
+Etablissement retenu : Lycée polyvalent Ella Fitzgerald — UAI 0380081G — commune Vienne — dept 038 (code INSEE 38544). Confirmé au CSV. Absent de build/blocus-recherche.js (aucune occurrence de « Fitzgerald »).
+Jour(s) de blocus : 29/09/2026 (mardi)
+Source(s) : https://www.vivre-villes.fr/vienne/vienne-a-la-une/2026/09/29/blocage-ce-matin-du-lycee-ella-fitzgerald-a-st-romain-en-gal-et-150-manifestants-rassembles-devant-lhotel-de-ville-de-vienne/ (29/09/2026)
+Note : CORRECTION IMPORTANTE : la vague 1 avait écrit « Saint-Romain-en-Gal (69) ». C'est FAUX côté département. Le CSV officiel donne `0380081G ; Lycée polyvalent Ella Fitzgerald ; code_departement 038 (Isère) ; libelle_commune Vienne`. Le département fait autorité via le CSV -> 38, et non 69. La commune de rattachement retenue est donc Vienne (code INSEE 38544), celle du CSV ; la source alterne d'ailleurs elle-même entre « le lycée de Saint-Romain-en-Gal » (dans le chapeau) et « le lycée Ella Fitzgerald à Vienne » (dans le corps) : c'est le même site, un seul établissement. Nature retenue « Tentative de blocus » : la source emploie elle-même cette formulation (« dans le cadre de tentative de blocages de nombreux lycées ») tout en décrivant une mobilisation à l'ouverture « pour bloquer les entrées ».
+Ligne de donnees : 38544|Lycée polyvalent Ella Fitzgerald|Vienne|038|Tentative de blocus|Tentative de blocus|29/09|2026-09-29|https://www.vivre-villes.fr/vienne/vienne-a-la-une/2026/09/29/blocage-ce-matin-du-lycee-ella-fitzgerald-a-st-romain-en-gal-et-150-manifestants-rassembles-devant-lhotel-de-ville-de-vienne/|presse|« Ainsi, plusieurs centaines de jeunes se sont mobilisés de matin à l'ouverture devant le lycée Ella Fitzgerald à Vienne pour bloquer les entrées » ; « ce mardi 29 septembre, l'endroit le plus chaud ce matin était le lycée de Saint-Romain-en-Gal »|vivre-villes.fr, 29/09/2026 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 11/18  Lycée Guillaume-Fichet
+STATUT: TRANCHE
+Etablissement retenu : Lycée polyvalent Guillaume Fichet — UAI 0740013M — Bonneville — dept 074 (code INSEE 74042). Confirmé au CSV. Absent de build/blocus-recherche.js (aucune occurrence de « Fichet »).
+Jour(s) de blocus : 29/09/2026 (mardi, dès 7h environ)
+Source(s) : https://lepaysgessien.lemessager.fr/649358276/article/2026-09-29/classes-surchargees-chaleur-dans-les-batiments-les-eleves-du-lycee-guillaume (29/09/2026 16h53) ; https://www.ledauphine.com/education/2026/09/29/mouvement-social-du-29-septembre-une-centaine-de-lyceens-bloquent-un-lycee-de-chambery (29/09/2026) ; https://www.pcf74.fr/2026/09/education-nationale-soutenons-les-personnels-et-lyceens-mobilises-et-refusons-l-envoi-des-forces-de-l-ordre-aux-portes-des-etablissements.html
+Note : CORRECTION IMPORTANTE : la vague 1 avait écrit « Chambéry (73) ». C'est FAUX. Le CSV ne contient aucun Guillaume Fichet en Savoie ; le seul établissement de ce nom est `0740013M ; Lycée polyvalent Guillaume Fichet ; 074 Haute-Savoie ; Bonneville`. Les trois sources convergent sur BONNEVILLE : ledauphine (« Des lycéens de Guillaume-Fichet ont installé un blocus ce mardi 29 septembre devant leur établissement »), pcf74 (« à Bonneville, dès 7h, les élèves du lycée Guillaume Fichet ont organisé le blocage de l'établissement »), Le Pays Gessien (« de nombreux élèves du lycée Guillaume-Fichet de Bonneville ont bloqué l'entrée de leur établissement avec des barrières »). Le titre de l'article ledauphine évoque par ailleurs « un lycée de Chambery » bloqué le même jour, mais cet établissement n'est pas nommé : je ne l'attribue à personne. Accès empêché (barrières) -> c'est bien un blocus.
+Ligne de donnees : 74042|Lycée polyvalent Guillaume Fichet|Bonneville|074|Blocus national|Blocus national|29/09|2026-09-29|https://lepaysgessien.lemessager.fr/649358276/article/2026-09-29/classes-surchargees-chaleur-dans-les-batiments-les-eleves-du-lycee-guillaume|presse|« Peu avant 7 heures ce mardi 29 septembre 2026, de nombreux élèves du lycée Guillaume-Fichet de Bonneville ont bloqué l'entrée de leur établissement » ; « On a souhaité bloquer le lycée pour attirer l'attention sur nos conditions d'étude »|Le Pays Gessien, 29/09/2026 ; ledauphine.com, 29/09/2026 ; pcf74.fr, 29/09/2026 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 12/18  Lycée Jean-Rostand
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 13/18  Lycée Léonard de Vinci
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 14/18  Lycée Paul-Sérusier
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 15/18  Lycée Saint-Vincent-de-Paul
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 16/18  Lycée Vauvenargues
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 17/18  Lycée général et technologique Van Gogh
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 18/18  Lycée professionnel Henri Matisse
+STATUT: A TRANCHER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+==============================================================================
+RECAP
+----------------------------------------------------------------------
+Fiches tranchees et ajoutables : 
+Fiches NON TRANCHEES : 
+Fiches reclassees (pas un blocus) : 

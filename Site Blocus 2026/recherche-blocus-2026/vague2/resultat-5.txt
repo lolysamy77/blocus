@@ -1,0 +1,187 @@
+VAGUE 2 - LOT 5 - RESULTAT
+==============================================================================
+
+A remplir AU FUR ET A MESURE. Ne pas reconstruire a la fin.
+
+Fiches traitees : 0 / 17
+
+Convention : `code` = code INSEE de la commune (source : build/communes/XX.js,
+genere par IGN ADMIN EXPRESS), et non le code postal. Le dept fait autorite via
+lycees-france\lycees_brut.csv.
+
+----------------------------------------------------------------------
+FICHE 1/17  Lycee Deodat de Severac
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 2/17  Lycee Louis-Armand
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 3/17  Lycee Saint-Joseph
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 4/17  Lycee polyvalent Galilee
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 5/17  Lycee (nom exact non precise) (L'Isle-d'Abeau)
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 6/17  Lycee Jean-Baptiste-de-La-Salle / pole Le Puy
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 7/17  Lycee Marcel-Sembat-Seguin (cite scolaire Sembat-Seguin)
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 8/17  Lycee polyvalent Rive-Gauche (cite scolaire Rive Gauche)
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 9/17  Lycee Andre Boulloche
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 10/17  Lycee Francois-Villon
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 11/17  Lycee Jacques-Prevert
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 12/17  Lycee Jules-Lesven
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 13/17  Lycee Monge
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 14/17  Lycee Philippe Lamour
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 15/17  Lycee Simone-Veil
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 16/17  Lycee Vincent Van-Gogh
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 17/17  Lycee polyvalent Jean Mace (LPMM)
+STATUT: A TRANCHER
+Etablissement retenu :
+Jour(s) de blocus :
+Source(s) :
+Note :
+Ligne de donnees :
+----------------------------------------------------------------------
+
+==============================================================================
+RECAP
+----------------------------------------------------------------------
+Fiches tranchees et ajoutables :
+Fiches NON TRANCHEES :
+Fiches reclassees (pas un blocus) :

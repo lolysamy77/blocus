@@ -1,0 +1,54 @@
+# Lot 7 - Aquitaine : Gironde, Pyrenees-Atlantiques, Landes
+
+La region a ete peu traitee par les lots precedents. Bordeaux et son
+agglomeration Concentration des lycees, et la presse locale bordelaise
+(Actu Bordeaux, Sud Ouest, France3 Aquitaine) publie regulierement des
+listes nominatives.
+
+## Etape 1 - liste prioritaire
+
+Chercher un article qui **liste** les lycees bloques. Le meilleur rendement
+historique vient d'un direct du 01/10 ou du 02/10 qui nomme les etablissements
+un par un.
+
+- `lycees bloques Bordeaux 1er octobre 2026`
+- `blocus lycees Gironde liste`
+- `lycees sans eleves Gironde 2 octobre prefecture`
+- `lycees bloques Pau Bayonne 2026`
+
+## Etape 2 - etre precis sur ce qui est un blocus
+
+Distinguer strictement :
+- **blocus** = les eleves empechent l'acces a l'etablissement
+- **fermeture administrative** = la prefecture suspend les cours
+- **rassemblement** = les eleves se reunissent devant, sans bloquer l'entree
+
+Un article qui parle d'un **rassemblement devant le lycee** ne prouve pas un
+blocus. Le dire explicitement si c'est le cas.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée professionnel Les Menuts - Lycée des métiers de la coiffure, de la relation client et l'assistance aux organisations | Bordeaux | 033 | PROFESSIONNEL |
+| 2 | Lycée professionnel Odilon Redon | Pauillac | 033 | PROFESSIONNEL |
+| 3 | Lycée polyvalent Jean Renou | La Réole | 033 | POLYVALENT |
+| 4 | Lycée professionnel Jehan Duperier | Saint-Médard-en-Jalles | 033 | PROFESSIONNEL |
+| 5 | Institut agricole privé Saint-Jean Errecart de Saint-Palais | Saint-Palais | 064 | PROFESSIONNEL |
+| 6 | Lycée professionnel privé stella maris - Lycée des métiers des sciences biotechnologiques, paramédicales, sociales et du management commercial | Anglet | 064 | PROFESSIONNEL |
+| 7 | Lycée général et technologique du Pays de Soule | Chéraute | 064 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 8 | Ecole professionnelle privée Tangérine Formations | Pau | 064 | PROFESSIONNEL |
+| 9 | Lycée polyvalent Gaston Crampe | Aire-sur-l'Adour | 040 | POLYVALENT |
+| 10 | Lycée professionnel agricole de Sabres | Sabres | 040 | PROFESSIONNEL |
+| 11 | Lycée agricole privé Sainte-Elisabeth de Saint-Pandelon | Saint-Pandelon | 040 | PROFESSIONNEL |
+| 12 | Lycée professionnel Jean d'Arcet - Lycée des métiers de l'hôtellerie restauration, de la coiffure et de l'assistance à la gestion | Aire-sur-l'Adour | 040 | PROFESSIONNEL |
+| 13 | Lycée professionnel Porte du Lot - Lycée des métiers de la maintenance et des travaux publics | Clairac | 047 | PROFESSIONNEL |
+| 14 | Lycée polyvalent Val de Garonne - Lycée des métiers des techniques innovantes Val de Garonne | Marmande | 047 | POLYVALENT |
+
+## Pieges
+
+- **Montaigne** existe a Bordeaux et a Pessac/Saint-M... verifier.
+- **Pau**, **Bayonne**, **Biarritz**, **Montauban** (82) : ne pas melanger
+  Pau et Montauban, ce sont deux villes distinctes a 100 km.
+- Bordeaux : **Montaigne**, **Bordeaux Sud**, **P Descartes**, **Mauvezin**,
+  **Benauge**, **Flora Tristan** - plusieurs sont des **lycees moyen/longue duree**.

@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "note": "Revendications publiées, relues à la main, par établissement. La clé est « codeCommune|nom de l'annuaire », écrite partout de la même façon. Les identifiants ne sont pas dans ce fichier : ils se calculent, pour que les votes d'une revendication restent les mêmes quand elle passe de « proposée » à « publiée » (voir build/import-revendications.js).",
+  "etablissements": {}
+}

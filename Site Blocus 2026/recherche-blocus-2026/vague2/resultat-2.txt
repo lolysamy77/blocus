@@ -1,0 +1,193 @@
+VAGUE 2 - LOT 2 - RESULTAT
+==============================================================================
+
+A remplir AU FUR ET A MESURE. Ne pas reconstruire a la fin.
+
+Fiches traitees : 0 / 18
+
+----------------------------------------------------------------------
+FICHE 1/18  Lycée Auguste Renoir
+STATUT: TRANCHE — DÉJÀ DANS LA BASE (rien à ajouter)
+Etablissement retenu : UAI 0920131T — Lycée général et technologique Auguste Renoir, Asnières-sur-Seine (092), code INSEE 92004
+Jour(s) de blocus : 29/09/2026 (mardi)
+Source(s) : https://versailles.snes.edu/spip.php?article7917 — SNES-FSU 92, publié 30/09/2026, MAJ 02/10/2026 (page OUVERTE)
+Note : HOMONYME LEVÉ. La page SNES-FSU 92 (section départementale des Hauts-de-Seine) porte un encadré « Lycée Renoir d'Asnières : Communiqué des personnels soutenus par la section SNES-FSU / CGT de l'établissement », qui tranche sans ambiguïté le 92. Citation exacte : « Mardi 29 septembre 2026, le blocage du lycée Auguste Renoir par les lycéens exprimant pacifiquement leurs revendications a donné lieu à une escalade répressive entraînant quatre interpellations de nos élèves ». Écarté : Renoir de Cagnes-sur-Mer (06), de Limoges (87), de Paris 18e (075, LP technologique) et « Auguste et Jean Renoir » d'Angers (49). La ligne est DÉJÀ présente dans build/blocus-recherche.js sous `92004|Lycée Auguste Renoir` (29/09, q identique) → duplication, ne pas réinjecter.
+Ligne de donnees : (déjà en base) 92004| Lycée Auguste Renoir|Asnières-sur-Seine|092|Blocus national|1|29/09|2026-09-29|https://versailles.snes.edu/spip.php?article7917|syndical (SNES-FSU 92)|« Mardi 29 septembre 2026, le blocage du lycée Auguste Renoir par les lycéens ... quatre interpellations de nos élèves »|SNES-FSU 92, 30/09/2026
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 2/18  Lycée Henri-Bergson
+STATUT: NON TRANCHE
+Etablissement retenu : aucun
+Jour(s) de blocus : —
+Source(s) : https://www.cafepedagogique.net/2026/09/30/338-lycees-bloques-la-mobilisation-prend-de-l-ampleur/ (404 à l'ouverture, 8 tentatives sur 4 chemins de substitution : lemonde.fr → 402, 24matins.fr → ne nomme pas Bergson, franceinfo.fr → ne nomme pas Bergson, DDG → extrait seul)
+Note : DOUBLE PROBLÈME. (a) La variante « Bourges » est une invention : le CSV officiel ne contient QUE deux Henri Bergson — Angers (49, UAI 0491966W) et Paris 19e (075, UAI 0750711R) ; aucun établissement à Bourges (18). La fiche de vague 1 le signalait d'ailleurs elle-même (« inexistant à Bourges », « aucune source trouvée ») → à supprimer, sans report. (b) La variante Paris 19e / 29-09 ne repose que sur l'article du Café pédagogique, désormais inaccessible (404) ; le seul extrait récupéré via moteur de recherche dit « devant le lycée Bergson au Nord Est de Paris, un des 416 établissements perturbés ce mardi 29 septembre », ce qui désigne bien Paris 19e (le CSV ne contient aucun Bergson au nord-est de Paris ailleurs), mais un extrait de moteur de recherche n'est pas une source ouverte : impossible de produire la citation exacte exigée, et aucune seconde source (presse, Le Monde, Franceinfo, 24matins) ne cite nommément Henri-Bergson. Le seul autre élément le concernant est son inclusion dans l'arrêté préfectoral du 02/10 (interdiction de manifestation / fermeture), qui n'est PAS un blocus. Budget de 8 ouvertures atteint → abandon, conformément à la règle « un abandon est un résultat correct ».
+Ligne de donnees : —
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 3/18  Lycée Paul Éluard
+STATUT: TRANCHE — DÉJÀ DANS LA BASE (rien à ajouter)
+Etablissement retenu : UAI 0930125F — Lycée enseignement général et technologique Paul Eluard, Saint-Denis (093), code INSEE 93066
+Jour(s) de blocus : 28/09/2026 et 29/09/2026 (déjà enregistrés)
+Source(s) : https://fr.news.yahoo.com/paris-pantin-lille-plusieurs-lyc%C3%A9es-062125171.html — BFMTV, jeu. 1er octobre 2026 6:21 (page OUVERTE) ; source des 28-29/09 : https://www.tf1info.fr/... et liberation.fr 28/09 (citées par la base, non rouvertes)
+Note : HOMONYME LEVÉ. La BFMTV écrit explicitement « le lycée Paul-Éluard de Saint-Denis » (Saint-Denis = 93, pas Saint-Junien/87), confirmant aussi « les précédents jours de blocage des lycéens ». Le CSV ne contient aucun autre Paul Éluard que Saint-Junien (87, UAI 0870040W) et Saint-Denis (93, UAI 0930125F) : le 93 est donc le bon département. DÉJÀ présent dans build/blocus-recherche.js sous `93066|Lycée Paul Éluard` (28/09 + 29/09) → ne pas réinjecter. Noter que la ligne du 29/09 pointe vers une URL tf1info hors sujet (météo/neige) : à corriger par l'étape d'audit, pas ici.
+Ligne de donnees : (déjà en base) 93066| Lycée Paul Éluard|Saint-Denis|093|Blocus national|2|28/09 ; 29/09|2026-09-28 ; 2026-09-29|https://fr.news.yahoo.com/paris-pantin-lille-plusieurs-lyc%C3%A9es-062125171.html|presse|« le lycée Paul-Éluard de Saint-Denis a décidé de fermer ses portes ce jeudi [...] endommagé lors des précédents jours de blocage des lycéens »|BFMTV, 01/10/2026
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 4/18  Lycée Stéphane-Hessel
+STATUT: TRANCHE (blocus 01/10) — réserve à lever sur LG&T vs LP
+Etablissement retenu : Stéphane-Hessel de Toulouse (31), site 44 chemin Cassaing — CSV : 0311902Z « Lycée général et technologique Stéphane Hessel » et 0310091F « Lycée professionnel Stéphane Hessel », même adresse, Toulouse, code INSEE 31555
+Jour(s) de blocus : 01/10/2026 (jeudi)
+Source(s) : https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html — Actu Toulouse, direct du 01/10/2026, point 9h30 (page OUVERTE)
+Note : HOMONYME LEVÉ par le lieu. La source est un direct d'Actu Toulouse dont le point de 9h30 est titré « De nombreux lycées sont bloqués ce jeudi à Toulouse » et énumère des.lycées toulousains : le « Stéphane Hessel » cité est donc celui de Toulouse (31). Écartés sans discussion : Vaison-la-Romaine (84, UAI 0841117H) et Epernay (51, UAI 0510068X) — la presse toulousaine ne parle que de Toulouse. RÉSERVE : le CSV contient DEUX établissements Stéphane Hessel à Toulouse,和保护 both at 44 chemin Cassaing ; la presse ne dit pas lequel. La ligne est donc calibrée sur la clé déjà utilisée par build/blocus-recherche.js (`31555|Lycée général et technologique Stéphane Hessel`, qui porte déjà la fermeture administrative du 02/10) ; l'intégrateur doit savoir que le même événement couvre aussi 0310091F. Ne pas inventer un jour de blocus supplémentaire : seul le 01/10 est attesté ici.
+Ligne de donnees : 31555| Lycée général et technologique Stéphane Hessel|Toulouse|031|Blocus national|1|01/10|2026-10-01|https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html|presse|« De nombreux lycées sont bloqués ce jeudi à Toulouse, incluant les lycées Toulouse-Lautrec, Urbain-Vitry, Saint-Sernin, Déodat de Séverac, Marcellin-Berthelot, Gallieni, Stéphane Hessel… »|Actu Toulouse, 01/10/2026
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 5/18  6 bis. Pour mémoire — Lycée Alexis-de-Tocqueville de Cherbourg-en-Cotentin
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 6/18  Lycée Dessaignes-Delaunay
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 7/18  Lycée Jean-Joseph Fourier
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 8/18  Lycée Vercingétorix
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 9/18  Cité scolaire Jean-Marie Le Bris
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 10/18  Lycée Claude-Fauriel
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 11/18  Lycée Georges-Duby
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 12/18  Lycée Jean Monnet
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 13/18  Lycée Louis-Jouvet
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 14/18  Lycée Ozenne
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 15/18  Lycée Saint-Charles
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 16/18  Lycée Urbain-Vitry
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 17/18  Lycée général et technologique Franklin Roosevelt
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 18/18  Lycée polyvalent d'application de l'ENNA
+STATUT: A TRAITER
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+==============================================================================
+RECAP
+----------------------------------------------------------------------
+Fiches tranchees et ajoutables : 
+Fiches NON TRANCHEES : 
+Fiches reclassees (pas un blocus) : 

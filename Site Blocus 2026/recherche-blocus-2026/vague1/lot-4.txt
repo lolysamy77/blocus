@@ -1,0 +1,46 @@
+# Lot 4 — DOM : Martinique, Guyane, La Réunion, Mayotte
+
+Etablissements deja releves mais **non rattaches**. Ce lot est important :
+les DOM sont mal couverts par la presse nationale, et les etablissements
+portugais/antillais/guyanais sont souvent absents des bases de l'education
+nationale. Travailler ces lignes avec soin.
+
+| # | Etablissement | Commune | Dept | Piste | URL fournie |
+|---|---|---|---|---|---|
+| 1 | Lycée Dillon | Fort-de-France | 972 | college Jenny Alpha (ex Dillon 2) — piste a verifier | https://rci.fm/martinique/infos/Social/Dillon-Bellevue-Trinite-situation-tendue-autour-de-plusieurs-lycees-en-martinique-ce |
+| 2 | Lycée Léopold-Bissol | Le Lorrain | 972 | — | https://rci.fm/martinique/infos/Social/Dillon-Bellevue-Trinite-situation-tendue-autour-de-plusieurs-lycees-en-martinique-ce |
+| 3 | Lycée Léopold-Bissol | Le Lamentin | 972 | ⚠ verifier la commune : l'article parle de Dillon, Bellevue et Trinité. Le Lorrain et le Lamentin sont deux communes differentes. | idem |
+| 4 | Lycée Sonia-Francius | Saint-Laurent-du-Maroni | 973 | en realite c'est une **greve**, pas un blocus. Verifier si un blocus a eu lieu par ailleurs. | https://la1ere.franceinfo.fr/guyane/ouest-guyanais/lycee-sonia-francius-des-eleves-en-greve-a-saint-laurent-denoncent-des-repas-manques-des-journees-trop-longues-et-un-gymnase-toujours-attendu-1743696.html |
+| 5 | Lycée agricole et horticole | Saint-Joseph | 974 | — | https://la1ere.franceinfo.fr/reunion/blocage-des-lycees-des-centaines-d-eleves-rassembles-devant-plusieurs-etablissements-de-l-ile-ce-vendredi-matin-1744119.html |
+| 6 | Lycée du Nord / Younoussa Bamana | Mamoudzou | 976 | nom a clarifier : « Lycée du Nord (Bamana) » ou « Lycée Younoussa Bamana » | https://www.la1ere.francetvinfo.fr/mayotte/le-bac-approche-toujours-pas-de-prof-de-francais-des-eleves-bloquent-le-lycee-de-bandrele-ce-vendredi-matin-1744155.html |
+| 7 | Lycée de Bandrélé | Bandrélé | 976 | — | https://www.la1ere.francetvinfo.fr/mayotte/le-bac-approche-toujours-pas-de-prof-de-francais-des-eleves-bloquent-le-lycee-de-bandrele-ce-vendredi-matin-1744155.html |
+
+## Regle specifique a ce lot
+
+Les articles la1ere.franceinfo.fr **citent plusieurs etablissements a chaque
+article** (« devant plusieurs etablissements de l'ile »). Les extraire tous,
+c'est le meilleur rendement du lot.
+
+## Recherche a faire en plus
+
+- Reunion : chercher la liste des etablissements bloques le 2 octobre (l'article
+  parle de « centaines d'eleves rassemblees devant plusieurs etablissements »).
+  Presse : Le Meridien, Le Journal de l'ile de la Reunion, Franceinfo.
+- Martinique : RCI (rci.fm), Franceinfo Antilles, La Martiniere.
+- Guyane : Franceinfo Guyane, la1ere.franceinfo.fr/guyane, Le Guyana_.
+- Mayotte : Franceinfo Mayotte, K Infos, Mayotte Infos.
+- Mots-cles utiles : `blocage lycees Reunion`, `blocus etudiants Martinique`,
+  `greve lycees Guyane`, `blocus college Mayotte`, `mouvement lycee outre-mer`.
+
+## Points d'attention
+
+- **Le Lorrain vs Le Lamentin** : verifier la commune exacte dans l'article.
+- **Le lycée de Bandrélé a toujours bloque « ce vendredi matin »** : dater
+  precisement. Attention, ne pas confondre la date de l'article et celle du blocus.
+- **Sonia-Francius** : c'est une greve d'eleves. Si aucun blocus n'est documente,
+  l'ecrire clairement plutot que de forcer.
+
+## Livrables attendus
+
+Pour chaque etablissement : nom officiel complet, commune, nature (lycee general /
+professionnel / agricole / college), dates de blocus, sources.

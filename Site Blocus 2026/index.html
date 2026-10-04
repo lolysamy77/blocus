@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Communes de France</title>
+<link rel="stylesheet" href="build/carte-boutons.css">
+<link rel="stylesheet" href="build/rev-panneau.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    /* La couleur du texte se pose ici, et non pas seulement sur body : sinon
+       elle dépendrait de celle que le navigateur invente — le noir en clair,
+       le blanc en sombre. Les deux sont proches de --texte, mais ce sont deux
+       couleurs que la page ne contrôle pas, et c'est le texte de toute la
+       carte. */
+    overflow: hidden; background: var(--fonds); color: var(--texte);
+    font: 13px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #map {
+    display: block; width: 100%; height: 100%;
+    cursor: grab; touch-action: none;
+    user-select: none; -webkit-user-select: none;
+  }
+  #map.dragging { cursor: grabbing; }
+  #root { will-change: transform; }
+
+  /* ---------------- barre du haut : menus et filtre ----------------
+     Elle est posée sur toutes les pages, donc la carte doit commencer en
+     dessous. Sa hauteur est mesurée par la page et passée dans --haut :
+     le nombre d'entrées de la barre change selon la largeur de l'écran, on ne
+     peut donc pas l'écrire en dur dans la feuille de style. */
+  /* Son apparence est celle de build/nav.js, qui l'injecte partout ; il ne
+     reste ici que la façon dont elle est posée sur la page. */
+  #topbar { position: fixed; z-index: 26; top: 0; left: 0; right: 0; }
+
+  /* Ce que la barre caches : tout ce qui est calé sur le bord supérieur doit
+     descendre d'autant. */
+  #depbar { top: calc(var(--haut, 46px) + 14px); }
+  #panneau { top: calc(var(--haut, 46px) + 12px); }
+  #panelBtn { top: calc(50% + var(--haut, 46px) / 2); }
+  #wait { top: calc(var(--haut, 46px) + 14px); }
+  #accueil { padding-top: calc(var(--haut, 46px) + clamp(1rem, 4vh, 3rem)); }
+  @media (max-width: 619px) {
+    #panneau { max-height: calc(48vh - var(--haut, 46px) - 6px); }
+    #panelBtn { bottom: calc(52vh + 14px); top: auto; }
+  }
+
+  /* ---------------- communes ----------------
+     Le trait est gris et non blanc : les communes se touchent, et sur un fond
+     blanc un liseré blanc ferait disparaître la frontière du département. */
+  .com {
+    stroke: var(--bord-2); stroke-width: .5; stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+    transition: filter .12s ease, stroke .12s ease;
+    cursor: pointer;
+  }
+  .com:hover { filter: brightness(.9) saturate(1.1); }
+  /* .hl : survol d'une ligne de la liste ; .sel : commune sélectionnée.
+     Les deux règles ont la même spécificité, donc l'ordre compte : .sel passe
+     en dernier pour l'emporter quand une commune est à la fois survolée et
+     sélectionnée. */
+  .com.hl { stroke: var(--lien); stroke-width: 1.5; }
+  .com.sel { stroke: var(--texte); stroke-width: 1.8; }
+
+  /* ---------------- infobulle ---------------- */
+  #tip {
+    position: fixed; z-index: 20; top: 0; left: 0;
+    pointer-events: none; opacity: 0;
+    padding: 5px 9px; border-radius: 5px;
+    background: var(--fonds-veile); border: 1px solid var(--bord);
+    box-shadow: 0 2px 8px var(--ombre);
+    white-space: nowrap; transition: opacity .1s ease;
+  }
+  #tip.on { opacity: 1; }
+  #tip .n { font-weight: 600; color: var(--texte); }
+  #tip .c { color: var(--texte-3); margin-left: 7px; font-variant-numeric: tabular-nums; }
+
+  /* ---------------- panneau latéral ---------------- */
+  /* La distance au bord gauche, et la distance au bord supérieur que la barre
+     du haut réclame, sont posées plus haut (voir « Ce que la barre caches »).
+     Les répéter ici les annulerait : à spécificité égale, c'est la dernière
+     règle qui gagne, et le panneau repartirait se glisser sous la barre. */
+  #depbar {
+    position: fixed; z-index: 21; left: 14px;
+    display: none; flex-direction: column; gap: 8px;
+    width: 248px; max-width: calc(100vw - 28px);
+    /* la colonne ne doit jamais déborder sous le bas de la fenêtre : c'est la
+       liste des communes qui se rétrécit, le reste garde sa hauteur. Les 42px
+       laissés en bas sont ceux de la signature, posée dans ce coin. */
+    max-height: calc(100vh - var(--haut, 46px) - 42px);
+  }
+  #depbar.on { display: flex; }
+  #back {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 11px; border-radius: 6px; border: 1px solid var(--bord);
+    background: var(--fonds-veile); color: var(--texte); text-decoration: none;
+    font: 600 13px/1 inherit;
+    box-shadow: 0 2px 8px var(--ombre);
+  }
+  #back:hover { border-color: var(--bord-2); }
+  #dephead {
+    padding: 10px 12px 11px; border-radius: 7px;
+    background: var(--fonds-veile); border: 1px solid var(--bord);
+    box-shadow: 0 4px 18px var(--ombre);
+  }
+  #dephead .t { font-weight: 600; font-size: 15px; color: var(--texte); letter-spacing: -.2px; }
+  #dephead .s { margin-top: 2px; font-size: 11.5px; color: var(--texte-3); }
+  #dephead .r {
+    display: flex; align-items: center; gap: 7px;
+    margin-top: 9px; padding-top: 9px; border-top: 1px solid var(--bord);
+    font-size: 12.5px; color: var(--texte);
+  }
+  #dephead .r .dot {
+    width: 9px; height: 9px; border-radius: 50%; flex: none;
+    background: var(--bord); box-shadow: inset 0 0 0 1px var(--ombre);
+  }
+  #dephead .r .pct { margin-left: auto; font-variant-numeric: tabular-nums; }
+  #search {
+    width: 100%; padding: 7px 10px; border-radius: 6px;
+    border: 1px solid var(--bord); background: var(--fonds-veile);
+    font: 13px/1.3 inherit; color: var(--texte);
+  }
+  #search:focus { outline: none; border-color: var(--texte-3); }
+  #list {
+    /* 44vh suffit quand la fenêtre est haute, mais sur un écran court la
+       colonne entière dépassait le bas. flex: 1 / min-height: 0 laissent la
+       liste absorber ce qui reste, et sa propre hauteur maximale continue de
+       borner le cas courant. */
+    flex: 1 1 auto; min-height: 46px;
+    max-height: min(44vh, 372px); overflow-y: auto; overscroll-behavior: contain;
+    border-radius: 7px; border: 1px solid var(--bord);
+    background: var(--fonds-veile); box-shadow: 0 4px 18px var(--ombre);
+  }
+  #list .it {
+    display: flex; align-items: baseline; gap: 7px;
+    padding: 6px 11px; cursor: pointer; border-bottom: 1px solid var(--fonds-3);
+  }
+  #list .it:last-child { border-bottom: 0; }
+  #list .it:hover, #list .it.on { background: var(--fonds-3); }
+  #list .nm { color: var(--texte); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #list .cp { color: var(--texte-3); font-size: 11px; font-variant-numeric: tabular-nums; margin-left: auto; flex: none; }
+  #list .vide { padding: 11px 12px; color: var(--texte-3); font-size: 12.5px; }
+
+  /* ---------------- panneau des collèges, lycées et blocus ----------------
+     Amarré à droite, il présente deux vues : la liste des établissements de la
+     commune sélectionnée, puis le détail des blocus de l'établissement choisi.
+     Choisir une commune zoome la carte sur elle : le panneau n'a plus besoin
+     d'être relié à un point, la commune remplit l'écran. */
+  /* même raison que #depbar : le haut est posé plus haut, après la barre. */
+  #panneau {
+    position: fixed; z-index: 23;
+    right: 12px; bottom: 12px;
+    width: 272px; max-width: calc(100vw - 24px);
+    display: none; flex-direction: column; overflow: hidden;
+    border-radius: 9px;
+    background: var(--fonds-veile); border: 1px solid var(--bord);
+    box-shadow: 0 14px 34px -12px var(--ombre);
+  }
+  #panneau.on { display: flex; }
+  #panneau .ph {
+    display: flex; align-items: flex-start; gap: 8px; flex: none;
+    padding: 9px 8px 8px 12px; border-bottom: 1px solid var(--bord);
+    background: var(--fonds-veile);
+  }
+  #panneau .ph > div { min-width: 0; }
+  #panneau .pn {
+    font-weight: 600; font-size: 14px; color: var(--texte); line-height: 1.2;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  #panneau .ps { margin-top: 2px; font-size: 11.5px; color: var(--texte-3); font-variant-numeric: tabular-nums; }
+  #panneau .pf {
+    margin-left: auto; flex: none; width: 24px; height: 24px; padding: 0;
+    border: 0; border-radius: 6px; background: transparent; cursor: pointer;
+    color: var(--texte-3); font-size: 17px; line-height: 1;
+  }
+  #panneau .pf:hover { background: var(--fonds-3); color: var(--texte); }
+  #panneau .pb {
+    flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+    padding-bottom: 6px;
+  }
+  #panneau .pv[hidden] { display: none; }
+  #panneau h4 {
+    display: flex; align-items: center; gap: 6px;
+    margin: 10px 12px 3px; font-size: 10.5px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .07em; color: var(--texte-3);
+  }
+  #panneau h4 .nb {
+    font-variant-numeric: tabular-nums; letter-spacing: 0;
+    background: var(--fonds-3); color: var(--texte-2); border-radius: 20px; padding: 0 6px;
+  }
+  #panneau .ec {
+    padding: 6px 12px 7px; border-top: 1px solid var(--bord); cursor: pointer;
+  }
+  #panneau h4 + .ec { border-top: 0; }
+  #panneau .ec:hover { background: var(--fonds-2); }
+  #panneau .ec.actif { background: var(--fonds-3); box-shadow: inset 2px 0 0 var(--rouge-vif); }
+  #panneau .en { display: flex; align-items: baseline; gap: 6px; }
+  #panneau .en .nm { font-size: 12.5px; color: var(--texte); line-height: 1.25; }
+  #panneau .bg {
+    flex: none; margin-left: auto; font-size: 9.5px; font-weight: 600;
+    padding: 1px 6px; border-radius: 20px; letter-spacing: .02em;
+    border: 1px solid var(--bord); color: var(--texte-2); background: var(--fonds-2);
+  }
+  #panneau .bg.pr { border-color: var(--rouge-bord); color: var(--rouge-fonce); background: var(--rouge-pale); }
+  #panneau .em { margin-top: 2px; font-size: 11.5px; color: var(--texte-3); }
+  #panneau .ea { margin-top: 2px; font-size: 11.5px; }
+  #panneau .ea a { color: var(--lien); text-decoration: none; }
+  #panneau .ea a:hover { text-decoration: underline; }
+  #panneau .vide { padding: 12px; color: var(--texte-3); font-size: 12.5px; line-height: 1.45; }
+
+  /* vue « blocus » : retour, centrage, et un bloc par blocus */
+  #panneau .ret {
+    display: block; width: 100%; margin: 0; padding: 7px 12px;
+    border: 0; border-bottom: 1px solid var(--bord); background: var(--fonds-2);
+    font: 600 12px/1.2 inherit; color: var(--texte-2); text-align: left; cursor: pointer;
+  }
+  #panneau .ret:hover { background: var(--fonds-3); color: var(--texte); }
+  #panneau .ctr {
+    display: block; width: 100%; margin: 0; padding: 6px 12px;
+    border: 0; border-bottom: 1px solid var(--bord); background: transparent;
+    font: 600 11.5px/1.2 inherit; color: var(--lien); text-align: left; cursor: pointer;
+  }
+  #panneau .ctr:hover { background: var(--fonds-2); }
+  #panneau .bl { padding: 8px 12px 9px; border-top: 1px solid var(--bord); }
+  #panneau .bl:first-of-type { border-top: 0; }
+  #panneau .bn { font-size: 12.5px; font-weight: 600; color: var(--texte); line-height: 1.3; }
+  #panneau .bj { margin-top: 2px; font-size: 11.5px; color: var(--texte-2); }
+  /* le jour affiché : on dit ce que la carte montre, pour que « aucune
+     commune violette » ne se confonde pas avec « aucun blocus » */
+  #panneau .pj {
+    padding: 7px 12px; margin-bottom: 2px; font-size: 11px; line-height: 1.4;
+    color: var(--accent); background: var(--accent-pale); border-bottom: 1px solid var(--accent-pale-2);
+  }
+  /* le lien qui prouve le blocus : sans lui, un blocus n'est qu'une rumeur */
+  #panneau .bp { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
+  #panneau .bp a { font-size: 11px; color: var(--lien); text-decoration: none; }
+  #panneau .bp a:hover { text-decoration: underline; }
+  /* les médias cités quand la source n'a pas donné d'adresse : c'est moins
+     précis qu'un lien, mais ce n'est pas rien non plus */
+  #panneau .bp .bs { font-size: 10.5px; line-height: 1.4; color: var(--texte-3); }
+  #panneau .bp .bq {
+    margin-left: 5px; padding: 1px 5px; border-radius: 4px;
+    background: var(--fonds-3); color: var(--texte-2); font-size: 10px; font-weight: 600;
+  }
+  #panneau .bp > :first-child.bq { margin-left: 0; }
+  /* la citation : ce que la source a écrit, mot pour mot. Elle tient lieu de
+     lien quand le rapport n'a donné qu'un nom de média. Le filet violet est
+     plus lisible que la teinte pâle, qui disparaissait sur fond clair. */
+  #panneau .bc {
+    margin: 5px 0 0; padding: 5px 8px; border-radius: 0 6px 6px 0;
+    border-left: 2px solid var(--accent); background: var(--fonds-2);
+    font-size: 11px; line-height: 1.45; color: var(--texte-2);
+  }
+  #panneau .sig {
+    display: block; margin-top: 8px; padding: 7px; border-radius: 7px;
+    background: var(--accent-pale); color: var(--accent-2); text-decoration: none;
+    font: 600 11.5px/1.2 inherit; text-align: center;
+  }
+  #panneau .sig:hover { background: var(--accent-cible); }
+
+  /* Bouton de rappel, quand le panneau est masqué */
+  #panelBtn {
+    position: fixed; z-index: 23; right: 0; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 76px; padding: 0; border-radius: 7px 0 0 7px;
+    border: 1px solid var(--bord); border-right: 0; cursor: pointer;
+    background: var(--fonds-veile); color: var(--texte-2); font-size: 14px;
+    box-shadow: -2px 4px 12px var(--ombre);
+  }
+  #panelBtn:hover { color: var(--texte); background: var(--fonds); }
+
+  /* Calque écran : les marqueurs des établissements de la commune sélectionnée.
+     Il vit hors du groupe que le zoom transforme, donc les marqueurs gardent
+     la même taille à toute échelle. */
+  #overlay { pointer-events: none; }
+  #overlay .sc { fill: var(--rouge-vif); stroke: var(--fonds); stroke-width: 1.4; }
+  #overlay .sc.sec { fill: var(--bord-2); }
+  #overlay .sc.sel { fill: var(--texte); stroke: var(--fonds); stroke-width: 1.8; }
+  /* L'établissement que « Centrer sur l'établissement » vient d'amener au
+     milieu de l'écran : son point s'entoure, sinon on ne le retrouve pas dans la
+     carte agrandie. Cette passe après .sel et .sec, donc elle l'emporte sur la
+     couleur du texte. */
+  #overlay .sc.cent { fill: var(--rouge-vif); stroke: var(--fonds); stroke-width: 2.8; }
+  /* Sauf s'il n'est pas bloqué ce jour-là : le rouge veut dire « bloqué », et il
+     ne doit pas dire « on vient de le centrer ». Un tel point reste gris, et
+     s'épaissit comme les autres — c'est l'épaisseur qui le rend retrouvable. */
+  #overlay .sc.sec.cent { fill: var(--bord-2); }
+
+  /* ---------------- écran d'accueil : choix du département ---------------- */
+  #accueil {
+    position: fixed; z-index: 21; inset: 0;
+    display: none; flex-direction: column; align-items: center;
+    padding: clamp(1rem, 4vh, 3rem) 1rem;
+    overflow-y: auto;
+  }
+  #accueil.on { display: flex; }
+  #accueil > * { width: 100%; max-width: 760px; }
+  #accueil h1 { margin: 0; font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 700; letter-spacing: -.02em; color: var(--texte); text-align: center; }
+  #accueil p { margin: .5rem 0 1.25rem; text-align: center; color: var(--texte-2); font-size: 13.5px; }
+  #depSearch {
+    padding: 9px 12px; border-radius: 7px; border: 1px solid var(--bord);
+    background: var(--fonds); font: 14px/1.3 inherit; color: var(--texte);
+    box-shadow: 0 2px 8px var(--ombre);
+  }
+  #depSearch:focus { outline: none; border-color: var(--texte-3); }
+  #depGrid {
+    margin-top: 12px; display: grid; gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  }
+  #depGrid a {
+    display: flex; align-items: baseline; gap: 8px;
+    padding: 6px 10px; border-radius: 6px; text-decoration: none;
+    background: var(--fonds-2); border: 1px solid var(--bord); color: var(--texte);
+  }
+  #depGrid a:hover { background: var(--fonds-3); border-color: var(--bord); }
+  #depGrid a b { font-variant-numeric: tabular-nums; color: var(--texte-3); font-weight: 600; font-size: 11.5px; min-width: 22px; }
+  #depGrid a span { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #accueil .aucun { color: var(--texte-3); font-size: 13px; padding: 14px 2px; text-align: center; }
+
+  /* ---------------- messages ---------------- */
+  #wait {
+    position: fixed; z-index: 22; left: 50%; transform: translateX(-50%);
+    padding: 7px 14px; border-radius: 6px; font-size: 13px;
+    background: var(--fonds-veile); border: 1px solid var(--bord);
+    box-shadow: 0 2px 8px var(--ombre); color: var(--texte-2);
+    display: none; white-space: nowrap;
+  }
+  #wait.on { display: block; }
+
+  /* ---------------- bouton réinitialisation ---------------- */
+  #reset {
+    position: fixed; z-index: 21; right: 14px; bottom: 14px;
+    width: 32px; height: 32px; padding: 0; border-radius: 50%;
+    background: var(--fonds-veile); border: 1px solid var(--bord);
+    box-shadow: 0 2px 8px var(--ombre);
+    color: var(--texte-2); font-size: 17px; line-height: 1; cursor: pointer;
+    opacity: .32; transition: opacity .15s ease, color .15s ease;
+  }
+  #reset.on { opacity: 1; }
+  #reset:hover { color: var(--texte); opacity: 1; }
+
+  /* ---------------- la signature ---------------- */
+  /* Cette page est une carte pleine fenêtre, et elle ne défile pas : un pied
+     de page y serait écrit sous le bord de l'écran. La signature est donc
+     posée dans le coin bas gauche, à l'endroit où une carte porte sa source.
+     Elle ne capte rien au pointeur — on lit une carte en faisant glisser, et un
+     texte qui attrape le clic contrarierait ça. Sur un téléphone le bas de
+     l'écran est déjà pris par la colonne des communes : elle s'y cacherait, on
+     ne l'affiche donc pas — l'accueil, lui, la dit en clair. */
+  #signature {
+    position: fixed; z-index: 19; left: 14px; bottom: 5px;
+    margin: 0; pointer-events: none;
+    color: var(--texte-3); font-size: 11px; line-height: 1.2; opacity: .8;
+  }
+  #signature .signature { margin: 0; font-size: inherit; }
+  @media (max-width: 619px) { #signature { display: none; } }
+
+  /* ---------------- boutons de zoom ---------------- */
+  /* C'est build/map-zoom.js qui les pose et qui décide quand ils sont visibles ;
+     leur apparence est celle de build/carte-boutons.css, que la carte de France
+     partage. Il ne reste ici que la place qu'ils prennent, qui dépend du bas de
+     la fenêtre et du bandeau des établissements. */
+  #zoomCarte { position: fixed; right: 14px; bottom: 56px; flex-direction: column; }
+  /* Sous 900 px le bas de la fenêtre est déjà pris par le bandeau des
+     établissements : les deux boutons se couchent à côté du bouton de retour
+     plutôt que de se poser dessus. */
+  @media (max-width: 899px) {
+    #zoomCarte { flex-direction: row; right: 56px; bottom: 14px; }
+  }
+
+  /* ---------------- écrans étroits : panneaux en bandeau ---------------- */
+  /* Sous 900 px la carte n'a plus la place de réserver un bandeau à droite :
+     le panneau se pose alors par-dessus, en laissant le bouton de
+     réinitialisation visible. */
+  @media (max-width: 899px) {
+    #panneau { bottom: 54px; }
+  }
+  @media (max-width: 619px) {
+    #depbar {
+      left: 8px; right: 8px; width: auto; top: auto; bottom: 8px;
+      max-height: 52vh;
+    }
+    #list { max-height: 22vh; }
+    /* le panneau passe en bandeau sous la barre du haut */
+    #panneau {
+      bottom: auto; left: 8px; right: 8px; width: auto;
+    }
+    #panelBtn { top: auto; bottom: calc(52vh + 14px); height: 64px; transform: none; }
+    /* une commune sélectionnée : le panneau des établissements prend le haut, la
+       liste des communes se replie sur son en-tête pour laisser la carte au
+       milieu (voir zone) */
+    body.commune #search, body.commune #list { display: none; }
+  }
+</style>
+<script src="build/theme.js"></script>
+</head>
+<body>
+
+<svg id="map" xmlns="http://www.w3.org/2000/svg" aria-label="Carte des communes du département"></svg>
+
+<div id="tip"><span class="n"></span><span class="c"></span></div>
+
+<div id="accueil">
+  <h1>Communes de France</h1>
+  <p>Choisissez un département pour afficher ses communes et leurs limites.
+     Cliquez ensuite sur une commune&nbsp;: le panneau de droite liste ses
+     collèges et lycées, et le détail des blocus de chacun d'eux s'y affiche.</p>
+  <input id="depSearch" type="search" placeholder="Rechercher un département…" aria-label="Rechercher un département" autocomplete="off" spellcheck="false">
+  <div id="depGrid"></div>
+</div>
+
+<div id="topbar">
+  <nav id="nav" aria-label="Navigation principale"></nav>
+</div>
+
+<div id="depbar">
+  <a id="back" href="carte.html" title="Revenir à la carte de France">&larr;&nbsp; Carte de France</a>
+  <div id="dephead" aria-live="polite">
+    <div class="t"></div>
+    <div class="s"></div>
+    <div class="r"><span class="dot"></span><span class="who"></span><span class="pct"></span></div>
+  </div>
+  <input id="search" type="search" placeholder="Rechercher une commune…" aria-label="Rechercher une commune" autocomplete="off" spellcheck="false">
+  <div id="list"></div>
+</div>
+
+<div id="panneau" role="region" aria-label="Collèges et lycées de la commune">
+  <div class="ph">
+    <div>
+      <div class="pn"></div>
+      <div class="ps"></div>
+    </div>
+    <button class="pf" type="button" title="Masquer le panneau" aria-label="Masquer le panneau">&rsaquo;</button>
+  </div>
+  <div class="pb">
+    <div class="pv" data-v="liste"></div>
+    <div class="pv" data-v="blocus" hidden></div>
+  </div>
+</div>
+
+<button id="panelBtn" type="button" title="Afficher les collèges et lycées"
+        aria-label="Afficher les collèges et lycées" hidden>&lsaquo;</button>
+
+<div id="wait"></div>
+
+<button id="reset" title="Revenir à l'ensemble du département" aria-label="Revenir à l'ensemble du département">&#8635;</button>
+
+<!-- La signature — « qui a écrit ce site ». Cette page ne défile pas : un pied
+     de page y serait écrit sous le bord de l'écran, donc il est posé dans le
+     coin bas gauche, là où une carte porte d'ordinaire sa source. Le texte
+     lui-même est écrit une seule fois, dans build/nav.js. -->
+<footer id="signature"></footer>
+
+<!-- Quatre fichiers partagés avec les autres pages, puis les blocus.
+     La barre de menus, les couleurs, le filtre et la liste des blocus sont
+     écrits une seule fois : c'est ce qui garantit qu'un département violet
+     sur la carte de France et ses communes blanches ici racontent la même
+     chose. -->
+<script src="build/nav.js"></script>
+<script src="build/teinte.js"></script>
+<script src="build/blocus.js"></script>
+<script src="build/blocus-recherche.js"></script>
+<script src="build/revendications.js"></script>
+<script src="build/appareil.js"></script>
+<script src="build/rev-panneau.js"></script>
+<script src="build/filtre.js"></script>
+
+<script>
+"use strict";
+/* ===========================================================================
+   COMMUNES D'UN DÉPARTEMENT — 100 % hors-ligne
+   ---------------------------------------------------------------------------
+   Cette page ne dessine plus la France : elle montre un département et ses
+   communes. Le département est désigné par le fragment de l'adresse :
+
+       index.html#01        l'Ain
+       index.html#75        Paris, ses 20 arrondissements
+       index.html#971       la Guadeloupe
+
+   C'est carte.html — la carte de France — qui fournit ce lien : un clic sur
+   un département y conduit ici.
+
+   · Les contours communaux sont à côté, dans build/communes/XX.js, chargés à
+     la demande : un département pèse 10 à 740 Ko, tous ensemble 36 Mo, trop
+     pour être embarqués dans la page. Chaque fichier est un script autonome
+     et non du JSON, parce qu'une balise script src se charge en file:// alors
+     que fetch() y est bloqué : la page reste ouvrable par simple double-clic.
+   · Les collèges et lycées suivent la même voie, dans build/ecoles/XX.js
+     (2,2 Mo au total, 22 Ko par département). Une commune sélectionnée
+     alimente le panneau de droite : la liste de ses établissements, puis,
+     au clic sur l'un d'eux, le détail des blocus qui s'y tiennent. La liste
+     des blocus est lue dans build/blocus.js, seul fichier à compléter.
+     Choisir une commune agrandit la carte sur elle, et chaque établissement
+     est piqué à sa position.
+   · Métropole en Lambert conforme conique, outre-mer en équirectangulaire
+     locale, sur la latitude du département.
+   · Aucune requête réseau : tout est sur le disque.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. RÉSULTATS — seule partie à modifier
+   Clé = numéro du département ("01" … "95", "2A", "2B", "971" … "976").
+   Un département absent de cette table n'affiche pas de résultats.
+   --------------------------------------------------------------------------- */
+const results = {
+  "75":  { candidate: "Candidat A", percentage: 52.4, color: "#e30613" },
+  "13":  { candidate: "Candidat B", percentage: 48.7, color: "#2563eb" },
+  "69":  { candidate: "Candidat A", percentage: 51.2, color: "#e30613" },
+  "2A":  { candidate: "Candidat B", percentage: 54.1, color: "#2563eb" },
+  "06":  { candidate: "Candidat A", percentage: 49.8, color: "#e30613" },
+  "33":  { candidate: "Candidat A", percentage: 55.3, color: "#e30613" },
+  "59":  { candidate: "Candidat B", percentage: 50.6, color: "#2563eb" },
+  "974": { candidate: "Candidat A", percentage: 61.4, color: "#e30613" },
+  "971": { candidate: "Candidat B", percentage: 57.9, color: "#2563eb" },
+  "973": { candidate: "Candidat A", percentage: 58.2, color: "#e30613" }
+};
+
+/* ---------------------------------------------------------------------------
+   2. INDEX DES DÉPARTEMENTS — injecté par make_html.js (ne pas modifier)
+   Nom officiel de chacun des 101 départements.
+   --------------------------------------------------------------------------- */
+/* Nom officiel des 101 départements. */
+const DEPTS = {"10":"Aube","11":"Aude","12":"Aveyron","13":"Bouches-du-Rhône","14":"Calvados","15":"Cantal","16":"Charente","17":"Charente-Maritime","18":"Cher","19":"Corrèze","21":"Côte-d'Or","22":"Côtes-d'Armor","23":"Creuse","24":"Dordogne","25":"Doubs","26":"Drôme","27":"Eure","28":"Eure-et-Loir","29":"Finistère","30":"Gard","31":"Haute-Garonne","32":"Gers","33":"Gironde","34":"Hérault","35":"Ille-et-Vilaine","36":"Indre","37":"Indre-et-Loire","38":"Isère","39":"Jura","40":"Landes","41":"Loir-et-Cher","42":"Loire","43":"Haute-Loire","44":"Loire-Atlantique","45":"Loiret","46":"Lot","47":"Lot-et-Garonne","48":"Lozère","49":"Maine-et-Loire","50":"Manche","51":"Marne","52":"Haute-Marne","53":"Mayenne","54":"Meurthe-et-Moselle","55":"Meuse","56":"Morbihan","57":"Moselle","58":"Nièvre","59":"Nord","60":"Oise","61":"Orne","62":"Pas-de-Calais","63":"Puy-de-Dôme","64":"Pyrénées-Atlantiques","65":"Hautes-Pyrénées","66":"Pyrénées-Orientales","67":"Bas-Rhin","68":"Haut-Rhin","69":"Rhône","70":"Haute-Saône","71":"Saône-et-Loire","72":"Sarthe","73":"Savoie","74":"Haute-Savoie","75":"Paris","76":"Seine-Maritime","77":"Seine-et-Marne","78":"Yvelines","79":"Deux-Sèvres","80":"Somme","81":"Tarn","82":"Tarn-et-Garonne","83":"Var","84":"Vaucluse","85":"Vendée","86":"Vienne","87":"Haute-Vienne","88":"Vosges","89":"Yonne","90":"Territoire de Belfort","91":"Essonne","92":"Hauts-de-Seine","93":"Seine-Saint-Denis","94":"Val-de-Marne","95":"Val-d'Oise","971":"Guadeloupe","972":"Martinique","973":"Guyane","974":"La Réunion","976":"Mayotte","01":"Ain","02":"Aisne","03":"Allier","04":"Alpes-de-Haute-Provence","05":"Hautes-Alpes","06":"Alpes-Maritimes","07":"Ardèche","08":"Ardennes","09":"Ariège","2A":"Corse-du-Sud","2B":"Haute-Corse"};
+
+
+/* latitude des territoires d'outre-mer : repère de leur projection locale.
+   Ces cinq valeurs sont fixes, elles servent de constante au même titre que
+   les parallèles standards du Lambert. */
+const DOM_LAT = {
+  "971": 16.191,    // Guadeloupe
+  "972": 14.611,    // Martinique
+  "973":  3.410,    // Guyane
+  "974": -21.136,   // La Réunion
+  "976": -12.815    // Mayotte
+};
+const estDOM = function (code) { return DOM_LAT[code] !== undefined; };
+
+/* ---------------------------------------------------------------------------
+   3. PROJECTIONS
+   --------------------------------------------------------------------------- */
+const RAD = Math.PI / 180;
+
+/* Lambert conforme conique à deux parallèles standards */
+function lambert(p1, p2, p0, lon0) {
+  const n = Math.log(Math.cos(p1 * RAD) / Math.cos(p2 * RAD)) /
+            Math.log(Math.tan(Math.PI / 4 + p2 * RAD / 2) / Math.tan(Math.PI / 4 + p1 * RAD / 2));
+  const F = Math.cos(p1 * RAD) * Math.pow(Math.tan(Math.PI / 4 + p1 * RAD / 2), n) / n;
+  const rho0 = F / Math.pow(Math.tan(Math.PI / 4 + p0 * RAD / 2), n);
+  return function (lon, lat) {
+    const rho = F / Math.pow(Math.tan(Math.PI / 4 + lat * RAD / 2), n);
+    const th = n * (lon - lon0) * RAD;
+    return [rho * Math.sin(th), rho0 - rho * Math.cos(th)];   // y vers le nord
+  };
+}
+/* équirectangulaire locale, pour les petits territoires d'outre-mer */
+function plateCarree(lat0) {
+  const k = Math.cos(lat0 * RAD);
+  return function (lon, lat) { return [lon * k, -lat]; };
+}
+const metroProject = lambert(44, 49, 46.5, 3);
+
+/* ---------------------------------------------------------------------------
+   4. CHARGEMENT DES COMMUNES
+   ---------------------------------------------------------------------------
+   Format : {dep, nom, n, communes:[{c, n, z, p, l:[lon,lat], g:[["lon,lat …"]]}]}
+   où g est une liste de polygones, chaque polygone une liste d'anneaux dont le
+   premier est le contour extérieur.
+   --------------------------------------------------------------------------- */
+const COMMUNE_DIR = "build/communes/";
+const communeCache = {};
+
+function loadCommunes(code) {
+  if (communeCache[code]) return Promise.resolve(communeCache[code]);
+  return new Promise(function (resolve, reject) {
+    const s = document.createElement("script");
+    s.src = COMMUNE_DIR + code + ".js";
+    s.onload = function () {
+      const d = window.COMMUNES && window.COMMUNES[code];
+      if (d) { communeCache[code] = d; resolve(d); }
+      else reject(new Error("données illisibles"));
+    };
+    s.onerror = function () { reject(new Error("fichier absent : build/communes/" + code + ".js")); };
+    document.head.appendChild(s);
+  });
+}
+
+/* ---------------------------------------------------------------------------
+   4 bis. CHARGEMENT DES COLLÈGES ET LYCÉES
+   ---------------------------------------------------------------------------
+   Même principe que les communes : un script par département, chargé à la
+   demande. Format :
+       window.ECOLES["01"] = {dep, nom, villes:{ "01053":[ {n,t,s,v,g,a,z,d,w,la,lo} ] }}
+   n nom · t "C" collège / "L" lycée · s "Pr" si privé · v voies du lycée ·
+   g SEGPA · a adresse · z code postal · d téléphone · w site · la/lo position.
+   --------------------------------------------------------------------------- */
+const ECOLE_DIR = "build/ecoles/";
+const ecoleCache = {};
+
+function loadEcoles(code) {
+  if (ecoleCache[code]) return Promise.resolve(ecoleCache[code]);
+  return new Promise(function (resolve, reject) {
+    const s = document.createElement("script");
+    s.src = ECOLE_DIR + code + ".js";
+    s.onload = function () {
+      const d = window.ECOLES && window.ECOLES[code];
+      if (d) { ecoleCache[code] = d; resolve(d); }
+      else reject(new Error("données illisibles"));
+    };
+    s.onerror = function () { reject(new Error("fichier absent : build/ecoles/" + code + ".js")); };
+    document.head.appendChild(s);
+  });
+}
+
+function decodeRing(str, proj) {
+  const parts = str.split(" ");
+  const pts = new Array(parts.length);
+  for (let i = 0; i < parts.length; i++) {
+    const c = parts[i].split(",");
+    pts[i] = proj(+c[0], +c[1]);
+  }
+  return pts;
+}
+
+/** trace des polygones projetés, décalés sur (bx,by) et mis à l'échelle k */
+function pathOf(rings, bx, by, k) {
+  let d = "";
+  for (const poly of rings) {
+    for (const ring of poly) {
+      for (let i = 0; i < ring.length; i++) {
+        const p = ring[i];
+        d += (i ? "L" : "M") + ((p[0] - bx) * k).toFixed(1) + " " + ((p[1] - by) * k).toFixed(1);
+      }
+      d += "Z";
+    }
+  }
+  return d;
+}
+
+/** projette les communes et les ramène dans un repère où la plus grande
+    dimension vaut UNITE : les coordonnées restent ainsi dans une fourchette
+    lisible, quelles que soient les dimensions du département. */
+const UNITE = 1000;
+
+function prepCommunes(code, data) {
+  const proj = estDOM(code) ? plateCarree(DOM_LAT[code]) : metroProject;
+  const list = [];
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const c of data.communes) {
+    const rings = [];
+    let bx0 = Infinity, by0 = Infinity, bx1 = -Infinity, by1 = -Infinity;
+    for (const poly of c.g) {
+      const pr = [];
+      for (const rs of poly) {
+        const pts = decodeRing(rs, proj);
+        for (const p of pts) {
+          if (p[0] < bx0) bx0 = p[0];
+          if (p[0] > bx1) bx1 = p[0];
+          if (p[1] < by0) by0 = p[1];
+          if (p[1] > by1) by1 = p[1];
+        }
+        pr.push(pts);
+      }
+      rings.push(pr);
+    }
+    if (!rings.length) continue;
+    if (bx0 < x0) x0 = bx0;
+    if (bx1 > x1) x1 = bx1;
+    if (by0 < y0) y0 = by0;
+    if (by1 > y1) y1 = by1;
+    list.push({
+      c: c.c, n: c.n, z: c.z || "", p: c.p, rings: rings,
+      bx0: bx0, by0: by0, bx1: bx1, by1: by1
+    });
+  }
+  if (!list.length) return null;
+
+  const w = x1 - x0, h = y1 - y0;
+  const k = UNITE / Math.max(w, h);
+
+  /* Damier. Sur un aplat unique, la limite entre deux communes adjacentes
+     ressort à peine : c'est ce qui donne aux cartes communales leur aspect
+     « échiquier ». On alterne deux teintes très proches sur une grille de côté
+     comparable à la taille moyenne d'une commune, ce qui garantit que deux
+     communes voisines recoivent des parités différentes. */
+  let aire = 0;
+  for (const c of list) aire += (c.bx1 - c.bx0) * (c.by1 - c.by0);
+  const cell = Math.sqrt(aire * k * k / list.length) || 1;
+  for (const c of list) {
+    const i = Math.floor((((c.bx0 + c.bx1) / 2) - x0) * k / cell);
+    const j = Math.floor((((c.by0 + c.by1) / 2) - y0) * k / cell);
+    c.par = (i + j) & 1;
+  }
+
+  /* Paris est découpé en arrondissements, pas en communes : l'intitulé est
+     calculé une fois ici, pour l'en-tête comme pour le retour à la vue
+     d'ensemble après désélection d'une commune. */
+  const paris = /arrondissement/i.test(list[0].n);
+
+  return { code: code, nom: data.nom, list: list, x0: x0, y0: y0, k: k, w: w * k, h: h * k,
+           proj: proj, unit: paris ? "arrondissement" : "commune" };
+}
+
+/* ---------------------------------------------------------------------------
+   5. RENDU
+   --------------------------------------------------------------------------- */
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("map");
+const root = document.createElementNS(NS, "g");
+root.id = "root";
+svg.appendChild(root);
+const communeGroup = document.createElementNS(NS, "g");
+communeGroup.id = "communes";
+root.appendChild(communeGroup);
+
+/* Calque écran, posé après #root et donc insensible au zoom : il porte les
+   marqueurs des établissements de la commune choisie. */
+const overlay = document.createElementNS(NS, "g");
+overlay.id = "overlay";
+svg.appendChild(overlay);
+
+/* Le damier des communes vient de la feuille de style (--carte-2 et --carte-3),
+   comme le violet de la rampe : BLOC.teinteCommune relit les deux à chaque
+   peinture. Aucune couleur n'est donc écrite ici, et le damier suit le thème. */
+
+let depView = null;            /* communes affichées, sinon null */
+let communeItems = {};
+let selectedCommune = null;     /* commune sélectionnée (objet c), sinon null */
+let survolee = null;            /* commune mise en avant depuis la liste */
+let ecoles = null;              /* collèges et lycées du département affiché */
+let ecolesPour = null;          /* code du département auquel ecoles se rapporte */
+let ecolesChargement = false;   /* un chargement d'établissements est en cours */
+
+/* Une entrée de communeItems est une enveloppe { path, c } : path est le
+   tracé SVG, c les données INSEE (c.c = code, c.n = nom, c.z = code postal,
+   c.p = population). selectedCommune retient l'enveloppe. */
+
+function clearSelection() {
+  if (selectedCommune) selectedCommune.path.classList.remove("sel");
+  selectedCommune = null;
+  if (depView) {
+    const data = window.COMMUNES && window.COMMUNES[depView.code];
+    depT.textContent = data ? data.nom : depView.nom;
+    depS.textContent = plural(depView.list.length, depView.unit);
+    const r = results[depView.code];
+    depRow.style.display = r ? "" : "none";
+    if (r) {
+      depDot.style.background = r.color || BLOC.couleurCss("--bord", "#d8dce0");
+      depWho.textContent = r.candidate || "—";
+      depPct.textContent = (typeof r.percentage === "number") ? pct(r.percentage) + " %" : "—";
+    }
+  }
+  marquerCommune(null);
+  viderPanneau();
+}
+
+/** Sélectionne une commune : son tracé est encadré sur la carte et l'en-tête
+    affiche son identité (nom, code INSEE, code postal, population) à la place
+    de celle du département. */
+function selectCommune(entry) {
+  if (!depView || !entry || !entry.path) { clearSelection(); return; }
+  const c = entry.c;
+  if (selectedCommune && selectedCommune !== entry) selectedCommune.path.classList.remove("sel");
+  selectedCommune = entry;
+  entry.path.classList.add("sel");
+  depT.textContent = c.n;
+  const bits = ["INSEE " + c.c];
+  if (c.z) bits.push("CP " + c.z);
+  depS.textContent = bits.join(" · ");
+  depRow.style.display = "";
+  depDot.style.background = BLOC.couleurCss("--bord-2", "#cfd4da");
+  const pop = (c.p === undefined || c.p === null) ? 0 : Number(c.p);
+  depWho.textContent = pop > 0
+    ? pop.toLocaleString("fr-FR") + " habitants"
+    : "Population non renseignée";
+  depPct.textContent = "";
+  marquerCommune(null);
+  afficherPanneau(entry);
+}
+
+/* La couleur d'une commune : le damier de départ, viré vers le violet selon
+   le nombre de blocus du filtre en cours. On écrit l'attribut `fill` et non
+   `style` : un attribut perd contre la règle CSS .com:hover, ce qui laisse le
+   survol fonctionner. */
+function colorerCommunes() {
+  if (!depView) return;
+  const compte = BLOC.compte(BLOCUSFILTRE());
+  for (const c of depView.list) {
+    const item = communeItems[c.c];
+    if (!item) continue;
+    const n = compte.com[c.c] || 0;
+    item.path.setAttribute("fill", BLOC.teinteCommune(n, compte.maxCom, c.par || 0));
+    const t = item.path.querySelector("title");
+    if (t) t.textContent = c.n + (c.z ? " · " + c.z : "") +
+      (n ? " — " + plural(n, "blocus") : "");
+  }
+}
+
+function renderCommunes(v) {
+  while (communeGroup.firstChild) communeGroup.removeChild(communeGroup.firstChild);
+  communeItems = {};
+  const frag = document.createDocumentFragment();
+  for (const c of v.list) {
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("class", "com");
+    p.setAttribute("d", pathOf(c.rings, v.x0, v.y0, v.k));
+    p.setAttribute("data-c", c.c);
+    /* l'aplat provisoire, avant que colorerCommunes() ne tranche : même
+       chemin que le damier, donc même couleur, et rien ne bouge à l'œil */
+    p.setAttribute("fill", BLOC.teinteCommune(0, 0, c.par || 0));
+    const t = document.createElementNS(NS, "title");
+    t.textContent = c.n + (c.z ? " · " + c.z : "");
+    p.appendChild(t);
+    frag.appendChild(p);
+    communeItems[c.c] = { path: p, c: c };
+  }
+  communeGroup.appendChild(frag);
+  colorerCommunes();
+  selectedCommune = null;
+}
+
+/* ---------------------------------------------------------------------------
+   6. MISE EN PAGE
+   --------------------------------------------------------------------------- */
+let W = 0, H = 0, rect = { x: 0, y: 0, w: 0, h: 0, k: 1 };
+
+/** hauteur de la barre du haut, en pixels écran. Mesurée plutôt que devinée :
+    le nombre d'entrées du menu dépend de la largeur, et sous 620 px la barre
+    passe sur deux lignes. */
+function hauteurTop() {
+  const b = document.getElementById("topbar");
+  return b ? b.getBoundingClientRect().height : 0;
+}
+
+/** zone laissée à la carte, en pixels écran, une fois les panneaux déduits.
+    Sur écran large, celui des communes est à gauche et celui des
+    établissements à droite ; sous 900 px ce dernier se pose par-dessus la
+    carte et le centrage se fait à côté (voir zoneCentre) ; sous 620 px il
+    occupe le haut, et le panneau des communes se replie sur son en-tête.
+    La barre du haut est toujours déduite, sur toutes les largeurs. */
+function zone() {
+  const P = Math.max(10, Math.min(W, H) * 0.02) * 1.6;
+  const T = hauteurTop() + P;
+  if (W < 620) {
+    const bas = selectedCommune ? Math.min(140, H * 0.2) : Math.min(330, H * 0.54);
+    const haut = Math.max(T, panneauVisible() ? panneau.getBoundingClientRect().bottom + P : T);
+    return { x0: P, y0: haut, x1: W - P, y1: Math.max(haut + 60, H - bas) };
+  }
+  const g = Math.min(272, W * 0.36);
+  const d = panneauVisible() && W >= 900 ? 272 + P : 0;
+  return { x0: g + P, y0: T, x1: Math.max(g + P + 120, W - d), y1: H - P };
+}
+
+function layout() {
+  W = svg.clientWidth || window.innerWidth;
+  H = svg.clientHeight || window.innerHeight;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  if (!depView) {
+    rect = { x: 0, y: 0, w: 0, h: 0, k: 1 };
+    communeGroup.removeAttribute("transform");
+    carteChangement();
+    return;
+  }
+  const v = depView, z = zone();
+  const k = Math.max(0.001, Math.min((z.x1 - z.x0) / v.w, (z.y1 - z.y0) / v.h));
+  const w = v.w * k, h = v.h * k;
+  rect = { x: z.x0 + (z.x1 - z.x0 - w) / 2, y: z.y0 + (z.y1 - z.y0 - h) / 2, w: w, h: h, k: k };
+  communeGroup.setAttribute("transform",
+    "translate(" + rect.x.toFixed(2) + " " + rect.y.toFixed(2) + ") scale(" + k.toFixed(6) + ")");
+  carteChangement();
+}
+
+/* ---------------------------------------------------------------------------
+   7. ZOOM / PANORAMIQUE
+   --------------------------------------------------------------------------- */
+let scale = 1, tx = 0, ty = 0;
+/* l'élan du déplacement (voir plus bas) : la vitesse acquise au dernier
+   mouvement de la souris, et la boucle qui la rend */
+let elan = 0, vx = 0, vy = 0;
+const MINZ = 0.7, MAXZ = 30;
+
+function apply() {
+  root.style.transform = "translate(" + tx.toFixed(2) + "px," + ty.toFixed(2) + "px) scale(" + scale.toFixed(5) + ")";
+  document.getElementById("reset").classList.toggle("on", !auRepos());
+  placerMarqueurs();
+}
+
+/** La carte est-elle à sa place ? Une carte ajustée au département ne tombe pas
+    à (0, 0) : elle est centrée plus bas que le milieu de la fenêtre, sous la
+    barre du haut. Comparer tx et ty à zéro allumait donc le bouton de retour
+    dès la page ouverte, alors que rien n'avait bougé. */
+function auRepos() {
+  if (Math.abs(scale - 1) > 1e-4 || !rect) return false;
+  return Math.abs(tx - ((W - rect.w * scale) / 2 - rect.x * scale)) < .5 &&
+    Math.abs(ty - ((H - rect.h * scale) / 2 - rect.y * scale)) < .5;
+}
+
+/** Bornes de déplacement sur un axe. `a0`/`a1` sont les bords de la carte en
+    coordonnées du dessin, `s` l'échelle, `L` la taille de la fenêtre.
+
+    Une seule règle, valable à toutes les échelles : la carte va jusqu'à ce
+    qu'un de ses bords arrive au milieu de la page. On peut donc toujours amener
+    la gauche ou la droite du département au centre de l'écran, en tirant
+    dessus, qu'elle tienne dans la fenêtre ou qu'elle soit agrandie.
+
+    Cette borne est plus large que la carte ne le demande à l'écran, et c'est
+    voulu : le vide qui apparaît alors d'un côté n'en fait pas moins que la
+    carte recouvre toujours la ligne du milieu, donc qu'on ne la perd jamais de
+    vue. C'est le prix de la liberté demandée — et la position de repos (le
+    bouton de retour) n'a pas changé. */
+function bornes(a0, a1, s, L) {
+  return [L / 2 - a1 * s, L / 2 - a0 * s];
+}
+
+function clamp(centre) {
+  const x0 = rect.x, y0 = rect.y, x1 = rect.x + rect.w, y1 = rect.y + rect.h;
+  const bw = (x1 - x0) * scale, bh = (y1 - y0) * scale;
+  if (centre) {
+    tx = (W - bw) / 2 - x0 * scale;
+    ty = (H - bh) / 2 - y0 * scale;
+    return;
+  }
+  const bx = bornes(x0, x1, scale, W), by = bornes(y0, y1, scale, H);
+  tx = Math.min(Math.max(tx, bx[0]), bx[1]);
+  ty = Math.min(Math.max(ty, by[0]), by[1]);
+}
+
+function zoomAt(cx, cy, factor) {
+  arreterElan();
+  const z = Math.min(MAXZ, Math.max(MINZ, scale * factor));
+  if (z === scale) return;
+  tx = cx - (cx - tx) * (z / scale);
+  ty = cy - (cy - ty) * (z / scale);
+  scale = z;
+  clamp(false);
+  apply();
+}
+
+function resetView() { arreterElan(); scale = 1; clamp(true); apply(); }
+
+/* ------------------------------------------------------------- élan de la carte
+   Relâcher le bouton au moment exact où l'on vise ne déplace la carte que de
+   quelques pixels, alors qu'on voulait souvent aller plus loin. Elle continue
+   donc sur sa lance, comme une image qu'on lâche du doigt, et s'arrête seule
+   quand la vitesse devient trop faible pour qu'on la voie ou quand elle atteint
+   une borne. Un clic, lui, ne lance rien : il n'y a pas eu de déplacement. */
+function arreterElan() {
+  if (elan) cancelAnimationFrame(elan);
+  elan = 0; vx = 0; vy = 0;
+}
+
+function lancerElan() {
+  if (!elan) elan = requestAnimationFrame(pasElan);
+}
+
+function pasElan() {
+  const px = tx, py = ty;
+  tx += vx; ty += vy;
+  clamp(false); apply();
+  /* Un axe qui n'a pas bougé est arrivé à sa borne : on oublie sa vitesse,
+     sinon la carte continue de pousser contre un mur invisible. */
+  if (Math.abs(tx - px) < Math.abs(vx) * .5) vx = 0;
+  if (Math.abs(ty - py) < Math.abs(vy) * .5) vy = 0;
+  vx *= .86; vy *= .86;
+  if (Math.abs(vx) + Math.abs(vy) < .5) { elan = 0; return; }
+  elan = requestAnimationFrame(pasElan);
+}
+
+/* molette */
+svg.addEventListener("wheel", function (e) {
+  e.preventDefault();
+  const r = svg.getBoundingClientRect();
+  const d = e.deltaMode === 1 ? e.deltaY * 16 : (e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY);
+  zoomAt(e.clientX - r.left, e.clientY - r.top, Math.exp(-d * 0.0016));
+}, { passive: false });
+
+/* ------------------------------------------------------- pointeur (souris / tactile) */
+const pts = new Map();
+let downC = null, startX = 0, startY = 0, baseX = 0, baseY = 0;
+let dragging = false, pinch = null, pinched = false;
+
+function two() { const a = []; pts.forEach(function (v) { a.push(v); }); return a; }
+function midpoint() { const a = two(); return { x: (a[0].x + a[1].x) / 2, y: (a[0].y + a[1].y) / 2 }; }
+function spread() { const a = two(); return Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y); }
+
+/** la commune sous le pointeur, ou null (fond, mer) */
+function codeOf(el) { return el && el.getAttribute ? el.getAttribute("data-c") : null; }
+
+svg.addEventListener("pointerdown", function (e) {
+  try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+  arreterElan();
+  pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (pts.size === 1) {
+    downC = codeOf(e.target);
+    startX = e.clientX; startY = e.clientY;
+    baseX = tx; baseY = ty;
+    dragging = false; pinched = false;
+  } else if (pts.size === 2) {
+    const m = midpoint();
+    pinch = { d: spread(), mx: m.x, my: m.y, s: scale, tx: tx, ty: ty };
+    dragging = true; pinched = true;
+  }
+});
+
+svg.addEventListener("pointermove", function (e) {
+  if (pts.has(e.pointerId)) {
+    pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pts.size >= 2) {                                    // pincement à deux doigts
+      const d = spread(), m = midpoint();
+      if (pinch && pinch.d > 6 && d > 6) {
+        const z = Math.min(MAXZ, Math.max(MINZ, pinch.s * (d / pinch.d)));
+        const cx = (pinch.mx - pinch.tx) / pinch.s;
+        const cy = (pinch.my - pinch.ty) / pinch.s;
+        scale = z; tx = m.x - cx * z; ty = m.y - cy * z;
+        clamp(false); apply();
+      }
+      pinch = { d: d, mx: m.x, my: m.y, s: scale, tx: tx, ty: ty };
+      svg.classList.add("dragging");
+      hideTip();
+      return;
+    }
+    if (Math.abs(e.clientX - startX) + Math.abs(e.clientY - startY) > 5) {
+      dragging = true;
+      svg.classList.add("dragging");
+      hideTip();
+    }
+    if (dragging) {
+      const nx = baseX + (e.clientX - startX);
+      const ny = baseY + (e.clientY - startY);
+      /* ce que la carte vient de gagner : c'est la vitesse de l'élan, bridée
+         pour qu'un saut de souris ne la projette pas hors de l'écran */
+      vx = Math.max(-60, Math.min(60, nx - tx));
+      vy = Math.max(-60, Math.min(60, ny - ty));
+      tx = nx; ty = ny;
+      clamp(false); apply();
+    }
+    return;
+  }
+  if (e.pointerType === "mouse") hover(e);
+});
+
+function release(e) {
+  const only = pts.size === 1 && Array.from(pts.keys())[0] === e.pointerId;
+  const moved = Math.abs(e.clientX - startX) + Math.abs(e.clientY - startY);
+  pts.delete(e.pointerId);
+  try { svg.releasePointerCapture(e.pointerId); } catch (err) {}
+  svg.classList.remove("dragging");
+  if (pts.size === 0) {
+    if (only && !pinched && moved < 6) {
+      /* clic sur une commune : on la sélectionne et on la cadre ;
+         clic sur le fond (mer, hors département) : on désélectionne. */
+      if (downC) {
+        const entry = communeItems[downC];
+        selectCommune(entry);
+        gotoCommune(entry);
+      } else {
+        clearSelection();
+      }
+    }
+    /* Un glissement qui finit par un lâcher franc continue tout seul ; un clic
+       ne lance rien, sinon la carte partirait sous le doigt du lecteur. */
+    if (only && !pinched && moved > 24 && Math.abs(vx) + Math.abs(vy) > 6) lancerElan();
+    dragging = false; pinch = null; pinched = false;
+    if (!elan) { vx = 0; vy = 0; }
+  } else if (pts.size === 1) {
+    const a = two()[0];
+    startX = a.x; startY = a.y; baseX = tx; baseY = ty;
+    dragging = false; pinch = null; pinched = false;
+  }
+}
+svg.addEventListener("pointerup", release);
+svg.addEventListener("pointercancel", function (e) {
+  arreterElan();
+  pts.delete(e.pointerId);
+  svg.classList.remove("dragging");
+  dragging = false; pinch = null; pinched = false;
+});
+svg.addEventListener("pointerleave", hideTip);
+svg.addEventListener("dblclick", function (e) {
+  const r = svg.getBoundingClientRect();
+  zoomAt(e.clientX - r.left, e.clientY - r.top, 1.9);
+});
+
+/* Ce que la carte sait faire, pour build/map-zoom.js : les deux boutons et les
+   flèches du clavier. Le nom est en majuscules pour ne pas être confondu avec
+   la carte de France de carte.html, qui s'appelle aussi « carte ». Une page
+   sans carte n'expose rien, et le fichier se retire alors sans laisser de
+   bouton orphelin. */
+const carteAbonnes = [];
+function carteChangement() { for (const f of carteAbonnes) f(); }
+window.CARTE = {
+  /** agrandit (facteur supérieur à 1) ou réduit, autour du milieu de l'écran */
+  zoom: function (facteur) { zoomAt(W / 2, H / 2, facteur); },
+  /** déplace la carte de dx et dy pixels à l'écran */
+  glisse: function (dx, dy) { arreterElan(); tx += dx; ty += dy; clamp(false); apply(); },
+  /** revient à l'ensemble du département */
+  vue: function () { resetView(); },
+  /** y a-t-il une carte à déplacer ? sur la carte de France, non */
+  disponible: function () { return !!(rect && rect.w > 0); },
+  /** prévient quand la carte a été remise en page : les boutons suivent */
+  surChangement: function (f) { carteAbonnes.push(f); f(); },
+};
+
+/* ---------------------------------------------------------------------------
+   8. SURVOL
+   --------------------------------------------------------------------------- */
+const tip = document.getElementById("tip");
+const tipN = tip.querySelector(".n"), tipC = tip.querySelector(".c");
+
+function hab(n) {
+  if (n >= 1000000) return (n / 1000000).toLocaleString("fr-FR", { maximumFractionDigits: 1 }) + " M";
+  if (n >= 10000) return Math.round(n / 1000) + " 000";
+  return n.toLocaleString("fr-FR");
+}
+
+function hover(e) {
+  const id = codeOf(e.target);
+  const it = id && communeItems[id];
+  if (!it) { hideTip(); return; }
+  tipN.textContent = it.c.n;
+  tipC.textContent = [it.c.z, (it.c.p ? hab(it.c.p) + " hab." : "")].filter(Boolean).join(" · ");
+  placeTip(e);
+}
+function placeTip(e) {
+  tip.classList.add("on");
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 15, y = e.clientY - h - 12;
+  if (x + w > window.innerWidth - 8) x = e.clientX - w - 15;
+  if (y < 8) y = e.clientY + 20;
+  if (y + h > window.innerHeight - 8) y = window.innerHeight - h - 8;
+  tip.style.transform = "translate(" + Math.round(x) + "px," + Math.round(y) + "px)";
+}
+function hideTip() { tip.classList.remove("on"); }
+
+/* ---------------------------------------------------------------------------
+   9. LISTE DES COMMUNES, RECHERCHE, CADRAGE
+   --------------------------------------------------------------------------- */
+const depbar = document.getElementById("depbar");
+const depHead = depbar.querySelector("#dephead");
+const depT = depHead.querySelector(".t");
+const depS = depHead.querySelector(".s");
+const depRow = depHead.querySelector(".r");
+const depDot = depHead.querySelector(".dot");
+const depWho = depHead.querySelector(".who");
+const depPct = depHead.querySelector(".pct");
+const searchInput = document.getElementById("search");
+const listBox = document.getElementById("list");
+const waitBox = document.getElementById("wait");
+const resetBtn = document.getElementById("reset");
+
+function pct(v) {
+  try { return v.toLocaleString("fr-FR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
+  catch (err) { return String(v).replace(".", ","); }
+}
+function plural(n, mot) { return n + " " + mot + (n > 1 ? "s" : ""); }
+function norm(s) {
+  return String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+}
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+/* message temporaire en haut de l'écran (chargement, fichier absent…) */
+let waitTimer = null;
+function flash(msg, ms) {
+  waitBox.textContent = msg;
+  waitBox.classList.add("on");
+  if (waitTimer) clearTimeout(waitTimer);
+  waitTimer = setTimeout(function () { waitBox.classList.remove("on"); }, ms || 2800);
+}
+function stopFlash() {
+  if (waitTimer) clearTimeout(waitTimer);
+  waitBox.classList.remove("on");
+}
+
+function fillList(q) {
+  if (!depView) return;
+  const s = norm(q);
+  const rows = [];
+  for (const c of depView.list) {
+    if (s && norm(c.n).indexOf(s) < 0 && norm(c.z).indexOf(s) < 0) continue;
+    rows.push(c);
+  }
+  rows.sort(function (a, b) { return a.n.localeCompare(b.n, "fr"); });
+  if (!rows.length) {
+    listBox.innerHTML = '<div class="vide">Aucun nom ne correspond.</div>';
+    return;
+  }
+  let h = "";
+  const lim = Math.min(rows.length, 400);
+  for (let i = 0; i < lim; i++) {
+    const c = rows[i];
+    h += '<div class="it" data-c="' + esc(c.c) + '"><span class="nm">' + esc(c.n) + "</span>" +
+         (c.z ? '<span class="cp">' + esc(c.z) + "</span>" : "") + "</div>";
+  }
+  if (lim < rows.length) h += '<div class="vide">… et ' + (rows.length - lim) + " autres.</div>";
+  listBox.innerHTML = h;
+}
+
+/* --- cadrage sur une commune -------------------------------------------- */
+/** Choisir une commune zoome la carte sur elle : elle remplit la vue, avec juste
+    assez d'air autour pour que ses voisines servent de repère. Le pad est donc
+    volontairement faible — un large laissait la commune perdue au milieu du
+    département, ce qui ne se lisait pas comme un zoom. */
+function gotoCommune(entry) {
+  if (!depView || !entry) return;
+  const v = depView, c = entry.c;
+  const w = (c.bx1 - c.bx0) * v.k, h = (c.by1 - c.by0) * v.k;
+  const cx = ((c.bx0 + c.bx1) / 2 - v.x0) * v.k;
+  const cy = ((c.by0 + c.by1) / 2 - v.y0) * v.k;
+  const pad = Math.max(w, h) * 0.12 + 6;          // un peu d'air autour
+  const z = zoneCentre();
+  const s = Math.min((z.x1 - z.x0) / (w + 2 * pad), (z.y1 - z.y0) / (h + 2 * pad));
+  scale = Math.min(MAXZ, Math.max(MINZ, s));
+  tx = (z.x0 + z.x1) / 2 - (rect.x + rect.k * cx) * scale;
+  ty = (z.y0 + z.y1) / 2 - (rect.y + rect.k * cy) * scale;
+  apply();
+}
+
+/* ---------------------------------------------------------------------------
+   10. NAVIGATION — le fragment de l'adresse désigne le département
+   --------------------------------------------------------------------------- */
+const accueil = document.getElementById("accueil");
+const depSearch = document.getElementById("depSearch");
+const depGrid = document.getElementById("depGrid");
+
+/** tous les départements, dans l'ordre du code */
+const TOUS = Object.keys(DEPTS).sort(function (a, b) {
+  if (a.length !== b.length) return a.length - b.length;   // 2A, 2B avant 971
+  return a < b ? -1 : a > b ? 1 : 0;
+});
+
+function fillDepGrid(q) {
+  const s = norm(q);
+  const rows = TOUS.filter(function (c) {
+    return !s || norm(DEPTS[c]).indexOf(s) >= 0 || norm(c).indexOf(s) === 0;
+  });
+  if (!rows.length) {
+    depGrid.innerHTML = '<div class="aucun">Aucun département ne correspond.</div>';
+    return;
+  }
+  let h = "";
+  for (const c of rows) {
+    h += '<a href="#' + c + '"><b>' + c + "</b><span>" + esc(DEPTS[c]) + "</span></a>";
+  }
+  depGrid.innerHTML = h;
+}
+
+function codeDuHash() {
+  const h = decodeURIComponent((location.hash || "").replace(/^#/, "")).trim().toUpperCase();
+  return DEPTS[h] ? h : null;
+}
+
+function showAccueil() {
+  depView = null;
+  communeItems = {};
+  ecoles = null;
+  ecolesPour = null;
+  while (communeGroup.firstChild) communeGroup.removeChild(communeGroup.firstChild);
+  hideTip();
+  viderPanneau();
+  synchroniser();
+  stopFlash();
+  depbar.classList.remove("on");
+  accueil.classList.add("on");
+  document.getElementById("reset").classList.remove("on");
+  document.title = "Communes de France";
+  /* sans département, la barre renvoie à la carte de France : « Communes »
+     n'a plus où se poser */
+  NAV.poser("nav", "carte");
+  layout();
+}
+
+function showDep(code) {
+  if (depView && depView.code === code) return;
+  flash("Chargement des communes…", 60000);
+  loadCommunes(code).then(function (data) {
+    stopFlash();
+    const v = prepCommunes(code, data);
+    if (!v) { flash("Aucune commune à afficher."); return; }
+
+    depView = v;
+    renderCommunes(v);
+
+    /* Les établissements arrivent en parallèle : la carte s'affiche tout de
+       suite, le panneau se complète quand le fichier est là. */
+    ecoles = null;
+    ecolesPour = null;
+    ecolesChargement = true;
+    loadEcoles(code).then(function (d) {
+      ecolesChargement = false;
+      if (depView && depView.code === code) {
+        ecoles = d;
+        ecolesPour = code;
+        if (selectedCommune) afficherPanneau(selectedCommune);
+      }
+    }).catch(function () {
+      ecolesChargement = false;
+      if (selectedCommune) afficherPanneau(selectedCommune);
+    });
+
+    depT.textContent = data.nom;
+    depS.textContent = plural(v.list.length, v.unit);
+    document.title = data.nom + " — " + v.unit + "s";
+
+    /* La barre est reapposée à chaque département : c'est elle qui porte le
+       lien de retour, et un lien figé au premier département ouvert mènerait
+       à la mauvaise carte. Elle est aussi plus haute que le titre, alors on
+       la repose avant lui. */
+    NAV.poser("nav", "dep", { dep: code });
+
+    /* les résultats du département */
+    const r = results[code];
+    depRow.style.display = r ? "" : "none";
+    if (r) {
+      depDot.style.background = r.color || BLOC.couleurCss("--bord", "#d8dce0");
+      depWho.textContent = r.candidate || "—";
+      depPct.textContent = (typeof r.percentage === "number") ? pct(r.percentage) + " %" : "—";
+    }
+
+    hideTip();
+    accueil.classList.remove("on");
+    depbar.classList.add("on");
+    resetBtn.title = "Revenir à l'ensemble du département";
+    searchInput.value = "";
+    fillList("");
+    rendreListe();
+    synchroniser();
+    layout();
+    resetView();
+  }).catch(function (err) {
+    stopFlash();
+    flash("Communes indisponibles — " + err.message, 5000);
+  });
+}
+
+function router() {
+  const c = codeDuHash();
+  if (c) showDep(c); else showAccueil();
+}
+
+/* --- branchements -------------------------------------------------------- */
+window.addEventListener("hashchange", router);
+resetBtn.addEventListener("click", function () { clearSelection(); resetView(); });
+depSearch.addEventListener("input", function () { fillDepGrid(depSearch.value); });
+
+searchInput.addEventListener("input", function () { fillList(searchInput.value); });
+searchInput.addEventListener("keydown", function (e) {
+  if (e.key !== "Enter") return;
+  const first = listBox.querySelector(".it");
+  if (first) {
+    const entry = communeItems[first.getAttribute("data-c")];
+    selectCommune(entry);
+    gotoCommune(entry);
+  }
+});
+listBox.addEventListener("click", function (e) {
+  const it = e.target.closest(".it");
+  if (!it) return;
+  const entry = communeItems[it.getAttribute("data-c")];
+  selectCommune(entry);
+  gotoCommune(entry);
+});
+
+/* survoler une ligne de la liste met sa commune en évidence sur la carte :
+   c'est le seul moyen de retrouver visuellement une commune trop petite pour
+   être cliquable à cette échelle. Classe .hl, distincte de .sel, pour ne pas
+   effacer la sélection au passage de la souris. */
+function marquerCommune(code) {
+  if (survolee && communeItems[survolee]) communeItems[survolee].path.classList.remove("hl");
+  survolee = code;
+  if (code && communeItems[code]) communeItems[code].path.classList.add("hl");
+}
+listBox.addEventListener("mouseover", function (e) {
+  const it = e.target.closest(".it");
+  marquerCommune(it ? it.getAttribute("data-c") : null);
+});
+listBox.addEventListener("mouseleave", function () { marquerCommune(null); });
+
+/* ---------------------------------------------------------------------------
+   10 bis. PANNEAU DES COLLÈGES, DES LYCÉES ET DES BLOCUS
+   ---------------------------------------------------------------------------
+   Le panneau est amarré à droite et présente deux vues : la liste des
+   collèges et lycées de la commune sélectionnée, puis — au clic sur l'un
+   d'eux — le détail des blocus qui s'y tiennent.
+
+   · La liste des blocus est lue dans build/blocus.js, seul fichier à
+     compléter. Elle est repérée par la commune (code INSEE) et le nom de
+     l'établissement ; la casse, les accents et le mot « Collège » en tête
+     n'ont aucune importance.
+
+   Sur la carte : un marqueur par établissement — rouge quand l'établissement
+   a des blocus, gris sinon, à la couleur du texte pour celui affiché, rouge et
+   cerclé pour celui que « Centrer sur l'établissement » vient d'amener au milieu
+   de l'écran. Choisir une commune zoome la carte sur elle : il n'y a plus de
+   point de repère ni de trait de rappel vers le panneau. Les marqueurs vivent
+   en coordonnées écran, donc ils sont remis en place à chaque déplacement de la
+   carte (apply appelle placerMarqueurs).
+   --------------------------------------------------------------------------- */
+const panneau = document.getElementById("panneau");
+const panNom = panneau.querySelector(".pn");
+const panSous = panneau.querySelector(".ps");
+const panCorps = panneau.querySelector(".pb");
+const vueListe = panneau.querySelector('[data-v="liste"]');
+const vueBlocus = panneau.querySelector('[data-v="blocus"]');
+const panelBtn = document.getElementById("panelBtn");
+
+let panneauOuvert = true;   /* l'utilisateur a-t-il laissé le panneau visible ? */
+let ecoleOrdre = [];        /* établissements de la commune, collèges puis lycées */
+let ecoleCourante = -1;     /* index dans ecoleOrdre, -1 pour la vue « liste » */
+let ecoleCentree = "";      /* clé de l'établissement centré sur la carte, "" si aucun */
+let marquesEcole = [];      /* marqueurs, en repère normalisé */
+
+const VOIE = { G: "général", T: "technologique", P: "professionnel" };
+
+/* --- les blocus : liste du fichier -------------------------------------- */
+
+/** les blocus que le filtre de la barre laisse voir, tous établissements
+    confondus. La carte, la liste et le panneau partagent ce résultat : c'est
+    le moyen qu'ils racontent tous la même chose. */
+function BLOCUSFILTRE() {
+  return window.FILTRE ? window.FILTRE.filtrer(window.BLOCUS || {}) : (window.BLOCUS || {});
+}
+
+/** met la table des blocus sur pied : les clés sont ramenées à
+    « codeCommune|nom normalisé ».
+
+    Elle est bâtie sur BLOCUSFILTRE(), c'est-à-dire sur ce que la barre laisse
+    voir, et non sur le fichier entier. La table ne montrait que les blocus en
+    cours quel que soit le jour choisi — le cache était invalidé à chaque
+    changement de filtre, mais se reconstruisait sur la même source. */
+let tableBlocus = null;
+function blocusTable() {
+  const B = BLOCUSFILTRE();
+  if (tableBlocus && tableBlocus.source === B) return tableBlocus;
+  const t = { source: B, parCle: {} };
+  for (const cle of Object.keys(B)) {
+    const i = cle.indexOf("|");
+    if (i < 0) continue;
+    const l = B[cle];
+    if (Array.isArray(l) && l.length) {
+      t.parCle[cle.slice(0, i).trim() + "|" + cleNom(cle.slice(i + 1))] = l;
+    }
+  }
+  tableBlocus = t;
+  return t;
+}
+
+/** réduit un nom d'établissement à une clé : minuscules, sans accents ni
+    ponctuation, et sans le mot « collège », « lycée » ou « institut » en tête */
+function cleNom(nom) {
+  const n = norm(nom).replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+  return n.replace(/^(?:college|lycee|institut|ecole|section|groupement)\s+/, "");
+}
+
+/** blocus d'un établissement : la clé retenue et la liste, ou null */
+function blocusDe(codeCommune, nom) {
+  const cle = codeCommune + "|" + cleNom(nom);
+  const l = blocusTable().parCle[cle];
+  return Array.isArray(l) && l.length ? { cle: cle, liste: l } : null;
+}
+
+/** rattache à un établissement les blocus qui lui sont propres */
+function rattacher(e, codeCommune) {
+  e.blocus = blocusDe(codeCommune, e.n);
+}
+
+/* --- ouverture, fermeture, changement de vue ------------------------------ */
+
+/** le panneau est-il à l'écran ? */
+function panneauVisible() { return panneauOuvert && !!depView; }
+
+/** zone de centrage. Entre 620 et 900 px le panneau se pose par-dessus la
+    carte au lieu de lui réserver une bande : la carte occupe donc toute la
+    largeur, et on centre sur la partie qui reste visible à gauche du panneau,
+    sinon la commune sélectionnée — et ses marqueurs — finiraient dessous. Les
+    deux autres dispositions sont déjà déduites par zone(). */
+function zoneCentre() {
+  const z = zone();
+  if (!panneauVisible() || W < 620 || W >= 900) return z;
+  const b = panneau.getBoundingClientRect();
+  if (b.width < 40 || b.left <= z.x0) return z;
+  return { x0: z.x0, y0: z.y0, x1: Math.max(z.x0 + 60, b.left - 8), y1: z.y1 };
+}
+
+/** aligne le panneau et son bouton de rappel sur l'état courant */
+function synchroniser() {
+  panneau.classList.toggle("on", panneauVisible());
+  panelBtn.hidden = !depView || panneauOuvert;
+  /* le calque n'a de raison d'être que si le panneau est là pour l'expliquer */
+  overlay.style.display = panneauVisible() ? "" : "none";
+}
+
+/** Sous 620 px, la hauteur du panneau commande la place laissée à la carte
+    (voir zone) : s'il vient de changer de taille, la carte doit être remesurée
+    avant d'y centrer quoi que ce soit. */
+function remesurer(avant) {
+  if (!depView || W >= 620) return;
+  if (avant !== undefined && avant === panneau.offsetHeight) return;
+  layout();
+}
+
+/** montre ou masque le panneau, en refaisant la mise en page de la carte */
+function basculerPanneau(ouvrir) {
+  const voulu = !!ouvrir;
+  if (panneauOuvert === voulu) { synchroniser(); return; }
+  panneauOuvert = voulu;
+  synchroniser();
+  if (depView) { layout(); resetView(); }
+  placerMarqueurs();
+}
+
+/* --- vue 1 : la liste des établissements ---------------------------------- */
+
+/** une ligne d'établissement : nom, statut, adresse, et le nombre de blocus */
+function ligneEcole(e, i) {
+  const prive = e.s === "Pr";
+  const meta = [];
+  if (e.t === "L" && e.v) {
+    const v = [];
+    for (const x of e.v) v.push(VOIE[x] || x);
+    meta.push("Lycée " + v.join(" · "));
+  }
+  if (e.a) meta.push(esc(e.a));
+  if (e.z) meta.push(esc(e.z));
+  if (e.g) meta.push("SEGPA");
+  if (e.blocus) meta.push(plural(e.blocus.liste.length, "blocus"));
+  /* Les revendications de l'établissement, quand il en a : la phrase vient de
+     build/rev-panneau.js, qui possède les données et la règle du vote. Une
+     école sans revendication ne dit rien — la ligne reste telle quelle. */
+  if (window.REV) {
+    /* le code de la commune, comme dans rendreBlocus() : l'entrée, puis son
+       propre code. Sans code, pas de clé, donc pas de phrase. */
+    const entree = (selectedCommune && selectedCommune.c) || {};
+    const rev = REV.meta(e, entree.c || "");
+    if (rev) meta.push(rev);
+  }
+  let h = '<div class="ec" data-i="' + i + '"' + (e.la === undefined ? ' data-sec="1"' : "") + ">" +
+    '<div class="en"><span class="nm">' + esc(e.n) + "</span>" +
+    '<span class="bg' + (prive ? " pr" : "") + '">' + (prive ? "Privé" : "Public") + "</span></div>";
+  if (meta.length) h += '<div class="em">' + meta.join(" · ") + "</div>";
+  const contact = [];
+  if (e.d) contact.push('<a href="tel:' + esc(e.d).replace(/\s/g, "") + '">' + esc(e.d) + "</a>");
+  if (e.w) contact.push('<a href="https://' + esc(e.w) + '" target="_blank" rel="noopener">' + esc(e.w) + "</a>");
+  if (contact.length) h += '<div class="ea">' + contact.join(" · ") + "</div>";
+  return h + "</div>";
+}
+
+/** remplit la vue « liste » : les établissements de la commune sélectionnée,
+    ou une invitation à cliquer sur une commune */
+function rendreListe() {
+  /* sur écran étroit, la sélection fait replier la liste des communes sur son
+     seul en-tête, pour laisser la place au panneau (voir zone) */
+  document.body.classList.toggle("commune", !!selectedCommune);
+  const avant = panneau.offsetHeight;
+  peindreListe();
+  remesurer(avant);
+}
+
+function peindreListe() {
+  ecoleCourante = -1;
+  majMarques();
+  vueBlocus.hidden = true;
+  vueListe.hidden = false;
+
+  if (!selectedCommune) {
+    panNom.textContent = depView ? depView.nom : "Établissements";
+    panSous.textContent = depView ? depView.unit + "s" : "";
+    vueListe.innerHTML = depView
+      ? '<div class="vide">Cliquez sur une commune de la carte&nbsp;: ses collèges et lycées s\'afficheront ici.</div>' +
+        '<div class="pj">Jour affiché&nbsp;: ' + esc(FILTRE.libelle()) + ".</div>"
+      : "";
+    return;
+  }
+
+  const c = selectedCommune.c;
+  panNom.textContent = c.n;
+  const bits = ["INSEE " + c.c];
+  if (c.z) bits.push("CP " + c.z);
+  panSous.textContent = bits.join(" · ");
+
+  let h = '<div class="pj">Blocus affichés&nbsp;: ' + esc(FILTRE.libelle()) + ".</div>";
+  let i = 0, titre = null;
+  for (const e of ecoleOrdre) {
+    const th = e.t === "C" ? "Collèges" : "Lycées";
+    if (th !== titre) {
+      let n = 0;
+      for (const x of ecoleOrdre) if (x.t === e.t) n++;
+      h += "<h4>" + th + '<span class="nb">' + n + "</span></h4>";
+      titre = th;
+    }
+    h += ligneEcole(e, i++);
+  }
+  if (!ecoleOrdre.length) {
+    if (ecolesChargement) h = '<div class="vide">Chargement des établissements…</div>';
+    else if (ecolesPour === depView.code) h = '<div class="vide">Aucun collège ni lycée recensé dans cette ' + depView.unit + ".</div>";
+    else h = '<div class="vide">Établissements indisponibles pour ce département.</div>';
+  }
+  vueListe.innerHTML = h;
+}
+
+/* --- vue 2 : le détail des blocus ---------------------------------------- */
+
+/** remplit la vue « blocus » : les blocus de l'établissement choisi, chacun
+    avec ce qui le prouve */
+function rendreBlocus() {
+  const e = ecoleOrdre[ecoleCourante];
+  if (!e) return rendreListe();
+  const avant = panneau.offsetHeight;
+  vueListe.hidden = true;
+  vueBlocus.hidden = false;
+  panNom.textContent = e.n;
+  const bits = [e.t === "L" ? "Lycée" : "Collège"];
+  if (e.s === "Pr") bits.push("Privé");
+  if (e.a) bits.push(esc(e.a));
+  if (e.z) bits.push(esc(e.z));
+  panSous.textContent = bits.join(" · ");
+
+  let h = '<button class="ret" type="button">&larr;&nbsp; Les établissements</button>' +
+    '<button class="ctr" type="button">Centrer sur l\'établissement</button>' +
+    /* la commune vient de la sélection, pas d'une variable locale : elle
+       n'existe que dans rendreListe() et la référencer ici échouerait */
+    signalerLien(selectedCommune && selectedCommune.c, e);
+  const b = e.blocus;
+  if (!b) {
+    h += '<div class="vide">Blocus non renseigné pour cet établissement.</div>';
+  } else {
+    for (let i = 0; i < b.liste.length; i++) {
+      const x = b.liste[i] || {};
+      /* Les trois façons de prouver un blocus : une adresse, une citation, un
+         média cité. Le rapport donne les deux dernières, la recherche la
+         première ; une ligne peut n'avoir que l'une des trois. */
+      const preuves = [];
+      if (x.l) {
+        preuves.push('<a href="' + esc(x.l) + '" target="_blank" rel="noopener">Voir la source</a>');
+      }
+      if (x.m) preuves.push('<span class="bs">' + esc(x.m) + "</span>");
+      if (x.p) preuves.push('<span class="bq">' + esc(x.p) + "</span>");
+      h += '<div class="bl">' +
+        '<div class="bn">' + esc(x.n || "Blocus " + (i + 1)) + "</div>" +
+        (x.j ? '<div class="bj">' + esc(x.j) + "</div>" : "") +
+        (x.s ? '<div class="bj">' + esc(x.s) + "</div>" : "") +
+        (x.q ? '<blockquote class="bc">' + esc(x.q) + "</blockquote>" : "") +
+        (preuves.length ? '<div class="bp">' + preuves.join(" ") + "</div>" : "") +
+        "</div>";
+    }
+  }
+  vueBlocus.innerHTML = h;
+  /* Les revendications de cet établissement : le tableau, les pourcentages, les
+     deux boutons pour voter, et le lien pour en écrire une. Tout le bloc est
+     écrit par build/rev-panneau.js — ici, une seule ligne, et après
+     innerHTML, puisque c'est lui qui vide la vue.
+
+     Le code de la commune est lu comme dans signalerLien() ci-dessus :
+     `selectedCommune.c` est l'entrée de commune, son code est `.c.c`. C'est ce
+     code et le nom de l'annuaire qui forment la clé « 37261|Collège Jules
+     Ferry » — celle du questionnaire, du serveur et des votes. */
+  if (window.REV) {
+    const commune = (selectedCommune && selectedCommune.c) || {};
+    REV.rendre({
+      code: commune.c || "",
+      nom: e.n,
+      dep: depView ? depView.code : "",
+      type: e.t === "C" ? "C" : "L",
+    });
+  }
+  remesurer(avant);
+}
+
+/** le lien vers le questionnaire, pré-rempli avec ce qu'on sait déjà : le
+    département, la commune, l'établissement et son genre. Sans cela, la
+    personne doit tout ressaisir. */
+function signalerLien(c, e) {
+  const p = new URLSearchParams();
+  if (depView) p.set("dep", depView.code);
+  if (c && c.c) p.set("commune", c.c);
+  if (e && e.n) { p.set("eta", e.n); p.set("type", e.t === "C" ? "C" : "L"); }
+  return '<a class="sig" href="signaler-un-blocus.html?' + p.toString() + '">Signaler un blocus ici</a>';
+}
+
+/* --- calque sur la carte -------------------------------------------------- */
+
+/** met les marqueurs en accord avec la sélection : rouge et petit par défaut,
+    la couleur du texte et grand pour l'établissement affiché, rouge et cerclé
+    pour celui que le bouton « Centrer » a amené au milieu de l'écran */
+function majMarques() {
+  for (let i = 0; i < marquesEcole.length; i++) {
+    const mk = marquesEcole[i];
+    if (!mk) continue;
+    const e = ecoleOrdre[i] || {};
+    const actif = i === ecoleCourante;
+    const cent = estCentre(e);
+    mk.el.setAttribute("class", "sc" + (e.blocus ? "" : " sec") +
+                       (actif ? " sel" : "") + (cent ? " cent" : ""));
+    mk.el.setAttribute("r", rayon(i));
+  }
+}
+
+/** l'établissement est-il celui qu'on a centré ? On le compare par sa clé — le
+    code INSEE de la commune et son nom — et non par son indice : l'indice
+    bouge avec la liste et le changement de jour, la clé non. Deux communes
+    peuvent avoir un collège du même nom, d'où le code devant le nom. */
+function cleEcole(e) {
+  if (!e || !e.n) return "";
+  return (selectedCommune ? selectedCommune.c : "") + "|" + e.n;
+}
+function estCentre(e) { return !!ecoleCentree && cleEcole(e) === ecoleCentree; }
+
+/** le rayon d'un marqueur : plus grand pour l'établissement affiché, et pour
+    celui qu'on a centré, qu'il faut retrouver au milieu de l'écran */
+function rayon(i) {
+  const e = ecoleOrdre[i];
+  if (i === ecoleCourante) return estCentre(e) ? 8 : 6;
+  return estCentre(e) ? 7 : 3.5;
+}
+
+function survolerEcole(i) {
+  const mk = marquesEcole[i];
+  if (!mk) return;
+  const r = rayon(i);
+  mk.el.setAttribute("r", r > 4 ? r + 1.5 : 6);
+}
+function quitterEcole(i) {
+  const mk = marquesEcole[i];
+  if (mk) mk.el.setAttribute("r", rayon(i));
+}
+
+/** remplit le panneau et le calque d'une commune sélectionnée */
+function afficherPanneau(entry) {
+  if (!depView || !entry) return;
+  const c = entry.c;
+
+  /* La même liste ordonnée sert au panneau et au calque : l'indice d'une
+     ligne (data-i) est celui de son marqueur dans marquesEcole. */
+  const liste = (ecolesPour === depView.code && ecoles && ecoles.villes)
+    ? (ecoles.villes[c.c] || []) : [];
+  ecoleOrdre = [];
+  for (const t of ["C", "L"]) for (const e of liste) if (e.t === t) ecoleOrdre.push(e);
+  for (const e of ecoleOrdre) rattacher(e, c.c);
+
+  while (overlay.firstChild) overlay.removeChild(overlay.firstChild);
+  marquesEcole = [];
+
+  for (const e of ecoleOrdre) {
+    if (typeof e.la !== "number" || typeof e.lo !== "number") { marquesEcole.push(null); continue; }
+    const p = depView.proj(e.lo, e.la);
+    const el = document.createElementNS(NS, "circle");
+    el.setAttribute("class", "sc");
+    el.setAttribute("r", "3.5");
+    overlay.appendChild(el);
+    marquesEcole.push({ el: el, mx: (p[0] - depView.x0) * depView.k, my: (p[1] - depView.y0) * depView.k });
+  }
+
+  if (panneauOuvert) synchroniser(); else basculerPanneau(true);
+  rendreListe();
+  placerMarqueurs();
+}
+
+/** vide le calque et revient à la vue « liste » */
+function viderPanneau() {
+  while (overlay.firstChild) overlay.removeChild(overlay.firstChild);
+  marquesEcole = [];
+  ecoleOrdre = [];
+  ecoleCourante = -1;
+  rendreListe();
+}
+
+/** met les marqueurs des établissements à leur place à l'écran. Le calque est
+    hors du groupe que le zoom transforme : il faut donc y recopier la position
+    des points à chaque déplacement de la carte. */
+function placerMarqueurs() {
+  if (!depView) return;
+  const m = communeGroup.getScreenCTM();
+  if (!m) return;
+  for (const mk of marquesEcole) {
+    if (!mk) continue;
+    mk.el.setAttribute("cx", (m.a * mk.mx + m.c * mk.my + m.e).toFixed(1));
+    mk.el.setAttribute("cy", (m.b * mk.mx + m.d * mk.my + m.f).toFixed(1));
+  }
+}
+
+/** centre la carte sur un point du repère normalisé */
+function allerAuPoint(mx, my, s) {
+  const z = zoneCentre();
+  scale = Math.min(MAXZ, Math.max(MINZ, s));
+  tx = (z.x0 + z.x1) / 2 - (rect.x + rect.k * mx) * scale;
+  ty = (z.y0 + z.y1) / 2 - (rect.y + rect.k * my) * scale;
+  apply();
+}
+
+/* --- branchements du panneau --------------------------------------------- */
+panneau.querySelector(".pf").addEventListener("click", function () { basculerPanneau(false); });
+panelBtn.addEventListener("click", function () { basculerPanneau(true); });
+
+panCorps.addEventListener("mouseover", function (e) {
+  const it = e.target.closest(".ec");
+  if (!it) return;
+  survolerEcole(+it.getAttribute("data-i"));
+  it.classList.add("actif");
+});
+panCorps.addEventListener("mouseout", function (e) {
+  const it = e.target.closest(".ec");
+  if (!it) return;
+  quitterEcole(+it.getAttribute("data-i"));
+  it.classList.remove("actif");
+});
+panCorps.addEventListener("click", function (e) {
+  if (e.target.closest(".ret")) { rendreListe(); return; }
+  if (e.target.closest(".ctr")) {
+    const cible = ecoleOrdre[ecoleCourante];
+    const mk = marquesEcole[ecoleCourante];
+    /* le point passe en rouge avant le déplacement : il faut le voir arriver
+       au milieu de l'écran, et pas seulement après */
+    if (cible) { ecoleCentree = cleEcole(cible); majMarques(); }
+    if (mk) allerAuPoint(mk.mx, mk.my, Math.max(scale, 8));
+    return;
+  }
+  const it = e.target.closest(".ec");
+  if (!it) return;
+  ecoleCourante = +it.getAttribute("data-i");
+  rendreBlocus();
+  majMarques();
+});
+
+/* ---------------------------------------------------------------------------
+   11. DÉMARRAGE
+   --------------------------------------------------------------------------- */
+let tmr = null;
+/* La barre est remesurée avant le reste : --haut change la place des panneaux,
+   et ceux-ci doivent savoir où ils vont être posés avant d'être mesurés eux-mêmes. */
+function relayout() { mesurerBarre(); layout(); resetView(); }
+window.addEventListener("resize", function () {
+  if (tmr) clearTimeout(tmr);
+  tmr = setTimeout(relayout, 90);
+});
+window.addEventListener("orientationchange", function () { setTimeout(relayout, 250); });
+
+/* --- la barre du haut : menus, puis filtre ---------------------------------
+   L'ordre compte. FILTRE.poser() relit le choix memorisé (donc il doit
+   tourner avant le premier calcul de couleur), et la hauteur de la barre est
+   publiee dans --haut, dont dependent la carte et le panneau pour se placer
+   en dessous. */
+function mesurerBarre() {
+  const b = document.getElementById("topbar");
+  if (b) document.documentElement.style.setProperty("--haut", b.offsetHeight + "px");
+}
+/* La barre s'enroule sur deux lignes dès que la fenêtre rétrécit, et le routeur
+   lui ajoute un lien de plus quand on ouvre un département : une mesure faite
+   une seule fois se périmait, et --haut restait trop petit — les panneaux
+   repartaient se glisser sous la barre. Un observateur la reprend à chaque
+   changement de hauteur. Il ne peut pas boucler : --haut ne change que la
+   place des panneaux, pas la hauteur de la barre. */
+if (window.ResizeObserver) {
+  const barre = document.getElementById("topbar");
+  if (barre) new ResizeObserver(mesurerBarre).observe(barre);
+}
+/* La barre est posée ici sans département : le routeur la reapposera dès
+   qu'il saura dans quel département on se trouve. */
+NAV.poser("nav", "dep");
+  const navEl = document.getElementById("nav");
+FILTRE.poser("filtre");
+mesurerBarre();
+
+/* Quand on change de periode, tout ce qui depend du filtre est refait : les
+   couleurs des communes, la table des blocus, le panneau et la liste. */
+FILTRE.surChangement(function () {
+  tableBlocus = null;
+  colorerCommunes();
+  mesurerBarre();
+  if (depView) layout();
+  if (ecoles && ecolesPour === (depView && depView.code)) {
+    for (const c in ecoles.villes) {
+      for (const e of ecoles.villes[c]) rattacher(e, c);
+    }
+  }
+  if (selectedCommune) afficherPanneau(selectedCommune);
+  fillList(document.getElementById("search").value || "");
+});
+
+/* Changer de thème ne change aucun nombre, mais il change les couleurs dont
+   les nombres sont tirés : la carte et la pastille de la barre sont donc
+   repeintes. Tout le reste — traits, marqueurs, panneaux, encadrés — est écrit
+   en variables dans la feuille de style et se met à jour seul. */
+if (window.THEME) THEME.surChangement(function () {
+  colorerCommunes();
+  const r = depView && results[depView.code];
+  if (selectedCommune) depDot.style.background = BLOC.couleurCss("--bord-2", "#cfd4da");
+  else if (r) depDot.style.background = r.color || BLOC.couleurCss("--bord", "#d8dce0");
+});
+
+fillDepGrid("");
+router();
+</script>
+  <script src="build/map-zoom.js"></script>
+</body>
+</html>
