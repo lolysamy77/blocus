@@ -1,0 +1,28 @@
+/* ---------------------------------------------------------------------------
+   L'apparence des boutons posés autour des cartes : « agrandir / réduire », posés
+   par build/map-zoom.js, et « revenir à la France entière », posé par
+   build/carte-pan.js.
+
+   Elle est écrite une fois pour les deux cartes du site. La place des boutons,
+   elle, dépend de ce qui entoure la carte — barre d'échelle en bas à droite sur
+   index.html, coin de la carte sur voter.html — et reste donc dans la feuille de
+   style de chaque page ; ce fichier ne dit rien de `position`.
+
+       <link rel="stylesheet" href="build/carte-boutons.css">
+
+   Les couleurs sont celles du thème (build/theme.js), avec les mêmes replis que
+   dans index.html : un bouton reste lisible même si le thème n'a pas été posé.
+   --------------------------------------------------------------------------- */
+#zoomCarte, #retourCarte { display: none; gap: 5px; z-index: 21; }
+#zoomCarte.on, #retourCarte.on { display: flex; }
+
+#zoomCarte button, #retourCarte button {
+  width: 32px; height: 32px; padding: 0; border-radius: 50%;
+  background: var(--fonds-veile, rgba(255, 255, 255, .9)); border: 1px solid var(--bord, #d8dce0);
+  box-shadow: 0 2px 8px var(--ombre, rgba(0, 0, 0, .16)); color: var(--texte-2, #5b6169);
+  font-family: inherit; font-size: 17px; line-height: 1;
+  cursor: pointer; opacity: .32;
+  transition: opacity .15s ease, color .15s ease;
+}
+#zoomCarte button:hover, #zoomCarte button:focus,
+#retourCarte button:hover, #retourCarte button:focus { color: var(--texte, #14161a); opacity: 1; }

@@ -1,0 +1,476 @@
+VAGUE 2 - LOT 6 : FICHES A TRANCHER (17)
+==============================================================================
+
+CONTEXTE
+----------
+Ces fiches viennent de la vague 1. L'agent de vague 1 a trouve une
+source qui attribue un blocus a un etablissement, mais N'A PAS PU
+TRANCHER de quel etablissement il s'agit : le nom est porte par
+plusieurs departements, ou le nom ne correspond a aucune entree du
+fichier officiel des 4774 lycees.
+
+Ton travail : ouvrir les URL listees, confirmer QUEL etablissement
+est reellement cite, QUELS JOURS de blocus, et produire une ligne
+de donnees prete a copier dans build/blocus.js.
+
+Regles absolues :
+1. N'invente jamais un etablissement, une date ni une URL. Si tu ne
+   peux pas trancher, la fiche sort en STATUT: NON TRANCHE et tu
+   passes a la suivante. Un abandon est correct ; une invention
+   est grave.
+2. Une source unique reste acceptable SEULEMENT si elle nomme
+   explicitement l'etablissement. Une liste de communes sans nom
+   d'etablissement ne permet pas de trancher.
+3. Un arret prefectoral de fermeture ou d'interdiction de
+   manifestation n'est PAS un blocus. Reclasse si c'est ca.
+4. Compare toujours le nom au CSV officiel : 39 noms de lycees
+   existent dans plusieurs departements. Un agent de vague 1 a
+   accuse a tort 6 lycees d'etre absents de la base a cause de ça.
+5. ECRIS LE FICHIER resultat-6.txt AVANT de commencer a chercher.
+   Remplis-le au fur et a mesure. Ne reconstruis pas le fichier a
+   la fin depuis ta memoire.
+
+Les URL ci-dessous sont celles citees par l'agent de vague 1.
+Elles peuvent etre particulieres ou Abolues : dans ce cas, retrouve
+l'article par une autre voie, ou declare NON TRANCHE.
+
+
+------------------------------------------------------------------------------
+FICHE 1/17  [PROBLEME : HOMONYME]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Eiffel
+Statut vague 1          : confirmé 02/10
+Vague 1, lot(s)         : 10
+
+Correspondances au fichier officiel (17) :
+   dept 976  UAI 9760125G   Lycée polyvalent Gustave Eiffel de Kahani                  Ouangani
+   dept 95   UAI 0951673C   Lycée polyvalent Gustave Eiffel - Lycée des métiers de l'é Ermont
+   dept 59   UAI 0590011S   Lycée polyvalent Gustave Eiffel - Lycée des métiers        Armentières
+   dept 75   UAI 0752961L   Lycée professionnel Gustave Eiffel                         Paris  7e  Arrondissement
+   dept 68   UAI 0681810Y   Lycée polyvalent Gustave Eiffel                            Cernay
+   dept 3    UAI 0030905T   Lycée professionnel Gustave Eiffel - Lycée des métiers de  Gannat
+   dept 33   UAI 0330028B   Lycée polyvalent Gustave Eiffel                            Bordeaux
+   dept 92   UAI 0922398G   Lycée polyvalent Gustave Eiffel, lycée des métiers de la s Rueil-Malmaison
+   dept 93   UAI 0931272C   Lycée général et technologique Gustave Eiffel              Gagny
+   dept 21   UAI 0211033J   Lycée technologique Gustave Eiffel                         Dijon
+   ... et 7 autres
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 10 - titre : Lycée Eiffel]
+  | 5|Lycée Eiffel|Dijon|21|01/10 (tensions) ; 02/10|**confirmé** 02/10|2
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 2/17  [PROBLEME : HOMONYME]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Marcel-Sembat
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 6
+
+Correspondances au fichier officiel (3) :
+   dept 69   UAI 0690104N   Lycée général et technologique Marcel Sembat               Vénissieux
+   dept 76   UAI 0760110G   Lycée général et technologique Marcel Sembat               Sotteville-lès-Rouen
+   dept 76   UAI 0760146W   Lycée professionnel Marcel Sembat - Lycée des métiers de l Sotteville-lès-Rouen
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 6 - titre : Lycée Marcel-Sembat]
+  | 21|Lycée Marcel-Sembat|Sotteville-lès-Rouen|076|01/10|source unique|1|non
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 3/17  [PROBLEME : HOMONYME]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Sainte-Famille
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 10
+
+Correspondances au fichier officiel (5) :
+   dept 25   UAI 0251035P   Lycée professionnel privé Sainte-Famille                   Besançon
+   dept 33   UAI 0331556M   Lycée général et technologique privé Sainte Famille - Sain Bordeaux
+   dept 33   UAI 0332496J   Lycée professionnel privé Sainte Famille - Saintonge       Bordeaux
+   dept 74   UAI 0740092Y   Lycée polyvalent privé Sainte Famille                      La Roche-sur-Foron
+   dept 80   UAI 0801209E   Lycée général et technologique privé Sainte-Famille        Amiens
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 10 - titre : Lycée Sainte-Famille]
+  | 33|Lycée Sainte-Famille|Besançon|25|01/10|**source unique**|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 4/17  [PROBLEME : HOMONYME]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée privé Saint-Joseph (« Saint-Jo »)
+Commune(s) donnee(s)   : Saint-Martin-Boulogne (62), code 62770
+Statut vague 1          : source unique pour le blocus (une source l'appelle bloqué, une
+Vague 1, lot(s)         : 3
+
+Correspondances au fichier officiel (102) :
+   dept 5    UAI 0050035L   Lycée général privé Saint Joseph                           Gap
+   dept 63   UAI 0631162W   Lycée agricole privé Saint-Joseph de Le Breuil-sur-Couze   Le Breuil-sur-Couze
+   dept 64   UAI 0641705F   Lycée professionnel privé Saint Joseph                     Ustaritz
+   dept 42   UAI 0420992A   Lycée professionnel Saint Joseph                           Le Chambon-Feugerolles
+   dept 29   UAI 0291654R   Lycée polyvalent privé Saint-Joseph - Saint-Marc           Concarneau
+   dept 33   UAI 0332535B   Lycée professionnel privé Saint Joseph                     Blanquefort
+   dept 16   UAI 0160083D   Lycée polyvalent privé Saint Joseph L'Amandier             Saint-Yrieix-sur-Charente
+   dept 48   UAI 0480023P   Lycée polyvalent privé Saint Joseph, lycée des métiers des Marvejols
+   dept 1    UAI 0010814E   Lycée professionnel privé Saint Joseph                     Miribel
+   dept 988  UAI 9830269A   Lycée professionnel privé Saint Joseph de Cluny            Nouméa
+   ... et 92 autres
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 3 - titre : Lycée privé Saint-Joseph (« Saint-Jo »)]
+  | 3a|Lycée privé Saint-Joseph (« Saint-Jo »)|**Saint-Martin-Boulogne** — *pas Boulogne-sur-Mer*|62|01/10 (réserve nature)|**source unique**|2 (1 média)|Qualifié « bloqué » dans une liste, « rassemblement » à 13 h sur place. **Absent du fichier.**
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 5/17  [PROBLEME : INTROUVABLE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Brioude
+Commune(s) donnee(s)   : Lafayette
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 5
+
+AUCUNE correspondance au fichier officiel des 4774
+etablissements. Soit le nom est errone, soit c'est un nom
+different (c cite scolaire, LP avec appellation complete,
+etablissement hors liste). Verifie sur le CSV.
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 5 - titre : Lycée Brioude – Lafayette]
+  | Lycée Brioude – Lafayette|Brioude (43)|30/09 et 01/10|source unique|C1 : action calme devant le lycée le **30/09** (légende), et blocus le **01/10** (corps)
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 6/17  [PROBLEME : INTROUVABLE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Jean-François de Lapérouse
+Commune(s) donnee(s)   : Albi
+Statut vague 1          : confirmé
+Vague 1, lot(s)         : 11
+
+AUCUNE correspondance au fichier officiel des 4774
+etablissements. Soit le nom est errone, soit c'est un nom
+different (c cite scolaire, LP avec appellation complete,
+etablissement hors liste). Verifie sur le CSV.
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 11 - titre : Lycée Jean-François de Lapérouse]
+  | 31|Lycée Jean-François de Lapérouse|Albi|81|01/10 (29/09 = tentative échouée)|blocus confirmé|3
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 7/17  [PROBLEME : INTROUVABLE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Monnet-Fourneyron
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 5
+
+AUCUNE correspondance au fichier officiel des 4774
+etablissements. Soit le nom est errone, soit c'est un nom
+different (c cite scolaire, LP avec appellation complete,
+etablissement hors liste). Verifie sur le CSV.
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 5 - titre : Lycée Monnet-Fourneyron]
+  | 55|Lycée Monnet-Fourneyron|commune non vérifiée|42|01/10|source unique|1|**non → ajouter**
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 8/17  [PROBLEME : INTROUVABLE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée professionnel (à identifier)
+Commune(s) donnee(s)   : Brochon
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 1
+
+AUCUNE correspondance au fichier officiel des 4774
+etablissements. Soit le nom est errone, soit c'est un nom
+different (c cite scolaire, LP avec appellation complete,
+etablissement hors liste). Verifie sur le CSV.
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 1 - titre : Lycée professionnel (à identifier)]
+  | Lycée professionnel (à identifier)|Brochon|21|lycée général et technologique Stéphen-Liégeard|29/09/2026|**source unique**|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 9/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Camille Pissarro
+Commune(s) donnee(s)   : Pontoise
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 6, 12
+
+Correspondances au fichier officiel (1) :
+   dept 95   UAI 0950649P   Lycée polyvalent Camille Pissarro - Lycée des métiers de l Pontoise
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 6 - titre : Lycée Camille Pissarro]
+  | 28|Lycée Camille Pissarro|Pontoise|095|date incertaine|source unique|1|non
+
+  [vague 1 - lot 12 - titre : Lycée Camille-Pissarro]
+  | 17|Lycée Camille-Pissarro|Pontoise|95|**01/10**|source unique|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 10/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Galilée
+Commune(s) donnee(s)   : Cergy
+Statut vague 1          : source unique (syndical)
+Vague 1, lot(s)         : 6, 12
+
+Correspondances au fichier officiel (1) :
+   dept 95   UAI 0951637N   Lycée général et technologique Galilée                     Cergy
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 6 - titre : Lycée Galilée]
+  | 30|Lycée Galilée|Gennevilliers|092|non datée|source unique (syndical)|1|non
+
+  [vague 1 - lot 12 - titre : Lycée Galilée]
+  | 19|Lycée Galilée|Cergy|95|01/10 (rassemblement) / 02/10 (fermeture admin.)|non confirmé|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 11/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Jacques-Vaucanson
+Commune(s) donnee(s)   : Les Mureaux
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 6, 12
+
+Correspondances au fichier officiel (1) :
+   dept 37   UAI 0371418R   Lycée général et technologique Jacques de Vaucanson        Tours
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 6 - titre : Lycée Jacques-Vaucanson]
+  | 33|Lycée Jacques-Vaucanson|Les Mureaux|078|29/09|source unique|1|non
+
+  [vague 1 - lot 12 - titre : Lycée Jacques-Vaucanson]
+  | 28|Lycée Jacques-Vaucanson|Les Mureaux|78|**29/09**|source unique|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 12/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée La Martinière-Duchère
+Commune(s) donnee(s)   : Lyon 9e
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 5
+
+Correspondances au fichier officiel (1) :
+   dept 69   UAI 0690038S   Lycée général et technologique La Martinière Duchère       Lyon 9e  Arrondissement
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 5 - titre : Lycée La Martinière-Duchère]
+  | 20|Lycée La Martinière-Duchère|Lyon 9e|69|29/09|source unique|1|**non → ajouter**
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 13/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Monnet-Mermoz
+Commune(s) donnee(s)   : Aurillac
+Statut vague 1          : confirmé
+Vague 1, lot(s)         : 5
+
+Correspondances au fichier officiel (1) :
+   dept 15   UAI 0150006A   Lycée polyvalent Monnet-Mermoz - Lycée des métiers des sci Aurillac
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 5 - titre : Lycée Monnet-Mermoz]
+  | 79|Lycée Monnet-Mermoz|Aurillac|15|29/09|confirmé|2|**non → ajouter**
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 14/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Pierre-Mendès France
+Commune(s) donnee(s)   : Montpellier
+Statut vague 1          : confirmé
+Vague 1, lot(s)         : 11
+
+Correspondances au fichier officiel (1) :
+   dept 34   UAI 0340043M   Lycée professionnel Pierre Mendès France                   Montpellier
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 11 - titre : Lycée Pierre-Mendès France]
+  | 6|Lycée Pierre-Mendès France|Montpellier|34|01/10|blocus confirmé|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 15/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Sonia-Francius
+Commune(s) donnee(s)   : Saint-Laurent-du-Maroni
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 4
+
+Correspondances au fichier officiel (1) :
+   dept 973  UAI 9730597L   LYCEE POLYVALENT SONIA FRANCIUS                            Saint-Laurent-du-Maroni
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 4 - titre : 4. Lycée Sonia-Francius — Saint-Laurent-du-Maroni (973)]
+  | ## 4. Lycée Sonia-Francius — Saint-Laurent-du-Maroni (973)
+  | 
+  | - **Statut** : source unique
+  | - **Nature** : mobilisation **et** lock-out matinal des entrées. Le titre de
+  |   l'article parle de « grève », et c'est bien une grève/mobilisation d'élèves — mais
+  |   le corps du texte décrit factuellement un acte de blocus au sens de la règle
+  |   n°2 : « **les entrées ont été cadenassées dans la matinée, avant que les
+  |   cadenas ne soient découpés** ». Le blocus a donc duré une partie de la matinée
+  |   seulement ; ensuite les élèves ont poursuivi leur rassemblement devant
+  |   l'établissement, dans le calme. Aucune reconduction annoncée au moment de
+  |   l'article.
+  | - **Blocus le** : 30/09 (2026-09-30), le matin — l'article précise « Ce mercredi
+  |   30 septembre », ce qui est cohérent avec le calendrier (29/09 = mardi, journée
+  |   nationale de grève citée partout).
+  | - **Sources** :
+  |   1. Lycée Sonia Francius : des élèves en grève à Saint-Laurent dénoncent des repas
+  |      manqués, des journées trop longues et un gymnase toujours attendu —
+  |      https://la1ere.franceinfo.fr/guyane/ouest-guyanais/lycee-sonia-francius-des-eleves-en-greve-a-saint-laurent-denoncent-des-repas-manques-des-journees-trop-longues-et-un-gymnase-toujours-attendu-1743696.html
+  |      — `01/10/2026 02h43`
+  |   2. Ce que l'on sait du mouvement des lycéens de La Réunion à la Guyane en
+  |      passant par la Guadeloupe, Mayotte et la Martinique —
+  |      https://la1ere.franceinfo.fr/ce-que-l-on-sait-du-mouvement-des-lyceens-de-la-reunion-a-la-guyane-en-passant-par-la-guyane-mayotte-et-la-martinique-1744191.html
+  |      — `02/10/2026 15h13` *(reprise par la même rédaction, ne compte pas comme
+  |      source indépendante)*
+  | 
+  | ### Réserves et identité
+  | 
+  | - **Identité** : **lycée polyvalent Sonia-Francius**, aussi appelé **lycée IV** ou
+  |   « lycée 4 », route de Saint-Laurent, ouvert pour sa première rentrée le
+  |   3 septembre 2026. Le même établissement est nommé « lycée Sonia Francius » par
+  |   les élèves et la presse.
+  | - **Une source secondaire dit « lundi »** : la brève de Lutte Ouvrière du 02/10/2026
+  |   écrit que les élèves « se sont mobilisés **lundi** », tout en citant la presse.
+  |   Ce « lundi » contredit le « mercredi 30 septembre » de Guyane La 1ère et le
+  |   titre lui-même de l'article (« des élèves en grève » publié le 01/10 au matin).
+  |   Je retiens le **mercredi 30/09/2026**, date explicite et cohérente, et je
+  |   signale la contradiction plutôt que de la lisser :
+  |   https://www.lutte-ouvriere.org/portail/breves/guyane-lyceens-lycee-iv-st-laurent-maroni-mobilisent-197630.html
+  |   — `02/10/2026` *(article fondé sur la presse, pas une source indépendante)*
+  | - Aucune source ne documente un blocus supplémentaire de cet établissement entre
+  |   le 1ᵉʳ et le 4 octobre 2026. À noter, dans le même établissement voisine : les
+  |   élèves du **lycée Bertène-Juminer** ont « tiré la sonnette d'alerte » le
+  |   vendredi 2 octobre (chaleur, électricité, climatisation) — mobilisation, pas
+  |   de blocus.
+  | 
+  | ---
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 16/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée Voltaire
+Commune(s) donnee(s)   : Nîmes
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 11
+
+Correspondances au fichier officiel (1) :
+   dept 30   UAI 0301210C   Lycée professionnel Voltaire                               Nîmes
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 11 - titre : Lycée Voltaire]
+  | 15|Lycée Voltaire|Nîmes|30|02/10|**fermeture administrative, blocus non établi**|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+
+
+------------------------------------------------------------------------------
+FICHE 17/17  [PROBLEME : ABSENT_BASE]
+------------------------------------------------------------------------------
+Nom donne par l'agent : Lycée polyvalent Jean Macé (métiers de la Métallurgie, de l'Électrotechnique et de la Maintenance industrielle)
+Statut vague 1          : source unique
+Vague 1, lot(s)         : 12
+
+Correspondances au fichier officiel (1) :
+   dept 94   UAI 0940129E   Lycée polyvalent Jean Macé - Lycée des métiers de la Métal Vitry-sur-Seine
+
+BLOC ECRIT PAR L'AGENT DE VAGUE 1 (a verifier, pas a recopier) :
+
+  [vague 1 - lot 12 - titre : Lycée polyvalent Jean Macé (métiers de la Métallurgie, de l'Électrotechnique et de la Maintenance industrielle)]
+  | 3|Lycée polyvalent Jean Macé (métiers de la Métallurgie, de l'Électrotechnique et de la Maintenance industrielle)|Vitry-sur-Seine|94|non daté (avant le 02/10)|source unique|1
+
+  A RENDRE (une seule ligne de donnees) :
+  code| appellation exacte du CSV | commune | dept | nature | n | j | z | l(url) | p | q(citation) | m
+  ...ou... STATUT: NON TRANCHE + une phrase de motif.
+

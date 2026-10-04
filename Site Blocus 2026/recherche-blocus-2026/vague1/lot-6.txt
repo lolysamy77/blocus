@@ -1,0 +1,53 @@
+# Lot 6 - Paris et petite couronne
+
+Paris est le **premier foyer du mouvement** et c'est le plus grand reservoir
+d'etablissements non rattaches de tout le pays (169 a Paris seul).
+Attention : beaucoup de ces etablissements sont des **prive**, des **EREA**,
+des **sections d'ULIS** ou des **cites scolaires** qui ne bloquent pas
+forcacement meme quand le secteur bloque.
+
+## Etape 1 - les articles de liste parisien avant tout
+
+Chercher d'abord les articles de presse qui **donnent une liste nominative**
+des lycees parisiens bloques. C'est le seul rendement possible a cette
+echelle. Pistes de recherche a tenter :
+
+- `lycees parisiens bloques 1er octobre 2026 liste`
+- `blocus lycees Paris 30 septembre 2026`
+- `lycees sans eleves Paris prefecture 2 octobre`
+- site:lemonde.fr / site:francebleu.fr / site:liberation.fr / site:20minutes.fr
+- Les agence de presse recopient souvent la liste prefecture en entier : ce qui
+  compte comme **une seule source**, pas N.
+
+## Etape 2 - piege majeur du 02/10
+
+La liste prefectorale des etablissements qui **suspendent les cours** le
+vendredi 2 octobre ne dit pas qui a bloque le jour meme. Un etablissement qui
+n'est dans cette liste que parce qu'il a ete bloque le 1er n'a pas de blocus
+le 2. Chercher la date reelle du blocus pour chacun.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Ecole du Verre de Paris - Lucas de Nehou Lycée Polyvalent des Métiers d'Art | Paris  5e  Arrondissement | 075 | POLYVALENT |
+| 2 | Lycée professionnel René Cassin - Lycée des métiers supports, du conseil et du numérique | Paris 16e  Arrondissement | 075 | PROFESSIONNEL |
+| 3 | Lycée polyvalent Galilée - Lycée des métiers de la chimie et des biotechnologies | Franqueville-Saint-Pierre | 076 | POLYVALENT |
+| 4 | Lycée professionnel privé Notre-Dame | Elbeuf | 076 | PROFESSIONNEL |
+| 5 | Lycée professionnel Paul Painlevé, lycée des métiers du commerce, de la communication et de la gestion | Courbevoie | 092 | PROFESSIONNEL |
+| 6 | Lycée général et technologique privé Jeanne d'Arc | Colombes | 092 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 7 | Lycée polyvalent Sabatier - Lycée des métiers de la beauté, du bien-être et du goût | Bobigny | 093 | POLYVALENT |
+| 8 | Lycée polyvalent Application de l'Enna - Lycée des métiers d'art, de la couture, de la mode éthique et des services publics | Saint-Denis | 093 | POLYVALENT |
+| 9 | Lycée général privé cours du hameau | Thiais | 094 | D ENSEIGNEMENT GENERAL |
+| 10 | Lycée général et technologique Eugène Delacroix | Maisons-Alfort | 094 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 11 | Lycée général et technologique Van Gogh | Ermont | 095 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 12 | Lycée polyvalent privé Notre Dame de La Compassion | Pontoise | 095 | POLYVALENT |
+| 13 | Lycée général et technologique Les Sept Mares | Maurepas | 078 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 14 | Lycée professionnel Henri Matisse | Trappes | 078 | PROFESSIONNEL |
+
+## Rapports nommes a ne pas confondre
+
+- Paris compte plusieurs homonymes : **Thomas Edison**, **Jean Renoir**,
+  **Jacques Decour**, **Colette Heilbronner**... verifier la commune.
+- Un meme nom existe en province : **Lakanal** existe aussi a-other region ?
+ Verifier systematiquement le code departement avant d'attribuer une date.

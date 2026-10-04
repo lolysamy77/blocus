@@ -1,0 +1,43 @@
+# Lot 2 — Mediterranee, Alpes, Rhone-Alpes, Seine-Saint-Denis, Haute-Garonne
+
+Etablissements deja releves mais **non rattaches**. URL de presse fournie :
+la recuperer en premier.
+
+| # | Etablissement | Commune | Dept | Piste | URL fournie |
+|---|---|---|---|---|---|
+| 1 | Lycée polyvalent Rive-Gauche | La Seyne-sur-Mer | 83 | — | via Facebook Marseille Mobilite |
+| 2 | Lycée Curide | Menton | 06 | nom a verifier: Curi**de** ou Curide ? | via Facebook France 3 Provence-Alpes |
+| 3 | Lycée Thomas-Edison | Grenoble | 38 | — | https://www.facebook.com/LeDauphineLibereGrenoble/posts/1761334225993647/ |
+| 4 | Lycée Marie-Curie | Grenoble | 38 | attention: existe aussi un college Marie-Curie a Grenoble | https://www.facebook.com/LeDauphineLibereGrenoble/posts/1761334225993647/ |
+| 5 | Lycée Bouloche | Livry-Gargan | 93 | — | https://www.tf1info.fr/societe/direct-blocus-des-lycees-et-des-universites-le-mouvement-se-poursuit-laurent-nunez-edouard-geffray-france-insoumise-education-les-informations-du-vendredi-2-octobre-2026-2467571.html |
+| 6 | Lycée Françoise-Dissart | Tournefeuille | 31 | — | https://actu.fr/occitanie/toulouse_31555/apres-les-violences-de-jeudi-de-nombreux-lycees-suspendent-les-cours-en-haute-garonne-voici-la-liste_64868865.html |
+
+## Articles de liste a exploiter en priorite
+
+Ces articles citent **plusieurs etablissements d'un coup**. Les extraire
+et completer, c'est le meilleur rapport resultat/temps :
+
+- https://actu.fr/occitanie/toulouse_31555/apres-les-violences-de-jeudi-de-nombreux-lycees-suspendent-les-cours-en-haute-garonne-voici-la-liste_64868865.html
+- Liste des lycees bloques en PACA : chercher `"liste des lycees" blocages PACA
+  Bouches-du-Rhône Var Alpes-Maritimes octobre 2026`
+- Marseille : l'article indique **18 lycees totalement bloques + 3 partiellement**
+  le 1er octobre, et une quarantaine d'etablissements concernes dans les
+  Bouches-du-Rhene. Chercher la liste nominative.
+- Brest : la majorite des lycees bloques le 1er octobre.
+- Lyon / Rhone / Loire : chercher la liste des lycees sans eleves le 2 octobre
+  (prefecture).
+
+## Attention nommage
+
+- **Marie-Curie a Grenoble** : college et lycee portent le meme nom. Verifier
+  la nature exacte de l'etablissement bloque.
+- **Livry-Gargan (93)** : verifier le nom exact (Bouloche).
+- Ne pas confondre avec le **lycee Balzac de Tours**, traite au lot 1.
+
+## Extensions a couvrir en plus
+
+Meme zone, si le temps le permet : Marseille et son hinterland, Toulon,
+Nice, Aix-en-Provence, Grenoble, Lyon, Villeurbanne, Saint-Étienne, Clermont-
+Ferrand, Toulouse.
+
+Consulter `build/blocus-recherche.js` pour eviter les doublons.

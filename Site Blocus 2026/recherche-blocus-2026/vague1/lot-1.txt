@@ -1,0 +1,39 @@
+# Lot 1 — Centre-Val de Loire + Bourgogne-Franche-Comté
+
+Établissements déjà releves dans la recherche precedente mais **non rattaches**
+(Nature erronee proposee entre parentheses = piste de la machine, a verifier).
+Pour chacun, une URL de presse est fournie : la recuperer en premier.
+
+| # | Etablissement | Commune | Dept | Piste | URL fournie |
+|---|---|---|---|---|---|
+| 1 | Lycée Henri-Bergson | Bourges | 18 | — | via Facebook Berry Républicain (chercher le post) |
+| 2 | Lycée Dessaignes-Delaunay | Blois | 41 | Lycée professionnel Sonia Delaunay | https://www.lanouvellerepublique.fr/deux-sevres/direct-mobilisation-lyceenne-la-colere-etudiante-se-poursuit-en-centre-val-de-loire-et-dans-le-poitou-1790835628 |
+| 3 | Lycée Balzac | Blois | 41 | — | https://www.lanouvellerepublique.fr/deux-sevres/direct-mobilisation-lyceenne-la-colere-etudiante-se-poursuit-en-centre-val-de-loire-et-dans-le-poitou-1790835628 |
+| 4 | Lycée Augustin-Thierry | Blois | 41 | College Augustin Thierry — nature differente, A VERIFIER | https://www.lanouvellerepublique.fr/deux-sevres/direct-mobilisation-lyceenne-la-colere-etudiante-se-poursuit-en-centre-val-de-loire-et-dans-le-poitou-1790835628 |
+| 5 | Lycée Montjoux | Besancon | 25 | — | https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/ |
+| 6 | Lycée Germaine-Tillion | Audincourt | 25 | — | https://letrois.info/societe/greve-des-lyceens-nouvelles-interpellations-a-belfort/ |
+| 7 | Lycée de Behren-les-Forbach | Behren-les-Forbach | 57 | attention: existe aussi un college a Behren | https://www.radiomelodie.com/a/23394-manifestations-lyceennes-des-tensions-eclatent-entre-jeunes-et-forces-de-lordre-a-forbach |
+| 8 | Lycée La Providence | Forbach | 57 | College La Providence — nature differente, A VERIFIER | https://www.radiomelodie.com/a/23394-manifestations-lyceennes-des-tensions-eclatent-entre-jeunes-et-forces-de-lordre-a-forbach |
+| 9 | Cité scolaire du Banlay | Nevers | 58 | — | https://www.lejdc.fr/nevers-58000/actualites/on-bloque-tout-parce-quon-nous-laisse-rien-plusieurs-centaines-deleves-mobilises-devant-leurs-lycees-a-nevers_15055004/ |
+| 10 | Lycée Marc-Bloch | Strasbourg | 67 | — | https://www.lalsace.fr/education/2026/09/30/blocages-des-lycees-l-acces-a-plusieurs-etablissements-perturbe-en-alsace |
+| 11 | Lycée Henri-Vincenot | Louhans | 71 | — | https://www.lejsl.com/education/2026/10/01/suivez-la-3e-journee-de-mobilisation-lyceenne-en-saone-et-loire |
+| 12 | Lycée professionnel (a identifier) | Brochon | 21 | nom manquant dans la source | https://www.infos-dijon.com/news/bourgogne-franche-comte/bourgogne-franche-comte/bourgogne-point-de-situation-des-blocages-de-lycees-1790719200.html |
+
+## Attention nommage
+
+- **Balzac a Blois (41)** est bien un lycee; c'est aussi le nom d'un college a
+  Blois. Le blocus du 30/09 au lycee Balzac de Tours (37) est un autre etablissement.
+  Ne pas confondre les deux.
+- **Cité scolaire du Banlay** est un etablissement (lycees voie generale,
+  technologique et professionnelle), pas un lycee simple.
+- La **Behren-les-Forbach** : verifier quel etablissement a ete bloque (le lycee
+  ou le college du meme nom).
+
+## Extensions a couvrir en plus (meme zone)
+
+Si le temps le permet, verifier aussi ces lycees des memes departements qui
+n'apparaissent dans aucun des fichiers de blocus existants :
+Blois, Tours, Bourges, Chartres, Orléans, Dijon, Besançon, Belfort, Strasbourg,
+Colmar, Mâcon, Nevers, Auxerre, Chalon-sur-Saône.
+
+Consulter `build/blocus-recherche.js` pour ne pas refaire ce qui est deja couvert.

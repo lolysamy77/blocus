@@ -1,0 +1,88 @@
+# Lot 12 - Ile-de-France, suite
+
+Le lot 6 n'a couvert que Paris et un fragment de la petite couronne. La
+region IDF est le **premier reservoir du pays** : 286 etablissements non
+rattaches, dont 169 a Paris seul. On attaque les departements non faits.
+
+## Etape 1 - liste prioritaire
+
+- `lycees bloques Val-de-Marne 1er octobre 2026 liste`
+- `blocus lycees Yvelines Essonne 30 septembre 2026`
+- `lycees sans eleves Val-d'Oise 2 octobre prefecture`
+- `lycee bloque Creteil Nanterre 2026`
+- Sites : leparisien.fr, francebleu.fr, actu.fr, 20minutes.fr, lemonde.fr
+
+## Etape 2
+
+- **Le 02/10 est majoritairement une fermeture administrative.** Cherche la date
+  reelle du blocus.
+- L'academie de Versailles (78, 91, 95) et celle de Creteil (94) et Paris (75)
+  communiquent separement. Un article « lycees sans eleves en Ile-de-France »
+  ne precise pas l'academie : sache laquelle avant d'attribuer une date.
+- **Les dept 92, 93 et 94** sont tres denses en lycees et peu couverts par la
+  presse : attends-toi a beaucoup de « non confirme », ce qui est un resultat
+  normal et acceptable.
+
+## Regles de methode
+
+- **Un fil AFP recopie = UNE source.** Sinon ecris `source unique`.
+- **Snapchat n'est pas une source.** Instagram / TikTok / YouTube seulement si
+  une URL reelle monte, avec « vue en recherche, page non ouverte ».
+- **Verifie la date ET l'etablissement de chaque page.**
+- Si tu ne trouves rien : **non confirme**, en preciseant tes recherches.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée général privé cours du hameau | Thiais | 094 | D ENSEIGNEMENT GENERAL |
+| 2 | Lycée général et technologique Eugène Delacroix | Maisons-Alfort | 094 | GENERAL ET TECHNOLOGIQUE |
+| 3 | Lycée polyvalent Jean Macé - Lycée des métiers de la Métallurgie, de l'Electrotechnique et de la Maintenance Industrielle | Vitry-sur-Seine | 094 | POLYVALENT |
+| 4 | Lycée général et technologique Charles Le Chauve | Roissy-en-Brie | 077 | GENERAL ET TECHNOLOGIQUE |
+| 5 | Lycée polyvalent du Gué à Tresmes | Congis-sur-Thérouanne | 077 | POLYVALENT |
+| 6 | Lycée général privé Guy Gasnier-Sainte Bathilde | Chelles | 077 | D ENSEIGNEMENT GENERAL |
+| 7 | Lycée polyvalent Georges Brassens, lycée des métiers du numérique et des arts appliqués | Evry-Courcouronnes | 091 | POLYVALENT |
+| 8 | Lycée polyvalent Marie Laurencin | Mennecy | 091 | POLYVALENT |
+| 9 | Etablissement régional d'enseignement adapté Le Château du Lac | Ollainville | 091 | ETAB REGIONAL/ENSEIGNEMENT ADAPT |
+| 10 | Lycée général et technologique Van Gogh | Ermont | 095 | GENERAL ET TECHNOLOGIQUE |
+| 11 | Lycée polyvalent privé Notre Dame de La Compassion | Pontoise | 095 | POLYVALENT |
+| 12 | Lycée général et technologique privé Notre-Dame | Sannois | 095 | GENERAL ET TECHNOLOGIQUE |
+| 13 | Lycée général et technologique Les Sept Mares | Maurepas | 078 | GENERAL ET TECHNOLOGIQUE |
+| 14 | Lycée professionnel Henri Matisse | Trappes | 078 | PROFESSIONNEL |
+| 15 | Lycée agricole privé Sully de Magnanville | Magnanville | 078 | PROFESSIONNEL |
+
+## QUALITY-CHECK - l'interdit absolu
+
+Interdit de mettre une ligne sans nom d'etablissement, et interdit de regrouper
+plusieurs lycees sur une seule ligne avec la ville a la place du nom. Ecris
+plutot « [Ville] - non identifie » dans la section « Ce que je n'ai pas pu
+trouver ».
+
+## Homonymes
+
+- **Voie Domitienne** (94), **Lakanal** (92), **Voie Domitienne / Lakanal /
+  Jean Renoir** sont des sites deastes. Verifie le site.
+- **Germaine Tillion** est a Montbeliard (25), **Germaine Tillion** existe
+  aussi dans d'autres departements. Un agent a confondu avec Audincourt.
+- **Montjoux** est le **lycee Jules-Haag**, a Montferrand-le-Chateau, pas
+  « Montjoux » dans le Jura.
+- Un agent a cru que **Marc Bloch** etait a Strasbourg : il est a **Bischheim**
+  (67). Verifie toujours le code postal contre le CSV.
+
+Arrete-toi vers 25-30 etablissements documentes. Ne descends pas sous 12.
+
+## Livrable
+
+Un seul fichier : `recherche-blocus-2026/vague1/resultat-12.md`
+1. Titre + date + calendrier
+2. Bloc « Articles-listes trouves » avec URL
+3. Une section `## N. Nom - Commune (Dept)` par etablissement
+4. Tableau de synthese :
+   `# | Etablissement | Commune | Dept | Date(s) | Statut | Nb sources independantes`
+5. « Erreurs trouvees dans le lot » et « Ce que je n'ai pas pu trouver »
+
+**ECRIS LE FICHIER TOT DE BUT** : cree-le avec le titre avant les recherches,
+puis complete-le au fur et a mesure.
+
+N'ecris AUCUN autre fichier. Ne modifie rien d'existant. Ne touche pas a
+`build/blocus-recherche.js`.

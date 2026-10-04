@@ -1,0 +1,94 @@
+# Lot 11 - Occitanie hors Haute-Garonne
+
+Montpellier, Nîmes, Perpignan, Béziers, Narbonne, Tarbes. La Haute-Garonne a
+eteTreatée par le lot 2 (Toulouse), on l'evite. 159 etablissements non
+rattaches sur cette zone.
+
+## Etape 1 - liste prioritaire
+
+- `lycees bloques Montpellier 1er octobre 2026 liste`
+- `blocus lycees Nimes Perpignan 30 septembre 2026`
+- `lycees sans eleves Hérault 2 octobre prefecture`
+- `lycee bloque Beziers Tarbes 2026`
+- Sites : actu.fr/montpellier, actu.fr/nimes, france3-regions, middleterm,
+  lapec-laregion.fr, lemonde.fr
+
+## Etape 2
+
+- **Le 02/10 est majoritairement une fermeture administrative**, pas un blocus.
+  Cherche la date reelle du blocus.
+- Montpellier et Nimes ont des **cites scolaires** : verifier de quel etablissement
+  on parle (la cite, le lycee, le LP).
+- **Perpignan** : la presse catalane (L'Independant, Le Petit Catalan) couvre
+  le mouvement. Cherche aussi en catalan si les resultats francais sont vides.
+
+## Regles de methode
+
+- **Un fil AFP recopie = UNE source.** Sinon ecris `source unique`.
+- **Snapchat n'est pas une source.** Instagram / TikTok / YouTube seulement si
+  une URL reelle monte, avec « vue en recherche, page non ouverte ».
+- **Verifie la date ET l'etablissement de chaque page.** Les articles qui
+  rappellent un vieux mouvement piagent : un agent a rejette un article France 3
+  sur Cherbourg qui datait du 4 decembre.
+- Si tu ne trouves rien : **non confirme**, en preciseant tes recherches.
+- Ne **comble jamais** un etablissement avec le nom de la ville (voir la section
+  quality-check plus bas).
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée polyvalent Joseph Vallot | Lodève | 034 | POLYVALENT |
+| 2 | Lycée professionnel Jules Ferry - Lycée des métiers des services à la personne, et de l'entreprise | Montpellier | 034 | PROFESSIONNEL |
+| 3 | Lycée général et technologique privé Notre Dame de La Merci | Montpellier | 034 | GENERAL ET TECHNOLOGIQUE |
+| 4 | Lycée polyvalent André Chamson | Le Vigan | 030 | POLYVALENT |
+| 5 | Lycée général et technologique privé Bellevue | Alès | 030 | GENERAL ET TECHNOLOGIQUE |
+| 6 | Lycée polyvalent privé Emmanuel d'Alzon | Nîmes | 030 | POLYVALENT |
+| 7 | Lycée polyvalent Déodat de Séverac - Lycée des métiers du transport, de la logistique et des gestions associées | Céret | 066 | POLYVALENT |
+| 8 | Lycée polyvalent Jean Lurcat, Lycée des métiers des arts et services aux organisations | Perpignan | 066 | POLYVALENT |
+| 9 | Lycée polyvalent Charles Renouvier | Prades | 066 | POLYVALENT |
+| 10 | Lycée professionnel Toulouse-Lautrec - Lycée des métiers de service à la personne et à l'entreprise | Albi | 081 | PROFESSIONNEL |
+| 11 | Lycée professionnel Anne Veaute - Lycée des métiers du paramédical et du tertiaire | Castres | 081 | PROFESSIONNEL |
+| 12 | Lycée général Las Cases | Lavaur | 081 | D ENSEIGNEMENT GENERAL |
+| 13 | Lycée professionnel Sixte Vignon - Lycée des métiers de l'habitat, de l'énergie et de l'automobile | Aureilhan | 065 | PROFESSIONNEL |
+| 14 | Lycée d'enseignement général et technologique agricole de Vic-en-Bigorre | Vic-en-Bigorre | 065 | GENERAL ET TECHNOLOGIQUE |
+| 15 | Ecole technologique privée Concept Formation Ecole de coiffure | Tarbes | 065 | D ENSEIGNEMENT TECHNOLOGIQUE |
+
+## QUALITY-CHECK - l'interdit absolu
+
+Un agent a produit des lignes comme « Annecy - Gabriel-Faurier / Germain-Sommeiller /
+... » pour 3 lycees, et « Lycée (Bourgoin-Jallieu) » sans nom d'etablissement.
+**C'est interdit.** Sur un site public qui nomme des etablissements reels, une
+ligne sans nom d'etablissement est une invention.
+
+Si tu n'arrives pas a identifier le lycee d'une ville, ecris :
+« [Ville] - etablissement non identifie, aucune source nominative »
+dans la section « Ce que je n'ai pas pu trouver », **pas** dans le tableau de synthese.
+
+## Ancien piege : les homonymes
+
+- **Jean Monnet**, **Aristide Briand**, **Paul Langevin**, **Jules Guesde**,
+  **Daudet**, **Mistral** existent dans plusieurs villes. Verifie le code postal.
+- Un agent a cru que « Pasteur » etait dans une liste de lycees : c'etait une
+  **rue**. Verifie que l'etablissement est reellement nomme.
+
+Arrete-toi vers 25-30 etablissements documentes. Ne descends pas sous 12.
+
+## Livrable
+
+Un seul fichier : `recherche-blocus-2026/vague1/resultat-11.md`
+1. Titre + date + calendrier (28/09 lundi, 29/09 mardi, 30/09 mercredi,
+   01/10 jeudi, 02/10 vendredi, 03/10 samedi, 04/10 dimanche)
+2. Bloc « Articles-listes trouves » avec URL
+3. Une section `## N. Nom - Commune (Dept)` par etablissement
+4. Tableau de synthese :
+   `# | Etablissement | Commune | Dept | Date(s) | Statut | Nb sources independantes`
+5. « Erreurs trouvees dans le lot » et « Ce que je n'ai pas pu trouver »
+
+**ECRIS LE FICHIER TOT DE BUT** : cree `resultat-11.md` avec le titre et l'en-tete
+avant de commencer les recherches, puis complete-le au fur et a mesure. Un agent
+precedent a epuise son contexte avant d'ecrire quoi que ce soit et son travail a
+ete perdu.
+
+N'ecris AUCUN autre fichier. Ne modifie rien d'existant. Ne touche pas a
+`build/blocus-recherche.js`.

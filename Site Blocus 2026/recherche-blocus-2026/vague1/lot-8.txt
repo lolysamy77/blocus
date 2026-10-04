@@ -1,0 +1,51 @@
+# Lot 8 - Bretagne et Pays de la Loire
+
+Bretagne (Ille-et-Vilaine, Finistere) et Pays de la Loire (Loire-Atlantique,
+Vendee). Tres peu couvert par les lots precedents. Les lycees bretons ont
+montre un mobilisation reelle fin septembre, documentee par la presse locale
+(Ouest-France, Le Telegramme, France3 Bretagne).
+
+## Etape 1 - liste prioritaire
+
+- `lycees bloques Bretagne 1er octobre 2026`
+- `lycees bloques Ille-et-Vilaine liste`
+- `blocus lycees Quimper Brest Rennes 2026`
+- `lycees Nantes bloque 30 septembre 2026`
+
+Reste a verifier de l'information connue : le **lycee Jules-Lesven a Brest** et
+le **lycee Chaptal a Quimper** seraient concernes, mais sans liste complete
+ni date precise. Chercher les autres et les dater.
+
+## Etape 2 - le piege du 02/10 a Nantes
+
+Une liste de **lycees nantais sans eleves le 2 octobre** circule. Comme
+ailleurs, c'est une **fermeture administrative consecutive aux blocus des
+jours precedents**, pas un blocus le 2. Chercher la date du blocus lui-meme.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée professionnel Alphonse Pellé | Dol-de-Bretagne | 035 | PROFESSIONNEL |
+| 2 | Lycée professionnel Jean Guéhenno - Lycée des métiers | Fougères | 035 | PROFESSIONNEL |
+| 3 | Lycée professionnel privé Notre-Dame | Redon | 035 | PROFESSIONNEL |
+| 4 | Lycée polyvalent privé Jeanne d'Arc - Lycée des métiers du tourisme, du secteur sanitaire et de l'intervention sociale | Rennes | 035 | POLYVALENT |
+| 5 | Lycée professionnel René Laënnec - Lycée des métiers des services à la personne | Pont-l'Abbé | 029 | PROFESSIONNEL |
+| 6 | Lycée polyvalent privé Saint-Joseph - Saint-Marc | Concarneau | 029 | POLYVALENT |
+| 7 | Lycée professionnel privé Javouhey | Brest | 029 | PROFESSIONNEL |
+| 8 | Lycée professionnel privé Le Likès - La Salle - Lycée des métiers | Quimper | 029 | PROFESSIONNEL |
+| 9 | Lycée général et technologique privé Saint Stanislas | Nantes | 044 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 10 | Lycée général et technologique privé Notre Dame d'Espérance | Saint-Nazaire | 044 | ENSEIGNT GENERAL ET TECHNOLOGIQUE |
+| 11 | Lycée professionnel privé Saint Thomas d'Aquin | Ancenis-Saint-Géréon | 044 | PROFESSIONNEL |
+| 12 | Lycée professionnel privé Sainte Thérèse | Saint-Nazaire | 044 | PROFESSIONNEL |
+| 13 | Lycée polyvalent privé Saint Carlo Acutis | Montaigu-Vendée | 085 | POLYVALENT |
+| 14 | Lycée polyvalent privé Notre-Dame | Challans | 085 | POLYVALENT |
+
+## Pieges
+
+- **Chaptal** existe a Quimper, Paris et Rouen. Verifier le departement.
+- **Jules-Lesven** est le nom actuel du lycee de l'**Iroise** a Brest
+  (ancien LEP Saint-Ouen, lire fusee en 2008). Ne pas chercher Saint-Ouen.
+- **Fustel-de-Coulanges**, **Victor Hugo**, **Montaigne** a Saint-Brieuc.
+- La **Manche** (50) est en Normandie et a deja ete traitee par le lot 3 :
+  ne pas reprendre les etablissements du lot 3.

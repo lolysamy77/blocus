@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revendications - Lycéens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Les couleurs viennent de build/theme.js ; ces noms sont des surnoms,
+       gardés parce que la page s'en sert partout. */
+    :root {
+      --primary: var(--lien);
+      --primary-light: var(--lien-pale);
+      --bg: var(--fonds-2);
+      --text-primary: var(--texte);
+      --text-secondary: var(--texte-2);
+      --border: var(--bord);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* La barre est celle du site : son contenu ET son apparence sont écrits
+       dans build/nav.js, qui l'injecte dans les cinq pages. Il ne reste ici
+       que la façon dont elle est posée. */
+    header { position: sticky; top: 0; z-index: 10; }
+
+    /* le titre et son chapeau */
+    .titre {
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.4rem,3.4vw,1.9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .chapo {
+      margin: 0 0 1.2rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 62ch;
+    }
+
+    .container {
+      width: min(980px,95vw);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.5rem,3vw,2rem);
+    }
+
+    .card {
+      background: transparent;
+      border-radius: 0;
+      padding: clamp(1.75rem,4vw,2.5rem);
+      box-shadow: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.5rem,3vw,2rem);
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.25rem,2.5vw,1.75rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-item {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(0.5rem,1.5vw,0.75rem);
+      padding: clamp(1rem,2.5vw,1.25rem) clamp(1.25rem,2.5vw,1.5rem);
+      border-radius: 14px;
+      background: linear-gradient(180deg, var(--fonds-2), var(--fonds));
+      border: 1px solid var(--bord);
+      transition: border-color 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .list-item:hover {
+      border-color: var(--lien-bord);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 60px -30px var(--ombre-forte);
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: clamp(1.05rem,2.2vw,1.2rem);
+      margin: 0;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .item-text {
+      color: var(--text-secondary);
+      margin: 0;
+      font-size: clamp(1rem,2vw,1.05rem);
+    }
+
+    /* l'encart qui distingue les revendications d'un établissement de celles
+       de la liste : deux choses voisines, deux endroits différents */
+    .encart {
+      margin-top: clamp(1rem, 2.5vw, 1.5rem);
+      padding: clamp(1rem,2.5vw,1.25rem) clamp(1.25rem,2.5vw,1.5rem);
+      border-radius: 14px;
+      border: 1px solid var(--lien-bord);
+      background: var(--accent-pale);
+    }
+
+    .encart-titre {
+      margin: 0 0 .5rem;
+      font-size: clamp(1rem,2.2vw,1.15rem);
+      font-weight: 600;
+      color: var(--accent-2);
+      letter-spacing: -0.01em;
+    }
+
+    .encart-texte {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: clamp(0.95rem,2vw,1.02rem);
+    }
+
+    .encart-texte b { color: var(--text-primary); }
+
+    .encart-actions { margin: .9rem 0 0; }
+
+    .encart-lien {
+      display: inline-block;
+      padding: .6rem 1rem;
+      border-radius: 10px;
+      background: var(--accent);
+      color: var(--blanc);
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+    }
+
+    .encart-lien:hover { background: var(--accent-solide-2); }
+
+    footer {
+      padding: 1.5rem 1rem 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      opacity: 0.85;
+    }
+  </style>
+<script src="build/theme.js"></script>
+<style>html, body { background-image: url("fond du site.jpg"); background-size: cover; background-attachment: fixed; background-position: center; }
+</style>
+  <link rel="stylesheet" href="build/mobile-nav.css" />
+</head>
+<body>
+  <header>
+    <nav id="nav" aria-label="Navigation principale"></nav>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="card">
+        <h1 class="titre">Nos revendications</h1>
+        <p class="chapo">
+          Ce que nous demandons pour les lycées. Ce sont ces demandes que
+          défendent les élèves dans les lycées bloqués.
+        </p>
+        <ul class="list">
+          <li class="list-item">
+            <h4 class="item-title">Des moyens supplémentaires pour les lycées</h4>
+            <p class="item-text">
+              Des moyens supplémentaires pour les lycées : davantage de personnels, de
+             matériel et de financements.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Des classes moins chargées</h4>
+            <p class="item-text">
+              Des classes moins chargées, afin d'améliorer les conditions d'apprentissage.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Le recrutement de professeurs et de personnels</h4>
+            <p class="item-text">
+              Le recrutement de professeurs et de personnels (surveillants, CPE, infirmiers,
+             psychologues, etc.).
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">L'amélioration des bâtiments et des équipements</h4>
+            <p class="item-text">
+              L'amélioration des bâtiments et des équipements : chauffage, ventilation,
+             sanitaires, mobilier, salles informatiques, équipements sportifs…
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">De meilleures conditions de travail et d'étude</h4>
+            <p class="item-text">
+              De meilleures conditions de travail et d'étude pour les élèves et les
+             enseignants.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Une restauration scolaire plus accessible et de meilleure qualité</h4>
+            <p class="item-text">
+              Une restauration scolaire plus accessible et de meilleure qualité.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Une amélioration des transports scolaires</h4>
+            <p class="item-text">
+              Une amélioration des transports scolaires, notamment dans les zones rurales.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Davantage d'accompagnement pour l'orientation</h4>
+            <p class="item-text">
+              Davantage d'accompagnement pour l'orientation, notamment concernant Parcoursup
+             et les études supérieures.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">La lutte contre le harcèlement scolaire et les discriminations</h4>
+            <p class="item-text">
+              La lutte contre le harcèlement scolaire et les discriminations.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Une meilleure prise en compte de la santé mentale</h4>
+            <p class="item-text">
+              Une meilleure prise en compte de la santé mentale et du bien-être des élèves.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Des mesures concernant l'écologie dans les établissements</h4>
+            <p class="item-text">
+              Des mesures concernant l'écologie dans les établissements : réduction des
+             déchets, économies d'énergie, végétalisation, etc.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Une plus grande participation des élèves aux décisions</h4>
+            <p class="item-text">
+              Une plus grande participation des élèves aux décisions concernant leur lycée,
+             notamment par l'intermédiaire des conseils de vie de lycée.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">Des mesures contre les inégalités scolaires et sociales</h4>
+            <p class="item-text">
+              Des mesures contre les inégalités scolaires et sociales, afin que l'origine
+             sociale ait moins d'influence sur la réussite.
+            </p>
+          </li>
+          <li class="list-item">
+            <h4 class="item-title">La défense ou la modification de certaines réformes</h4>
+            <p class="item-text">
+              La défense ou la modification de certaines réformes de l'Éducation nationale,
+             selon le mouvement concerné.
+            </p>
+          </li>
+        </ul>
+        <!-- Ce qui est ci-dessus est écrit à la main, relu, et vaut pour
+             tous les lycées de France. C'est aussi la seule liste : le
+             formulaire d'« Ajouter une revendication » ne demande pas d'écrire
+             une phrase, il propose de choisir une de celles-ci, et le serveur
+             refuse tout titre qui ne serait pas ici. Le dire, sinon on cherche
+             à l'onglet Revendications une phrase qu'on n'y trouvera jamais. -->
+        <div class="encart">
+          <h4 class="encart-titre">Votre établissement soutient une de ces revendications</h4>
+          <p class="encart-texte">
+            Cette liste est celle du mouvement, pour tous les lycées, et c'est
+            la seule : on ne peut pas y ajouter une phrase pour son collège ou
+            son lycée. Mais chaque établissement peut soutenir l'une d'elles —
+            celle qui le concerne, une heure de sport qui saute, un professeur
+            manquant, une salle fermée. Choisissez-la pour
+            <b>votre</b> établissement : elle rejoint alors les autres dans
+            <b>son</b> tableau, à droite des blocus, où les élèves de
+            l'établissement la soutiennent ou s'y opposent.
+          </p>
+          <p class="encart-actions">
+            <a class="encart-lien" href="ajouter-une-revendication.html">Choisir pour mon établissement</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-note">
+      Revendications des lycéens • À transmettre à l'Assemblée nationale et à
+      Emmanuel Macron.
+    </p>
+  </footer>
+<script src="build/nav.js"></script>
+<script>NAV.poser("nav", "revendications", { titre: "Revendications" });</script>
+  <script src="build/mobile-nav.js"></script>
+</body>
+</html>

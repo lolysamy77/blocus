@@ -1,0 +1,203 @@
+VAGUE 2 - LOT 4 - RESULTAT
+==============================================================================
+
+A remplir AU FUR ET A MESURE. Ne pas reconstruire a la fin.
+
+Fiches traitees : 0 / 18
+
+----------------------------------------------------------------------
+FICHE 1/18  Lycée Condé
+STATUT: TRANCHE
+Etablissement retenu : Lycée professionnel Condé - Lycée des métiers du soin, des services et de la restauration (UAI 0250014E), Besançon, dept 25 — PAS Maryse-Condé (Sarcelles 95) ni Pays de Condé (59).
+Jour(s) de blocus : 01/10/2026 uniquement.
+Source(s) : macommune.info, « Lycées bloqués à Besançon : revendications mais aussi départs de feu, police et pompiers caillassés », 01/10/2026 09:59 (maj 17:14) — OUVERT. https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/
+Note : Le corps de l'article lève l'homonymie explicitement (« Au lycée professionnel Condé de Besançon »). Le CSV ne contient qu'un seul « Condé » au sens de ce nom : UAI 0250014E à Besançon (25000). La fiche est donc bien dept 25. Clé build existante : `25056|Lycée professionnel Condé` (qui contient déjà un 01/10 classé « Rassemblement » et un 02/10) — la ligne ci-dessous corrige la nature du 01/10 en blocus.
+Ligne de donnees :
+0250014E|Lycée professionnel Condé - Lycée des métiers du soin, des services et de la restauration|Besançon|25|Blocus national|01/10|2026-10-01|https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/|presse|« 09h00 : Au lycée professionnel Condé de Besançon , plus d'une centaine de lycéens participent au blocage ce jeudi matin. […] Vers 10h20, le blocage a commencé à s'amenuiser. »|macommune.info, 01/10 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 2/18  Lycée Jeanne-d'Arc
+STATUT: TRANCHE
+Etablissement retenu : Lycée international Jeanne d'Arc (UAI 0630019D), Clermont-Ferrand, dept 63 — et NON l'un des 50 autres Jeanne-d'Arc (dont Paray-le-Monial 71, qui n'a AUCUNE source).
+Jour(s) de blocus : 01/10/2026 (source unique) ; 02/10/2026 confirmé (site bloqué, une trentaine de poubelles, ~200 élèves dès 8 h).
+Source(s) :
+  - actu.fr Clermont-Ferrand, 01/10/2026 10h59 (maj 17h16) — OUVERT : https://actu.fr/auvergne-rhone-alpes/clermont-ferrand_63113/des-lycees-bloques-dans-le-puy-de-dome-et-a-clermont-ferrand-on-fait-le-point-sur-la-situation_64863340.html — n'y parle que de « mobilisations », pas d'un blocus.
+  - ici.fr, « Blocage des lycées : une nouvelle journée de mobilisation en Auvergne, de premières actions en cours à Clermont-Ferrand », 02/10/2026 08h31 — OUVERT : https://www.ici.fr/auvergne-rhone-alpes/puy-de-dome-63/blocage-des-lycees-une-nouvelle-journee-de-mobilisation-en-auvergne-de-premieres-actions-en-cours-a-clermont-ferrand-6289898
+Note : L'appellation exacte du CSV pour Clermont-Ferrand est « Lycée **international** Jeanne d'Arc » (le build utilise encore l'ancienne forme `63113|Lycée général Jeanne d'Arc`). Le 02/10 est un blocus net et photographié ; c'est le seul Jeanne-d'Arc que ces articles nomment, aucun des 50 autres homonymes n'est concerné ; Le blocus du 01/10 est DÉJÀ dans le build (radioscoop.com) ; l'actu.fr du 01/10 ne parle, lui, que de « mobilisations ».
+Ligne de donnees :
+0630019D|Lycée international Jeanne d'Arc|Clermont-Ferrand|63|Blocus national|02/10|2026-10-02|https://www.ici.fr/auvergne-rhone-alpes/puy-de-dome-63/blocage-des-lycees-une-nouvelle-journee-de-mobilisation-en-auvergne-de-premieres-actions-en-cours-a-clermont-ferrand-6289898|presse|« Des premières actions sont en cours depuis 7 heures ce matin, notamment le blocage du lycée Jeanne d'Arc à Clermont-Ferrand » ; « Le site est bloqué avec une trentaine de poubelles mais aussi un canapé »|ici.fr, 02/10 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 3/18  Lycée Roland-Garros
+STATUT: RECLASSÉ — PAS UN BLOCUS
+Etablissement retenu : Lycée professionnel Roland Garros (UAI 0310052N), Toulouse, dept 31 — l'autre Roland Garros est au Tampon (974, hors zone).
+Jour(s) de blocus : AUCUN.
+Source(s) : Actu Toulouse, direct du 01/10/2026 (publié 8h24, maj 22h19) — OUVERT. https://actu.fr/occitanie/toulouse_31555/nouvelle-mobilisation-lyceenne-a-toulouse-des-blocages-en-cours-le-tram-t1-interrompu_64862530.html
+  - « 14h. Le lycée Roland Garros, situé à Barrière de Paris, a été fermé dans la matinée. L'établissement a subi de gros dégâts, notamment au niveau de l'entrée tout fraîchement rénovée qui devait être inaugurée dans les prochains jours. »
+  - « Au lycée Roland-Garros, des incendies ont été recensés devant l'établissement. »
+  - « 17h20. On en sait plus sur les dégradations au lycée Roland-Garros […] a subi d'importants dégâts, notamment au niveau de son entrée. »
+Note : **RECLASSEMENT.** Ce n'est pas un blocus d'accès : c'est un incendie de l'entrée *avant l'ouverture* + fermeture de l'établissement. La liste nominative des lycées bloqués du même direct (9h30) ne cite PAS Roland-Garros (« De nombreux lyèces sont bloqués ce jeudi à Toulouse, incluant les lycées Toulouse-Lautrec, Urbain-Vitry, Saint-Sernin, Déodat de Séverac, Marcellin-Berthelot, Gallieni, Stéphane Hessel… »). Le build ne contient d'ailleurs qu'une « Fermeture administrative » du 02/10 pour ce lycée.
+Ligne de donnees : AUCUNE (rien à ajouter). 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 4/18  Lycée général et technologique Louis Pasteur
+STATUT: TRANCHE
+Etablissement retenu : Lycée général et technologique Louis Pasteur (UAI 0250008Y), Besançon, dept 25 — et NON Somain (59), Strasbourg (67), Lille (59), Avignon (84), Nice (06), Hénin-Beaumont (62), Neuilly (92).
+Jour(s) de blocus : 29/09/2026 (dès 6 h) ; 01/10/2026 (cité dans la liste des lycées bloqués de Besançon).
+Source(s) :
+  - macommune.info, « Blocus au lycée Pasteur à Besançon : les lycéens mobilisés aux côtés du mouvement national », 29/09/2026 09h14 — https://www.macommune.info/blocus-au-lycee-pasteur-a-besancon-les-lyceens-mobilises-aux-cotes-du-mouvement-national/ (page+lien vérifiés via l'article du 01/10, qui la référence et en reprend le titre ; page propre non ouverte).
+  - macommune.info, « Lycées bloqués à Besançon : revendications mais aussi départs de feu… », 01/10/2026 09h59 — OUVERT : https://www.macommune.info/blocage-des-lycees-departs-de-feu-camions-de-pompiers-caillasses-et-policier-blesse-a-besancon/
+Note : Deux lycées « Pasteur » existent à Besançon même (Louis Pasteur, 0250008Y) et à Montbéliard (Georges Cuvier, autre) ; c'est celui de **Besançon** que la presse nomme (« le lycée Pasteur de Besançon » dans le build, « À Besançon : … » ici). Le CSV tranche : seul UAI 0250008Y est à Besançon (25000). ATTENTION : le corps de l'article du 01/10 décrit le 01/10 à Pasteur comme une « mobilisation en musique, avec goûter et partie de foot » et fixe un « rendez-vous à 14h00 devant le lycée Pasteur pour bloquer le rectorat » ; seul le chapô/video de l'article le range parmi les lycées bloqués. Le blocus du 01/10 est fragile ; le blocus du 29/09 est net (« bloqué depuis 6 heures »). Clé build existante : `25056|Lycée général et technologique Louis Pasteur` (29/09, 01/10, 02/10 déjà présents) — cette fiche confirme le dept 25 et n'ajoute donc pas d'établissement nouveau.
+Ligne de donnees :
+0250008Y|Lycée général et technologique Louis Pasteur|Besançon|25|Blocus national|29/09|2026-09-29|https://www.macommune.info/blocus-au-lycee-pasteur-a-besancon-les-lyceens-mobilises-aux-cotes-du-mouvement-national/|presse|« Le lycée Pasteur est bloqué depuis 6 heures ce mardi 29 septembre 2026 par des lycéens mobilisés dans le cadre de la journée nationale de grève et de manifestations dans la fonction publique »|macommune.info, 29/09 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 5/18  Lycée (Bourgoin-Jallieu)
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 6/18  Lycée Henri-de-Toulouse-Lautrec
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 7/18  Lycée Joseph Joffre
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 8/18  Lycée d'Issoire
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 9/18  Lycée Albert-Thomas
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 10/18  Lycée François-Cevert
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 11/18  Lycée Honoré-d'Urfé
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 12/18  Lycée Jules Raimu
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 13/18  Lycée Marillac
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 14/18  Lycée Paul-Émile-Victor
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 15/18  Lycée Sainte-Marie
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 16/18  Lycée Victor-Hugo
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 17/18  Lycée général et technologique Vincent Van-Gogh
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+FICHE 18/18  Lycée Évariste Galois
+STATUT: EN COURS
+Etablissement retenu : 
+Jour(s) de blocus : 
+Source(s) : 
+Note : 
+Ligne de donnees : 
+----------------------------------------------------------------------
+
+==============================================================================
+RECAP
+----------------------------------------------------------------------
+Fiches tranchees et ajoutables : 
+Fiches NON TRANCHEES : 
+Fiches reclassees (pas un blocus) : 

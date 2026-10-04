@@ -1,0 +1,92 @@
+# Lot 9 - Grand Est : Moselle, Alsace, Ardennes, Lorraine, Champagne
+
+Le Grand Est est le **troisieme reservoir** apres l'IDF et ARA : 248 etablissements
+non rattaches. Strasbourg, Reims et Metz ont une presse locale dense
+(Actu Strasbourg, Le Parisien Alsace, France3 Grand Est, La Voix de l'Est) et
+des prefectorats qui publient des listes de lycees suspendus.
+
+## Etape 1 - liste prioritaire
+
+Cherche d'abord un article qui **liste nominativement** les lycees bloques.
+Un direct du 01/10 ou du 02/10 qui enumere les etablissements un par un est le
+meilleur rendement possible, comme le direct Actu Toulouse du 01/10 dans le lot 2.
+
+- `lycees bloques Strasbourg 1er octobre 2026 liste`
+- `blocus lycees Alsace Moselle 30 septembre 2026`
+- `lycees sans eleves Reims 2 octobre prefecture`
+- `lycee bloque Metz Nancy 2026`
+- Sites : actu.fr, france3-regions, leparisien.fr, lavoixdelest.fr, alsace
+
+## Etape 2 - pieges specifiques a la zone
+
+- **Le 02/10 n'est pas un jour de blocus dans la plupart des cas.** Les
+  prefectures ferment les etablissements qui sont sans eleves depuis 2-3 jours.
+  Cherche la date reelle du blocus, pas la date de la fermeture.
+- **Strasbourg** : l'universite et les lycees ont parfois ete melanges dans la
+  meme phrase de presse. Ne confonds pas un blocage universitaire (ULB /，涉及
+  discipline) d'un blocus lycee.
+- **Reims, Nancy, Metz** : verifier l'academie. Un lycee peut etre dans le
+  ressort de Reims mais a proximite de Nancy.
+- **Ardennes / Meuse / Vosges** : tres peu de lycees, mais zone peu documentee.
+  Un etablissement sans resultat est normal ici : ecris non confirme.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée polyvalent Charles Hermite | Dieuze | 057 | POLYVALENT |
+| 2 | Lycée général et technologique Robert Schuman | Metz | 057 | GENERAL ET TECHNOLOGIQUE |
+| 3 | Lycée général privé le Gymnase Jean Sturm | Strasbourg | 067 | D ENSEIGNEMENT GENERAL |
+| 4 | Lycée général et technologique privé Institution Sainte Philomène | Haguenau | 067 | GENERAL ET TECHNOLOGIQUE |
+| 5 | Lycée général et technologique épiscopal Saint André | Colmar | 068 | GENERAL ET TECHNOLOGIQUE |
+| 6 | Ecole/CFA Terrade | Mulhouse | 068 | PROFESSIONNEL |
+| 7 | Lycée d'enseignement général, technologique et professionnel agricole de Saint-Laurent à Charleville-Mézières | Saint-Laurent | 008 | ENS GENERAL TECHNO PROF AGRICOLE |
+| 8 | Lycée polyvalent Bazeilles | Bazeilles | 008 | POLYVALENT |
+| 9 | Lycée agricole privé de Laxou | Laxou | 054 | PROFESSIONNEL |
+| 10 | Lycée professionnel Entre Meurthe et Sânon - Lycée des métiers | Dombasle-sur-Meurthe | 054 | PROFESSIONNEL |
+| 11 | Lycée général et technologique Franklin Roosevelt | Reims | 051 | GENERAL ET TECHNOLOGIQUE |
+| 12 | Lycée d'enseignement général, technologique et professionnel agricole de Châlons-en-Champgne | Somme-Vesle | 051 | ENS GENERAL TECHNO PROF AGRICOLE |
+| 13 | Lycée professionnel privé Notre Dame des Vertus | Ligny-en-Barrois | 055 | PROFESSIONNEL |
+| 14 | Lycée d'enseignement général, technologique et professionnel agricole de Verdun | Verdun | 055 | ENS GENERAL TECHNO PROF AGRICOLE |
+
+## Homonymes a ne pas confondre
+
+- **Robert Schuman**, **Kleber**, **Joffre** existent dans plusieurs villes
+  alsaciennes et mosellanes. Verifie le code postal avant d'attribuer une date.
+- **Notre-Dame de la Paix** a Saint-Avold (57), **Notre-Dame** a Colmar (68),
+  **Notre-Dame de la Treille** a Lille (59, hors zone). Verifie systematiquement.
+- Les **lycees professionnels** et **EREA** bloquent rarement et ne sont
+  quasi jamais listes dans la presse : ne les declare pas « non confirmes » au
+  point de suggérer qu'ils n'ont pas ete concernes. Ecris « etablissement peu
+  susceptible d'etre concerne, aucune source ».
+
+## Regles de methode
+
+- Un fil AFP recopie par plusieurs sites = **une seule source**.
+- **Snapchat n'est pas une source** : aucune URL accessible, n'en cite jamais.
+- Instagram / TikTok / YouTube seulement si une URL reelle remonte, et dans ce
+  cas ecris « vue en recherche, page non ouverte ».
+- Si tu ne trouves rien : ecris **non confirme** en preciseant ce que tu as
+  cherche. Ne comble jamais un trou par une deduction.
+- Tu as le droit de **corriger ce fichier de lot** si une identification est
+  fausse, et tu dois le signaler dans ton rapport.
+
+Arrete-toi vers 25-30 etablissements documentes, ou quand la zone est epuisee.
+Ne descends pas sous 12.
+
+## Livrable
+
+Un seul fichier : `recherche-blocus-2026/vague1/resultat-9.md`
+Structure :
+1. Titre + date + rappel du calendrier (28/09 lundi, 29/09 mardi, 30/09 mercredi,
+   01/10 jeudi, 02/10 vendredi, 03/10 samedi, 04/10 dimanche)
+2. Bloc « Articles-listes trouves » avec URL, en commencant par ceux qui nomment
+   le plus d'etablissements
+3. Une section `## N. Nom - Commune (Dept)` par etablissement : statut
+   (confirme / source unique / non confirme / pas un blocus), dates, sources
+   avec URL reelles
+4. Tableau de synthese : `# | Etablissement | Commune | Dept | Date(s) | Statut | Nb sources independantes`
+5. « Erreurs trouvees dans le lot » et « Ce que je n'ai pas pu trouver »
+
+N'ecris AUCUN autre fichier. Ne modifie rien d'existant. Ne touche pas a
+`build/blocus-recherche.js`.

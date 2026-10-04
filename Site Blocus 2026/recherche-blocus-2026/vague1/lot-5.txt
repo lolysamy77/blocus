@@ -1,0 +1,69 @@
+# Lot 5 — Rhone / Auvergne-Rhone-Alpes + balayage des grands pôles non couverts
+
+Ce lot estcelui qui a le meilleur rendement : il commence par un **article de
+liste de 44 lycees**, ce qui donne 44 verifications d'un coup.
+
+## Etape 1 — l'article de liste (priorite absolue)
+
+- https://actu.fr/societe/blocages-la-liste-des-44-lycees-sans-eleves-vendredi-a-lyon-et-dans-le-rhone-la-prefecture-sort-l-arsenal_64868945.html
+
+Cet article liste **44 lycees sans eleves** dans le Rhone et l'agglomeration
+lyonnaise le vendredi 2 octobre. Pour chacun :
+
+1. Verifier la date exacte (« vendredi » = **2 octobre 2026**).
+2. ⚠ Distinguer deux choses : **lycée sans élèves** (conséquence du blocus des
+   jours précédents, fermeture administrative) et **blocus le jour même**.
+   Ne pas noter un blocus le 02/10 a un etablissement qui n'a fait que subir la
+   fermeture. Chercher si l'etablissement avait bloque le 29, 30/09 ou 01/10.
+3. Chercher pour chacun 1 source supplementaire qui date le blocus lui-meme.
+
+Les deux entrees non rattachees de ce lot viennent de cet article :
+
+| # | Etablissement | Commune | Dept | Piste |
+|---|---|---|---|---|
+| 1 | EREA DV René-Pellet | Villeurbanne | 69 | EREA (enseignement adapte), a confirmer |
+| 2 | Institut Robin | Saint-Romain-en-Gal | 69 | Institut, pas un lycee au sens strict |
+
+## Etape 2 — les grands poles hors des articles deja traites
+
+Verifier ces villes et agglomerations, dont les lycees n'ont pas encore ete
+balayes :
+
+- **Lyon, Villeurbanne, Vénissieux, Bron, Caluire** (legerement hors periode :
+  chercher aussi les lycees de l'Ouest lyonnais)
+- **Saint-Étienne**, Roanne, Bourgoin-Jallieu, Vienne
+- **Clermont-Ferrand**, Aurillac, Le Puy-en-Velay
+- **Annecy**, Chambéry, Grenoble et sa region's autres villes
+
+Pour chaque ville : chercher d'abord un article de liste regional.
+
+Recherches a tenter :
+
+- `"liste des lycees" bloques Rhone octobre 2026`
+- `lycees sans eleves Rhone 2 octobre 2026`
+- `blocage lycees Loire Saint-Etienne octobre 2026`
+- `blocus lycees Puy-de-Dome Clermont octobre 2026`
+- `lycees bloques Haute-Savoie Savoie octobre 2026`
+- `prefecture liste etablissements fermes Rhone`
+
+## Etape 3 — Signs a confirmer
+
+Le blocus du **lycée Lumière a Lyon** (facade incendiee) et du
+**lycée Nelson-Mandela a Nantes** (hall incendie) sont cites dans l'article
+Wikipédia du mouvement. Nantes n'est pas dans ton lot, mais Lyon oui :
+confirmer la date du blocus du lycée Lumière, pas seulement l'incendie.
+
+## Regles
+
+- Lire `CONSIGNES.md` avant tout.
+- Ne jamais inventer de date ni d'URL. Une date non verifiee s'ecrit
+  `date incertaine`.
+- Toute source notee doit etre une URL reellement retournee par la recherche.
+- Commencer par `build/blocus-recherche.js` pour ne pas refaire l'existant.
+
+## Rappel chiffres du mouvement
+
+Pour situer les dates : le mouvement debute le **18/09/2026**, se structure
+a partir du **21/09** (Saint-Exupery de Creteil), et les journees d'action
+majeures sont **29/09**, **30/09**, **01/10**, **02/10**, et **06/10** (annonce).
+Verifier le jour de la semaine avant toute deduction de date.

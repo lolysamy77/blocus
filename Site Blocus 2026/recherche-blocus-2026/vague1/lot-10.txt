@@ -1,0 +1,93 @@
+# Lot 10 - Bourgogne-Franche-Comté
+
+Cote-d Or, Saone-et-Loire, Yonne, Nievre, Jura, Doubs, Belfort, Haute-Saone.
+159 etablissements non rattaches. C'est la region la moins couvertie a ce jour
+apres les lots 2 a 9. Dijon et Besancon ont une presse locale reelle
+(Actu Dijon, Le Bien Public, Est Releve, France3 BFC).
+
+## Etape 1 - liste prioritaire
+
+Les seuls articles qui ont produit des resultats dans les lots precedents sont
+ceux qui **listent nominativement** plusieurs lycees. Cherche ca d'abord.
+
+- `lycees bloques Dijon 1er octobre 2026 liste`
+- `blocus lycees Besancon 30 septembre 2026`
+- `lycees sans eleves Cote-d Or 2 octobre prefecture`
+- `lycee bloque Auxerre Nevers 2026`
+- Sites : actu.fr, france3-regions, lebienpublic.fr, estreleve.fr, lemonde.fr
+
+Rappel : 28/09 = lundi, 29/09 = mardi, 30/09 = mercredi, 01/10 = jeudi,
+02/10 = vendredi, 03/10 = samedi, 04/10 = dimanche.
+
+## Etape 2 - ne pas extrapoler
+
+- **Le 02/10 est majoritairement un jour de fermeture administrative**, pas de
+  blocus. Cherche la date reelle du blocus.
+- Si tu ne trouves rien pour un etablissement, ecris **non confirme** en
+  preciseant tes recherches. Ne comble jamais un trou par une deduction.
+- Un etablissement sans resultat dans une zone peu documentee est un resultat
+  normal : ne le presente pas comme une erreur de la base.
+
+## Regles de methode
+
+- **Un fil AFP recopie par plusieurs sites = UNE seule source.** Ecris
+  `source unique` si tu n'as qu'un redacteur.
+- **Snapchat n'est pas une source** : aucune URL accessible, jamais cite.
+- Instagram / TikTok / YouTube seulement si une URL reelle monte, avec la
+  mention « vue en recherche, page non ouverte ».
+- **Verifie que la page que tu cites parle bien de l'etablissement cite**, et
+  que sa date est dans la fenetre. Un agent a rejette un hit France 3 titre
+  sur un blocus a Cherbourg qui datait en realite du 4 decembre d'une autre
+  annee. Les articles qui rapellent un vieux mouvement piagent.
+- Tu peux **corriger ce fichier de lot** si une identification est fausse, et
+  tu dois le signaler.
+
+## Etablissements a traiter
+
+| # | Etablissement | Commune | Dept | Nature |
+|---|---|---|---|---|
+| 1 | Lycée polyvalent de la Céramique Henry Moisand - Lycée des métiers arts-design-céramique | Longchamp | 021 | POLYVALENT |
+| 2 | Lycée polyvalent régional Anna Judic | Semur-en-Auxois | 021 | POLYVALENT |
+| 3 | Lycée général et technologique privé Jeanne d'Arc | Paray-le-Monial | 071 | GENERAL ET TECHNOLOGIQUE |
+| 4 | Lycée professionnel Jeannette Guyot - Lycée des métiers du bâtiment et travaux publics, de l'automobile, de la logistique et du transport | Chalon-sur-Saône | 071 | PROFESSIONNEL |
+| 5 | Lycée général Jacques Amyot | Auxerre | 089 | D ENSEIGNEMENT GENERAL |
+| 6 | Lycée polyvalent du Parc des Chaumes | Avallon | 089 | POLYVALENT |
+| 7 | Lycée polyvalent Pierre Gilles de Gennes - Lycée des métiers | Cosne-Cours-sur-Loire | 058 | POLYVALENT |
+| 8 | Lycée d'enseignement général et technologique agricole de Nevers-Challuy | Challuy | 058 | GENERAL ET TECHNOLOGIQUE |
+| 9 | Lycée d'enseignement général et technologique agricole de  Mancy - Lons-le-Saunier | Lons-le-Saunier | 039 | GENERAL ET TECHNOLOGIQUE |
+| 10 | Lycée d'enseignement général et technologique agricole de Poligny | Poligny | 039 | GENERAL ET TECHNOLOGIQUE |
+| 11 | Etablissement régional d'enseignement adapté Simone Veil | Besançon | 025 | ETAB REGIONAL/ENSEIGNEMENT ADAPTE |
+| 12 | Ecole secondaire professionnelle privée du FC Sochaux | Seloncourt | 025 | PROFESSIONNEL |
+| 13 | ECOLE DE PRODUCTION DE BELFORT | Cravanche | 090 | PROFESSIONNEL |
+| 14 | Lycée professionnel Jules Ferry - Lycée des métiers des services aux collectivités, aux entreprises et à la personne | Delle | 090 | PROFESSIONNEL |
+
+## Homonymes et pieges
+
+- **Saint-Exupery** existe a Dijon et a Roanne (42, hors zone).
+- **Carnot**, **Pasteur**, **Jeanne d'Arc**, **Marx Dormoy** : plusieurs
+  villes de la region. Verifie le code postal systematiquement.
+- **Dijon** : **Carnot**, **Marcel Claudel**, **Fontaine d'Ouche**,
+  **Jean-Perrot**, **Faidherbe**, **Maillet**, **Greuze** (Beaune).
+- **Besancon** : **Pasteur**, **Jules Haag**, **Bregille**, **Velotte**,
+  **Montjoux** (a Montferrand-le-Chateau, pas Montjoux dans le Jura).
+- Le **Departement** de la Saone-et-Loire est **71**, celui de la Haute-Saone
+  est **70** : inverse frequent.
+
+Arrete-toi vers 25-30 etablissements documentes, ou quand la zone est epuisee.
+Ne descends pas sous 12.
+
+## Livrable
+
+Un seul fichier : `recherche-blocus-2026/vague1/resultat-10.md`
+1. Titre + date + rappel du calendrier
+2. Bloc « Articles-listes trouves » avec URL, en commencant par ceux qui nomment
+   le plus d'etablissements
+3. Une section `## N. Nom - Commune (Dept)` par etablissement : statut
+   (confirme / source unique / non confirme / pas un blocus), dates, sources
+   avec URL reelles
+4. Tableau de synthese :
+   `# | Etablissement | Commune | Dept | Date(s) | Statut | Nb sources independantes`
+5. « Erreurs trouvees dans le lot » et « Ce que je n'ai pas pu trouver »
+
+N'ecris AUCUN autre fichier. Ne modifie rien d'existant. Ne touche pas a
+`build/blocus-recherche.js`.

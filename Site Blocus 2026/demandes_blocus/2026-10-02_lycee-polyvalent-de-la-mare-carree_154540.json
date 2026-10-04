@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "recu_le": "2026-10-04T15:45:40",
+  "source": "signaler.html",
+  "departement": "77",
+  "certifie_en_france": true,
+  "type": "L",
+  "type_lisible": "lycée professionnel, agricole ou institut",
+  "etablissement": "Lycée polyvalent de la Mare Carrée",
+  "code_insee_commune": "77296",
+  "date": "2026-10-02",
+  "nature": "blocus-incidents",
+  "description": "ils ont bloqué le lycée",
+  "lien_preuve": "https://www.youtube.com",
+  "signale_par": "j'étais sur place",
+  "nom_departement": "Seine-et-Marne",
+  "nom_fichier": "2026-10-02_lycee-polyvalent-de-la-mare-carree_154540.json"
+}

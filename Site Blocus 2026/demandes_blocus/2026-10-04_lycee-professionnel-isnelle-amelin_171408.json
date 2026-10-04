@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "recu_le": "2026-10-04T17:14:08",
+  "source": "signaler.html",
+  "departement": "974",
+  "certifie_en_france": true,
+  "type": "L",
+  "type_lisible": "lycée professionnel, agricole ou institut",
+  "etablissement": "Lycée professionnel Isnelle Amelin",
+  "code_insee_commune": "97418",
+  "date": "2026-10-04",
+  "nature": "fermeture",
+  "description": "blocus",
+  "lien_preuve": "https://www.google.com",
+  "signale_par": "",
+  "nom_departement": "La Réunion",
+  "nom_fichier": "2026-10-04_lycee-professionnel-isnelle-amelin_171408.json"
+}
